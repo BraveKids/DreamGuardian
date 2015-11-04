@@ -1,0 +1,364 @@
+fileFormatVersion: 2
+guid: 0a5f751747bef174eb17143775d856eb
+timeCreated: 1446649475
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: platformscpia_0
+    21300002: platformscpia_1
+    21300004: platformscpia_2
+    21300006: platformscpia_3
+    21300008: platformscpia_4
+    21300010: platformscpia_5
+    21300012: platformscpia_6
+    21300014: platformscpia_7
+    21300016: platformscpia_8
+    21300018: platformscpia_9
+    21300020: platformscpia_10
+    21300022: platformscpia_11
+    21300024: platformscpia_12
+    21300026: platformscpia_13
+    21300028: platformscpia_14
+    21300030: platformscpia_15
+    21300032: platformscpia_16
+    21300034: platformscpia_17
+    21300036: platformscpia_18
+    21300038: platformscpia_19
+    21300040: platformscpia_20
+    21300042: platformscpia_21
+    21300044: platformscpia_22
+    21300046: platformscpia_23
+    21300048: platformscpia_24
+    21300050: platformscpia_25
+    21300052: platformscpia_26
+    21300054: platformscpia_27
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: platformscpia_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 367
+        width: 246
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_1
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 371
+        width: 246
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_2
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 287
+        width: 244
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_3
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 274
+        width: 247
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 197
+        width: 246
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_5
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 197
+        width: 246
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 82
+        width: 246
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_7
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 85
+        width: 246
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_8
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 46
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_9
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 46
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_10
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 46
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_11
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 46
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_12
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 46
+        width: 26
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_13
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 46
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_14
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 46
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_15
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 41
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_16
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 46
+        width: 41
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_17
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 46
+        width: 11
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_18
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 46
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_19
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 46
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_20
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 46
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_21
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 46
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_22
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 46
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_23
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 46
+        width: 25
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_24
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 16
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_25
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 16
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_26
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 16
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platformscpia_27
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 16
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
