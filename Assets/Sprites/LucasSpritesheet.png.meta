@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 729dd488f56a45c4581c588d4efa3212
-timeCreated: 1446649930
+timeCreated: 1446653267
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -8,23 +8,23 @@ TextureImporter:
     21300002: idle2
     21300004: idle3
     21300006: idle4
-    21300008: LucasSpritesheet_4
-    21300010: LucasSpritesheet_5
-    21300012: LucasSpritesheet_6
+    21300008: run1
+    21300010: run2
+    21300012: run3
     21300014: LucasSpritesheet_7
-    21300016: LucasSpritesheet_8
-    21300018: LucasSpritesheet_9
-    21300020: LucasSpritesheet_10
-    21300022: LucasSpritesheet_11
-    21300024: LucasSpritesheet_12
-    21300026: LucasSpritesheet_13
-    21300028: LucasSpritesheet_14
-    21300030: LucasSpritesheet_15
-    21300032: LucasSpritesheet_16
-    21300034: LucasSpritesheet_17
-    21300036: LucasSpritesheet_18
-    21300038: LucasSpritesheet_19
-    21300040: LucasSpritesheet_20
+    21300016: run4
+    21300018: run5
+    21300020: run6
+    21300022: run7
+    21300024: jump1
+    21300026: jump2
+    21300028: jump3
+    21300030: jump4
+    21300032: jump5
+    21300034: jump6
+    21300036: jump7
+    21300038: jump8
+    21300040: jump9
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -111,7 +111,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: LucasSpritesheet_4
+    - name: run1
       rect:
         serializedVersion: 2
         x: 3
@@ -119,9 +119,9 @@ TextureImporter:
         width: 34
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: LucasSpritesheet_5
+    - name: run2
       rect:
         serializedVersion: 2
         x: 39
@@ -129,9 +129,9 @@ TextureImporter:
         width: 40
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: LucasSpritesheet_6
+    - name: run3
       rect:
         serializedVersion: 2
         x: 81
@@ -139,7 +139,7 @@ TextureImporter:
         width: 37
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: LucasSpritesheet_7
       rect:
@@ -149,9 +149,9 @@ TextureImporter:
         width: 31
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: LucasSpritesheet_8
+    - name: run4
       rect:
         serializedVersion: 2
         x: 164
@@ -159,9 +159,9 @@ TextureImporter:
         width: 33
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: LucasSpritesheet_9
+    - name: run5
       rect:
         serializedVersion: 2
         x: 199
@@ -169,9 +169,9 @@ TextureImporter:
         width: 39
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: LucasSpritesheet_10
+    - name: run6
       rect:
         serializedVersion: 2
         x: 240
@@ -179,9 +179,9 @@ TextureImporter:
         width: 37
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: LucasSpritesheet_11
+    - name: run7
       rect:
         serializedVersion: 2
         x: 286
@@ -189,9 +189,9 @@ TextureImporter:
         width: 31
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: LucasSpritesheet_12
+    - name: jump1
       rect:
         serializedVersion: 2
         x: 8
@@ -199,9 +199,9 @@ TextureImporter:
         width: 24
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: LucasSpritesheet_13
+    - name: jump2
       rect:
         serializedVersion: 2
         x: 43
@@ -209,9 +209,9 @@ TextureImporter:
         width: 33
         height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: LucasSpritesheet_14
+    - name: jump3
       rect:
         serializedVersion: 2
         x: 83
@@ -219,9 +219,9 @@ TextureImporter:
         width: 34
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: LucasSpritesheet_15
+    - name: jump4
       rect:
         serializedVersion: 2
         x: 122
@@ -229,9 +229,9 @@ TextureImporter:
         width: 34
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: LucasSpritesheet_16
+    - name: jump5
       rect:
         serializedVersion: 2
         x: 164
@@ -239,9 +239,9 @@ TextureImporter:
         width: 32
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: LucasSpritesheet_17
+    - name: jump6
       rect:
         serializedVersion: 2
         x: 203
@@ -249,9 +249,9 @@ TextureImporter:
         width: 32
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: LucasSpritesheet_18
+    - name: jump7
       rect:
         serializedVersion: 2
         x: 243
@@ -259,9 +259,9 @@ TextureImporter:
         width: 33
         height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: LucasSpritesheet_19
+    - name: jump8
       rect:
         serializedVersion: 2
         x: 284
@@ -269,9 +269,9 @@ TextureImporter:
         width: 33
         height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: LucasSpritesheet_20
+    - name: jump9
       rect:
         serializedVersion: 2
         x: 323
@@ -279,7 +279,7 @@ TextureImporter:
         width: 33
         height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
