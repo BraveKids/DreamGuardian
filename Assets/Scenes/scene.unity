@@ -139,6 +139,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2091745706}
   m_RootOrder: 0
+--- !u!1 &278038529
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 278038530}
+  m_Layer: 8
+  m_Name: GroundCheckRight
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &278038530
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 278038529}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .282999992, y: -.484999895, z: 0}
+  m_LocalScale: {x: .5, y: .5, z: .5}
+  m_Children: []
+  m_Father: {fileID: 758866003}
+  m_RootOrder: 2
 --- !u!1 &474698430
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,7 +283,7 @@ GameObject:
   - 114: {fileID: 758866005}
   m_Layer: 8
   m_Name: Ken
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -287,9 +314,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -.0138916969, y: 0}
   serializedVersion: 2
-  m_Size: {x: .790000021, y: 1.03999996}
+  m_Size: {x: .558474779, y: 1.03999996}
 --- !u!95 &758866001
 Animator:
   serializedVersion: 3
@@ -345,6 +372,7 @@ Transform:
   m_Children:
   - {fileID: 1796810137}
   - {fileID: 1608162825}
+  - {fileID: 278038530}
   m_Father: {fileID: 0}
   m_RootOrder: 7
 --- !u!114 &758866004
@@ -359,7 +387,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 4
-  groundCheck: {fileID: 1796810137}
+  groundCheckLeft: {fileID: 1796810137}
+  groundCheckRight: {fileID: 278038530}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 4294966527
@@ -959,7 +988,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1796810137}
   m_Layer: 8
-  m_Name: GroundCheck
+  m_Name: GroundCheckLeft
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -972,7 +1001,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1796810136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.485000014, z: 0}
+  m_LocalPosition: {x: -.32100001, y: -.485000014, z: 0}
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children: []
   m_Father: {fileID: 758866003}
@@ -1051,6 +1080,7 @@ GameObject:
   - 92: {fileID: 2039337693}
   - 124: {fileID: 2039337692}
   - 81: {fileID: 2039337691}
+  - 114: {fileID: 2039337696}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1125,6 +1155,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &2039337696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2039337690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 944fd9e7877c5af459638d070399a0c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smoothTimeY: 0
+  smoothTimeX: 0
+  player: {fileID: 0}
+  terrain: {fileID: 914984645}
+  origin: {x: 0, y: 0, z: 0}
 --- !u!1 &2091745705
 GameObject:
   m_ObjectHideFlags: 0

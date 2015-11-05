@@ -8,8 +8,11 @@ public class CharacterControllerScript : MonoBehaviour {
     Rigidbody2D rb;
     Animator anim;
 
-    bool grounded = false;
-    public Transform groundCheck;
+    bool groundedLeft = false;
+	bool groundedRight = false;
+	bool grounded = false;
+	public Transform groundCheckLeft;
+	public Transform groundCheckRight;
     float groundRadius = 0.1f;
     public LayerMask whatIsGround; //cosa il character deve considerare ground es. il terreno, i nemici...
     public float jumpForce = 70f;
@@ -34,7 +37,9 @@ public class CharacterControllerScript : MonoBehaviour {
 
 
 	void FixedUpdate () {
-        grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
+        groundedLeft = Physics2D.OverlapCircle(groundCheckLeft.position, groundRadius, whatIsGround);
+		groundedRight = Physics2D.OverlapCircle(groundCheckRight.position, groundRadius, whatIsGround);
+		grounded = groundedLeft || groundedRight;
         anim.SetBool("Ground", grounded); //per "capire" se è o no grounded, continua a chiederselo/ a verificarlo
 
         anim.SetFloat("vSpeed", rb.velocity.y); //vertical speed
