@@ -7,6 +7,7 @@ public class CharacterControllerScript : MonoBehaviour {
     bool facingRight = true;
     Rigidbody2D rb;
     Animator anim;
+	bool isAttacking = true;
 
     bool grounded = false;
     public Transform groundCheck;
@@ -29,6 +30,14 @@ public class CharacterControllerScript : MonoBehaviour {
            anim.SetBool("Ground", false);
            rb.AddForce(new Vector2(0, jumpForce));
         }
+		if (grounded && Input.GetButtonDown ("Fire2")) {
+			Invoke("AttackLag",2f);
+			if(isAttacking==true){
+			anim.SetTrigger ("Attack");
+			}
+			isAttacking = false;
+
+		}
     }
 
 
@@ -56,4 +65,8 @@ public class CharacterControllerScript : MonoBehaviour {
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+
+	void AttackLag(){
+		isAttacking = true;
+	}
 }
