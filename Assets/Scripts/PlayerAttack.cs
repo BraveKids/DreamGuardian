@@ -16,7 +16,7 @@ public class PlayerAttack: MonoBehaviour {
 		if(Input.GetKeyDown("f") && !attacking){
 			attacking = true;
 			attackTimer= attackCd;
-			Invoke ("Attack", 0.4f);
+			Invoke ("Attack", 0.1f);
 
 		}
 		if (attacking){
@@ -31,16 +31,10 @@ public class PlayerAttack: MonoBehaviour {
 		anim.SetBool("Attacking",attacking);
 	}
 
-	void OnTriggerEnter2D(Collider2D other) {
-		if (other.CompareTag ("Enemy")) {
-			//Destroy (other.gameObject);
-			Debug.Log(other.ToString());
-			other.gameObject.SetActive(false);
-		}
-	}
 
 	void Attack(){
 		attackTrigger.enabled = true;
 	}
+
+	}
 	
-}
