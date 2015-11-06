@@ -29,5 +29,13 @@ public class PlayerAttack: MonoBehaviour {
 		}
 		anim.SetBool("Attacking",attacking);
 	}
+
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.CompareTag ("Enemy")) {
+			//Destroy (other.gameObject);
+			Debug.Log(other.ToString());
+			other.gameObject.SetActive(false);
+		}
+	}
 	
 }
