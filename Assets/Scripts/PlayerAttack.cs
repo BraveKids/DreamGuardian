@@ -7,34 +7,34 @@ public class PlayerAttack: MonoBehaviour {
 	private float attackCd = 0.6f;
 	public Collider2D attackTrigger;
 	private Animator anim;
-	void Awake (){
-		anim = gameObject.GetComponent<Animator>();
+
+	void Awake () {
+		anim = gameObject.GetComponent<Animator> ();
 		attackTrigger.enabled = false;
 	}
 	
-	void Update() {
-		if(Input.GetKeyDown("f") && !attacking){
+	void Update () {
+		if (Input.GetKeyDown ("f") && !attacking) {
 			attacking = true;
-			attackTimer= attackCd;
+			attackTimer = attackCd;
 			attackTrigger.enabled = true;
 		}
-		if (attacking){
-			if(attackTimer>0){
-				attackTimer-=Time.deltaTime;
-			}
-			else{
-				attacking=false;
+		if (attacking) {
+			if (attackTimer > 0) {
+				attackTimer -= Time.deltaTime;
+			} else {
+				attacking = false;
 				attackTrigger.enabled = false;
 			}
 		}
-		anim.SetBool("Attacking",attacking);
+		anim.SetBool ("Attacking", attacking);
 	}
 
-	void OnTriggerEnter2D(Collider2D other) {
+	void OnTriggerEnter2D (Collider2D other) {
 		if (other.CompareTag ("Enemy")) {
 			//Destroy (other.gameObject);
-			Debug.Log(other.ToString());
-			other.gameObject.SetActive(false);
+			Debug.Log (other.ToString ());
+			other.gameObject.SetActive (false);
 		}
 	}
 	
