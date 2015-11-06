@@ -16,7 +16,8 @@ public class PlayerAttack: MonoBehaviour {
 		if(Input.GetKeyDown("f") && !attacking){
 			attacking = true;
 			attackTimer= attackCd;
-			attackTrigger.enabled = true;
+			Invoke ("Attack", 0.4f);
+
 		}
 		if (attacking){
 			if(attackTimer>0){
@@ -36,6 +37,10 @@ public class PlayerAttack: MonoBehaviour {
 			Debug.Log(other.ToString());
 			other.gameObject.SetActive(false);
 		}
+	}
+
+	void Attack(){
+		attackTrigger.enabled = true;
 	}
 	
 }
