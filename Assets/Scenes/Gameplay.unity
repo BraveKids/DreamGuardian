@@ -1336,6 +1336,7 @@ GameObject:
   - 124: {fileID: 2039337692}
   - 81: {fileID: 2039337691}
   - 114: {fileID: 2039337696}
+  - 114: {fileID: 2039337697}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1416,7 +1417,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2039337690}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5c7d86e47cf21f4c90d1c31a7a71a00, type: 3}
   m_Name: 
@@ -1426,6 +1427,19 @@ MonoBehaviour:
   player: {fileID: 0}
   terrain: {fileID: 914984645}
   origin: {x: 0, y: 0, z: 0}
+--- !u!114 &2039337697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2039337690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c824c74fb99854e46a601f5c854ffc8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextOrigin: {x: 0, y: 0, z: 0}
+  smoothTimeX: 0
 --- !u!1 &2091745705
 GameObject:
   m_ObjectHideFlags: 0
