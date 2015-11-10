@@ -428,7 +428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481a8ae8d161e1741b295e20734b457c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 4
+  maxSpeed: 2.5
   attackTrigger: {fileID: 1608162826}
   groundCheckLeft: {fileID: 1796810137}
   groundCheckRight: {fileID: 278038530}
