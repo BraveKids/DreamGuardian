@@ -40,23 +40,25 @@ public class CharacterControllerScript : MonoBehaviour {
 
 
 	void FixedUpdate () {
-        groundedLeft = Physics2D.OverlapCircle(groundCheckLeft.position, groundRadius, whatIsGround);
-		groundedRight = Physics2D.OverlapCircle(groundCheckRight.position, groundRadius, whatIsGround);
-		grounded = groundedLeft || groundedRight;
-        anim.SetBool("Ground", grounded); //per "capire" se è o no grounded, continua a chiederselo/ a verificarlo
+		if (anim.GetBool ("Attacking") == false) {
+			groundedLeft = Physics2D.OverlapCircle (groundCheckLeft.position, groundRadius, whatIsGround);
+			groundedRight = Physics2D.OverlapCircle (groundCheckRight.position, groundRadius, whatIsGround);
+			grounded = groundedLeft || groundedRight;
+			anim.SetBool ("Ground", grounded); //per "capire" se è o no grounded, continua a chiederselo/ a verificarlo
 
-        anim.SetFloat("vSpeed", rb.velocity.y); //vertical speed
+			anim.SetFloat ("vSpeed", rb.velocity.y); //vertical speed
 
-        float move = Input.GetAxis("Horizontal");
-        anim.SetFloat("Speed", Mathf.Abs(move)); //con questa riga risco a "leggere" il mutamento di Speed
-                                                 // e quindi a far cambiare l'animazione da idle a run
+			float move = Input.GetAxis ("Horizontal");
+			anim.SetFloat ("Speed", Mathf.Abs (move)); //con questa riga risco a "leggere" il mutamento di Speed
+			// e quindi a far cambiare l'animazione da idle a run
        
-        rb.velocity = new Vector2(move*maxSpeed,rb.velocity.y);
+			rb.velocity = new Vector2 (move * maxSpeed, rb.velocity.y);
 
-        if (move < 0 && !facingRight)
-            Flip();
-        else if (move > 0 && facingRight)
-            Flip();
+			if (move < 0 && !facingRight)
+				Flip ();
+			else if (move > 0 && facingRight)
+				Flip ();
+		}
 	}
     void Flip()
     {
