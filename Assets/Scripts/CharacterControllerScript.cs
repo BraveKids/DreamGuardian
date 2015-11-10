@@ -4,10 +4,11 @@ using System.Collections;
 public class CharacterControllerScript : MonoBehaviour {
 
     public float maxSpeed = 10f;
+	float hp = 3;
     bool facingRight = true;
     Rigidbody2D rb;
     Animator anim;
-
+	public Collider2D attackTrigger;
     bool groundedLeft = false;
 	bool groundedRight = false;
 	bool grounded = false;
@@ -16,6 +17,8 @@ public class CharacterControllerScript : MonoBehaviour {
     float groundRadius = 0.1f;
     public LayerMask whatIsGround; //cosa il character deve considerare ground es. il terreno, i nemici...
     public float jumpForce = 70f;
+	public float damageForce = 500f;
+
 
     // Use this for initialization
     void Start () {
@@ -62,5 +65,20 @@ public class CharacterControllerScript : MonoBehaviour {
         theScale.x *= -1;
         transform.localScale = theScale;
     }
-	
+
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.CompareTag ("Enemy") && attackTrigger.enabled == false) {
+
+			hp -= 1;
+			Debug.Log ("Danno " + hp + " left!");
+			if (hp <= 0) {
+				anim.SetTrigger ("death");
+				Invoke ("Death", 0.8f);
+			}
+		}
+		}
+
+	void Death(){
+		this.gameObject.SetActive (false);
+	}
 }
