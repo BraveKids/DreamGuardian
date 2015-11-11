@@ -30,11 +30,17 @@ public class CharacterControllerScript : MonoBehaviour {
 	// Update is called once per frame
     void Update()
     {
-        if (grounded && Input.GetKeyDown(KeyCode.Space))
-        {
-           anim.SetBool("Ground", false);
-           rb.AddForce(new Vector2(0, jumpForce));
-        }
+		Movement ();
+
+    }
+
+	void Movement(){
+		if (grounded && Input.GetKeyDown(KeyCode.Space))
+		{
+			anim.SetBool("Ground", false);
+			rb.AddForce(new Vector2(0, jumpForce));
+		}
+		
 		if (anim.GetBool ("Attacking") == false) {
 			groundedLeft = Physics2D.OverlapCircle (groundCheckLeft.position, groundRadius, whatIsGround);
 			groundedRight = Physics2D.OverlapCircle (groundCheckRight.position, groundRadius, whatIsGround);
@@ -54,8 +60,7 @@ public class CharacterControllerScript : MonoBehaviour {
 			else if (move > 0 && facingRight)
 				Flip ();
 		}
-
-    }
+	}
 
 	
     void Flip()
