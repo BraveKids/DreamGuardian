@@ -17,7 +17,6 @@ public class CharacterControllerScript : MonoBehaviour {
     float groundRadius = 0.1f;
     public LayerMask whatIsGround; //cosa il character deve considerare ground es. il terreno, i nemici...
     public float jumpForce = 70f;
-	public float damageForce = 500f;
 
 
     // Use this for initialization
