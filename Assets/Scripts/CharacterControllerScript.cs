@@ -30,36 +30,39 @@ public class CharacterControllerScript : MonoBehaviour {
 	// Update is called once per frame
     void Update()
     {
-        if (grounded && Input.GetKeyDown(KeyCode.Space))
-        {
-           anim.SetBool("Ground", false);
-           rb.AddForce(new Vector2(0, jumpForce));
-        }
+		Movement ();
 
     }
 
-
-	void FixedUpdate () {
+	void Movement(){
+		if (grounded && Input.GetKeyDown(KeyCode.Space))
+		{
+			anim.SetBool("Ground", false);
+			rb.AddForce(new Vector2(0, jumpForce));
+		}
+		
 		if (anim.GetBool ("Attacking") == false) {
 			groundedLeft = Physics2D.OverlapCircle (groundCheckLeft.position, groundRadius, whatIsGround);
 			groundedRight = Physics2D.OverlapCircle (groundCheckRight.position, groundRadius, whatIsGround);
 			grounded = groundedLeft || groundedRight;
 			anim.SetBool ("Ground", grounded); //per "capire" se è o no grounded, continua a chiederselo/ a verificarlo
-
+			
 			anim.SetFloat ("vSpeed", rb.velocity.y); //vertical speed
-
+			
 			float move = Input.GetAxis ("Horizontal");
 			anim.SetFloat ("Speed", Mathf.Abs (move)); //con questa riga risco a "leggere" il mutamento di Speed
 			// e quindi a far cambiare l'animazione da idle a run
-       
+			
 			rb.velocity = new Vector2 (move * maxSpeed, rb.velocity.y);
-
+			
 			if (move < 0 && !facingRight)
 				Flip ();
 			else if (move > 0 && facingRight)
 				Flip ();
 		}
 	}
+
+	
     void Flip()
     {
         facingRight = !facingRight;
