@@ -18,10 +18,10 @@ public class EndLevelScript : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            var startPosition = other.transform.position;
+            //var startPosition = other.transform.position;
             other.transform.position = destination.position;
-            var moveDelta = other.transform.position - startPosition;
-            Camera.current.transform.position += moveDelta;
+            //var moveDelta = other.transform.position - startPosition;
+            //Camera.current.transform.position += moveDelta;
         }
         
     }
