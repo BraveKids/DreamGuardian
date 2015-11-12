@@ -3,20 +3,24 @@ using System.Collections;
 
 public class CharacterControllerScript : MonoBehaviour {
 
-    public float maxSpeed = 10f;
-	float hp = 3;
+    public float maxSpeed;
+	public int hp = 3;
+
     bool facingRight = true;
     Rigidbody2D rb;
     Animator anim;
 	public Collider2D attackTrigger;
+	public Collider2D superAttackTrigger;
     bool groundedLeft = false;
 	bool groundedRight = false;
 	bool grounded = false;
 	public Transform groundCheckLeft;
 	public Transform groundCheckRight;
+	float hitDelay = 1.5f;
+	private float nextHitAllowed = 0f;
     float groundRadius = 0.1f;
     public LayerMask whatIsGround; //cosa il character deve considerare ground es. il terreno, i nemici...
-    public float jumpForce = 70f;
+    public float jumpForce;
 
 
     // Use this for initialization
@@ -59,6 +63,10 @@ public class CharacterControllerScript : MonoBehaviour {
 			else if (move > 0 && facingRight)
 				Flip ();
 		}
+
+	
+
+
 	}
 
 	
@@ -70,11 +78,12 @@ public class CharacterControllerScript : MonoBehaviour {
         transform.localScale = theScale;
     }
 
-	void OnTriggerEnter2D(Collider2D other) {
-		if (other.CompareTag ("Enemy") && attackTrigger.enabled == false) {
+	void OnTriggerStay2D(Collider2D other) {
+			if (other.CompareTag ("Enemy") && attackTrigger.enabled == false && superAttackTrigger.enabled== false && Time.time > nextHitAllowed) {
 
 			hp -= 1;
 			Debug.Log ("Danno " + hp + " left!");
+			nextHitAllowed = Time.time + hitDelay;
 			if (hp <= 0) {
 				anim.SetTrigger ("death");
 				Invoke ("Death", 0.8f);

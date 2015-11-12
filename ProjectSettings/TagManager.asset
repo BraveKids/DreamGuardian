@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - MenuScreen
   - AttackTrigger
+  - SuperAttackTrigger
   layers:
   - Default
   - TransparentFX
