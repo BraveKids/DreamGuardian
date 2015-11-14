@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - MenuScreen
   - AttackTrigger
+  - Ground
+  - Platform
   layers:
   - Default
   - TransparentFX

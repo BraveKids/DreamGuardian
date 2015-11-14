@@ -76,6 +76,8 @@ GameObject:
   - 50: {fileID: 5007026}
   - 114: {fileID: 11406618}
   - 114: {fileID: 11413852}
+  - 114: {fileID: 11479306}
+  - 114: {fileID: 11439652}
   m_Layer: 8
   m_Name: Ken
   m_TagString: Player
@@ -90,7 +92,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 178676}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.48999977, y: -2.16700006, z: 0}
+  m_LocalPosition: {x: -5.20007086, y: -2.54800153, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 480486}
@@ -251,6 +253,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackTrigger: {fileID: 6167460}
+--- !u!114 &11439652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ac004930296df340b2ca20d6e6a0675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11479306
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e607360c1d7ccf4bad3d9ba2941a02b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21219292
 SpriteRenderer:
   m_ObjectHideFlags: 1
