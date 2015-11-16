@@ -1,0 +1,221 @@
+fileFormatVersion: 2
+guid: 797df9116bc39a7458b6d6ce1a44c4f2
+timeCreated: 1447680724
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: yumerRun_0
+    21300002: yumerRun_1
+    21300004: yumerRun_2
+    21300006: yumerRun_3
+    21300008: yumerRun_4
+    21300010: yumerRun_5
+    21300012: yumerRun_6
+    21300014: yumerRun_7
+    21300016: yumerRun_8
+    21300018: yumerRun_9
+    21300020: yumerRun_10
+    21300022: yumerRun_11
+    21300024: yumerRun_12
+    21300026: yumerRun_13
+    21300028: yumerRun_14
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: yumerRun_0
+      rect:
+        serializedVersion: 2
+        x: 1761
+        y: 1109
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumerRun_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 640
+        width: 239
+        height: 389
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumerRun_2
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 640
+        width: 225
+        height: 387
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumerRun_3
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 639
+        width: 288
+        height: 369
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumerRun_4
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 640
+        width: 345
+        height: 341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumerRun_5
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 636
+        width: 335
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumerRun_6
+      rect:
+        serializedVersion: 2
+        x: 1469
+        y: 646
+        width: 259
+        height: 366
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumerRun_7
+      rect:
+        serializedVersion: 2
+        x: 1756
+        y: 949
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumerRun_8
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 648
+        width: 277
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumerRun_9
+      rect:
+        serializedVersion: 2
+        x: 2061
+        y: 646
+        width: 369
+        height: 371
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumerRun_10
+      rect:
+        serializedVersion: 2
+        x: 1555
+        y: 642
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumerRun_11
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 608
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumerRun_12
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 85
+        width: 338
+        height: 358
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumerRun_13
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 87
+        width: 256
+        height: 368
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumerRun_14
+      rect:
+        serializedVersion: 2
+        x: 1118
+        y: 440
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
