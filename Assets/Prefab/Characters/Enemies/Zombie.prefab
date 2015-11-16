@@ -213,7 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   MoveSpeed: 1.5
-  facingForward: 1
+  isLeft: 1
 --- !u!114 &11482500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -226,7 +226,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForward: 0
-  isLeft: 0
   zombieAI: {fileID: 0}
 --- !u!114 &11485846
 MonoBehaviour:
@@ -239,8 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e4396ea4b40d3246aadaf3870716be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isForward: 0
-  isLeft: 1
+  isForward: 1
   zombieAI: {fileID: 0}
 --- !u!212 &21200116
 SpriteRenderer:
