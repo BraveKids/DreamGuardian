@@ -11,7 +11,7 @@ GameObject:
   - 60: {fileID: 6011898}
   - 114: {fileID: 11485846}
   m_Layer: 0
-  m_Name: ChaseRangeLeft
+  m_Name: ChaseRangeForward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ GameObject:
   - 60: {fileID: 6049034}
   - 114: {fileID: 11482500}
   m_Layer: 0
-  m_Name: ChaseRangeRight
+  m_Name: ChaseRangeBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129562}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.42999983, y: -4.21000004, z: 0}
+  m_LocalPosition: {x: 3.79999995, y: -4.21000004, z: 0}
   m_LocalScale: {x: 2.29999995, y: 2.9000001, z: 1}
   m_Children:
   - {fileID: 447210}
@@ -213,6 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   MoveSpeed: 1.5
+  facingForward: 1
 --- !u!114 &11482500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -224,6 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e4396ea4b40d3246aadaf3870716be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isForward: 0
   isLeft: 0
   zombieAI: {fileID: 0}
 --- !u!114 &11485846
@@ -237,6 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e4396ea4b40d3246aadaf3870716be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isForward: 0
   isLeft: 1
   zombieAI: {fileID: 0}
 --- !u!212 &21200116

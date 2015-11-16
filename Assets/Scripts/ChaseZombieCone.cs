@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ChaseZombieCone : MonoBehaviour {
 
-    public bool isLeft = false;
+    public bool isForward = false;
     public ZombieAI zombieAI;
 
     void Start()
@@ -14,18 +14,31 @@ public class ChaseZombieCone : MonoBehaviour {
     {
 
     }
+
+    
+
     void OnTriggerStay2D(Collider2D col)
     {
         if (col.CompareTag("Player"))
         {
-            if (isLeft)
+            if (isForward == true)
             {
-                zombieAI.chaseLeft();
+                if (zombieAI.isLeft == true)
+                {
+                    zombieAI.chaseLeft();
+                }
+                else if (zombieAI.isLeft == false)
+                {
+                    zombieAI.chaseRight();
+                }
             }
-            else
+            else if (isForward == false)
             {
-                zombieAI.chaseRight();
+                zombieAI.Flip();
+                
             }
         }
+        
+            
     }
 }
