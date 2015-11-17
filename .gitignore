@@ -7,7 +7,7 @@ UnityGenerated/
 Library/
 Assets/AssetStoreTools*
 Assets/Scenes
-
+*.unity
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
 # ===================================== #
