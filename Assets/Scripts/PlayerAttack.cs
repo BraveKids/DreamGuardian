@@ -31,16 +31,15 @@ public class PlayerAttack: MonoBehaviour {
 			Invoke ("Attack", 0.1f);
 
 		}
-		if (attacking){
-			if(attackTimer>0){
-				attackTimer-=Time.deltaTime;
-			}
-			else{
-				attacking=false;
+		if (attacking) {
+			if (attackTimer > 0) {
+				attackTimer -= Time.deltaTime;
+			} else {
+				attacking = false;
 				attackTrigger.enabled = false;
 			}
 		}
-		anim.SetBool("Attacking",attacking);
+		anim.SetBool ("Attacking", attacking);
 	}
 
 

@@ -76,6 +76,8 @@ GameObject:
   - 50: {fileID: 5007026}
   - 114: {fileID: 11406618}
   - 114: {fileID: 11413852}
+  - 114: {fileID: 11479306}
+  - 114: {fileID: 11439652}
   m_Layer: 8
   m_Name: Ken
   m_TagString: Player
