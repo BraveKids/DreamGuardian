@@ -30,7 +30,7 @@ GameObject:
   - 61: {fileID: 6151294}
   m_Layer: 0
   m_Name: Platform1
-  m_TagString: Ground
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.13223839, y: -2.60086083, z: 0}
+  m_LocalPosition: {x: 3.62309957, y: -.594390035, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400202}
