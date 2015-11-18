@@ -8,6 +8,8 @@ TagManager:
   - MenuScreen
   - AttackTrigger
   - SuperAttackTrigger
+  - Ground
+  - Platform
   layers:
   - Default
   - TransparentFX

@@ -38,6 +38,6 @@ public class EnemyController : MonoBehaviour {
 
 
 	void DestroyEnemy(){
-		Destroy (this.gameObject);
+		this.gameObject.SetActive (false);
 	}
 }
