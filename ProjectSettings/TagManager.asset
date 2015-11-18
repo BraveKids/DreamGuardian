@@ -10,6 +10,7 @@ TagManager:
   - SuperAttackTrigger
   - Ground
   - Platform
+  - Death
   layers:
   - Default
   - TransparentFX

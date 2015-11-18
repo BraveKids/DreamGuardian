@@ -98,7 +98,14 @@ public class CharacterControllerScript : MonoBehaviour {
 		}
 		}
 
-	void Death(){
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.CompareTag ("Death")) {
+			Death();
+		}
+		
+	}
+	
+	 void Death(){
 		this.gameObject.SetActive (false);
 	}
 }
