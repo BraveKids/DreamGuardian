@@ -7,7 +7,7 @@ public class CharacterControllerScript : MonoBehaviour {
 	public int hp = 3;
 
     bool facingRight = true;
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
     Animator anim;
 	public Collider2D attackTrigger;
 	public Collider2D superAttackTrigger;
@@ -33,11 +33,18 @@ public class CharacterControllerScript : MonoBehaviour {
 	// Update is called once per frame
     void Update()
     {
+		if (anim.GetBool ("Attacking") == true && grounded) {
+			rb.isKinematic = true;
+			
+		} else {
+			rb.isKinematic = false;
+		}
 		Movement ();
 
     }
 
 	void Movement(){
+
 		if (grounded && Input.GetKeyDown(KeyCode.Space))
 		{
 			anim.SetBool("Ground", false);

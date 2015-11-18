@@ -26,6 +26,7 @@ public class PlayerAttack: MonoBehaviour {
 
 		}
 		if(Input.GetKeyDown("f") && !attacking){
+			anim.SetFloat("Speed", 0f);
 			attacking = true;
 			attackTimer= attackCd;
 			Invoke ("Attack", 0.1f);
