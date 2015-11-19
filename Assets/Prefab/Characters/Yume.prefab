@@ -47,6 +47,7 @@ GameObject:
   - 114: {fileID: 11400148}
   - 114: {fileID: 11440098}
   - 58: {fileID: 5880158}
+  - 58: {fileID: 5872672}
   m_Layer: 8
   m_Name: Yume
   m_TagString: Player
@@ -64,8 +65,24 @@ GameObject:
   - 4: {fileID: 417440}
   - 61: {fileID: 6174426}
   m_Layer: 8
-  m_Name: attackTrigger
+  m_Name: attackTrigger1
   m_TagString: AttackTrigger
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &137492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 496164}
+  - 61: {fileID: 6195150}
+  m_Layer: 8
+  m_Name: attackTrigger2
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,6 +102,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &174982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 405052}
+  - 61: {fileID: 6159060}
+  m_Layer: 8
+  m_Name: attackTrigger3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &195686
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,6 +134,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &405052
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174982}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 408752}
+  m_RootOrder: 5
 --- !u!4 &408752
 Transform:
   m_ObjectHideFlags: 1
@@ -116,6 +161,8 @@ Transform:
   - {fileID: 417440}
   - {fileID: 483088}
   - {fileID: 491936}
+  - {fileID: 405052}
+  - {fileID: 496164}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &417440
@@ -178,6 +225,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 408752}
   m_RootOrder: 4
+--- !u!4 &496164
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137492}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 408752}
+  m_RootOrder: 6
 --- !u!50 &5035974
 Rigidbody2D:
   serializedVersion: 2
@@ -194,6 +253,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &5872672
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118686}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: .230000004, y: -1.20000005}
+  serializedVersion: 2
+  m_Radius: .720000029
 --- !u!58 &5880158
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -204,9 +276,9 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: .230000004, y: 1.29999995}
+  m_Offset: {x: .230000004, y: 1.45000005}
   serializedVersion: 2
-  m_Radius: .74461776
+  m_Radius: .550000012
 --- !u!61 &6117906
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -233,6 +305,19 @@ BoxCollider2D:
   m_Offset: {x: .193610132, y: .19429329}
   serializedVersion: 2
   m_Size: {x: 1.10834444, y: 1.47323918}
+--- !u!61 &6159060
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174982}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
 --- !u!61 &6174426
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -246,6 +331,19 @@ BoxCollider2D:
   m_Offset: {x: .212483183, y: .209314808}
   serializedVersion: 2
   m_Size: {x: .575035572, y: .581370354}
+--- !u!61 &6195150
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137492}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
 --- !u!61 &6199544
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -287,7 +385,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3729ed06969eed64081210ecd5050f7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackTrigger: {fileID: 6174426}
+  attackTrigger1: {fileID: 0}
+  attackTrigger2: {fileID: 0}
+  attackTrigger3: {fileID: 0}
   superAttackTrigger: {fileID: 6199544}
   energy: 0
 --- !u!114 &11440098
