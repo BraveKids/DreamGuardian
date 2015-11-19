@@ -9,7 +9,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	public float currentY;		//l'ultima piattaforma toccata
 	public float nextY;	//la piattaforma che si sta toccando
 	GameObject player;
-	public float groundDim = 1f;
+	public float groundDim = 1.5f;
 	private Vector2 velocity;
 	public float smoothTimeX;
 	public float smoothTimeY;
@@ -40,8 +40,10 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 		//if i'm falling
 		if (player.transform.position.y + groundDim < currentY) {
 			posY = Mathf.SmoothDamp (transform.position.y, player.transform.position.y + groundDim, ref velocity.y, smoothTimeY);
-			posY=player.transform.position.y+groundDim;
-			currentY = player.transform.position.y;
+			posY = player.transform.position.y + groundDim;
+			currentY = player.transform.position.y + groundDim;
+			nextY = player.transform.position.y + groundDim;
+			
 		}
 		transform.position = new Vector3 (posX, posY, transform.position.z);
 

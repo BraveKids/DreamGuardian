@@ -15,9 +15,9 @@ public class PlayerGroundOnPlatform : MonoBehaviour {
 
 		if (other.CompareTag ("Ground")) {
 			
-			CameraFollowOnPlatform.instance.currentY = transform.position.y+CameraFollowOnPlatform.instance.groundDim;
-			CameraFollowOnPlatform.instance.nextY = transform.position.y+CameraFollowOnPlatform.instance.groundDim;
-			Debug.Log("Ground");
+			/*CameraFollowOnPlatform.instance.currentY = transform.position.y+CameraFollowOnPlatform.instance.groundDim;
+			CameraFollowOnPlatform.instance.nextY = CameraFollowOnPlatform.instance.currentY;
+			Debug.Log(CameraFollowOnPlatform.instance.groundDim);*/
 			
 			
 		}
