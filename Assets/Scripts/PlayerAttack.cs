@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerAttack: MonoBehaviour {
 	private bool attacking = false;
 	private float attackTimer = 0;
-	private float attackCd = 0.7f;
+	private float attackCd = 0.4f;
 	private int combo = 0;
 	public Collider2D attackTrigger1;
 	public Collider2D attackTrigger2;
@@ -45,16 +45,17 @@ public class PlayerAttack: MonoBehaviour {
 					}
 					attackTimer = attackCd;
 				}
-
-
+				
+				
 			} else {
+				
+				anim.SetInteger("Combo", 0);
 				combo = 0;
-				anim.SetInteger("Combo", combo);
 				attacking = false;
 				attackTrigger1.enabled = false;
 				attackTrigger2.enabled = false;
 				attackTrigger3.enabled = false;
-
+				
 				
 			}
 		}
@@ -63,7 +64,6 @@ public class PlayerAttack: MonoBehaviour {
 	
 		
 	}
-
 
 	void SuperAttack(){
 		anim.SetTrigger ("SuperAttack");
