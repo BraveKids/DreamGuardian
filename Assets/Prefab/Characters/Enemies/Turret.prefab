@@ -112,7 +112,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &419446
 Transform:
   m_ObjectHideFlags: 1
@@ -158,7 +158,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 191880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.41199994, y: -2.7019999, z: 0}
+  m_LocalPosition: {x: -2.44099998, y: -2.74699998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 485328}
@@ -308,7 +308,7 @@ MonoBehaviour:
   maxHealt: 0
   distance: 0
   wakeRange: 3.5
-  shootInterval: .200000003
+  shootInterval: .800000012
   bulletSpeed: 10
   bulletTimer: 0
   awake: 0
