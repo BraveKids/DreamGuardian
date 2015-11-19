@@ -7,23 +7,6 @@ public class ZombieAI : MonoBehaviour {
     public float MoveSpeed = 4;
     public bool isLeft = false;
 
-    /* void Update()
-     {
-         float move = Input.GetAxis("Horizontal");
-         if (move < 0 && !facingRight)
-             Flip();
-         else if (move > 0 && facingRight)
-             Flip();
-     }
-
-     void Flip()
-     {
-         facingRight = !facingRight;
-         Vector3 theScale = transform.localScale;
-         theScale.x *= -1;
-         transform.localScale = theScale;
-     } */
-
     public void chaseLeft()
     {
         transform.position -= transform.right * MoveSpeed * Time.deltaTime;
@@ -39,5 +22,6 @@ public class ZombieAI : MonoBehaviour {
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+        
     }
 }
