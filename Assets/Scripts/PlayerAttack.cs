@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerAttack: MonoBehaviour {
 	private bool attacking = false;
 	private float attackTimer = 0;
-	private float attackCd = 1f;
+	private float attackCd = 0.7f;
 	private int combo = 0;
 	public Collider2D attackTrigger1;
 	public Collider2D attackTrigger2;
@@ -12,7 +12,7 @@ public class PlayerAttack: MonoBehaviour {
 	public Collider2D superAttackTrigger;
 	private Animator anim;
 	public int energy=0;
-	void Awake (){
+	void Start (){
 		anim = gameObject.GetComponent<Animator>();
 		attackTrigger1.enabled = false;
 		attackTrigger2.enabled = false;
@@ -29,19 +29,21 @@ public class PlayerAttack: MonoBehaviour {
 		if(Input.GetKeyDown("f") && !attacking && anim.GetBool("Ground")==true){
 			attacking = true;
 			attackTimer= attackCd;
-			if(combo>0 && combo<3){
-			Invoke ("AttackTrigger"+combo, 0.1f);
-			}
-
 
 		}
 		if (attacking) {
 		
-			if (attackTimer > 0) {
+			if (attackTimer > 0 ) {
 				attackTimer -= Time.deltaTime;
-				if(Input.GetKeyDown("f")){
+				if(Input.GetKeyDown("f")&& combo<3){
 					combo +=1;
+					disablePrevCombo(combo);
+					//combo = combo%3;		
 					anim.SetInteger("Combo", combo);
+					if(combo>0 && combo<4){
+						Invoke ("AttackTrigger"+combo, 0.1f);
+					}
+					attackTimer = attackCd;
 				}
 
 
@@ -57,7 +59,7 @@ public class PlayerAttack: MonoBehaviour {
 			}
 		}
 		anim.SetBool ("Attacking", attacking);
-		anim.SetInteger("Combo", combo);
+
 	
 		
 	}
@@ -67,10 +69,16 @@ public class PlayerAttack: MonoBehaviour {
 		anim.SetTrigger ("SuperAttack");
 		
 		superAttackTrigger.enabled = true;
-		Invoke("superAttackDown", 0.2f);
+		Invoke("superAttackDown", 0.01f);
 	
 	}
-
+	void disablePrevCombo(int comboCounter){
+		if (comboCounter == 2) {
+			attackTrigger1.enabled = false;
+		} else {
+			attackTrigger2.enabled = false;
+		}
+	}
 
 	void AttackTrigger1(){
 		attackTrigger1.enabled = true;
@@ -87,3 +95,4 @@ public class PlayerAttack: MonoBehaviour {
 	}
 	
 }
+

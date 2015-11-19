@@ -34,11 +34,11 @@ public class CharacterControllerScript : MonoBehaviour {
     void Update()
     {
 		if (anim.GetBool ("Attacking") == true && grounded) {
-			rb.isKinematic = true;
-			
-		} else {
+			//rb.isKinematic = true;
+			anim.SetFloat("Speed",0f);
+		} /*else {
 			rb.isKinematic = false;
-		}
+		}*/
 		Movement ();
 
     }

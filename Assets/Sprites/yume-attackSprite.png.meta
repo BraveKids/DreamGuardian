@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7ca5265b9b053b942900956f08fc0661
-timeCreated: 1447937571
+timeCreated: 1447943488
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -14,6 +14,15 @@ TextureImporter:
     21300014: combo2_1
     21300016: combo2_2
     21300018: combo2_3
+    21300020: yume-attackSprite_0
+    21300022: yume-attackSprite_1
+    21300024: yume-attackSprite_2
+    21300026: yume-attackSprite_3
+    21300028: yume-attackSprite_4
+    21300030: yume-attackSprite_5
+    21300032: yume-attackSprite_6
+    21300034: yume-attackSprite_7
+    21300036: yume-attackSprite_8
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -157,6 +166,96 @@ TextureImporter:
         y: 1021
         width: 698
         height: 413
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yume-attackSprite_0
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 563
+        width: 525
+        height: 397
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yume-attackSprite_1
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 561
+        width: 212
+        height: 369
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yume-attackSprite_2
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 561
+        width: 224
+        height: 364
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yume-attackSprite_3
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 561
+        width: 376
+        height: 360
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yume-attackSprite_4
+      rect:
+        serializedVersion: 2
+        x: 1707
+        y: 561
+        width: 656
+        height: 353
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yume-attackSprite_5
+      rect:
+        serializedVersion: 2
+        x: 2440
+        y: 554
+        width: 390
+        height: 343
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yume-attackSprite_6
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 132
+        width: 364
+        height: 347
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yume-attackSprite_7
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 136
+        width: 242
+        height: 343
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yume-attackSprite_8
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 134
+        width: 189
+        height: 346
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
