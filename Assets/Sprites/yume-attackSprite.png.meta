@@ -1,0 +1,122 @@
+fileFormatVersion: 2
+guid: 7ca5265b9b053b942900956f08fc0661
+timeCreated: 1447893444
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: yume-attackSprite_0
+    21300002: yume-attackSprite_1
+    21300004: yume-attackSprite_2
+    21300006: yume-attackSprite_3
+    21300008: yume-attackSprite_4
+    21300010: yume-attackSprite_5
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: yume-attackSprite_0
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 1474
+        width: 247
+        height: 400
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yume-attackSprite_1
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 1479
+        width: 248
+        height: 393
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yume-attackSprite_2
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1476
+        width: 288
+        height: 388
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yume-attackSprite_3
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 1479
+        width: 383
+        height: 385
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 7, w: 0}
+    - name: yume-attackSprite_4
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 1491
+        width: 416
+        height: 390
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yume-attackSprite_5
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 1486
+        width: 530
+        height: 431
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
