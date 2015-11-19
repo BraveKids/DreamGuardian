@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerAttack: MonoBehaviour {
 	private bool attacking = false;
 	private float attackTimer = 0;
-	private float attackCd = 0.2f;
+	private float attackCd = 0.5f;
 	public Collider2D attackTrigger;
 	public Collider2D superAttackTrigger;
 	private Animator anim;
@@ -26,7 +26,6 @@ public class PlayerAttack: MonoBehaviour {
 
 		}
 		if(Input.GetKeyDown("f") && !attacking){
-			anim.SetFloat("Speed", 0f);
 			attacking = true;
 			attackTimer= attackCd;
 			Invoke ("Attack", 0.1f);
