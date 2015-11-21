@@ -3,17 +3,19 @@ using System.Collections;
 
 public class PlayerAttack: MonoBehaviour {
 	private bool attacking = false;
-	private float attackTimer = 0;
-	private float attackCd = 0.4f;
+
+	private float hitTimer=0;
+	private float lastHitTimer=0;
 	private int combo = 0;
 	public Collider2D attackTrigger1;
 	public Collider2D attackTrigger2;
 	public Collider2D attackTrigger3;
 	public Collider2D superAttackTrigger;
-	private Animator anim;
+	Animator anim;
 	public int energy=0;
-	void Start (){
-		anim = gameObject.GetComponent<Animator>();
+
+	void Awake (){
+		anim = GetComponent<Animator>();
 		attackTrigger1.enabled = false;
 		attackTrigger2.enabled = false;
 		attackTrigger3.enabled = false;
@@ -21,49 +23,73 @@ public class PlayerAttack: MonoBehaviour {
 	}
 	
 	void Update() {
-		if (energy==3 && Input.GetKey(KeyCode.B))
-		{
-			SuperAttack();
-	
-		}
-		if(Input.GetKeyDown("f") && !attacking && anim.GetBool("Ground")==true){
-			attacking = true;
-			attackTimer= attackCd;
+		hitTimer = Time.realtimeSinceStartup;
 
-		}
-		if (attacking) {
-		
-			if (attackTimer > 0 ) {
-				attackTimer -= Time.deltaTime;
-				if(Input.GetKeyDown("f")&& combo<3){
-					combo +=1;
-					disablePrevCombo(combo);
-					//combo = combo%3;		
-					anim.SetInteger("Combo", combo);
-					if(combo>0 && combo<4){
-						Invoke ("AttackTrigger"+combo, 0.1f);
-					}
-					attackTimer = attackCd;
-				}
-				
-				
+		if (Input.GetKeyDown (KeyCode.F) && anim.GetBool ("Ground") == true) {
+			lastHitTimer = Time.realtimeSinceStartup;
+			if (combo > 3) {
+				combo = 0;
+
 			} else {
-				
-				anim.SetInteger("Combo", 0);
+				combo++;
+			}
+			attacking = true;
+			Combo (combo);
+		}
+			if (hitTimer - lastHitTimer > 0.8) {
 				combo = 0;
 				attacking = false;
 				attackTrigger1.enabled = false;
 				attackTrigger2.enabled = false;
 				attackTrigger3.enabled = false;
-				
-				
-			}
-		}
-		anim.SetBool ("Attacking", attacking);
+				if (hitTimer - lastHitTimer < 0.5) {
+					
+					attacking = false;
+					combo=0;
+					Combo (0);
 
+				} 
+			}
+			anim.SetBool ("Attacking", attacking);
+			
+		}
 	
-		
+
+
+	void Combo(int comboCounter){
+			switch(comboCounter){
+		case(1):
+			anim.Play("YumeAttack1");
+			//anim.SetInteger ("Combo", 1);
+			attackTrigger1.enabled = true;
+			attackTrigger2.enabled = false;
+			attackTrigger3.enabled = false;
+			break;
+		case(2):
+			//anim.SetInteger ("Combo", 2);
+			anim.Play("YumeAttack2");
+			attackTrigger1.enabled = false;
+			attackTrigger2.enabled = true;
+			attackTrigger3.enabled = false;
+			break;
+		case(3):
+			anim.Play("YumeAttack3");
+			//anim.SetInteger ("Combo", 3);
+			attackTrigger1.enabled = false;
+			attackTrigger2.enabled = false;
+			attackTrigger3.enabled = true;
+			break;
+		default:
+	
+			//anim.SetInteger("Combo",0);
+			attackTrigger1.enabled = false;
+			attackTrigger2.enabled = false;
+			attackTrigger3.enabled = false;
+			break;
+
+		}
 	}
+
 
 	void SuperAttack(){
 		anim.SetTrigger ("SuperAttack");
@@ -71,23 +97,6 @@ public class PlayerAttack: MonoBehaviour {
 		superAttackTrigger.enabled = true;
 		Invoke("superAttackDown", 0.01f);
 	
-	}
-	void disablePrevCombo(int comboCounter){
-		if (comboCounter == 2) {
-			attackTrigger1.enabled = false;
-		} else {
-			attackTrigger2.enabled = false;
-		}
-	}
-
-	void AttackTrigger1(){
-		attackTrigger1.enabled = true;
-	}
-	void AttackTrigger2(){
-		attackTrigger2.enabled = true;
-	}
-	void AttackTrigger3(){
-		attackTrigger3.enabled = true;
 	}
 	void superAttackDown(){
 		energy=-1;
