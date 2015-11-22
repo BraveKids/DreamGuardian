@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 89f118723499ba543a7587ee1a85b467
-timeCreated: 1448207367
+timeCreated: 1448215200
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -66,7 +66,7 @@ TextureImporter:
         width: 322
         height: 359
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: yumeSpriteCorsa_1
       rect:
@@ -76,7 +76,7 @@ TextureImporter:
         width: 330
         height: 323
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: yumeSpriteCorsa_2
       rect:
@@ -86,7 +86,7 @@ TextureImporter:
         width: 260
         height: 362
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: yumeSpriteCorsa_3
       rect:
@@ -96,7 +96,7 @@ TextureImporter:
         width: 280
         height: 359
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: yumeSpriteCorsa_4
       rect:
@@ -106,7 +106,7 @@ TextureImporter:
         width: 327
         height: 346
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: yumeSpriteCorsa_5
       rect:
@@ -116,7 +116,7 @@ TextureImporter:
         width: 333
         height: 326
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: yumeSpriteCorsa_6
       rect:
@@ -126,7 +126,7 @@ TextureImporter:
         width: 260
         height: 364
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: yumeSpriteCorsa_7
       rect:
@@ -136,7 +136,7 @@ TextureImporter:
         width: 281
         height: 358
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

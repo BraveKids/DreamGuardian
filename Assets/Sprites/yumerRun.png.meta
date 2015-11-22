@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 797df9116bc39a7458b6d6ce1a44c4f2
-timeCreated: 1447892933
+timeCreated: 1448215125
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -14,11 +14,6 @@ TextureImporter:
     21300014: yumerRun_7
     21300016: yumerRun_8
     21300018: yumerRun_9
-    21300020: yumerRun_10
-    21300022: yumerRun_11
-    21300024: yumerRun_12
-    21300026: yumerRun_13
-    21300028: yumerRun_14
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -68,16 +63,6 @@ TextureImporter:
     - name: yumerRun_0
       rect:
         serializedVersion: 2
-        x: 1761
-        y: 1109
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: yumerRun_1
-      rect:
-        serializedVersion: 2
         x: 1
         y: 640
         width: 239
@@ -85,7 +70,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: yumerRun_2
+    - name: yumerRun_1
       rect:
         serializedVersion: 2
         x: 251
@@ -95,7 +80,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: yumerRun_3
+    - name: yumerRun_2
       rect:
         serializedVersion: 2
         x: 483
@@ -105,7 +90,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: yumerRun_4
+    - name: yumerRun_3
       rect:
         serializedVersion: 2
         x: 769
@@ -115,7 +100,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: yumerRun_5
+    - name: yumerRun_4
       rect:
         serializedVersion: 2
         x: 1112
@@ -125,7 +110,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: yumerRun_6
+    - name: yumerRun_5
       rect:
         serializedVersion: 2
         x: 1470
@@ -135,17 +120,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: yumerRun_7
-      rect:
-        serializedVersion: 2
-        x: 1756
-        y: 950
-        width: 24
-        height: 12
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: yumerRun_8
+    - name: yumerRun_6
       rect:
         serializedVersion: 2
         x: 1757
@@ -155,7 +130,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: yumerRun_9
+    - name: yumerRun_7
       rect:
         serializedVersion: 2
         x: 2061
@@ -165,27 +140,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: yumerRun_10
-      rect:
-        serializedVersion: 2
-        x: 1556
-        y: 643
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: yumerRun_11
-      rect:
-        serializedVersion: 2
-        x: 785
-        y: 608
-        width: 6
-        height: 5
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: yumerRun_12
+    - name: yumerRun_8
       rect:
         serializedVersion: 2
         x: 12
@@ -195,23 +150,13 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: yumerRun_13
+    - name: yumerRun_9
       rect:
         serializedVersion: 2
         x: 434
         y: 87
         width: 254
         height: 368
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: yumerRun_14
-      rect:
-        serializedVersion: 2
-        x: 1118
-        y: 441
-        width: 4
-        height: 4
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
