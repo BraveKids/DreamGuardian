@@ -1,0 +1,221 @@
+fileFormatVersion: 2
+guid: a80e0f79ed695c3419d9255e5789e137
+timeCreated: 1448208333
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: YumeSalto_0
+    21300002: YumeSalto_1
+    21300004: YumeSalto_2
+    21300006: YumeSalto_3
+    21300008: YumeSalto_4
+    21300010: YumeSalto_5
+    21300012: YumeSalto_6
+    21300014: YumeSalto_7
+    21300016: YumeSalto_8
+    21300018: YumeSalto_9
+    21300020: YumeSalto_10
+    21300022: YumeSalto_11
+    21300024: YumeSalto_12
+    21300026: YumeSalto_13
+    21300028: YumeSalto_14
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: YumeSalto_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 841
+        width: 231
+        height: 377
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: YumeSalto_1
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 838
+        width: 232
+        height: 346
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: YumeSalto_2
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 810
+        width: 176
+        height: 449
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: YumeSalto_3
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 811
+        width: 229
+        height: 446
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: YumeSalto_4
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 800
+        width: 204
+        height: 461
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: YumeSalto_5
+      rect:
+        serializedVersion: 2
+        x: 1373
+        y: 885
+        width: 231
+        height: 345
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: YumeSalto_6
+      rect:
+        serializedVersion: 2
+        x: 1622
+        y: 877
+        width: 232
+        height: 354
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 6, w: 0}
+    - name: YumeSalto_7
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 406
+        width: 237
+        height: 370
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: YumeSalto_8
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 450
+        width: 282
+        height: 317
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: YumeSalto_9
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 445
+        width: 320
+        height: 324
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: YumeSalto_10
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 366
+        width: 370
+        height: 434
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: YumeSalto_11
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 398
+        width: 352
+        height: 420
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: YumeSalto_12
+      rect:
+        serializedVersion: 2
+        x: 1657
+        y: 416
+        width: 249
+        height: 407
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: YumeSalto_13
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 49
+        width: 232
+        height: 326
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: YumeSalto_14
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 38
+        width: 210
+        height: 371
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -48,6 +48,7 @@ GameObject:
   - 114: {fileID: 11440098}
   - 58: {fileID: 5880158}
   - 58: {fileID: 5872672}
+  - 114: {fileID: 11404800}
   m_Layer: 8
   m_Name: Yume
   m_TagString: Player
@@ -145,7 +146,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 408752}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!4 &408752
 Transform:
   m_ObjectHideFlags: 1
@@ -158,11 +159,11 @@ Transform:
   m_Children:
   - {fileID: 457942}
   - {fileID: 491292}
-  - {fileID: 417440}
   - {fileID: 483088}
   - {fileID: 491936}
-  - {fileID: 405052}
+  - {fileID: 417440}
   - {fileID: 496164}
+  - {fileID: 405052}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &417440
@@ -176,7 +177,7 @@ Transform:
   m_LocalScale: {x: 1.25616515, y: 4.05925798, z: 1}
   m_Children: []
   m_Father: {fileID: 408752}
-  m_RootOrder: 2
+  m_RootOrder: 4
 --- !u!4 &457942
 Transform:
   m_ObjectHideFlags: 1
@@ -200,7 +201,7 @@ Transform:
   m_LocalScale: {x: 3.02812481, y: 3.8125, z: 1}
   m_Children: []
   m_Father: {fileID: 408752}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!4 &491292
 Transform:
   m_ObjectHideFlags: 1
@@ -224,7 +225,7 @@ Transform:
   m_LocalScale: {x: 2.69999981, y: 3.16250014, z: 1}
   m_Children: []
   m_Father: {fileID: 408752}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!4 &496164
 Transform:
   m_ObjectHideFlags: 1
@@ -236,7 +237,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 408752}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!50 &5035974
 Rigidbody2D:
   serializedVersion: 2
@@ -390,6 +391,17 @@ MonoBehaviour:
   attackTrigger3: {fileID: 6159060}
   superAttackTrigger: {fileID: 6199544}
   energy: 0
+--- !u!114 &11404800
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118686}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 346c622c9963f07419e94483972de492, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11440098
 MonoBehaviour:
   m_ObjectHideFlags: 1

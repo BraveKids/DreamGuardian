@@ -12,6 +12,7 @@ public class PlayerAttack: MonoBehaviour {
 	public Collider2D attackTrigger3;
 	public Collider2D superAttackTrigger;
 	Animator anim;
+
 	public int energy=0;
 
 	void Awake (){
@@ -25,7 +26,7 @@ public class PlayerAttack: MonoBehaviour {
 	void Update() {
 		hitTimer = Time.realtimeSinceStartup;
 
-		if (Input.GetKeyDown (KeyCode.F) && anim.GetBool ("Ground") == true) {
+		if (Input.GetKeyDown (KeyCode.F) &&  anim.GetBool ("Ground") == true) {
 			lastHitTimer = Time.realtimeSinceStartup;
 			if (combo > 3) {
 				combo = 0;
@@ -36,13 +37,13 @@ public class PlayerAttack: MonoBehaviour {
 			attacking = true;
 			Combo (combo);
 		}
-			if (hitTimer - lastHitTimer > 0.8) {
+			if (hitTimer - lastHitTimer > 0.5) {
 				combo = 0;
 				attacking = false;
 				attackTrigger1.enabled = false;
 				attackTrigger2.enabled = false;
 				attackTrigger3.enabled = false;
-				if (hitTimer - lastHitTimer < 0.5) {
+				if (hitTimer - lastHitTimer < 0.2) {
 					
 					attacking = false;
 					combo=0;
@@ -60,13 +61,11 @@ public class PlayerAttack: MonoBehaviour {
 			switch(comboCounter){
 		case(1):
 			anim.Play("YumeAttack1");
-			//anim.SetInteger ("Combo", 1);
 			attackTrigger1.enabled = true;
 			attackTrigger2.enabled = false;
 			attackTrigger3.enabled = false;
 			break;
 		case(2):
-			//anim.SetInteger ("Combo", 2);
 			anim.Play("YumeAttack2");
 			attackTrigger1.enabled = false;
 			attackTrigger2.enabled = true;
@@ -74,14 +73,12 @@ public class PlayerAttack: MonoBehaviour {
 			break;
 		case(3):
 			anim.Play("YumeAttack3");
-			//anim.SetInteger ("Combo", 3);
 			attackTrigger1.enabled = false;
 			attackTrigger2.enabled = false;
 			attackTrigger3.enabled = true;
 			break;
 		default:
-	
-			//anim.SetInteger("Combo",0);
+
 			attackTrigger1.enabled = false;
 			attackTrigger2.enabled = false;
 			attackTrigger3.enabled = false;
