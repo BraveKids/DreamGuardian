@@ -48,7 +48,6 @@ GameObject:
   - 114: {fileID: 11440098}
   - 58: {fileID: 5880158}
   - 58: {fileID: 5872672}
-  - 114: {fileID: 11404800}
   m_Layer: 8
   m_Name: Yume
   m_TagString: Player
@@ -391,17 +390,6 @@ MonoBehaviour:
   attackTrigger3: {fileID: 6159060}
   superAttackTrigger: {fileID: 6199544}
   energy: 0
---- !u!114 &11404800
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 118686}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 346c622c9963f07419e94483972de492, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11440098
 MonoBehaviour:
   m_ObjectHideFlags: 1
