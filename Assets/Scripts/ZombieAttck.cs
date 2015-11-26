@@ -14,10 +14,10 @@ public class ZombieAttck : MonoBehaviour {
 	void Update () {
 	
 	}
-
+	/*
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && other.collision=="box")
+        if (other.CompareTag("Player") && other.collider=="box")
         {
             //zombieAI.stop();
             zombieAI.anim.SetBool("Attacking", true);
@@ -30,6 +30,6 @@ public class ZombieAttck : MonoBehaviour {
         {
             zombieAI.anim.SetBool("Attacking", false);
         }
-    }
+    }*/
 }
 
