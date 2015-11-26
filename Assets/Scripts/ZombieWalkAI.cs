@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class ZombieWalkAI : MonoBehaviour {
-    public float velocity = 1f;
+    public float velocity = 0.5f;
     Rigidbody2D rb;
 
     // Use this for initialization

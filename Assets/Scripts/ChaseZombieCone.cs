@@ -23,14 +23,7 @@ public class ChaseZombieCone : MonoBehaviour {
         {
             if (isForward == true)
             {
-                if (zombieAI.isLeft == true)
-                {
-                    zombieAI.chaseLeft();
-                }
-                else if (zombieAI.isLeft == false)
-                {
-                    zombieAI.chaseRight();
-                }
+                zombieAI.move();
             }
             else if (isForward == false)
             {
@@ -40,5 +33,12 @@ public class ChaseZombieCone : MonoBehaviour {
         }
         
             
+    }
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.CompareTag("Player"))
+        {
+            zombieAI.stop();
+        }
     }
 }

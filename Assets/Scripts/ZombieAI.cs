@@ -4,24 +4,35 @@ using System.Collections;
 public class ZombieAI : MonoBehaviour {
 
     public Transform Player;
-    public float MoveSpeed = 4;
-    public bool isLeft = false;
+    public float velocity = 1.5f;
+    Rigidbody2D rb;
+    public Animator anim;
 
-    public void chaseLeft()
+
+    void Start()
     {
-        transform.position -= transform.right * MoveSpeed * Time.deltaTime;
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+
     }
-    public void chaseRight()
+
+    public void move()
     {
-        transform.position += transform.right * MoveSpeed * Time.deltaTime;
+        rb.isKinematic = false;
+        rb.velocity = new Vector2(-velocity, rb.velocity.y);
     }
 
     public void Flip()
     {
-        isLeft = !isLeft;
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
-        
+        transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+        velocity *= -1;
+
     }
+
+    public void stop()
+    {
+        rb.isKinematic = true;
+    }
+
+    
 }
