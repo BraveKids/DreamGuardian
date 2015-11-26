@@ -62,7 +62,7 @@ public class MenuManager : MonoBehaviour {
 		Button continueButton = GameObject.Find ("Continue").GetComponents<Button> () [0]; //restituisce una list di Button, avendone uno solo con [0] sono sicuro di prenderlo
 
 		//check if there is a saved point and disable/able the continue button 
-		if (File.Exists (SaveLoad.Instance.SAVING_PATH)) {
+		if (File.Exists (SaveLoad.SAVING_PATH)) {
 			continueButton.interactable = true;
 		} else {
 			continueButton.interactable = false;
@@ -77,9 +77,9 @@ public class MenuManager : MonoBehaviour {
 		//Gameplay.newGame = newGame; //if true began a new game
 
 		if (newGame) {
-			SaveLoad.Instance.FirstGame ();
+			SaveLoad.FirstGame ();
 		} else {
-			SaveLoad.Instance.ContinueGame ();
+			SaveLoad.ContinueGame ();
 		}
 
 		// background music
