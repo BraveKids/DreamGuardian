@@ -14,8 +14,10 @@ public class LifeBar : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		playerLifeScript = player.gameObject.GetComponent("CharacterControllerScript") as CharacterControllerScript;
-		playerEnergyScript = player.gameObject.GetComponent("PlayerAttack") as PlayerAttack;
+		player = GameObject.FindGameObjectWithTag ("Player");
+
+		playerLifeScript = player.gameObject.GetComponent ("CharacterControllerScript") as CharacterControllerScript;
+		playerEnergyScript = player.gameObject.GetComponent ("PlayerAttack") as PlayerAttack;
 	}
 	
 	// Update is called once per frame
@@ -24,8 +26,9 @@ public class LifeBar : MonoBehaviour {
 		checkLifeBar ();
 		checkEnergyBar ();
 		
-}
-	void checkLifeBar(){
+	}
+
+	void checkLifeBar () {
 		if (playerLifeScript.hp < 3) {
 			heart3.gameObject.SetActive (false);
 		}
@@ -38,7 +41,7 @@ public class LifeBar : MonoBehaviour {
 
 	}
 
-	void checkEnergyBar(){
+	void checkEnergyBar () {
 		if (playerEnergyScript.energy == 1) {
 			energy1.gameObject.SetActive (true);
 		}
@@ -54,13 +57,13 @@ public class LifeBar : MonoBehaviour {
 		}
 	}
 
-	void resetEnergyBar(){
+	void resetEnergyBar () {
 		energy1.gameObject.SetActive (false);
 		energy2.gameObject.SetActive (false);
 		energy3.gameObject.SetActive (false);
 	}
 
-	void resetLifeBar(){
+	void resetLifeBar () {
 		heart1.gameObject.SetActive (true);
 		heart2.gameObject.SetActive (true);
 		heart3.gameObject.SetActive (true);

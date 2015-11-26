@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.IO;
 
 public class MenuManager : MonoBehaviour {
 
@@ -12,87 +13,115 @@ public class MenuManager : MonoBehaviour {
 	public GameObject leaderboard;
 	public GameObject settings;
 	public GameObject credits;
-
+	public GameObject saving;
 	public static bool first_run = true;
-
 	float splash_pause = 1f; 	// every splash stays for one seconds
 
 	// Use this for initialization
 	void Start () {
 		if (first_run) {
-			CleanMenus();
-			StartCoroutine(SplashScreen());
+			CleanMenus ();
+			StartCoroutine (SplashScreen ());
 			first_run = false;
 		} else {
 			// menu music
-			SoundManager.instance.SetBackgroundMusic(0);
-			GoToMenu();
+			SoundManager.instance.SetBackgroundMusic (0);
+			GoToMenu ();
 		}
 	}
 	
 	public void SliderValueChanged (float value) {
-		SoundManager.instance.SetVolume(value);
+		SoundManager.instance.SetVolume (value);
 	}
 
 	public void MusicCheckBoxChanged (bool value) {
-		SoundManager.instance.SetMusic(value);
+		SoundManager.instance.SetMusic (value);
 	}
 
-	public void GoToMenu() {
-		menu.SetActive(true);
-		leaderboard.SetActive(false);
-		settings.SetActive(false);
-		credits.SetActive(false);
+	public void GoToMenu () {
+		menu.SetActive (true);
+		leaderboard.SetActive (false);
+		settings.SetActive (false);
+		credits.SetActive (false);
 	}
 
-	public void GoToLeaderboard() {
-		menu.SetActive(false);
-		leaderboard.SetActive(true);
-		settings.SetActive(false);
-		credits.SetActive(false);
+	public void GoToLeaderboard () {
+		menu.SetActive (false);
+		leaderboard.SetActive (true);
+		settings.SetActive (false);
+		credits.SetActive (false);
 	}
 
-	public void GoToGameplay() {
+	public void GoToSavingMenu () {
+		menu.SetActive (false);
+		leaderboard.SetActive (false);
+		settings.SetActive (false);
+		credits.SetActive (false);
+		saving.SetActive (true);
+
+		Button continueButton = GameObject.Find ("Continue").GetComponents<Button> () [0]; //restituisce una list di Button, avendone uno solo con [0] sono sicuro di prenderlo
+
+		//check if there is a saved point and disable/able the continue button 
+		if (File.Exists (SaveLoad.Instance.SAVING_PATH)) {
+			continueButton.interactable = true;
+		} else {
+			continueButton.interactable = false;
+		}
+
+	}
+
+	//activate both on Continue and New Game button
+	public void GoToGameplay (bool newGame) {
+		//GoToGameplay->Gameplay.cs->SaveLoad.cs->SetYume.cs
+
+		//Gameplay.newGame = newGame; //if true began a new game
+
+		if (newGame) {
+			SaveLoad.Instance.FirstGame ();
+		} else {
+			SaveLoad.Instance.ContinueGame ();
+		}
 
 		// background music
-		SoundManager.instance.SetBackgroundMusic(1);
-		Application.LoadLevel("Gameplay");
+
+		SoundManager.instance.SetBackgroundMusic (1);
+		Application.LoadLevel ("Gameplay");
 
 	}
 
-	public void GoToSettings() {
-		menu.SetActive(false);
-		leaderboard.SetActive(false);
-		settings.SetActive(true);
-		credits.SetActive(false);
+	public void GoToSettings () {
+		menu.SetActive (false);
+		leaderboard.SetActive (false);
+		settings.SetActive (true);
+		credits.SetActive (false);
 	}
 
-	public void GoToCredits() {
-		menu.SetActive(false);
-		leaderboard.SetActive(false);
-		settings.SetActive(false);
-		credits.SetActive(true);
+	public void GoToCredits () {
+		menu.SetActive (false);
+		leaderboard.SetActive (false);
+		settings.SetActive (false);
+		credits.SetActive (true);
 	}
 
-	public void CleanMenus() {
-		menu.SetActive(false);
-		leaderboard.SetActive(false);
-		settings.SetActive(false);
-		credits.SetActive(false);
-		full_background.SetActive(false);
+	public void CleanMenus () {
+		menu.SetActive (false);
+		leaderboard.SetActive (false);
+		settings.SetActive (false);
+		credits.SetActive (false);
+		full_background.SetActive (false);
 	}
 
-	IEnumerator SplashScreen() {
-		first_splash.SetActive(true);
-		yield return new WaitForSeconds(splash_pause);
-		first_splash.SetActive(false);
-		second_splash.SetActive(true);
-		yield return new WaitForSeconds(splash_pause);
-		second_splash.SetActive(false);
+	IEnumerator SplashScreen () {
+		first_splash.SetActive (true);
+		yield return new WaitForSeconds (splash_pause);
+		first_splash.SetActive (false);
+		second_splash.SetActive (true);
+		yield return new WaitForSeconds (splash_pause);
+		second_splash.SetActive (false);
 
-		full_background.SetActive(true);
+		full_background.SetActive (true);
 
-		GoToMenu();
+		GoToMenu ();
 		yield return null;
 	}
 }
