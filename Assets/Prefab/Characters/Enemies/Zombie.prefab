@@ -52,23 +52,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &196772
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 442326}
-  - 61: {fileID: 6183490}
-  - 114: {fileID: 11425314}
-  m_Layer: 0
-  m_Name: AttackTrigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &199542
 GameObject:
   m_ObjectHideFlags: 1
@@ -93,25 +76,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129562}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.34000015, y: -5.44000006, z: 0}
+  m_LocalPosition: {x: -14.6800003, y: -4.30000019, z: 0}
   m_LocalScale: {x: 2.29999995, y: 2.9000001, z: 1}
   m_Children:
   - {fileID: 447210}
-  - {fileID: 442326}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!4 &442326
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196772}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 426800}
-  m_RootOrder: 1
 --- !u!4 &445802
 Transform:
   m_ObjectHideFlags: 1
@@ -213,19 +183,6 @@ BoxCollider2D:
   m_Offset: {x: .00344649609, y: -1.64426595e-07}
   serializedVersion: 2
   m_Size: {x: .285532117, y: .319999963}
---- !u!61 &6183490
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196772}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: -.180000007, y: .00999999978}
-  serializedVersion: 2
-  m_Size: {x: .0536447279, y: .249441788}
 --- !u!95 &9582636
 Animator:
   serializedVersion: 3
@@ -257,18 +214,6 @@ MonoBehaviour:
   Player: {fileID: 0}
   velocity: 1
   anim: {fileID: 0}
---- !u!114 &11425314
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2b3d2493d6b95c4d9258b267d450e17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  zombieAI: {fileID: 0}
 --- !u!114 &11482500
 MonoBehaviour:
   m_ObjectHideFlags: 1
