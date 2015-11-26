@@ -97,10 +97,23 @@ public class CharacterControllerScript : MonoBehaviour {
 		if (other.CompareTag ("Death")) {
 			Death();
 		}
+		if (other.transform.tag == "Platform") {
+			transform.parent = other.transform;
+		}
+
 		
 	}
 	
 	 void Death(){
 		this.gameObject.SetActive (false);
+	}
+
+
+
+	void OnTriggerExit2D(Collider2D other){
+		if (other.transform.tag == "Platform") {
+			transform.parent = null;
+		}
+		
 	}
 }

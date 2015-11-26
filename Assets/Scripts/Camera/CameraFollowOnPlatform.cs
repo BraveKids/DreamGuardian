@@ -26,9 +26,9 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 		currentOrigin = new Vector3 (player.transform.position.x, transform.position.y, transform.position.z);
 	}
 
-	void FixedUpdate () {
+	void Update () {
 		float posX = Mathf.SmoothDamp (transform.position.x, player.transform.position.x, ref velocity.x, smoothTimeX);
-		transform.position = new Vector3 (posX, transform.position.y, transform.position.z);
+		transform.position = new Vector3 (player.transform.position.x, transform.position.y, transform.position.z);
 		float posY = transform.position.y;
 
 		//if I land on a platform

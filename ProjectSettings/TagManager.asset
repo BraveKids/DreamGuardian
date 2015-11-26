@@ -11,6 +11,7 @@ TagManager:
   - Ground
   - Platform
   - Death
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX
