@@ -1,19 +1,17 @@
 fileFormatVersion: 2
-guid: 797df9116bc39a7458b6d6ce1a44c4f2
-timeCreated: 1448215125
+guid: 89f118723499ba543a7587ee1a85b467
+timeCreated: 1448215200
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: yumerRun_0
-    21300002: yumerRun_1
-    21300004: yumerRun_2
-    21300006: yumerRun_3
-    21300008: yumerRun_4
-    21300010: yumerRun_5
-    21300012: yumerRun_6
-    21300014: yumerRun_7
-    21300016: yumerRun_8
-    21300018: yumerRun_9
+    21300000: yumeSpriteCorsa_0
+    21300002: yumeSpriteCorsa_1
+    21300004: yumeSpriteCorsa_2
+    21300006: yumeSpriteCorsa_3
+    21300008: yumeSpriteCorsa_4
+    21300010: yumeSpriteCorsa_5
+    21300012: yumeSpriteCorsa_6
+    21300014: yumeSpriteCorsa_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -60,103 +58,83 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: yumerRun_0
+    - name: yumeSpriteCorsa_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 640
-        width: 239
-        height: 388
+        x: 18
+        y: 456
+        width: 322
+        height: 359
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: yumerRun_1
+    - name: yumeSpriteCorsa_1
       rect:
         serializedVersion: 2
-        x: 251
-        y: 640
-        width: 223
-        height: 387
+        x: 399
+        y: 471
+        width: 330
+        height: 323
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: yumerRun_2
+    - name: yumeSpriteCorsa_2
       rect:
         serializedVersion: 2
-        x: 483
-        y: 640
-        width: 288
-        height: 367
+        x: 728
+        y: 466
+        width: 260
+        height: 362
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: yumerRun_3
+    - name: yumeSpriteCorsa_3
       rect:
         serializedVersion: 2
-        x: 769
-        y: 640
-        width: 344
-        height: 340
+        x: 1008
+        y: 453
+        width: 280
+        height: 359
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: yumerRun_4
+    - name: yumeSpriteCorsa_4
       rect:
         serializedVersion: 2
-        x: 1112
-        y: 636
-        width: 335
-        height: 339
+        x: 1317
+        y: 461
+        width: 327
+        height: 346
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: yumerRun_5
+    - name: yumeSpriteCorsa_5
       rect:
         serializedVersion: 2
-        x: 1470
-        y: 646
-        width: 258
-        height: 365
+        x: 1728
+        y: 474
+        width: 333
+        height: 326
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: yumerRun_6
+    - name: yumeSpriteCorsa_6
       rect:
         serializedVersion: 2
-        x: 1757
-        y: 649
-        width: 277
-        height: 360
+        x: 2180
+        y: 464
+        width: 260
+        height: 364
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: yumerRun_7
+    - name: yumeSpriteCorsa_7
       rect:
         serializedVersion: 2
-        x: 2061
-        y: 646
-        width: 369
-        height: 370
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: yumerRun_8
-      rect:
-        serializedVersion: 2
-        x: 12
-        y: 86
-        width: 337
-        height: 356
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: yumerRun_9
-      rect:
-        serializedVersion: 2
-        x: 434
-        y: 87
-        width: 254
-        height: 368
+        x: 18
+        y: 0
+        width: 281
+        height: 358
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

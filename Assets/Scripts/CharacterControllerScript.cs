@@ -24,7 +24,7 @@ public class CharacterControllerScript : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
@@ -33,12 +33,7 @@ public class CharacterControllerScript : MonoBehaviour {
 	// Update is called once per frame
     void Update()
     {
-		if (anim.GetBool ("Attacking") == true && grounded) {
-			rb.isKinematic = true;
-			
-		} else {
-			rb.isKinematic = false;
-		}
+	
 		Movement ();
 
     }
@@ -102,10 +97,23 @@ public class CharacterControllerScript : MonoBehaviour {
 		if (other.CompareTag ("Death")) {
 			Death();
 		}
+		if (other.transform.tag == "Platform") {
+			transform.parent = other.transform;
+		}
+
 		
 	}
 	
 	 void Death(){
 		this.gameObject.SetActive (false);
+	}
+
+
+
+	void OnTriggerExit2D(Collider2D other){
+		if (other.transform.tag == "Platform") {
+			transform.parent = null;
+		}
+		
 	}
 }
