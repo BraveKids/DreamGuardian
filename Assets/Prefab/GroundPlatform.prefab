@@ -12,7 +12,7 @@ GameObject:
   - 61: {fileID: 6109614}
   - 61: {fileID: 6130408}
   m_Layer: 0
-  m_Name: Platform1
+  m_Name: GroundPlatform
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

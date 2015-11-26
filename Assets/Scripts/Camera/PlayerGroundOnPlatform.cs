@@ -7,7 +7,7 @@ public class PlayerGroundOnPlatform : MonoBehaviour {
 
 	void OnTriggerStay2D (Collider2D other) {
 
-		if (other.CompareTag ("Platform")) {
+		if (other.CompareTag ("Platform")|| other.CompareTag ("MovingPlatform") ) {
 		
 			CameraFollowOnPlatform.instance.nextY = transform.position.y;
 			Debug.Log("Platform");

@@ -28,6 +28,7 @@ public class CharacterControllerScript : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
+
     }
 	
 	// Update is called once per frame
@@ -35,6 +36,7 @@ public class CharacterControllerScript : MonoBehaviour {
     {
 	
 		Movement ();
+
 
     }
 
@@ -94,10 +96,10 @@ public class CharacterControllerScript : MonoBehaviour {
 		}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.CompareTag ("Death")) {
+		if (other.CompareTag ("Death") ) {
 			Death();
 		}
-		if (other.transform.tag == "Platform") {
+		if (other.transform.tag == "MovingPlatform" ) {
 			transform.parent = other.transform;
 		}
 
@@ -111,7 +113,7 @@ public class CharacterControllerScript : MonoBehaviour {
 
 
 	void OnTriggerExit2D(Collider2D other){
-		if (other.transform.tag == "Platform") {
+		if (other.transform.tag == "MovingPlatform") {
 			transform.parent = null;
 		}
 		

@@ -4,11 +4,13 @@ using System.Collections;
 public class ChaseZombieCone : MonoBehaviour {
 
     public bool isForward = false;
-    public ZombieAI zombieAI;
+	private ZombieAI zombieScript;
+	public GameObject zombie;
+	// Use this for initialization
 
     void Start()
     {
-        zombieAI = gameObject.GetComponentInParent<ZombieAI>();
+		zombieScript  = zombie.gameObject.GetComponent("ZombieAI") as ZombieAI;
     }
     void Update()
     {
@@ -23,11 +25,11 @@ public class ChaseZombieCone : MonoBehaviour {
         {
             if (isForward == true)
             {
-                zombieAI.move();
+                zombieScript.move();
             }
             else if (isForward == false)
             {
-                zombieAI.Flip();
+                zombieScript.Flip();
                 
             }
         }
@@ -38,7 +40,7 @@ public class ChaseZombieCone : MonoBehaviour {
     {
         if (col.CompareTag("Player"))
         {
-            zombieAI.stop();
+            zombieScript.stop();
         }
     }
 }

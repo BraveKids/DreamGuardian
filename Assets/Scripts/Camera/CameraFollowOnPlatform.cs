@@ -9,7 +9,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	public float currentY;		//l'ultima piattaforma toccata
 	public float nextY;	//la piattaforma che si sta toccando
 	GameObject player;
-	public float groundDim = 1.5f;
+	float groundDim = 1.5f;
 	private Vector2 velocity;
 	public float smoothTimeX;
 	public float smoothTimeY;

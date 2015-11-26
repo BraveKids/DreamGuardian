@@ -5,10 +5,11 @@ public class EnemyController : MonoBehaviour {
 	Animator anim;
 	public float hp = 4;
 	private PlayerAttack playerScript;
-	public GameObject player;
+	 GameObject player;
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
+		player = GameObject.FindGameObjectWithTag ("Player");
 		playerScript = player.gameObject.GetComponent("PlayerAttack") as PlayerAttack;
 	}
 	
@@ -27,12 +28,12 @@ public class EnemyController : MonoBehaviour {
 			Debug.Log ("OUCH! " + hp + " left!");
 			if (hp <= 0) {
 				anim.SetTrigger ("explode");
-				Invoke ("DestroyEnemy", 0.8f);
+				DestroyEnemy();
 			}
 		}
 		if (other.CompareTag ("SuperAttackTrigger")) {
 				anim.SetTrigger ("explode");
-				Invoke ("DestroyEnemy", 0.8f);
+				DestroyEnemy();
 			}
 		}
 
