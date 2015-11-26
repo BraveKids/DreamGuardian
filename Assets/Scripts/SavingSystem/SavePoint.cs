@@ -5,6 +5,7 @@ public class SavePoint : MonoBehaviour {
 
 	private bool usable = true;
 	string id;
+
 	void Start () {
 		id = GetComponent<GUIText> ().text;
 
@@ -25,8 +26,11 @@ public class SavePoint : MonoBehaviour {
 		
 		if (other.CompareTag ("Player") && usable) {
 
-			SavingPoints.pointsDict[id] = false;
-			setColor();
+			SavingPoints.pointsDict [id] = false;
+
+			usable = false;
+			setColor ();
+
 			SavingPoints.Save ();
 			SaveLoad.SaveGame ();
 			Debug.Log ("salvando");
