@@ -29,7 +29,7 @@ public class ZombieAI : MonoBehaviour {
 
     void Update()
     {
-        if (!(transform.position.x < RightBorder.position.x) && (transform.position.x > LeftBorder.position.x) && (Inseguimento == false) && (GoBack == true))
+        if ((transform.position.x < RightBorder.position.x) && (transform.position.x > LeftBorder.position.x) && (Inseguimento == false) && (GoBack == true))
         {
             GoBack = false;
         }
@@ -44,6 +44,7 @@ public class ZombieAI : MonoBehaviour {
     public void move()
     {
         Inseguimento = true;
+        GoBack = false;
     }
 
     
