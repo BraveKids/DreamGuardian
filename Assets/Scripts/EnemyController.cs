@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour {
 	 GameObject player;
 	// Use this for initialization
 	void Start () {
+		player = GameObject.FindGameObjectWithTag ("Player");
 		anim = GetComponent<Animator> ();
 		player = GameObject.FindGameObjectWithTag ("Player");
 		playerScript = player.gameObject.GetComponent("PlayerAttack") as PlayerAttack;
@@ -18,11 +19,11 @@ public class EnemyController : MonoBehaviour {
 	
 	}
 
-	void OnTriggerEnter2D(Collider2D other) {
+	void OnTriggerEnter2D (Collider2D other) {
 		if (other.CompareTag ("AttackTrigger")) {
 			hp -= 1;
-			if(playerScript.energy<3){
-			playerScript.energy += 1;
+			if (playerScript.energy < 3) {
+				playerScript.energy += 1;
 			}
 			anim.SetTrigger ("damage");
 			Debug.Log ("OUCH! " + hp + " left!");
@@ -36,9 +37,9 @@ public class EnemyController : MonoBehaviour {
 				DestroyEnemy();
 			}
 		}
+	}
 
-
-	void DestroyEnemy(){
+	void DestroyEnemy () {
 		this.gameObject.SetActive (false);
 	}
 }
