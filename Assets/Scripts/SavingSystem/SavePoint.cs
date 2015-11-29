@@ -18,7 +18,6 @@ public class SavePoint : MonoBehaviour {
 		} 
 
 		setColor ();
-		Debug.Log ("Pensi di stampare qualcosa a schermo o no: " + SavingPoints.pointsDict [id]);
 
 	}
 

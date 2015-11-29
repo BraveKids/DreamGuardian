@@ -9,7 +9,7 @@ public class SetYume : MonoBehaviour {
 		SaveLoad.GetYume();
 		Vector3 savedPos = new Vector3(SaveLoad.savedGame.x, SaveLoad.savedGame.y, transform.position.z);
 		transform.position = savedPos;
-		Debug.Log("Dai stampa"+savedPos);
+		Debug.Log("Yume Position: "+savedPos);
 	}
 	
 
