@@ -1,5 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &111348
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 470816}
+  m_Layer: 8
+  m_Name: PlatformAbilityPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &114248
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,11 +157,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .560000002, y: -1.89999998, z: 0}
+  m_LocalPosition: {x: .560000002, y: -1.79999995, z: 0}
   m_LocalScale: {x: .00100000005, y: .00100000005, z: 0}
   m_Children: []
   m_Father: {fileID: 433214}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!4 &413696
 Transform:
   m_ObjectHideFlags: 1
@@ -158,7 +173,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 433214}
-  m_RootOrder: 6
+  m_RootOrder: 0
 --- !u!4 &433214
 Transform:
   m_ObjectHideFlags: 1
@@ -166,16 +181,17 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.3799992, y: -2.33182907, z: 0}
+  m_LocalPosition: {x: -41, y: -4.9000001, z: -5}
   m_LocalScale: {x: .364357412, y: .364357412, z: .364357412}
   m_Children:
+  - {fileID: 413696}
   - {fileID: 439716}
   - {fileID: 404368}
   - {fileID: 488024}
   - {fileID: 455520}
   - {fileID: 441336}
   - {fileID: 482242}
-  - {fileID: 413696}
+  - {fileID: 470816}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &439716
@@ -185,11 +201,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 153578}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0500000007, y: -1.89999998, z: 0}
+  m_LocalPosition: {x: -.0500000007, y: -1.79999995, z: 0}
   m_LocalScale: {x: .00100000005, y: .00100000005, z: 0}
   m_Children: []
   m_Father: {fileID: 433214}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!4 &441336
 Transform:
   m_ObjectHideFlags: 1
@@ -201,7 +217,7 @@ Transform:
   m_LocalScale: {x: 1.25616515, y: 4.05925798, z: 1}
   m_Children: []
   m_Father: {fileID: 433214}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!4 &455520
 Transform:
   m_ObjectHideFlags: 1
@@ -213,7 +229,19 @@ Transform:
   m_LocalScale: {x: 2.69999981, y: 3.16250014, z: 1}
   m_Children: []
   m_Father: {fileID: 433214}
-  m_RootOrder: 3
+  m_RootOrder: 4
+--- !u!4 &470816
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111348}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 433214}
+  m_RootOrder: 7
 --- !u!4 &482242
 Transform:
   m_ObjectHideFlags: 1
@@ -225,7 +253,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 433214}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!4 &488024
 Transform:
   m_ObjectHideFlags: 1
@@ -237,7 +265,7 @@ Transform:
   m_LocalScale: {x: 3.02812481, y: 3.8125, z: 1}
   m_Children: []
   m_Father: {fileID: 433214}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!50 &5079628
 Rigidbody2D:
   serializedVersion: 2
@@ -279,7 +307,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: .230000004, y: -1.20000005}
   serializedVersion: 2
-  m_Radius: .720000029
+  m_Radius: .637532771
 --- !u!61 &6105828
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -342,9 +370,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -.0123397186, y: 0}
+  m_Offset: {x: -.0123397186, y: .012074776}
   serializedVersion: 2
-  m_Size: {x: .568166792, y: 1}
+  m_Size: {x: .568166792, y: .975850761}
 --- !u!61 &6171870
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -386,7 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481a8ae8d161e1741b295e20734b457c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 2.5
+  maxSpeed: 3
   hp: 3
   rb: {fileID: 0}
   attackTrigger: {fileID: 6171870}
@@ -397,6 +425,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294966527
   jumpForce: 300
+  platform: {fileID: 0}
+  platformSpwnPoint: {fileID: 470816}
 --- !u!114 &11474304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -430,7 +460,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126004}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0491d9843157e948a6f30c9be36f050, type: 3}
   m_Name: 

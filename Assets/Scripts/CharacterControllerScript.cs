@@ -20,8 +20,9 @@ public class CharacterControllerScript : MonoBehaviour {
 	private float nextHitAllowed = 0f;
     float groundRadius = 0.1f;
     public LayerMask whatIsGround; //cosa il character deve considerare ground es. il terreno, i nemici...
-    public float jumpForce;
-
+	public float jumpForce;
+	public GameObject platform;
+	public Transform platformSpwnPoint;
 
     // Use this for initialization
     void Awake () {
@@ -34,7 +35,14 @@ public class CharacterControllerScript : MonoBehaviour {
 	// Update is called once per frame
     void Update()
     {
-	
+		if (Input.GetKeyDown (KeyCode.G) && anim.GetBool ("Ground") == true && !platform.activeSelf) {
+			
+			
+			platform.transform.parent=null;
+			platform.transform.position = platformSpwnPoint.position;
+			platform.SetActive(true);
+			Invoke ("PlatformAbilityClose", 3f);
+		}
 		Movement ();
 
 
@@ -108,6 +116,15 @@ public class CharacterControllerScript : MonoBehaviour {
 	
 	 void Death(){
 		this.gameObject.SetActive (false);
+	}
+
+	void PlatformAbilityClose(){
+		
+		
+		//platform.transform.SetParent (this.transform);
+		platform.SetActive (false);
+		
+		
 	}
 
 

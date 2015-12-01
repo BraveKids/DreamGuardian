@@ -11,6 +11,7 @@ public class PlayerAttack: MonoBehaviour {
 	public Collider2D attackTrigger2;
 	public Collider2D attackTrigger3;
 	public Collider2D superAttackTrigger;
+
 	Animator anim;
 
 	public int energy=0;
@@ -25,6 +26,10 @@ public class PlayerAttack: MonoBehaviour {
 	
 	void Update() {
 		hitTimer = Time.realtimeSinceStartup;
+
+
+
+
 
 		if (Input.GetKeyDown (KeyCode.F) &&  anim.GetBool ("Ground") == true) {
 			lastHitTimer = Time.realtimeSinceStartup;
@@ -99,6 +104,8 @@ public class PlayerAttack: MonoBehaviour {
 		energy=-1;
 		superAttackTrigger.enabled = false;
 	}
+
+
 	
 }
 
