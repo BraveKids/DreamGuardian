@@ -23,6 +23,7 @@ public class CharacterControllerScript : MonoBehaviour {
 	public float jumpForce;
 	public GameObject platform;
 	public Transform platformSpwnPoint;
+	int abilitySelector = 0;
 
     // Use this for initialization
     void Awake () {
@@ -35,7 +36,27 @@ public class CharacterControllerScript : MonoBehaviour {
 	// Update is called once per frame
     void Update()
     {
-		if (Input.GetKeyDown (KeyCode.G) && anim.GetBool ("Ground") == true && !platform.activeSelf) {
+		ChangeAbility ();
+		Ability ();
+		Movement ();
+
+
+    }
+	void ChangeAbility(){
+		if (Input.GetKeyDown (KeyCode.Joystick1Button5)) {
+			if (abilitySelector == 0) {
+				abilitySelector = 1;
+				Debug.Log ("Abilità 2");
+			} else {
+				abilitySelector = 0;
+				Debug.Log ("Abilità 1");
+			}
+
+		}
+	}
+
+	void Ability(){
+		if (Input.GetKeyDown (KeyCode.Joystick1Button1) && anim.GetBool ("Ground") == true && !platform.activeSelf && abilitySelector==0) {
 			
 			
 			platform.transform.parent=null;
@@ -43,14 +64,14 @@ public class CharacterControllerScript : MonoBehaviour {
 			platform.SetActive(true);
 			Invoke ("PlatformAbilityClose", 3f);
 		}
-		Movement ();
-
-
-    }
+		if(Input.GetKeyDown(KeyCode.Joystick1Button1) && abilitySelector==1){
+			Debug.Log("FREZZIA!!!!");
+		}
+	}
 
 	void Movement(){
 
-		if (grounded && Input.GetKeyDown(KeyCode.Space))
+		if (grounded && Input.GetKeyDown(KeyCode.Joystick1Button0))
 		{
 			anim.SetBool("Ground", false);
 			rb.AddForce(new Vector2(0, jumpForce));
