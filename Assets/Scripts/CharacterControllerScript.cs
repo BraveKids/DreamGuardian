@@ -43,7 +43,7 @@ public class CharacterControllerScript : MonoBehaviour {
 
     }
 	void ChangeAbility(){
-		if (Input.GetKeyDown (KeyCode.Joystick1Button5)) {
+		if (Input.GetKeyDown (KeyCode.Joystick1Button5)|| Input.GetKeyDown(KeyCode.V)) {
 			if (abilitySelector == 0) {
 				abilitySelector = 1;
 				Debug.Log ("Abilità 2");
@@ -56,7 +56,7 @@ public class CharacterControllerScript : MonoBehaviour {
 	}
 
 	void Ability(){
-		if (Input.GetKeyDown (KeyCode.Joystick1Button1) && anim.GetBool ("Ground") == true && !platform.activeSelf && abilitySelector==0) {
+		if ((Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G))  && anim.GetBool ("Ground") == true && !platform.activeSelf && abilitySelector==0) {
 			
 			
 			platform.transform.parent=null;
@@ -71,7 +71,7 @@ public class CharacterControllerScript : MonoBehaviour {
 
 	void Movement(){
 
-		if (grounded && Input.GetKeyDown(KeyCode.Joystick1Button0))
+		if (grounded && (Input.GetKeyDown(KeyCode.Joystick1Button0)|| Input.GetKeyDown(KeyCode.Space)))
 		{
 			anim.SetBool("Ground", false);
 			rb.AddForce(new Vector2(0, jumpForce));

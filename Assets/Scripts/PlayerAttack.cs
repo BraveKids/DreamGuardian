@@ -31,7 +31,7 @@ public class PlayerAttack: MonoBehaviour {
 
 
 
-		if (Input.GetKeyDown (KeyCode.Joystick1Button2) &&  anim.GetBool ("Ground") == true) {
+		if ((Input.GetKeyDown (KeyCode.Joystick1Button2) || Input.GetKeyDown(KeyCode.F)) &&  anim.GetBool ("Ground") == true) {
 			lastHitTimer = Time.realtimeSinceStartup;
 			if (combo > 3) {
 				combo = 0;
