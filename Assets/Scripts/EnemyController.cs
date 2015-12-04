@@ -29,7 +29,7 @@ public class EnemyController : MonoBehaviour {
 			Debug.Log ("OUCH! " + hp + " left!");
 			if (hp <= 0) {
 				anim.SetTrigger ("explode");
-				DestroyEnemy();
+				Invoke("DestroyEnemy", 0.6f);
 			}
 		}
 		if (other.CompareTag ("SuperAttackTrigger")) {
@@ -41,5 +41,6 @@ public class EnemyController : MonoBehaviour {
 
 	void DestroyEnemy () {
 		this.gameObject.SetActive (false);
+
 	}
 }

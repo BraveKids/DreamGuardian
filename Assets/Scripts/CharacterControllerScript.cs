@@ -7,7 +7,7 @@ public class CharacterControllerScript : MonoBehaviour {
 	public int hp = 3;
 
     bool facingRight = true;
-    public Rigidbody2D rb;
+   	Rigidbody2D rb;
     Animator anim;
 	public Collider2D attackTrigger;
 	public Collider2D superAttackTrigger;
@@ -22,6 +22,8 @@ public class CharacterControllerScript : MonoBehaviour {
     public LayerMask whatIsGround; //cosa il character deve considerare ground es. il terreno, i nemici...
 	public float jumpForce;
 	public GameObject platform;
+	public GameObject arrow;
+	public Transform firePoint;
 	public Transform platformSpwnPoint;
 	int abilitySelector = 0;
 
@@ -58,14 +60,23 @@ public class CharacterControllerScript : MonoBehaviour {
 	void Ability(){
 		if ((Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G))  && anim.GetBool ("Ground") == true && !platform.activeSelf && abilitySelector==0) {
 			
-			
-			platform.transform.parent=null;
+
 			platform.transform.position = platformSpwnPoint.position;
 			platform.SetActive(true);
 			Invoke ("PlatformAbilityClose", 3f);
 		}
-		if(Input.GetKeyDown(KeyCode.Joystick1Button1) && abilitySelector==1){
+		if ((Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && !arrow.activeSelf && abilitySelector==1) {
 			Debug.Log("FREZZIA!!!!");
+			arrow.transform.position = firePoint.position;
+			arrow.SetActive(true);
+			Rigidbody2D arrowRb = arrow.GetComponent<Rigidbody2D>();
+			if(facingRight==true){
+			arrowRb.AddForce(new Vector2(400,0));
+			}else{
+				arrowRb.AddForce(new Vector2(-400,0));
+			}
+
+			Invoke ("ArrowAbilityClose", 1f);
 		}
 	}
 
@@ -144,6 +155,14 @@ public class CharacterControllerScript : MonoBehaviour {
 		
 		//platform.transform.SetParent (this.transform);
 		platform.SetActive (false);
+		
+		
+	}
+	void ArrowAbilityClose(){
+		
+		
+		//platform.transform.SetParent (this.transform);
+		arrow.SetActive (false);
 		
 		
 	}

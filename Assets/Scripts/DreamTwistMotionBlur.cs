@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityStandardAssets.ImageEffects;
 
-public class DreamTwist : MonoBehaviour {
+public class DreamTwistMotionBlur : MonoBehaviour {
 	private MotionBlur motionBlurScript;
 	public Camera cam;
 	// Use this for initialization
@@ -14,8 +14,10 @@ public class DreamTwist : MonoBehaviour {
 		if (other.CompareTag ("Player") ) {
 			if(motionBlurScript.enabled == false){
 				motionBlurScript.enabled = true;
+				this.gameObject.SetActive(false);
 		}else{
 				motionBlurScript.enabled = false;
+				this.gameObject.SetActive(false);
 			}
 
 		
