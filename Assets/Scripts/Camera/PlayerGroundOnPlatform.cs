@@ -7,11 +7,17 @@ public class PlayerGroundOnPlatform : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other) {
 
-		if (other.CompareTag ("Platform") || other.CompareTag ("MovingPlatform") ) {
+		if (other.CompareTag ("Platform")) {
 		
-			CameraFollowOnPlatform.instance.nextY = transform.position.y;
-
+			StartCoroutine (CameraFollowOnPlatform.instance.ResetCamera (transform.position.y, false));
+			//CameraFollowOnPlatform.instance.nextY = transform.position.y;
 		}
+
+		if (other.CompareTag ("MovingPlatform")) {
+
+			StartCoroutine (CameraFollowOnPlatform.instance.ResetCamera (transform.position.y, true));
+		}
+
 
 		if (other.CompareTag ("Ground")) {
 			
@@ -22,9 +28,10 @@ public class PlayerGroundOnPlatform : MonoBehaviour {
 			
 			
 		}
-
-
 	}
 
 
 }
+
+
+
