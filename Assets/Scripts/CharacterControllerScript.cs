@@ -9,7 +9,9 @@ public class CharacterControllerScript : MonoBehaviour {
     bool facingRight = true;
    	Rigidbody2D rb;
     Animator anim;
-	public Collider2D attackTrigger;
+	public Collider2D attackTrigger1;
+	public Collider2D attackTrigger2;
+	public Collider2D attackTrigger3;
 	public Collider2D superAttackTrigger;
     bool groundedLeft = false;
 	bool groundedRight = false;
@@ -123,7 +125,7 @@ public class CharacterControllerScript : MonoBehaviour {
     }
 
 	void OnTriggerStay2D(Collider2D other) {
-			if (other.CompareTag ("Enemy") && attackTrigger.enabled == false && superAttackTrigger.enabled== false && Time.time > nextHitAllowed) {
+		if (other.CompareTag ("Enemy") && attackTrigger1.enabled == false && attackTrigger2.enabled == false && attackTrigger3.enabled == false && superAttackTrigger.enabled== false && Time.time > nextHitAllowed) {
 
 			hp -= 1;
 			Debug.Log ("Danno " + hp + " left!");
@@ -142,7 +144,17 @@ public class CharacterControllerScript : MonoBehaviour {
 		if (other.transform.tag == "MovingPlatform" ) {
 			transform.parent = other.transform;
 		}
-
+		if(other.CompareTag("EnemyObject")){
+			hp -= 1;
+			Debug.Log ("Danno " + hp + " left!");
+			nextHitAllowed = Time.time + hitDelay;
+			if (hp <= 0) {
+				anim.SetTrigger ("death");
+				Invoke ("Death", 0.8f);
+		
+		}
+			other.gameObject.SetActive(false);
+		}
 		
 	}
 	

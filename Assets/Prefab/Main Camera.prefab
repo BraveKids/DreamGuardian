@@ -15,8 +15,8 @@ GameObject:
   - 114: {fileID: 11416696}
   - 114: {fileID: 11482914}
   - 114: {fileID: 11406206}
-  - 114: {fileID: 11439040}
-  - 114: {fileID: 11499040}
+  - 114: {fileID: 11484790}
+  - 114: {fileID: 11417914}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -113,7 +113,40 @@ MonoBehaviour:
   nextY: 0
   smoothTimeX: 0
   smoothTimeY: 0
---- !u!114 &11439040
+--- !u!114 &11417914
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4975a6e437fc3b149a8cd508ce5bdd69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threshold: .319999993
+  intensity: .870000005
+  blurSize: 3.67000008
+  blurIterations: 1
+  blurType: 1
+  fastBloomShader: {fileID: 4800000, guid: 68a00c837b82e4c6d92e7da765dc5f1d, type: 3}
+--- !u!114 &11482914
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173224}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c7d86e47cf21f4c90d1c31a7a71a00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smoothTimeY: 0
+  smoothTimeX: 0
+  player: {fileID: 0}
+  terrain: {fileID: 0}
+  origin: {x: 0, y: 0, z: 0}
+--- !u!114 &11484790
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -145,39 +178,6 @@ MonoBehaviour:
   jitter: 3
   showVelocity: 0
   showVelocityScale: 1
---- !u!114 &11482914
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 173224}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5c7d86e47cf21f4c90d1c31a7a71a00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smoothTimeY: 0
-  smoothTimeX: 0
-  player: {fileID: 0}
-  terrain: {fileID: 0}
-  origin: {x: 0, y: 0, z: 0}
---- !u!114 &11499040
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 173224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4975a6e437fc3b149a8cd508ce5bdd69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  threshold: .319999993
-  intensity: .870000005
-  blurSize: 3.67000008
-  blurIterations: 1
-  blurType: 1
-  fastBloomShader: {fileID: 4800000, guid: 68a00c837b82e4c6d92e7da765dc5f1d, type: 3}
 --- !u!124 &12414822
 Behaviour:
   m_ObjectHideFlags: 1

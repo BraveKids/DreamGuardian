@@ -176,7 +176,7 @@ Transform:
   m_LocalScale: {x: .00100000005, y: .00100000005, z: 0}
   m_Children: []
   m_Father: {fileID: 433214}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!4 &413696
 Transform:
   m_ObjectHideFlags: 1
@@ -188,7 +188,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 433214}
-  m_RootOrder: 0
+  m_RootOrder: 6
 --- !u!4 &433214
 Transform:
   m_ObjectHideFlags: 1
@@ -199,13 +199,13 @@ Transform:
   m_LocalPosition: {x: -3.29999995, y: -0, z: -5}
   m_LocalScale: {x: .364357412, y: .364357412, z: .364357412}
   m_Children:
-  - {fileID: 413696}
   - {fileID: 439716}
   - {fileID: 404368}
   - {fileID: 488024}
   - {fileID: 455520}
   - {fileID: 441336}
   - {fileID: 482242}
+  - {fileID: 413696}
   - {fileID: 470816}
   - {fileID: 480552}
   m_Father: {fileID: 0}
@@ -221,7 +221,7 @@ Transform:
   m_LocalScale: {x: .00100000005, y: .00100000005, z: 0}
   m_Children: []
   m_Father: {fileID: 433214}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!4 &441336
 Transform:
   m_ObjectHideFlags: 1
@@ -233,7 +233,7 @@ Transform:
   m_LocalScale: {x: 1.25616515, y: 4.05925798, z: 1}
   m_Children: []
   m_Father: {fileID: 433214}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!4 &455520
 Transform:
   m_ObjectHideFlags: 1
@@ -245,7 +245,7 @@ Transform:
   m_LocalScale: {x: 2.69999981, y: 3.16250014, z: 1}
   m_Children: []
   m_Father: {fileID: 433214}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!4 &470816
 Transform:
   m_ObjectHideFlags: 1
@@ -281,7 +281,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 433214}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!4 &488024
 Transform:
   m_ObjectHideFlags: 1
@@ -293,7 +293,7 @@ Transform:
   m_LocalScale: {x: 3.02812481, y: 3.8125, z: 1}
   m_Children: []
   m_Father: {fileID: 433214}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!50 &5079628
 Rigidbody2D:
   serializedVersion: 2
@@ -398,9 +398,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -.0123397186, y: .012074776}
+  m_Offset: {x: .0128110154, y: .012074776}
   serializedVersion: 2
-  m_Size: {x: .568166792, y: .975850761}
+  m_Size: {x: .618467867, y: .975850761}
 --- !u!61 &6171870
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -444,7 +444,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 3
   hp: 3
-  attackTrigger: {fileID: 6171870}
+  attackTrigger1: {fileID: 6171870}
+  attackTrigger2: {fileID: 6105828}
+  attackTrigger3: {fileID: 6142636}
   superAttackTrigger: {fileID: 6160318}
   groundCheckLeft: {fileID: 439716}
   groundCheckRight: {fileID: 404368}
@@ -454,7 +456,7 @@ MonoBehaviour:
   jumpForce: 300
   platform: {fileID: 0}
   arrow: {fileID: 0}
-  firePoint: {fileID: 0}
+  firePoint: {fileID: 480552}
   platformSpwnPoint: {fileID: 470816}
 --- !u!114 &11474304
 MonoBehaviour:

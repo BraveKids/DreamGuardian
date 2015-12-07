@@ -10,7 +10,6 @@ public class EnemyController : MonoBehaviour {
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		anim = GetComponent<Animator> ();
-		player = GameObject.FindGameObjectWithTag ("Player");
 		playerScript = player.gameObject.GetComponent("PlayerAttack") as PlayerAttack;
 	}
 	
@@ -22,14 +21,12 @@ public class EnemyController : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.CompareTag ("AttackTrigger")) {
 			hp -= 1;
-			if (playerScript.energy < 3) {
-				playerScript.energy += 1;
-			}
 			anim.SetTrigger ("damage");
 			Debug.Log ("OUCH! " + hp + " left!");
 			if (hp <= 0) {
-				anim.SetTrigger ("explode");
-				Invoke("DestroyEnemy", 0.6f);
+				anim.Play ("explosion");
+				Invoke ("DestroyEnemy", 0.15f);
+
 			}
 		}
 		if (other.CompareTag ("SuperAttackTrigger")) {
@@ -40,7 +37,10 @@ public class EnemyController : MonoBehaviour {
 
 
 	void DestroyEnemy () {
-		this.gameObject.SetActive (false);
+		this.gameObject.SetActive(false);
+		if (playerScript.energy < 3) {
+			playerScript.energy += 1;
+		}
 
 	}
 }
