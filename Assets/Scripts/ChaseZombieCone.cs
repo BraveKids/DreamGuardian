@@ -10,25 +10,19 @@ public class ChaseZombieCone : MonoBehaviour {
     {
         zombieAI = gameObject.GetComponentInParent<ZombieAI>();
     }
-    void Update()
-    {
-
-    }
-
     
-
     void OnTriggerStay2D(Collider2D col)
     {
         if (col.CompareTag("Player"))
         {
             if (isForward == true)
             {
-                zombieAI.move();
+                zombieAI.Inseguimento = true;
             }
             else if (isForward == false)
             {
                 zombieAI.Flip();
-                
+
             }
         }
         
@@ -38,7 +32,8 @@ public class ChaseZombieCone : MonoBehaviour {
     {
         if (col.CompareTag("Player"))
         {
-            zombieAI.stop();
+            zombieAI.Inseguimento = false;
+
         }
     }
 }

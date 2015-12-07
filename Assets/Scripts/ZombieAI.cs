@@ -6,65 +6,83 @@ public class ZombieAI : MonoBehaviour {
     public Transform Player;
     public Transform LeftBorder;
     public Transform RightBorder;
-    float velocity = 1f;
+
+    float walkVelocity = 1f;
+    float runVelocity = 1.8f;
     Rigidbody2D rb;
     public Animator anim;
     public bool Inseguimento = false;
-    public bool GoBack = false;
+    public bool IsLeft = true;
 
+    public Transform BorderCheck;
+    public float BorderCheckRadius;
+    public LayerMask WhatIsBorder;
+    public bool HittingBorder;
+    float Range;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-
+        Range = BorderCheckRadius * 2;
     }
 
     public void Flip()
     {
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
-        velocity *= -1;
+        walkVelocity *= -1;
+        runVelocity *= -1;
+        IsLeft = !IsLeft;
 
     }
 
     void Update()
     {
-        if ((transform.position.x < RightBorder.position.x) && (transform.position.x > LeftBorder.position.x) && (Inseguimento == false) && (GoBack == true))
+        if (Inseguimento == false)
         {
-            GoBack = false;
+            rb.velocity = new Vector2(-walkVelocity, rb.velocity.y);
+            checkPosition();
         }
-
-        if ((Inseguimento == false) && (GoBack == false) && ((transform.position.x <= LeftBorder.position.x) || (transform.position.x >= RightBorder.position.x)))
+        else if (Inseguimento == true)
         {
-            Flip();
+            rb.velocity = new Vector2(-runVelocity, rb.velocity.y);
         }
-        rb.velocity = new Vector2(-velocity, rb.velocity.y);
     }
 
-    public void move()
+    public void checkPosition()
     {
-        Inseguimento = true;
-        GoBack = false;
+        if ((BorderCheck.position.x > LeftBorder.position.x + Range) && (BorderCheck.position.x < RightBorder.position.x - Range))
+        {
+            walk();
+
+        }
+        else if ((BorderCheck.position.x < LeftBorder.position.x) && (IsLeft == true))
+        {
+            Flip();
+
+        }
+        else if ((BorderCheck.position.x > RightBorder.position.x) && (IsLeft == false))
+        {
+            Flip();
+
+        }
+        else if ((BorderCheck.position.x < LeftBorder.position.x) && (IsLeft == false))
+        {
+
+        }
+        else if ((BorderCheck.position.x > RightBorder.position.x) && (IsLeft == true))
+        {
+
+        }
+
     }
 
-    
-
-    public void stop()
+    public void walk()
     {
-        Inseguimento = false;
-        GoBack = true;
-        if ((transform.position.x < LeftBorder.position.x) && (rb.velocity.x < 0) && (GoBack == true))
+        HittingBorder = Physics2D.OverlapCircle(BorderCheck.position, BorderCheckRadius, WhatIsBorder);
+        if (HittingBorder)
         {
             Flip();
         }
-        if ((transform.position.x > RightBorder.position.x) && (rb.velocity.x > 0) && (GoBack == true))
-        { 
-            Flip();
-        }
-        
-
     }
-
-   
-
 }
