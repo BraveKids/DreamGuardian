@@ -6,7 +6,7 @@ public class ZombieDamage : MonoBehaviour {
     public float hp = 4;
     private PlayerAttack playerScript;
     public GameObject player;
-    public GameObject zombie;
+    public GameObject enemy;
     // Use this for initialization
     void Start()
     {
@@ -47,6 +47,6 @@ public class ZombieDamage : MonoBehaviour {
 
     void DestroyEnemy()
     {
-        zombie.gameObject.SetActive(false);
+        enemy.gameObject.SetActive(false);
     }
 }
