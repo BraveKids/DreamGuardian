@@ -20,13 +20,21 @@ public class PlayerGroundOnPlatform : MonoBehaviour {
 
 
 		if (other.CompareTag ("Ground")) {
-			
+
+			CameraFollowOnPlatform.instance.originY = transform.position.y;
 			//
 			//CameraFollowOnPlatform.instance.currentY = transform.position.y+CameraFollowOnPlatform.instance.groundDim;
 			//CameraFollowOnPlatform.instance.nextY = CameraFollowOnPlatform.instance.currentY+CameraFollowOnPlatform.instance.groundDim;
 
 			
 			
+		}
+	}
+
+	void OnTriggerExit2D (Collider2D other) {
+		if (other.CompareTag ("MovingPlatform")) {
+			CameraFollowOnPlatform.instance.on_moving_plat = false;
+			CameraFollowOnPlatform.instance.currentY = transform.position.y;
 		}
 	}
 
