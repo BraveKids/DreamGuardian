@@ -445,7 +445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 4
   player: {fileID: 0}
-  zombie: {fileID: 151222}
+  enemy: {fileID: 151222}
 --- !u!114 &11463388
 MonoBehaviour:
   m_ObjectHideFlags: 1
