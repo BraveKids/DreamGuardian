@@ -4,16 +4,17 @@ using UnityStandardAssets.ImageEffects;
 
 public class DreamTwistSpinCamera : MonoBehaviour {
 	
-	public Camera cam;
+	GameObject cam;
 	// Use this for initialization
 	void Start () {
-		
+		cam = GameObject.FindGameObjectWithTag("MainCamera");
 	}
 	
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag ("Player") ) {
-			cam.transform.Rotate(new Vector3(0,180,180));
-			cam.transform.Translate(0,0,-20);
+			cam.transform.Rotate(new Vector3(0,180f,180f));
+
+			cam.transform.position = new Vector3(0,0, -cam.transform.position.z);
 			this.gameObject.SetActive(false);
 				
 		}
