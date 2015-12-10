@@ -5,25 +5,50 @@ using System;
 public class PlayerGroundOnPlatform : MonoBehaviour {
 
 
-	void OnTriggerStay2D (Collider2D other) {
+	void OnTriggerEnter2D (Collider2D other) {
 
-		if (other.CompareTag ("Platform")|| other.CompareTag ("MovingPlatform") ) {
-		
-			CameraFollowOnPlatform.instance.nextY = transform.position.y;
-			Debug.Log("Platform");
+		if (other.CompareTag ("Platform")) {
+
+
+				StartCoroutine (CameraFollowOnPlatform.instance.ResetCamera (transform.position.y, false));
+			
+
+			//CameraFollowOnPlatform.instance.nextY = transform.position.y;
+			//CameraFollowOnPlatform.instance.isFalling = false;
 		}
+
+		if (other.CompareTag ("MovingPlatform")) {
+
+			StartCoroutine (CameraFollowOnPlatform.instance.ResetCamera (transform.position.y, true));
+
+			//CameraFollowOnPlatform.instance.isFalling = false;
+			
+		}
+
 
 		if (other.CompareTag ("Ground")) {
-			
-			/*CameraFollowOnPlatform.instance.currentY = transform.position.y+CameraFollowOnPlatform.instance.groundDim;
-			CameraFollowOnPlatform.instance.nextY = CameraFollowOnPlatform.instance.currentY;
-			Debug.Log(CameraFollowOnPlatform.instance.groundDim);*/
-			
-			
+
+			CameraFollowOnPlatform.instance.originY = transform.position.y;
+			//
+			//CameraFollowOnPlatform.instance.currentY = transform.position.y+CameraFollowOnPlatform.instance.groundDim;
+			//CameraFollowOnPlatform.instance.nextY = CameraFollowOnPlatform.instance.currentY+CameraFollowOnPlatform.instance.groundDim;
+
+					
 		}
 
+		//CameraFollowOnPlatform.instance.isFalling = false;
+	}
 
+	void OnTriggerExit2D (Collider2D other) {
+		if (other.CompareTag ("MovingPlatform")) {
+			CameraFollowOnPlatform.instance.diff_when_moving = 0;
+			CameraFollowOnPlatform.instance.on_moving_plat = false;
+			//CameraFollowOnPlatform.instance.currentY = transform.position.y;
+		}
 	}
 
 
 }
+
+
+
