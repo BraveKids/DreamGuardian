@@ -12,9 +12,13 @@ TagManager:
   - Platform
   - Death
   - MovingPlatform
+<<<<<<< HEAD
   - Trigger
   - SavePoint
   - EnemyObject
+=======
+  - Border
+>>>>>>> IA
   layers:
   - Default
   - TransparentFX
@@ -27,7 +31,7 @@ TagManager:
   - Player
   - Background
   - Enemy
-  - 
+  - Border
   - 
   - 
   - 
