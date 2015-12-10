@@ -7,7 +7,7 @@ public class MovingPlatfrom : MonoBehaviour {
 	public Transform currentPoint;
 	public Transform[] points;
 	public int pointSelection;
-	public static bool CAN_MOVE = false;
+
 	// Use this for initialization
 	void Start () {
 		currentPoint = points [pointSelection];
@@ -16,7 +16,7 @@ public class MovingPlatfrom : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (CAN_MOVE) {
+	
 			platform.transform.position = Vector3.MoveTowards (platform.transform.position, currentPoint.position, Time.deltaTime * moveSpeed);
 			if (platform.transform.position == currentPoint.position) {
 				pointSelection++;
@@ -27,6 +27,6 @@ public class MovingPlatfrom : MonoBehaviour {
 
 				currentPoint = points [pointSelection];
 			}
-		}
+		
 	}
 }

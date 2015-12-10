@@ -4,10 +4,9 @@ using UnityStandardAssets.ImageEffects;
 
 public class DreamTwistMotionBlur : MonoBehaviour {
 	private MotionBlur motionBlurScript;
-	 GameObject cam;
+	public Camera cam;
 	// Use this for initialization
 	void Start () {
-		cam = GameObject.FindGameObjectWithTag("MainCamera");
 		motionBlurScript = cam.GetComponent ("MotionBlur") as MotionBlur;
 	}
 	
