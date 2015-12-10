@@ -4,13 +4,13 @@ using System.Collections;
 public class ChaseZombieCone : MonoBehaviour {
 
     public bool isForward = false;
-	private ZombieAI zombieScript;
+	public ZombieAI zombieAI;
 	public GameObject zombie;
 	// Use this for initialization
 
     void Start()
     {
-		zombieScript  = zombie.gameObject.GetComponent("ZombieAI") as ZombieAI;
+		zombieAI  = gameObject.GetComponentInParent<ZombieAI>();
     }
     
     void OnTriggerStay2D(Collider2D col)
@@ -19,21 +19,13 @@ public class ChaseZombieCone : MonoBehaviour {
         {
             if (isForward == true)
             {
-<<<<<<< HEAD
-                zombieScript.move();
-            }
-            else if (isForward == false)
-            {
-                zombieScript.Flip();
-                
-=======
+
                 zombieAI.Inseguimento = true;
             }
             else if (isForward == false)
             {
                 zombieAI.Flip();
 
->>>>>>> IA
             }
         }
         
@@ -43,12 +35,9 @@ public class ChaseZombieCone : MonoBehaviour {
     {
         if (col.CompareTag("Player"))
         {
-<<<<<<< HEAD
-            zombieScript.stop();
-=======
+
             zombieAI.Inseguimento = false;
 
->>>>>>> IA
         }
     }
 }

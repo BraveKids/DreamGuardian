@@ -12,13 +12,9 @@ TagManager:
   - Platform
   - Death
   - MovingPlatform
-<<<<<<< HEAD
   - Trigger
   - SavePoint
   - EnemyObject
-=======
-  - Border
->>>>>>> IA
   layers:
   - Default
   - TransparentFX
@@ -31,7 +27,7 @@ TagManager:
   - Player
   - Background
   - Enemy
-  - Border
+  - 
   - 
   - 
   - 
@@ -59,9 +55,9 @@ TagManager:
   - name: Background
     uniqueID: 1133335085
     locked: 0
-  - name: Foreground
-    uniqueID: 3872052785
-    locked: 0
   - name: Player
     uniqueID: 2920803005
+    locked: 0
+  - name: Foreground
+    uniqueID: 3872052785
     locked: 0
