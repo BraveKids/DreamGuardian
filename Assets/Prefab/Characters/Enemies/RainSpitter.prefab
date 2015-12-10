@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &107546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 493292}
+  m_Layer: 0
+  m_Name: TargetPosition (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: -3545028842045912814, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &115762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 422988}
+  m_Layer: 0
+  m_Name: TargetPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: -3545028842045912814, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &131090
 GameObject:
   m_ObjectHideFlags: 0
@@ -39,9 +69,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 425026}
   m_Layer: 0
-  m_Name: TargetPosition
+  m_Name: TargetPosition (2)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -3545028842045912814, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -55,7 +85,7 @@ GameObject:
   - 4: {fileID: 486102}
   - 212: {fileID: 21267726}
   - 95: {fileID: 9577164}
-  - 114: {fileID: 11465618}
+  - 114: {fileID: 11465568}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -70,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 133490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0599999987, y: 1.23000002, z: 0}
+  m_LocalPosition: {x: -.0900000036, y: 1.23000002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 421982}
@@ -82,14 +112,28 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.259174824, y: -3.1412046, z: 0}
+  m_LocalPosition: {x: -14.1899996, y: .779999971, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 486102}
   - {fileID: 401644}
+  - {fileID: 422988}
+  - {fileID: 493292}
   - {fileID: 425026}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &422988
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115762}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.63000011, y: .419999987, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 421982}
+  m_RootOrder: 2
 --- !u!4 &425026
 Transform:
   m_ObjectHideFlags: 1
@@ -97,11 +141,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.29999995, y: -1.5, z: 0}
+  m_LocalPosition: {x: -1.33000004, y: .419999957, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 421982}
-  m_RootOrder: 2
+  m_RootOrder: 4
 --- !u!4 &486102
 Transform:
   m_ObjectHideFlags: 1
@@ -114,6 +158,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 421982}
   m_RootOrder: 0
+--- !u!4 &493292
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107546}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.50999999, y: .419999957, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 421982}
+  m_RootOrder: 3
 --- !u!95 &9577164
 Animator:
   serializedVersion: 3
@@ -131,7 +187,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11465618
+--- !u!114 &11465568
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -139,11 +195,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 190298}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73e7510db663a704cbc1f497901e8c45, type: 3}
+  m_Script: {fileID: 11500000, guid: 89ac82fdd584bf34385a18700613963f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myTarget: {fileID: 425026}
-  shootAngle: 30
+  cannonball: {fileID: 103468, guid: 598462a84e769584fb377acf3b8a0579, type: 2}
+  shootInterval: 1.5
+  shootPoint: {fileID: 401644}
+  target1: {fileID: 422988}
+  target2: {fileID: 493292}
+  target3: {fileID: 425026}
+  shootAngle: 45
 --- !u!212 &21267726
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -12,35 +12,28 @@ public class ZombieDamage : MonoBehaviour {
     {
         anim = GetComponentInParent<Animator>();
         playerScript = player.gameObject.GetComponent("PlayerAttack") as PlayerAttack;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
+   
+    void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("AttackTrigger"))
         {
             hp -= 1;
-            if (playerScript.energy < 3)
-            {
-                playerScript.energy += 1;
-            }
             anim.SetTrigger("damage");
             Debug.Log("OUCH! " + hp + " left!");
             if (hp <= 0)
             {
-                anim.SetTrigger("explode");
-                Invoke("DestroyEnemy", 0.8f);
+                anim.Play("explosion");
+                Invoke("DestroyEnemy", 0.15f);
+
             }
         }
         if (other.CompareTag("SuperAttackTrigger"))
         {
             anim.SetTrigger("explode");
-            Invoke("DestroyEnemy", 0.8f);
+            DestroyEnemy();
         }
     }
 
@@ -48,5 +41,12 @@ public class ZombieDamage : MonoBehaviour {
     void DestroyEnemy()
     {
         enemy.gameObject.SetActive(false);
+        if (playerScript.energy < 3)
+        {
+            playerScript.energy += 1;
+        }
+
     }
+
+   
 }
