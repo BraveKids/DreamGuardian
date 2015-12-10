@@ -15,6 +15,7 @@ TagManager:
   - Trigger
   - SavePoint
   - EnemyObject
+  - Border
   layers:
   - Default
   - TransparentFX
@@ -55,9 +56,9 @@ TagManager:
   - name: Background
     uniqueID: 1133335085
     locked: 0
-  - name: Player
-    uniqueID: 2920803005
-    locked: 0
   - name: Foreground
     uniqueID: 3872052785
+    locked: 0
+  - name: Player
+    uniqueID: 2920803005
     locked: 0

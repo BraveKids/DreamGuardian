@@ -66,18 +66,22 @@ public class PlayerAttack: MonoBehaviour {
 			switch(comboCounter){
 		case(1):
 			anim.Play("YumeAttack1");
+
 			attackTrigger1.enabled = true;
 			attackTrigger2.enabled = false;
 			attackTrigger3.enabled = false;
+
 			break;
 		case(2):
 			anim.Play("YumeAttack2");
+		
 			attackTrigger1.enabled = false;
 			attackTrigger2.enabled = true;
 			attackTrigger3.enabled = false;
 			break;
 		case(3):
 			anim.Play("YumeAttack3");
+	
 			attackTrigger1.enabled = false;
 			attackTrigger2.enabled = false;
 			attackTrigger3.enabled = true;
@@ -87,6 +91,7 @@ public class PlayerAttack: MonoBehaviour {
 			attackTrigger1.enabled = false;
 			attackTrigger2.enabled = false;
 			attackTrigger3.enabled = false;
+
 			break;
 
 		}
