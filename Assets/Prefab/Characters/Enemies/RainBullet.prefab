@@ -11,10 +11,10 @@ GameObject:
   - 212: {fileID: 21250774}
   - 61: {fileID: 6186208}
   - 50: {fileID: 5032322}
-  - 114: {fileID: 11410572}
+  - 114: {fileID: 11445134}
   m_Layer: 0
   m_Name: RainBullet
-  m_TagString: Untagged
+  m_TagString: EnemyObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,7 +60,7 @@ BoxCollider2D:
   m_Offset: {x: -.0416815951, y: -.143680662}
   serializedVersion: 2
   m_Size: {x: .723486841, y: .657440841}
---- !u!114 &11410572
+--- !u!114 &11445134
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -68,11 +68,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 103468}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73e7510db663a704cbc1f497901e8c45, type: 3}
+  m_Script: {fileID: 11500000, guid: 45029784dd902844dbdde327c9db5b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myTarget: {fileID: 0}
-  shootAngle: 30
 --- !u!212 &21250774
 SpriteRenderer:
   m_ObjectHideFlags: 1

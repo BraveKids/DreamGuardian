@@ -59,7 +59,7 @@ GameObject:
   - 4: {fileID: 402888}
   - 60: {fileID: 6078984}
   - 114: {fileID: 11465244}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ForwardTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}

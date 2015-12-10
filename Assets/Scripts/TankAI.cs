@@ -8,7 +8,7 @@ public class TankAI : MonoBehaviour {
     Rigidbody2D rb;
     public Animator anim;
     public bool isLeft;
-    public Transform player;
+    public GameObject player;
     public Transform startPosition;
     public Transform checkPosition;
     public float checkPositionRadius;
@@ -26,6 +26,7 @@ public class TankAI : MonoBehaviour {
     void Start () {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player");
 
     }
 	

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ZombieAI : MonoBehaviour {
 
-    public Transform Player;
+    public GameObject Player;
     public Transform LeftBorder;
     public Transform RightBorder;
 
@@ -25,6 +25,7 @@ public class ZombieAI : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         Range = BorderCheckRadius * 2;
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void Flip()
