@@ -11,12 +11,13 @@ public class ZombieDamage : MonoBehaviour {
     void Start()
     {
         anim = GetComponentInParent<Animator>();
+		player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.gameObject.GetComponent("PlayerAttack") as PlayerAttack;
-        player = GameObject.FindGameObjectWithTag("Player");
+        
     }
 
    
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("AttackTrigger"))
         {
