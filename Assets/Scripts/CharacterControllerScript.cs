@@ -64,21 +64,17 @@ public class CharacterControllerScript : MonoBehaviour {
 			
 
 			platform.transform.position = platformSpwnPoint.position;
-			platform.SetActive(true);
+			anim.Play("YumePiattaforma");
+			Invoke("PlatformAbility", 0.25f);
 			Invoke ("PlatformAbilityClose", 3f);
 		}
-		if ((Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && !arrow.activeSelf && abilitySelector==1) {
-			Debug.Log("FREZZIA!!!!");
-			arrow.transform.position = firePoint.position;
-			arrow.SetActive(true);
-			Rigidbody2D arrowRb = arrow.GetComponent<Rigidbody2D>();
-			if(facingRight==true){
-			arrowRb.AddForce(new Vector2(400,0));
-			}else{
-				arrowRb.AddForce(new Vector2(-400,0));
-			}
+		if ((Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && !arrow.activeSelf && abilitySelector==1 && anim.GetBool ("Ground") == true ) {
 
-			Invoke ("ArrowAbilityClose", 1f);
+			arrow.transform.position = firePoint.position;
+			anim.Play ("YumeArcoTerra");
+
+			Invoke ("ArrowAbility", 0.25f);
+			Invoke ("ArrowAbilityClose", 1.2f);
 		}
 	}
 
@@ -139,7 +135,9 @@ public class CharacterControllerScript : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag ("Death") ) {
-			Death();
+			anim.SetTrigger ("IstantDeath");
+			rb.isKinematic = true;
+			Invoke("Death",0.3f);
 		}
 		if (other.transform.tag == "MovingPlatform" ) {
 			transform.parent = other.transform;
@@ -160,23 +158,31 @@ public class CharacterControllerScript : MonoBehaviour {
 	
 	 void Death(){
 		this.gameObject.SetActive (false);
+
+	}
+
+	void PlatformAbility(){
+		platform.SetActive(true);
 	}
 
 	void PlatformAbilityClose(){
-		
-		
-		//platform.transform.SetParent (this.transform);
 		platform.SetActive (false);
-		
-		
 	}
+
+	
+	void ArrowAbility(){
+		arrow.SetActive(true);
+		Rigidbody2D arrowRb = arrow.GetComponent<Rigidbody2D>();
+		if(facingRight==true){
+			arrowRb.AddForce(new Vector2(400,0));
+		}else{
+			arrowRb.AddForce(new Vector2(-400,0));
+		}
+	}
+
+
 	void ArrowAbilityClose(){
-		
-		
-		//platform.transform.SetParent (this.transform);
 		arrow.SetActive (false);
-		
-		
 	}
 
 

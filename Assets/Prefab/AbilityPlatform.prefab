@@ -109,7 +109,7 @@ Transform:
   m_GameObject: {fileID: 145494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .600000024, y: .5, z: 1}
+  m_LocalScale: {x: .349999994, y: .349999994, z: 1}
   m_Children:
   - {fileID: 444280}
   - {fileID: 418844}
@@ -126,9 +126,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: .0111427307, y: .329286814}
+  m_Offset: {x: .01114274, y: 1.26771188}
   serializedVersion: 2
-  m_Size: {x: 2.02231812, y: .0517081022}
+  m_Size: {x: 2.3846879, y: .155977249}
 --- !u!61 &6143266
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -139,9 +139,9 @@ BoxCollider2D:
   m_Material: {fileID: 6200000, guid: d416426d135ebaf4ca0da4e132a693cd, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 1.177598, y: -.00132260215}
+  m_Offset: {x: 1.25093496, y: .971899509}
   serializedVersion: 2
-  m_Size: {x: .161747694, y: .703220844}
+  m_Size: {x: .308421046, y: .723927259}
 --- !u!61 &6174908
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -152,9 +152,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 1.01303673}
   serializedVersion: 2
-  m_Size: {x: 2.454772, y: .709065557}
+  m_Size: {x: 2.454772, y: .572032452}
 --- !u!61 &6197980
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -165,9 +165,9 @@ BoxCollider2D:
   m_Material: {fileID: 6200000, guid: d416426d135ebaf4ca0da4e132a693cd, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -1.17287922, y: -2.75867791e-07}
+  m_Offset: {x: -1.25484383, y: .983575106}
   serializedVersion: 2
-  m_Size: {x: .180320978, y: .705865681}
+  m_Size: {x: .344250202, y: .726572275}
 --- !u!212 &21252752
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -190,9 +190,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -422914511
+  m_SortingLayerID: -1374164291
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2eff5a229ed8632418bf40244c7d2e99, type: 3}
+  m_Sprite: {fileID: 21300000, guid: edb4fcc0c9bf4844fa76efbd0322681f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -200,7 +200,12 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: edb4fcc0c9bf4844fa76efbd0322681f,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 145494}
