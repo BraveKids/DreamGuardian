@@ -13,12 +13,16 @@ public class ZombieAI : MonoBehaviour {
     public Animator anim;
     public bool Inseguimento = false;
     public bool IsLeft = true;
+    bool stopped = false;
 
     public Transform BorderCheck;
     public float BorderCheckRadius;
     public LayerMask WhatIsBorder;
     public bool HittingBorder;
     float Range;
+
+    float timer;
+    float stopInterval = 2;
 
     void Start()
     {
@@ -39,12 +43,23 @@ public class ZombieAI : MonoBehaviour {
 
     void Update()
     {
-        if (Inseguimento == false)
+        if (stopped == true)
+        {
+            rb.isKinematic = true;
+            timer += Time.deltaTime;
+            if (timer >= stopInterval)
+            {
+                rb.isKinematic = false;
+                timer = 0;
+                stopped = false;
+            }
+        }
+        if (Inseguimento == false && stopped == false)
         {
             rb.velocity = new Vector2(-walkVelocity, rb.velocity.y);
             checkPosition();
         }
-        else if (Inseguimento == true)
+        else if (Inseguimento == true && stopped == false)
         {
             rb.velocity = new Vector2(-runVelocity, rb.velocity.y);
         }
@@ -59,13 +74,12 @@ public class ZombieAI : MonoBehaviour {
         }
         else if ((BorderCheck.position.x < LeftBorder.position.x) && (IsLeft == true))
         {
-            Flip();
+            Flip();  
 
         }
         else if ((BorderCheck.position.x > RightBorder.position.x) && (IsLeft == false))
         {
             Flip();
-
         }
         else if ((BorderCheck.position.x < LeftBorder.position.x) && (IsLeft == false))
         {
@@ -85,5 +99,10 @@ public class ZombieAI : MonoBehaviour {
         {
             Flip();
         }
+    }
+
+    public void Stop()
+    {
+        stopped = true;
     }
 }

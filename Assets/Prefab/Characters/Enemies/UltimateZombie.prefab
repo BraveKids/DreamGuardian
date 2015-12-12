@@ -140,7 +140,6 @@ GameObject:
   - 4: {fileID: 430856}
   - 50: {fileID: 5031616}
   - 114: {fileID: 11453850}
-  - 114: {fileID: 11439618}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -155,7 +154,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151222}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.63000011, y: -1.23000002, z: 0}
+  m_LocalPosition: {x: .660000026, y: -1.23000002, z: 0}
   m_LocalScale: {x: 1, y: 1.21249998, z: 1}
   m_Children:
   - {fileID: 430856}
@@ -382,34 +381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForward: 1
-  zombieAI: {fileID: 0}
   zombie: {fileID: 0}
---- !u!114 &11439618
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 197622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d6741e04d905cf4cbe7d017e20c1655, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  LeftBorder: {fileID: 447060}
-  RightBorder: {fileID: 414400}
-  Pivot: {fileID: 0}
-  velocity: 1
-  rb: {fileID: 0}
-  anim: {fileID: 0}
-  Inseguimento: 0
-  GoBack: 0
-  IsLeft: 1
-  BorderCheck: {fileID: 494506}
-  BorderCheckRadius: .100000001
-  WhatIsBorder: {}
-  HittingBorder: 0
-  Range: 0
 --- !u!114 &11453850
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -459,7 +431,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForward: 0
-  zombieAI: {fileID: 0}
   zombie: {fileID: 0}
 --- !u!212 &21250222
 SpriteRenderer:
