@@ -1,0 +1,14 @@
+Il sistema di salvataggio si basa sui metodi serialize e deserialize della classe BinaryFormatter.
+
+La classe Game viene utilizzata per salvare la x e la y del giocatore, un' istanza di Game è in SaveLoad, la classe dove ci sono tutti i metodi principali.
+
+-Quando inizio un nuovo gioco il metodo NewGame() elimina i file di salvataggio precedenti e scrive le posizioni di inizio gioco nell'istanza di GAME.
+Quando yume viene attivato richiama il metodo GetYume che permette a SaveLoad di ottenere il GameObject di yume (non posso farlo automaticamente da SaveLoad perchè Yume potrebbe non essere ancora stato caricato), poi chiama il metodo Spawn() che posiziona il player sulle cordinate salvate nell' istanza di Game().
+
+- Al passaggio su un savepoint prima aggiornerò l'instanza di Game, poi la salvo serializzandola.
+
+- Se invece continuo la partita deserializzo e setto x e y in base ai valori dell'istanza
+
+
+La classe SavingPoints gestisce i punti di salvataggio. Un punto di salvataggio si registra nel dizionario, se non presente. Questa struttura viene serializzata e salvata. I punti di salvataggio già utilizzati vengono resi inutilizzabili.
+ 
