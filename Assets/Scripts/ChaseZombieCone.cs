@@ -4,7 +4,7 @@ using System.Collections;
 public class ChaseZombieCone : MonoBehaviour {
 
     public bool isForward = false;
-	public ZombieAI zombieAI;
+    ZombieAI zombieAI;
 	public GameObject zombie;
 	// Use this for initialization
 

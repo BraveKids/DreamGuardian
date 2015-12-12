@@ -38,6 +38,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 421982}
+  - 114: {fileID: 11478170}
   m_Layer: 0
   m_Name: RainSpitter
   m_TagString: Untagged
@@ -85,7 +86,6 @@ GameObject:
   - 4: {fileID: 486102}
   - 212: {fileID: 21267726}
   - 95: {fileID: 9577164}
-  - 114: {fileID: 11465568}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -112,7 +112,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.1899996, y: .779999971, z: 0}
+  m_LocalPosition: {x: -2.18000007, y: -2.3900001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 486102}
@@ -129,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.63000011, y: .419999987, z: 0}
+  m_LocalPosition: {x: -3.74000001, y: .419999987, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 421982}
@@ -141,7 +141,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.33000004, y: .419999957, z: 0}
+  m_LocalPosition: {x: -1.51999998, y: .419999957, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 421982}
@@ -165,7 +165,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107546}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.50999999, y: .419999957, z: 0}
+  m_LocalPosition: {x: -2.6500001, y: .419999957, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 421982}
@@ -187,12 +187,12 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11465568
+--- !u!114 &11478170
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190298}
+  m_GameObject: {fileID: 131090}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89ac82fdd584bf34385a18700613963f, type: 3}
@@ -205,6 +205,8 @@ MonoBehaviour:
   target2: {fileID: 493292}
   target3: {fileID: 425026}
   shootAngle: 45
+  isLeft: 1
+  toFlip: {fileID: 0}
 --- !u!212 &21267726
 SpriteRenderer:
   m_ObjectHideFlags: 1
