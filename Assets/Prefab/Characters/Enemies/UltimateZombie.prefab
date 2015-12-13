@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &106530
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 496860}
+  - 58: {fileID: 5896500}
+  m_Layer: 0
+  m_Name: Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &112516
 GameObject:
   m_ObjectHideFlags: 0
@@ -28,9 +44,10 @@ GameObject:
   - 61: {fileID: 6198680}
   - 95: {fileID: 9500532}
   - 114: {fileID: 11459384}
+  - 58: {fileID: 5817306}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +61,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 434612}
   m_Layer: 0
-  m_Name: ChaseRangeTriggers
+  m_Name: Triggers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,6 +127,23 @@ GameObject:
   m_Name: LeftBorder
   m_TagString: Border
   m_Icon: {fileID: 2270504221434485236, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &172230
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 423560}
+  - 61: {fileID: 6180762}
+  - 114: {fileID: 11457056}
+  m_Layer: 9
+  m_Name: AttackZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -186,6 +220,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 406004}
   m_RootOrder: 2
+--- !u!4 &423560
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172230}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 434612}
+  m_RootOrder: 2
 --- !u!4 &430856
 Transform:
   m_ObjectHideFlags: 1
@@ -212,6 +258,8 @@ Transform:
   m_Children:
   - {fileID: 411422}
   - {fileID: 476514}
+  - {fileID: 423560}
+  - {fileID: 496860}
   m_Father: {fileID: 430856}
   m_RootOrder: 1
 --- !u!4 &447060
@@ -257,12 +305,24 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.71687508, y: 2.49937582, z: 1}
+  m_LocalPosition: {x: 0, y: -.00999999978, z: 0}
+  m_LocalScale: {x: 2.71687508, y: 2.43215871, z: 1}
   m_Children:
   - {fileID: 494506}
   m_Father: {fileID: 430856}
   m_RootOrder: 0
+--- !u!4 &496860
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 106530}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 434612}
+  m_RootOrder: 3
 --- !u!50 &5031616
 Rigidbody2D:
   serializedVersion: 2
@@ -279,6 +339,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &5817306
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116108}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: d416426d135ebaf4ca0da4e132a693cd, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -.0299999993, y: .0599999987}
+  serializedVersion: 2
+  m_Radius: .0759837255
+--- !u!58 &5896500
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 106530}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: -.449999988, y: .0199999996}
+  serializedVersion: 2
+  m_Radius: .145437405
 --- !u!60 &6040470
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -292,8 +378,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Points:
     m_Paths:
-    - - {x: -.478909492, y: .338453501}
-      - {x: -.466448784, y: -.36575827}
+    - - {x: -.561119556, y: .32779488}
+      - {x: -.556687593, y: -.347675741}
       - {x: -3.21488094, y: -.313163429}
       - {x: -3.21056843, y: .743306518}
 --- !u!60 &6098570
@@ -339,6 +425,19 @@ BoxCollider2D:
   m_Offset: {x: .0113260746, y: .102751896}
   serializedVersion: 2
   m_Size: {x: .116570443, y: .794496655}
+--- !u!61 &6180762
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172230}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: -.463439673, y: -.0281473529}
+  serializedVersion: 2
+  m_Size: {x: .174945652, y: .699762285}
 --- !u!61 &6198680
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -349,9 +448,9 @@ BoxCollider2D:
   m_Material: {fileID: 6200000, guid: d416426d135ebaf4ca0da4e132a693cd, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: .0239984542, y: -.0663285553}
   serializedVersion: 2
-  m_Size: {x: .319999993, y: .319999963}
+  m_Size: {x: .118412912, y: .187342837}
 --- !u!95 &9500532
 Animator:
   serializedVersion: 3
@@ -396,15 +495,29 @@ MonoBehaviour:
   Player: {fileID: 0}
   LeftBorder: {fileID: 447060}
   RightBorder: {fileID: 414400}
+  AttackTrigger: {fileID: 5896500}
   anim: {fileID: 0}
   Inseguimento: 0
   IsLeft: 1
+  attacking: 0
+  hit: 0
   BorderCheck: {fileID: 494506}
   BorderCheckRadius: .100000001
   WhatIsBorder:
     serializedVersion: 2
     m_Bits: 2048
   HittingBorder: 0
+--- !u!114 &11457056
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75ad8f92a74fa8e4e910c4c2b2828266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11459384
 MonoBehaviour:
   m_ObjectHideFlags: 1

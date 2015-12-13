@@ -34,8 +34,12 @@ public class ChaseZombieCone : MonoBehaviour {
     {
         if (col.CompareTag("Player"))
         {
-            zombieAI.Stop();
-            zombieAI.Inseguimento = false;
+            if (isForward == true)
+            {
+                zombieAI.Stop();
+                zombieAI.Inseguimento = false;
+            }
+            
 
         }
     }

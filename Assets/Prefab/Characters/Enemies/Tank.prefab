@@ -24,9 +24,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 484050}
   - 61: {fileID: 6148968}
+  - 58: {fileID: 5861474}
   m_Layer: 0
   m_Name: InvulnerableZone
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -277,6 +278,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &5861474
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126538}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: d416426d135ebaf4ca0da4e132a693cd, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: .0799999982}
+  serializedVersion: 2
+  m_Radius: .074738197
 --- !u!60 &6049868
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -317,9 +331,9 @@ BoxCollider2D:
   m_Material: {fileID: 6200000, guid: d416426d135ebaf4ca0da4e132a693cd, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: .0156659689, y: -.000291378557}
+  m_Offset: {x: .00788616389, y: -.0795306116}
   serializedVersion: 2
-  m_Size: {x: .184868768, y: .324059159}
+  m_Size: {x: .169309333, y: .16558069}
 --- !u!61 &6182782
 BoxCollider2D:
   m_ObjectHideFlags: 1
