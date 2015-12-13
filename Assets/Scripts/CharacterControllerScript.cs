@@ -157,7 +157,9 @@ public class CharacterControllerScript : MonoBehaviour {
 	}
 	
 	 void Death(){
+<<<<<<< HEAD
 		this.gameObject.SetActive (false);
+		SaveLoad.Spawn();
 
 	}
 
