@@ -17,6 +17,7 @@ public class ZombieAI : MonoBehaviour {
     bool stopped = false;
     public bool attacking = false;
     public bool hit = false;
+    bool allowHit = false;
 
     public Transform BorderCheck;
     public float BorderCheckRadius;
@@ -62,17 +63,7 @@ public class ZombieAI : MonoBehaviour {
                 stopped = false;
             }
         }
-        if (attacking == true)
-        {
-            Attack();
-        }
-        else if (attacking == false)
-        {
-            rb.isKinematic = false;
-            AttackTrigger.enabled = false;
-        hit = false;
 
-        }
         if (Inseguimento == false && stopped == false && attacking == false)
         {
             rb.velocity = new Vector2(-walkVelocity, rb.velocity.y);
@@ -127,17 +118,4 @@ public class ZombieAI : MonoBehaviour {
         stopped = true;
     }
 
-    void Attack()
-    {
-        rb.isKinematic = true;
-        hitTimer += Time.deltaTime;
-        if (hitTimer >= hitInterval)
-        {
-            AttackTrigger.enabled = true;
-            hit = true;
-            timer = 0;
-
-        }
-        
-    }
-}
+   }
