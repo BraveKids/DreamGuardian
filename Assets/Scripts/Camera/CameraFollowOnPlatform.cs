@@ -13,13 +13,16 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	GameObject player;
 	public float cameraOffset = 1.5f;	//when on ground how much the camera will be lift up from it?
 
-	public float deviationFix = 2f; //if i jump on the spot i get different y position. Fixed it introducing a little range between odl and new position
+	public float deviationFix = 0.2f; //if i jump on the spot i get different y position. Fixed it introducing a little range between odl and new position
 
-	public bool isFalling = false;
+	//used for ResetCamera, no need to explain
 	private Vector2 velocity;
 	public float smoothTimeX;
 	public float smoothTimeY;
-	public bool on_moving_plat = false;
+	float t = 0.0f;
+	public bool onMovingPlat = false;
+	bool movingCamera = false;
+	public float nextY;
 
 	//when on moving platform some time is needed to move vertically the camera, and then 
 	//the camera will follow the platform. This generate some space lap.
@@ -39,45 +42,40 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 
 	void Update () {
 
+		float playerY = player.transform.position.y;
+
 		Debug.DrawLine (new Vector3 (player.transform.position.x, transform.position.y + deviationFix, player.transform.position.z), new Vector3 (player.transform.position.x, transform.position.y - deviationFix, player.transform.position.z), Color.green, 2, false);
+
+		float cameraX = player.transform.position.x;
+		float cameraY = transform.position.y;
 		
 
-		if (player.transform.position.y < originY + cameraOffset) {
+		if (playerY < originY + cameraOffset) {
 			nextToGround = true;
 		} else {
 			nextToGround = false;
 		}
 		//float posX = Mathf.SmoothDamp (transform.position.x, player.transform.position.x, ref velocity.x, smoothTimeX);
 
-		float posX = player.transform.position.x;
 		//float posY = transform.position.y;
 
-		//if I land on a platform
-		/*if (currentY != nextY) {
-			StartCoroutine (ResetCamera (nextY));
-			currentY = nextY;
-			Debug.Log ("moving camera");
-		}*/
-
-		float posY = transform.position.y;
 
 		//if on moving platform
-		if (on_moving_plat) {
-			posY = player.transform.position.y + diff_when_moving;
+		if (onMovingPlat) {
+			cameraY = player.transform.position.y + diff_when_moving;
+			nextY = cameraY;
 		}
 
 		//if falling
-		if ((player.transform.position.y < transform.position.y) && !nextToGround) {
-			posY = player.transform.position.y + diff_when_moving;
-			//currentY = transform.position.y;
-			//isFalling = true;
-			Debug.Log ("FALLING");
-
-		} 
-
+		//if i'm out of range and also lower from the bottom then i'm falling
+		if (imFalling (playerY, nextY - deviationFix, nextY + deviationFix) && !nextToGround) {
+			float diff = cameraY - playerY;
+			movingCamera = false;
+			cameraY = playerY /*+ diff*/;
+		}
 	
 
-		transform.position = new Vector3 (posX, posY, transform.position.z);
+		transform.position = new Vector3 (cameraX, cameraY, transform.position.z);
 
 
 
@@ -86,48 +84,60 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 		
 	}
 
+	public void followMe (float nextY, bool movingPlat) {
+		this.nextY = nextY;
+		if (movingCamera) {
+			t = 0.0f;
+		} else {
+			StartCoroutine (ResetCamera (movingPlat));
+		}
+	}
 
 	//this method updata
-	public IEnumerator  ResetCamera (float nextY, bool moving_plat) {
+	public IEnumerator  ResetCamera (bool movingPlat = false) {
 		//Debug.DrawLine (new Vector3 (player.transform.position.x + 1f, currentY, player.transform.position.z), new Vector3 (player.transform.position.x - 1f, currentY, player.transform.position.z), Color.red, 2, false);
-		
+		movingCamera = true;
 		//if nextY is greater than the origin plus offset due to moving platform, don't move the camera
-		float originAndOffset = cameraOffset + originY;
-		if (!Range (nextY, transform.position.y - deviationFix, transform.position.y + deviationFix) && !nextToGround) {
+		bool substantialDiff = outOfRange (nextY, transform.position.y - deviationFix, transform.position.y + deviationFix);
+		if (substantialDiff && !nextToGround) {
 			Debug.Log ("Reset camera!");
-			//nextY
-		
-			float transitionDuration = 0.5f;
+			t = 0.0f;
+			float transitionDuration = 1f;
 			//some code
-			float t = 0.0f;
-			while (t < 1.0f) {
+			while (t < 1.0f && movingCamera) {
 				t += Time.deltaTime * (Time.timeScale / transitionDuration);
 				//Vector3 nextPos = new Vector3 (transform.position.x, nextY, transform.position.z);
 				Vector3 nextPos = new Vector3 (transform.position.x, nextY, transform.position.z);
 
-				transform.position = Vector3.Lerp (transform.position, nextPos, t);		
+				//don't know why but it seems like it take less than transitionDuration to set the camera so i forced the exit
+				transform.position = Vector3.Lerp (transform.position, nextPos, t);	
+				if (nextY == transform.position.y) {
+					movingCamera = false;
+				}
 				yield return 0;
 			}
 		}
-
-		//if i get here it means that i'm on a platform, so i'm not falling anymore
-		//when the position is updated closely follow the player
-		if (moving_plat) {
+		Debug.Log(movingPlat);
+		if (movingPlat) {
 			diff_when_moving = Mathf.Abs (transform.position.y - player.transform.position.y);
 			if (transform.position.y < player.transform.position.y) {
 				diff_when_moving = -diff_when_moving;
 			}
+			movingPlat = true;
 		}
+		onMovingPlat =movingPlat;
 
-
-		on_moving_plat = moving_plat;
-
-		//currentY = transform.position.y;
+		
+		movingCamera = false;
 
 	}
 
-	bool Range (float numberToCheck, float bottom, float top) {
-		return numberToCheck >= bottom && numberToCheck <= top;
+	bool outOfRange (float numberToCheck, float bottom, float top) {
+		return numberToCheck < bottom || numberToCheck > top;
+	}
+
+	bool imFalling (float playerY, float bottom, float top) {
+		return outOfRange (playerY, bottom, top) && playerY < bottom;
 	}
 
 }
