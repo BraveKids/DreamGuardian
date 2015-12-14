@@ -120,13 +120,13 @@ public class CharacterControllerScript : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.CompareTag ("Enemy") && attackTrigger1.enabled == false && attackTrigger2.enabled == false && attackTrigger3.enabled == false && superAttackTrigger.enabled== false && Time.time > nextHitAllowed) {
-
+			anim.Play("YumeDamage");
 			hp -= 1;
 			Debug.Log ("Danno " + hp + " left!");
 			nextHitAllowed = Time.time + hitDelay;
 			if (hp <= 0) {
 				anim.SetTrigger ("death");
-				Invoke ("Death", 0.9f);
+				Invoke ("Death", 0.6f);
 			}
 		}
 		}
@@ -141,12 +141,13 @@ public class CharacterControllerScript : MonoBehaviour {
 			transform.parent = other.transform;
 		}
 		if(other.CompareTag("EnemyObject")){
+			anim.Play ("YumeDamage");
 			hp -= 1;
 			Debug.Log ("Danno " + hp + " left!");
 			nextHitAllowed = Time.time + hitDelay;
 			if (hp <= 0) {
 				anim.SetTrigger ("death");
-				Invoke ("Death", 1f);
+				Invoke ("Death", 0.6f);
 		
 		}
 			other.gameObject.SetActive(false);
