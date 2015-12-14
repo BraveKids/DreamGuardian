@@ -101,7 +101,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 
 	//this method updata
 
-	public IEnumerator  ResetCamera (bool movingPlat = false) {
+	public IEnumerator  ResetCamera (bool movingPlat) {
 
 		//Debug.DrawLine (new Vector3 (player.transform.position.x + 1f, currentY, player.transform.position.z), new Vector3 (player.transform.position.x - 1f, currentY, player.transform.position.z), Color.red, 2, false);
 		movingCamera = true;
@@ -136,7 +136,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 			if (transform.position.y < player.transform.position.y) {
 				diff_when_moving = -diff_when_moving;
 			}
-			movingPlat = true;
+
 		}
 
 		onMovingPlat =movingPlat;

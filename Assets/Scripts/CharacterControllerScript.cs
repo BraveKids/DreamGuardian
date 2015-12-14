@@ -63,6 +63,8 @@ public class CharacterControllerScript : MonoBehaviour {
 
 			platform.transform.position = platformSpwnPoint.position;
 			anim.Play("YumePiattaforma");
+			anim.SetBool("platform", true);
+			rb.velocity = new Vector3(0f,0f,0f);
 			Invoke("PlatformAbility", 0.25f);
 			Invoke ("PlatformAbilityClose", 3f);
 		}
@@ -70,6 +72,7 @@ public class CharacterControllerScript : MonoBehaviour {
 
 			arrow.transform.position = firePoint.position;
 			anim.Play ("YumeArcoTerra");
+			rb.velocity = new Vector3(0f,0f,0f);
 			anim.SetBool("shooting", true);
 			Invoke ("ArrowAbility", 0.25f);
 			Invoke ("ArrowAbilityClose", 1.2f);
@@ -84,7 +87,7 @@ public class CharacterControllerScript : MonoBehaviour {
 			rb.AddForce(new Vector2(0, jumpForce));
 		}
 		
-		if (anim.GetBool ("Attacking") == false && anim.GetBool("shooting") == false && anim.GetBool("IstantDeath")== false) {
+		if (anim.GetBool ("Attacking") == false && anim.GetBool("shooting") == false && anim.GetBool("IstantDeath")== false && anim.GetBool("platform")==false) {
 			groundedLeft = Physics2D.OverlapCircle (groundCheckLeft.position, groundRadius, whatIsGround);
 			groundedRight = Physics2D.OverlapCircle (groundCheckRight.position, groundRadius, whatIsGround);
 			grounded = groundedLeft || groundedRight;
@@ -164,10 +167,12 @@ public class CharacterControllerScript : MonoBehaviour {
 
 	void PlatformAbility(){
 		platform.SetActive(true);
+		anim.SetBool ("platform", false);
 	}
 
 	void PlatformAbilityClose(){
 		platform.SetActive (false);
+
 	}
 
 	
