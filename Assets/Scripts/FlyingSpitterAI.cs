@@ -55,6 +55,7 @@ public class FlyingSpitterAI : MonoBehaviour {
             bulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(-bulletSpeed, 0);
             bulletTimer = 0;
          }
+		Debug.Log ("RAZZO");
     }
     
     void Flip()
