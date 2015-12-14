@@ -64,7 +64,7 @@ public class SaveLoad {
 	}
 	
 	public static  void FirstGame () {
-		//cancel prevoius saved game and saving points
+		//cancel previous saved game and saving points
 		if (File.Exists (SAVING_PATH)) {
 			File.Delete (SAVING_PATH);
 		}
@@ -72,11 +72,16 @@ public class SaveLoad {
 			File.Delete (SavingPoints.SAVING_POINTS_PATH);
 		}
 		Debug.Log ("New Game");
-		savedGame.x = -22.30036f;
-		savedGame.y = -2.331829f;
+		savedGame.firstGame = true;
+
 	}
 
 	public static void Spawn () {
+		if (savedGame.firstGame) {
+			GameObject startPoint = GameObject.FindGameObjectWithTag ("StartPoint");
+			savedGame.x = startPoint.transform.position.x;
+			savedGame.y = startPoint.transform.position.y;
+		}
 		Vector3 savedPos = new Vector3 (SaveLoad.savedGame.x, SaveLoad.savedGame.y, player.transform.position.z);
 		player.transform.position = savedPos;
 		Debug.Log ("Yume Position: " + savedPos);
