@@ -18,6 +18,8 @@ TagManager:
   - Border
   - StartPoint
   - MovingPlatformExt
+  - GUI
+  - LifeBar
   layers:
   - Default
   - TransparentFX

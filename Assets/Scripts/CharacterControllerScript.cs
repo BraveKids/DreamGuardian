@@ -28,11 +28,14 @@ public class CharacterControllerScript : MonoBehaviour {
 	public Transform firePoint;
 	public Transform platformSpwnPoint;
 	int abilitySelector = 0;
-
+	private LifeBar lifeBarScript;
+	GameObject LifeBar;
     // Use this for initialization
     void Awake () {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+		LifeBar = GameObject.FindGameObjectWithTag ("LifeBar");
+		lifeBarScript = LifeBar.gameObject.GetComponent ("LifeBar") as LifeBar;
     }
 	
 	// Update is called once per frame
@@ -163,6 +166,8 @@ public class CharacterControllerScript : MonoBehaviour {
 		anim.SetTrigger ("respawn");
 		SaveLoad.Spawn();
 		hp = 3;
+		lifeBarScript.resetLifeBar ();
+
 
 
 	}

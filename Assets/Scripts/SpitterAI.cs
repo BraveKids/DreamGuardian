@@ -55,6 +55,7 @@ public class SpitterAI : MonoBehaviour {
         {
 			anim.SetBool("Attacking", attacking);
             rb.isKinematic = true;
+			rb.velocity = new Vector2(0f,0f);
             Attack();
         }
        

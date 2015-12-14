@@ -14,7 +14,7 @@ public class FlyingSpitterAI : MonoBehaviour {
     public GameObject bullet;
     public Transform shootPoint;
     public float bulletSpeed;
-
+	Animator anim;
     public bool isLeft;
     GameObject player;
     public bool allowAttack = true;
@@ -24,12 +24,14 @@ public class FlyingSpitterAI : MonoBehaviour {
     {
         currentPoint = points[pointSelection];
         player = GameObject.FindGameObjectWithTag("Player");
+		anim = GetComponentInChildren<Animator> ();
     }
 
     // Update is called once per frame
     void Update()
     {
-        character.transform.position = Vector3.MoveTowards(character.transform.position, currentPoint.position, Time.deltaTime * moveSpeed);
+		bullet.transform.localScale = new Vector3 (0.3f, 0.3f, 0.3f);
+		character.transform.position = Vector3.MoveTowards(character.transform.position, currentPoint.position, Time.deltaTime * moveSpeed);
         if (character.transform.position == currentPoint.position)
         {
             pointSelection++;
@@ -50,6 +52,7 @@ public class FlyingSpitterAI : MonoBehaviour {
     {
         if (allowAttack == true)
         {
+			anim.Play("Attack");
             GameObject bulletClone;
             bulletClone = Instantiate(bullet, shootPoint.transform.position, Quaternion.identity) as GameObject;
             bulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(-bulletSpeed, 0);

@@ -57,13 +57,13 @@ public class LifeBar : MonoBehaviour {
 		}
 	}
 
-	void resetEnergyBar () {
+	public void resetEnergyBar () {
 		energy1.gameObject.SetActive (false);
 		energy2.gameObject.SetActive (false);
 		energy3.gameObject.SetActive (false);
 	}
 
-	void resetLifeBar () {
+	public void resetLifeBar () {
 		heart1.gameObject.SetActive (true);
 		heart2.gameObject.SetActive (true);
 		heart3.gameObject.SetActive (true);

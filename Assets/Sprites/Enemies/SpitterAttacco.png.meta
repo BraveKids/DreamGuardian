@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 978811f1d8bf89648a129505fb34cdfc
-timeCreated: 1450005357
+timeCreated: 1450116966
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -68,7 +68,7 @@ TextureImporter:
         width: 376
         height: 354
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: SpitterAttacco_1
       rect:
@@ -78,7 +78,7 @@ TextureImporter:
         width: 329
         height: 353
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: SpitterAttacco_2
       rect:
@@ -88,7 +88,7 @@ TextureImporter:
         width: 338
         height: 333
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: SpitterAttacco_3
       rect:
@@ -98,7 +98,7 @@ TextureImporter:
         width: 377
         height: 333
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: SpitterAttacco_4
       rect:
@@ -108,7 +108,7 @@ TextureImporter:
         width: 324
         height: 365
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: SpitterAttacco_5
       rect:
@@ -118,7 +118,7 @@ TextureImporter:
         width: 363
         height: 355
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: SpitterAttacco_6
       rect:
@@ -128,7 +128,7 @@ TextureImporter:
         width: 365
         height: 365
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: SpitterAttacco_7
       rect:
@@ -138,27 +138,17 @@ TextureImporter:
         width: 297
         height: 375
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: SpitterAttacco_8
-      rect:
-        serializedVersion: 2
-        x: 177
-        y: 214
-        width: 46
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: SpitterAttacco_9
       rect:
         serializedVersion: 2
-        x: 200
-        y: 133
-        width: 361
+        x: 163
+        y: 131
+        width: 390
         height: 130
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

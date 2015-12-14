@@ -6,10 +6,14 @@ public class EnemyController : MonoBehaviour {
 	public float hp = 4;
 	private PlayerAttack playerScript;
 	 GameObject player;
+	public GameObject enemy;
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		anim = GetComponent<Animator> ();
+		if (anim == null) {
+			anim = GetComponentInParent<Animator>();
+		}
 		playerScript = player.gameObject.GetComponent("PlayerAttack") as PlayerAttack;
 	}
 	
@@ -24,8 +28,8 @@ public class EnemyController : MonoBehaviour {
 			anim.SetTrigger ("damage");
 			Debug.Log ("OUCH! " + hp + " left!");
 			if (hp <= 0) {
-				anim.Play ("explosion");
-				Invoke ("DestroyEnemy", 0.15f);
+				anim.Play ("Death");
+				Invoke ("DestroyEnemy", 0.5f);
 
 			}
 		}
@@ -37,7 +41,7 @@ public class EnemyController : MonoBehaviour {
 
 
 	void DestroyEnemy () {
-		this.gameObject.SetActive(false);
+		enemy.gameObject.SetActive(false);
 		if (playerScript.energy < 3) {
 			playerScript.energy += 1;
 		}

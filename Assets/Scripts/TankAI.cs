@@ -25,7 +25,7 @@ public class TankAI : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+		anim = GetComponentInChildren<Animator> ();
         player = GameObject.FindGameObjectWithTag("Player");
 
     }
@@ -52,7 +52,8 @@ public class TankAI : MonoBehaviour {
             if (HittingBorder == false)
             {
                 if ((isLeft == true && checkPosition.transform.position.x < startPosition.transform.position.x)||(isLeft == false && checkPosition.transform.position.x > startPosition.transform.position.x))
-                {
+                {	
+					anim.SetBool("walking",false);
                     GoBack();
 
                 }
@@ -63,6 +64,7 @@ public class TankAI : MonoBehaviour {
             }
             else if (HittingBorder == true)
             {
+				anim.SetBool("walking",false);
                 Stop();
                 ritorno = false;
             }
@@ -92,6 +94,7 @@ public class TankAI : MonoBehaviour {
     public void Move()
     {
         rb.isKinematic = false;
+		anim.SetBool ("walking", true);
         rb.velocity = new Vector2(-velocity, rb.velocity.y);
     }
 

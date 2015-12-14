@@ -18,12 +18,4 @@ public class FlyingSpitterTrigger : MonoBehaviour
         }
     }
 
-    void OnTriggerExit2D(Collider2D col)
-    {
-        if (col.CompareTag("Player"))
-        {
-            flyingSpitterAI.allowAttack = true;
-            flyingSpitterAI.bulletTimer = 0;
-        }
-    }
 }
