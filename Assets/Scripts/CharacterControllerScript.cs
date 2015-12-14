@@ -162,6 +162,8 @@ public class CharacterControllerScript : MonoBehaviour {
 		anim.SetBool ("IstantDeath", false);
 		anim.SetTrigger ("respawn");
 		SaveLoad.Spawn();
+		hp = 3;
+
 
 	}
 

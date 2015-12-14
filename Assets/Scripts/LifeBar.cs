@@ -24,7 +24,7 @@ public class LifeBar : MonoBehaviour {
 	void Update () {
 
 		checkLifeBar ();
-		checkEnergyBar ();
+		//checkEnergyBar ();
 		
 	}
 

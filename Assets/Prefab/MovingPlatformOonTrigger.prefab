@@ -25,6 +25,21 @@ GameObject:
   m_Component:
   - 4: {fileID: 455838}
   m_Layer: 0
+  m_Name: StartPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &131838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 435382}
+  m_Layer: 0
   m_Name: EndPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +155,19 @@ Transform:
   - {fileID: 473024}
   - {fileID: 467944}
   m_Father: {fileID: 439150}
-  m_RootOrder: 1
+  m_RootOrder: 2
+--- !u!4 &435382
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131838}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.53999996, y: 9.76000023, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 439150}
+  m_RootOrder: 0
 --- !u!4 &439150
 Transform:
   m_ObjectHideFlags: 1
@@ -148,9 +175,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 157036}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.495813608, y: -1.70000005, z: 0}
+  m_LocalPosition: {x: 132.227692, y: 3.58504963, z: 0}
   m_LocalScale: {x: 1, y: 1.04939938, z: 1}
   m_Children:
+  - {fileID: 435382}
   - {fileID: 455838}
   - {fileID: 433836}
   m_Father: {fileID: 0}
@@ -162,11 +190,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 120366}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.05999994, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 439150}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!4 &467944
 Transform:
   m_ObjectHideFlags: 1
@@ -293,7 +321,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platform: {fileID: 164708}
   moveSpeed: .0149999997
-  EndPoint: {fileID: 455838}
+  EndPoint: {fileID: 435382}
+  StartPoint: {fileID: 0}
 --- !u!212 &21222986
 SpriteRenderer:
   m_ObjectHideFlags: 1
