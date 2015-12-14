@@ -17,6 +17,7 @@ TagManager:
   - EnemyObject
   - Border
   - StartPoint
+  - MovingPlatformExt
   layers:
   - Default
   - TransparentFX
