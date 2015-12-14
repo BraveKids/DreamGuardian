@@ -33,8 +33,6 @@ public class CharacterControllerScript : MonoBehaviour {
     void Awake () {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-
-
     }
 	
 	// Update is called once per frame
@@ -72,7 +70,7 @@ public class CharacterControllerScript : MonoBehaviour {
 
 			arrow.transform.position = firePoint.position;
 			anim.Play ("YumeArcoTerra");
-
+			anim.SetBool("shooting", true);
 			Invoke ("ArrowAbility", 0.25f);
 			Invoke ("ArrowAbilityClose", 1.2f);
 		}
@@ -86,7 +84,7 @@ public class CharacterControllerScript : MonoBehaviour {
 			rb.AddForce(new Vector2(0, jumpForce));
 		}
 		
-		if (anim.GetBool ("Attacking") == false) {
+		if (anim.GetBool ("Attacking") == false && anim.GetBool("shooting") == false && anim.GetBool("IstantDeath")== false) {
 			groundedLeft = Physics2D.OverlapCircle (groundCheckLeft.position, groundRadius, whatIsGround);
 			groundedRight = Physics2D.OverlapCircle (groundCheckRight.position, groundRadius, whatIsGround);
 			grounded = groundedLeft || groundedRight;
@@ -128,16 +126,16 @@ public class CharacterControllerScript : MonoBehaviour {
 			nextHitAllowed = Time.time + hitDelay;
 			if (hp <= 0) {
 				anim.SetTrigger ("death");
-				Invoke ("Death", 0.8f);
+				Invoke ("Death", 0.9f);
 			}
 		}
 		}
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag ("Death") ) {
-			anim.SetTrigger ("IstantDeath");
-			rb.isKinematic = true;
-			Invoke("Death",0.3f);
+			anim.SetBool ("IstantDeath", true);
+			rb.velocity = new Vector3(0f,0f,0f);
+			Invoke("Death",0.6f);
 		}
 		if (other.transform.tag == "MovingPlatform" ) {
 			transform.parent = other.transform;
@@ -148,7 +146,7 @@ public class CharacterControllerScript : MonoBehaviour {
 			nextHitAllowed = Time.time + hitDelay;
 			if (hp <= 0) {
 				anim.SetTrigger ("death");
-				Invoke ("Death", 0.8f);
+				Invoke ("Death", 1f);
 		
 		}
 			other.gameObject.SetActive(false);
@@ -157,6 +155,7 @@ public class CharacterControllerScript : MonoBehaviour {
 	}
 	
 	 void Death(){
+		anim.SetBool ("IstantDeath", false);
 		anim.SetTrigger ("respawn");
 		SaveLoad.Spawn();
 
@@ -179,10 +178,12 @@ public class CharacterControllerScript : MonoBehaviour {
 		}else{
 			arrowRb.AddForce(new Vector2(-400,0));
 		}
+		anim.SetBool("shooting", false);
 	}
 
 
 	void ArrowAbilityClose(){
+
 		arrow.SetActive (false);
 	}
 

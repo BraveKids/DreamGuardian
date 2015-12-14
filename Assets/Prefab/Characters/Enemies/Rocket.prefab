@@ -25,8 +25,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.58024168, y: -.524349988, z: 0}
-  m_LocalScale: {x: -.0487081483, y: .0680365786, z: 1}
+  m_LocalPosition: {x: 51.8639565, y: .147289634, z: 0}
+  m_LocalScale: {x: -.233832896, y: .326622814, z: 4.80069447}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -40,9 +40,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: .149091601, y: -.019409392}
   serializedVersion: 2
-  m_Size: {x: 6.46999931, y: 3.0999999}
+  m_Size: {x: 3.29796052, y: 1.27549338}
 --- !u!114 &11466914
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4708b4229e86cd347b324974d69c29c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
 --- !u!212 &21244826
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -422914511
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 61a92a5db4bbbdd4fbce14bcddfbf976, type: 3}
+  m_Sprite: {fileID: 21300018, guid: 978811f1d8bf89648a129505fb34cdfc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -87,7 +87,16 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300018, guid: 978811f1d8bf89648a129505fb34cdfc,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 159270}

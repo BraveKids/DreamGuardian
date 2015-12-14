@@ -16,6 +16,8 @@ TagManager:
   - SavePoint
   - EnemyObject
   - Border
+  - Arrow
+  - AbilityPlatform
   layers:
   - Default
   - TransparentFX
