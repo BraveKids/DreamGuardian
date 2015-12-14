@@ -141,7 +141,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158670}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.980000019, y: -.140000001, z: 0}
+  m_LocalPosition: {x: -1.24000001, y: -.140000001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 423904}
@@ -165,7 +165,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117170}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.19999981, y: -1.25, z: 0}
+  m_LocalPosition: {x: -2.80999994, y: -3.8599999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 423904}
@@ -238,9 +238,11 @@ MonoBehaviour:
   - {fileID: 405592}
   - {fileID: 465712}
   pointSelection: 1
-  shootInterval: 1.5
+  shootInterval: 2.5
   bullet: {fileID: 159270, guid: 386f667677e5a56449482a55420a92e3, type: 2}
   shootPoint: {fileID: 462366}
+  bulletSpeed: 2
+  isLeft: 1
 --- !u!114 &11465244
 MonoBehaviour:
   m_ObjectHideFlags: 1

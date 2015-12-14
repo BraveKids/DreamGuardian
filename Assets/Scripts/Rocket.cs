@@ -11,14 +11,13 @@ public class Rocket : MonoBehaviour {
         Destroy(gameObject, lifeTime);
     }
 
-    void Update()
-    {
-        this.transform.position = this.transform.position - this.transform.right * speed * Time.deltaTime;
-    }
-
     void OnTriggerEnter2D(Collider2D col)
     {
-       Destroy(gameObject);
+        if (col.isTrigger != true)
+        {
+            Destroy(gameObject);
+        }
+       
     }
     
 }
