@@ -16,6 +16,7 @@ TagManager:
   - SavePoint
   - EnemyObject
   - Border
+  - StartPoint
   layers:
   - Default
   - TransparentFX
