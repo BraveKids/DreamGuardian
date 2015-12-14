@@ -4,7 +4,7 @@ using System.Collections;
 public class ChaseZombieCone : MonoBehaviour {
 
     public bool isForward = false;
-	public ZombieAI zombieAI;
+    ZombieAI zombieAI;
 	public GameObject zombie;
 	// Use this for initialization
 
@@ -19,7 +19,6 @@ public class ChaseZombieCone : MonoBehaviour {
         {
             if (isForward == true)
             {
-
                 zombieAI.Inseguimento = true;
             }
             else if (isForward == false)
@@ -35,8 +34,12 @@ public class ChaseZombieCone : MonoBehaviour {
     {
         if (col.CompareTag("Player"))
         {
-
-            zombieAI.Inseguimento = false;
+            if (isForward == true)
+            {
+                zombieAI.Stop();
+                zombieAI.Inseguimento = false;
+            }
+            
 
         }
     }

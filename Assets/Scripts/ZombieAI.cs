@@ -6,6 +6,7 @@ public class ZombieAI : MonoBehaviour {
     public GameObject Player;
     public Transform LeftBorder;
     public Transform RightBorder;
+    public Collider2D AttackTrigger;
 
     float walkVelocity = 1f;
     float runVelocity = 1.8f;
@@ -13,6 +14,10 @@ public class ZombieAI : MonoBehaviour {
     public Animator anim;
     public bool Inseguimento = false;
     public bool IsLeft = true;
+    bool stopped = false;
+    public bool attacking = false;
+    public bool hit = false;
+    bool allowHit = false;
 
     public Transform BorderCheck;
     public float BorderCheckRadius;
@@ -20,16 +25,24 @@ public class ZombieAI : MonoBehaviour {
     public bool HittingBorder;
     float Range;
 
+    float timer;
+    float stopInterval = 2;
+    float hitTimer;
+    float hitInterval = 2;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
         Range = BorderCheckRadius * 2;
         Player = GameObject.FindGameObjectWithTag("Player");
+        AttackTrigger.enabled = false;
     }
 
     public void Flip()
     {
+        stopped = false;
+        timer = 0;
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         walkVelocity *= -1;
         runVelocity *= -1;
@@ -39,15 +52,29 @@ public class ZombieAI : MonoBehaviour {
 
     void Update()
     {
-        if (Inseguimento == false)
+        if (stopped == true)
+        {
+            rb.isKinematic = true;
+            timer += Time.deltaTime;
+            if (timer >= stopInterval)
+            {
+                rb.isKinematic = false;
+                timer = 0;
+                stopped = false;
+            }
+        }
+
+        if (Inseguimento == false && stopped == false && attacking == false)
         {
             rb.velocity = new Vector2(-walkVelocity, rb.velocity.y);
             checkPosition();
         }
-        else if (Inseguimento == true)
+        else if (Inseguimento == true && stopped == false && attacking == false)
         {
             rb.velocity = new Vector2(-runVelocity, rb.velocity.y);
         }
+        anim.SetBool("attacking", hit);
+
     }
 
     public void checkPosition()
@@ -59,13 +86,12 @@ public class ZombieAI : MonoBehaviour {
         }
         else if ((BorderCheck.position.x < LeftBorder.position.x) && (IsLeft == true))
         {
-            Flip();
+            Flip();  
 
         }
         else if ((BorderCheck.position.x > RightBorder.position.x) && (IsLeft == false))
         {
             Flip();
-
         }
         else if ((BorderCheck.position.x < LeftBorder.position.x) && (IsLeft == false))
         {
@@ -86,4 +112,10 @@ public class ZombieAI : MonoBehaviour {
             Flip();
         }
     }
-}
+
+    public void Stop()
+    {
+        stopped = true;
+    }
+
+   }

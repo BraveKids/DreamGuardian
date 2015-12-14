@@ -12,6 +12,9 @@ public class RainSpitterAI : MonoBehaviour {
     public Transform target3;
     int selectedTarget = 1;
     public float shootAngle = 30;
+    public bool isLeft;
+    GameObject player;
+    public GameObject toFlip;
 
     bool allowShoot;
 
@@ -33,11 +36,17 @@ public class RainSpitterAI : MonoBehaviour {
     void Start()
     {
         allowShoot = false;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
+        if ((isLeft == true && player.transform.position.x > transform.position.x) || (isLeft == false && player.transform.position.x < transform.position.x))
+        {
+            Flip();
+        }
+
         bulletTimer += Time.deltaTime;
         if (bulletTimer >= shootInterval)
         {
@@ -71,5 +80,10 @@ public class RainSpitterAI : MonoBehaviour {
             
         }
 
+    }
+    void Flip()
+    {
+        transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+        isLeft = !isLeft;
     }
 }

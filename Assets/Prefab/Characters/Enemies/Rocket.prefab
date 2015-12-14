@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21244826}
   - 61: {fileID: 6173110}
   - 114: {fileID: 11466914}
+  - 50: {fileID: 5037654}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Untagged
@@ -25,11 +26,27 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 51.8639565, y: .147289634, z: 0}
-  m_LocalScale: {x: -.233832896, y: .326622814, z: 4.80069447}
+  m_LocalPosition: {x: -7.58024168, y: -.524349988, z: 0}
+  m_LocalScale: {x: .0776799619, y: .0879695266, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!50 &5037654
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159270}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &6173110
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -54,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4708b4229e86cd347b324974d69c29c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: .5
 --- !u!212 &21244826
 SpriteRenderer:
   m_ObjectHideFlags: 1
