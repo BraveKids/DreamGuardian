@@ -58,6 +58,7 @@ public class SaveLoad {
 	public static void SaveGame () {
 		savedGame.x = player.transform.position.x;
 		savedGame.y = player.transform.position.y;
+		savedGame.firstGame = false;
 		Save ();
 		Debug.Log ("Game saved");
 		

@@ -15,8 +15,8 @@ public class tempCamera : MonoBehaviour {
 	void Update () {
 		float cameraX = player.transform.position.x;
 		float cameraY = transform.position.y;
-		if(player.transform.position.y > originY + 0.5)
-			cameraY = player.transform.position.y - 0.5f;
+		if(player.transform.position.y > originY + 0.7)
+			cameraY = player.transform.position.y - 0.7f;
 
 		transform.position = new Vector3 (cameraX, cameraY, transform.position.z);
 	}

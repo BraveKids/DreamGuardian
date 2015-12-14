@@ -63,7 +63,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 
 		//if on moving platform
 
-		if (onMovingPlat) {
+		if (onMovingPlat && !nextToGround) {
 			cameraY = player.transform.position.y + diff_when_moving;
 			nextY = cameraY;
 		}
