@@ -10,16 +10,10 @@ public class PlayerGroundOnPlatform : MonoBehaviour {
 
 		if (other.CompareTag ("Platform")) {
 
-
-<<<<<<< HEAD
-				//StartCoroutine (CameraFollowOnPlatform.instance.ResetCamera (transform.position.y, false));
-			
-			CameraFollowOnPlatform.instance.followMe(nextY, false);
-=======
 			//StartCoroutine (CameraFollowOnPlatform.instance.ResetCamera (transform.position.y, false));
 			
 			CameraFollowOnPlatform.instance.followMe (nextY, false);
->>>>>>> camera_follow
+
 			
 			//CameraFollowOnPlatform.instance.nextY = transform.position.y;
 			//CameraFollowOnPlatform.instance.isFalling = false;
@@ -30,11 +24,10 @@ public class PlayerGroundOnPlatform : MonoBehaviour {
 			//other.gameObject.GetComponentInChildren<BoxCollider2D> ().enabled = true;
 			other.transform.GetChild (0).GetComponent<BoxCollider2D> ().enabled = true;
 
-<<<<<<< HEAD
-			CameraFollowOnPlatform.instance.followMe(nextY, true);
-=======
+
+
 			CameraFollowOnPlatform.instance.followMe (nextY, true);
->>>>>>> camera_follow
+
 			//StartCoroutine (CameraFollowOnPlatform.instance.ResetCamera (transform.position.y, true));
 
 			//CameraFollowOnPlatform.instance.isFalling = false;
