@@ -52,7 +52,32 @@ public class ZombieAI : MonoBehaviour {
 
     void Update()
     {
-        if (stopped == true)
+        if (attacking == true)
+        {
+            if (allowHit == true)
+            {
+                Attack();
+                //allowHit = false;
+            }
+            else if (allowHit == false)
+            {
+                hit = false;
+                AttackTrigger.enabled = false;
+            }
+            hitTimer += Time.deltaTime;
+            if (hitTimer >= hitInterval)
+            {
+                allowHit = !allowHit;
+                hitTimer = 0;
+            }
+
+        }
+        if (attacking == false)
+        {
+            hit = false;
+            AttackTrigger.enabled = false;
+        }
+        if (stopped == true && attacking == false)
         {
             rb.isKinematic = true;
             timer += Time.deltaTime;
@@ -116,6 +141,13 @@ public class ZombieAI : MonoBehaviour {
     public void Stop()
     {
         stopped = true;
+    }
+
+    public void Attack()
+    {
+        rb.isKinematic = true;
+        hit = true;
+        AttackTrigger.enabled = true;
     }
 
    }

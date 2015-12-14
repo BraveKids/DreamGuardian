@@ -5,7 +5,7 @@ public class ZombieDamage : MonoBehaviour {
     Animator anim;
     public float hp = 4;
     private PlayerAttack playerScript;
-     GameObject player;
+    GameObject player;
     public GameObject enemy;
     // Use this for initialization
     void Start()
