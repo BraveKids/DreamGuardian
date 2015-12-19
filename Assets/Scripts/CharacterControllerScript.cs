@@ -77,7 +77,7 @@ public class CharacterControllerScript : MonoBehaviour {
 			anim.Play ("YumeArcoTerra");
 			rb.velocity = new Vector3(0f,0f,0f);
 			anim.SetBool("shooting", true);
-			Invoke ("ArrowAbility", 0.25f);
+			Invoke ("ArrowAbility", 0.15f);
 			Invoke ("ArrowAbilityClose", 1.2f);
 		}
 	}
@@ -188,10 +188,12 @@ public class CharacterControllerScript : MonoBehaviour {
 		Rigidbody2D arrowRb = arrow.GetComponent<Rigidbody2D>();
 		if(facingRight==true){
 			arrowRb.AddForce(new Vector2(400,0));
+			anim.SetBool("shooting", false);
 		}else{
 			arrowRb.AddForce(new Vector2(-400,0));
+			anim.SetBool("shooting", false);
 		}
-		anim.SetBool("shooting", false);
+
 	}
 
 
