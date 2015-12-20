@@ -15,7 +15,7 @@ public class MovingPlatfrom : MonoBehaviour {
 
 
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 	
 			platform.transform.position = Vector3.MoveTowards (platform.transform.position, currentPoint.position, Time.deltaTime * moveSpeed);
 			if (platform.transform.position == currentPoint.position) {
