@@ -9,7 +9,7 @@ public class FlyingSpitterAI : MonoBehaviour {
     public Transform[] points;
     public int pointSelection;
 
-    float bulletTimer;
+    public float bulletTimer;
     public float shootInterval;
     public GameObject bullet;
     public Transform shootPoint;
@@ -17,6 +17,7 @@ public class FlyingSpitterAI : MonoBehaviour {
 
     public bool isLeft;
     GameObject player;
+    public bool allowAttack = true;
 
     // Use this for initialization
     void Start()
@@ -47,14 +48,25 @@ public class FlyingSpitterAI : MonoBehaviour {
     }
     public void Attack()
     {
-        bulletTimer += Time.deltaTime;
-        if (bulletTimer >= shootInterval)
+        if (allowAttack == true)
         {
             GameObject bulletClone;
             bulletClone = Instantiate(bullet, shootPoint.transform.position, Quaternion.identity) as GameObject;
             bulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(-bulletSpeed, 0);
-            bulletTimer = 0;
-         }
+            allowAttack = false;
+        }
+        else if (allowAttack == false)
+        {
+            bulletTimer += Time.deltaTime;
+            if (bulletTimer >= shootInterval)
+            {
+
+                bulletTimer = 0;
+                allowAttack = true;
+            }
+        }
+
+       
     }
     
     void Flip()
