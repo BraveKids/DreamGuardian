@@ -1,0 +1,155 @@
+fileFormatVersion: 2
+guid: 37ec4c121ed601b408201096fc126268
+timeCreated: 1450005386
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: SpitterWalk_0
+    21300002: SpitterWalk_1
+    21300004: SpitterWalk_2
+    21300006: SpitterWalk_3
+    21300008: SpitterWalk_4
+    21300010: SpitterWalk_5
+    21300012: SpitterWalk_6
+    21300014: SpitterWalk_7
+    21300016: SpitterWalk_8
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: SpitterWalk_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 101
+        width: 378
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpitterWalk_1
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 148
+        width: 291
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpitterWalk_2
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 157
+        width: 246
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpitterWalk_3
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 157
+        width: 249
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpitterWalk_4
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 165
+        width: 330
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpitterWalk_5
+      rect:
+        serializedVersion: 2
+        x: 1887
+        y: 112
+        width: 379
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpitterWalk_6
+      rect:
+        serializedVersion: 2
+        x: 2323
+        y: 114
+        width: 330
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpitterWalk_7
+      rect:
+        serializedVersion: 2
+        x: 2689
+        y: 117
+        width: 433
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpitterWalk_8
+      rect:
+        serializedVersion: 2
+        x: 3148
+        y: 126
+        width: 417
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

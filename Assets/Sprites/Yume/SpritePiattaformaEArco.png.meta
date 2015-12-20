@@ -1,0 +1,199 @@
+fileFormatVersion: 2
+guid: f81a8a5da129e654f849f7d3b832cce8
+timeCreated: 1450022865
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: SpritePiattaformaEArco_0
+    21300002: SpritePiattaformaEArco_1
+    21300004: SpritePiattaformaEArco_2
+    21300006: SpritePiattaformaEArco_3
+    21300008: SpritePiattaformaEArco_4
+    21300010: SpritePiattaformaEArco_5
+    21300012: SpritePiattaformaEArco_6
+    21300014: SpritePiattaformaEArco_7
+    21300016: SpritePiattaformaEArco_8
+    21300018: SpritePiattaformaEArco_9
+    21300020: SpritePiattaformaEArco_10
+    21300022: SpritePiattaformaEArco_11
+    21300024: SpritePiattaformaEArco_12
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: SpritePiattaformaEArco_0
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 726
+        width: 309
+        height: 386
+      alignment: 9
+      pivot: {x: .541646898, y: .512836874}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpritePiattaformaEArco_1
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 728
+        width: 306
+        height: 387
+      alignment: 9
+      pivot: {x: .47476694, y: .538703501}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpritePiattaformaEArco_2
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 731
+        width: 337
+        height: 386
+      alignment: 9
+      pivot: {x: .438901454, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpritePiattaformaEArco_3
+      rect:
+        serializedVersion: 2
+        x: 1355
+        y: 723
+        width: 443
+        height: 425
+      alignment: 9
+      pivot: {x: .511619806, y: .488300949}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpritePiattaformaEArco_4
+      rect:
+        serializedVersion: 2
+        x: 1981
+        y: 726
+        width: 360
+        height: 425
+      alignment: 9
+      pivot: {x: .528597713, y: .464335591}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpritePiattaformaEArco_5
+      rect:
+        serializedVersion: 2
+        x: 2514
+        y: 741
+        width: 329
+        height: 379
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpritePiattaformaEArco_6
+      rect:
+        serializedVersion: 2
+        x: 2990
+        y: 744
+        width: 319
+        height: 376
+      alignment: 9
+      pivot: {x: .540342152, y: .54481709}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpritePiattaformaEArco_7
+      rect:
+        serializedVersion: 2
+        x: 3664
+        y: 937
+        width: 180
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpritePiattaformaEArco_8
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 98
+        width: 724
+        height: 399
+      alignment: 9
+      pivot: {x: .251610637, y: .461296529}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpritePiattaformaEArco_9
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 106
+        width: 785
+        height: 396
+      alignment: 9
+      pivot: {x: .266351968, y: .499999911}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpritePiattaformaEArco_11
+      rect:
+        serializedVersion: 2
+        x: 2153
+        y: 85
+        width: 389
+        height: 427
+      alignment: 9
+      pivot: {x: .539698899, y: .50000006}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpritePiattaformaEArco_12
+      rect:
+        serializedVersion: 2
+        x: 2614
+        y: 88
+        width: 371
+        height: 422
+      alignment: 9
+      pivot: {x: .527749777, y: .524395764}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpritePiattaformaEArco_10
+      rect:
+        serializedVersion: 2
+        x: 1715
+        y: 87
+        width: 402
+        height: 448
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

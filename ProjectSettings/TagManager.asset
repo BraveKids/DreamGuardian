@@ -16,6 +16,10 @@ TagManager:
   - SavePoint
   - EnemyObject
   - Border
+  - StartPoint
+  - MovingPlatformExt
+  - GUI
+  - LifeBar
   layers:
   - Default
   - TransparentFX
@@ -28,7 +32,7 @@ TagManager:
   - Player
   - Background
   - Enemy
-  - Border
+  - 
   - 
   - 
   - 
@@ -56,9 +60,12 @@ TagManager:
   - name: Background
     uniqueID: 1133335085
     locked: 0
-  - name: Player
-    uniqueID: 2920803005
+  - name: MiddleGround
+    uniqueID: 1109229767
     locked: 0
   - name: Foreground
     uniqueID: 3872052785
+    locked: 0
+  - name: Player
+    uniqueID: 2920803005
     locked: 0

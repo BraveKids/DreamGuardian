@@ -1,0 +1,122 @@
+fileFormatVersion: 2
+guid: b60fa7bafc97a4f41b6ed019a8736fee
+timeCreated: 1449858492
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: yumeFallingSprite_0
+    21300002: yumeFallingSprite_1
+    21300004: yumeFallingSprite_2
+    21300006: yumeFallingSprite_3
+    21300008: yumeFallingSprite_4
+    21300010: yumeFallingSprite_5
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: yumeFallingSprite_0
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 277
+        width: 341
+        height: 496
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeFallingSprite_1
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 304
+        width: 344
+        height: 523
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeFallingSprite_2
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 316
+        width: 394
+        height: 502
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeFallingSprite_3
+      rect:
+        serializedVersion: 2
+        x: 1901
+        y: 235
+        width: 562
+        height: 655
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeFallingSprite_4
+      rect:
+        serializedVersion: 2
+        x: 2801
+        y: 271
+        width: 595
+        height: 649
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeFallingSprite_5
+      rect:
+        serializedVersion: 2
+        x: 3758
+        y: 166
+        width: 919
+        height: 766
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -8,6 +8,7 @@ public class Game {
 
 	public float x;
 	public float y;
+	public bool firstGame;
 
 	public Game(){
 

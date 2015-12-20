@@ -25,11 +25,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 423904}
   - 212: {fileID: 21226012}
-  - 61: {fileID: 6198194}
   - 95: {fileID: 9563302}
+  - 58: {fileID: 5811184}
+  - 114: {fileID: 11446698}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,7 +105,7 @@ Transform:
   m_GameObject: {fileID: 150504}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1.07499969, y: 2.05000067, z: 1}
   m_Children: []
   m_Father: {fileID: 423904}
   m_RootOrder: 0
@@ -128,7 +129,7 @@ Transform:
   m_GameObject: {fileID: 134386}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -.300000012, y: .300000012, z: .300000012}
   m_Children:
   - {fileID: 402888}
   - {fileID: 462366}
@@ -141,7 +142,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158670}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.24000001, y: -.140000001, z: 0}
+  m_LocalPosition: {x: 2.3599999, y: -.140000001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 423904}
@@ -165,7 +166,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117170}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.80999994, y: -3.8599999, z: 0}
+  m_LocalPosition: {x: 49.8423271, y: -2.46000004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 423904}
@@ -173,6 +174,19 @@ Transform:
   - {fileID: 465712}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!58 &5811184
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134386}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: d416426d135ebaf4ca0da4e132a693cd, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: .200000003, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.29999638
 --- !u!60 &6078984
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -188,21 +202,9 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -.835517883, y: .59927845}
       - {x: -.852943897, y: -.48421073}
-      - {x: -5.8077898, y: -1.44313955}
-      - {x: -5.7770586, y: 1.24513233}
---- !u!61 &6198194
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 134386}
-  m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: d416426d135ebaf4ca0da4e132a693cd, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: .0124206543, y: .0124204159}
-  serializedVersion: 2
-  m_Size: {x: 1.67579472, y: .875477314}
+      - {x: -11.982769, y: -1.39504898}
+      - {x: -12.0290213, y: -.204963729}
+      - {x: -11.9826088, y: 1.03674006}
 --- !u!95 &9563302
 Animator:
   serializedVersion: 3
@@ -220,6 +222,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11446698
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 951949b9f2a03264798b501f2f112413, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 1
 --- !u!114 &11449622
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -238,11 +252,13 @@ MonoBehaviour:
   - {fileID: 405592}
   - {fileID: 465712}
   pointSelection: 1
-  shootInterval: 2.5
-  bullet: {fileID: 159270, guid: 386f667677e5a56449482a55420a92e3, type: 2}
+  bulletTimer: 0
+  shootInterval: 3
+  bullet: {fileID: 192964, guid: 386f667677e5a56449482a55420a92e3, type: 2}
   shootPoint: {fileID: 462366}
-  bulletSpeed: 2
+  bulletSpeed: 5
   isLeft: 1
+  allowAttack: 1
 --- !u!114 &11465244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -279,7 +295,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -422914511
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300014, guid: 42646657c5e13a84785c5f0269f88a2e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13e2d0f45432e0646b9359fed0488157, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

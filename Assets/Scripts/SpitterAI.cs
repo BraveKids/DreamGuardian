@@ -23,7 +23,7 @@ public class SpitterAI : MonoBehaviour {
     public bool HittingBorder;
 
     float bulletTimer;
-    float shootInterval = 2;
+    float shootInterval = 1;
 
 
     void Start()
@@ -46,13 +46,16 @@ public class SpitterAI : MonoBehaviour {
     {
         if (attacking == false)
         {
+			anim.SetBool("Attacking", attacking);
             rb.isKinematic = false;
             rb.velocity = new Vector2(-walkVelocity, rb.velocity.y);
             walk();
         }
         else if (attacking == true)
         {
+			anim.SetBool("Attacking", attacking);
             rb.isKinematic = true;
+			rb.velocity = new Vector2(0f,0f);
             Attack();
         }
        
@@ -74,6 +77,7 @@ public class SpitterAI : MonoBehaviour {
         bulletTimer += Time.deltaTime;
         if (bulletTimer >= shootInterval)
         {
+			anim.Play("Attack");
             GameObject bulletClone;
             bulletClone = Instantiate(bullet, shootPoint.transform.position, Quaternion.identity) as GameObject;
             bulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(-shootVelocity, 0);

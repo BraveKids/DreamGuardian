@@ -28,13 +28,14 @@ public class CharacterControllerScript : MonoBehaviour {
 	public Transform firePoint;
 	public Transform platformSpwnPoint;
 	int abilitySelector = 0;
-
+	private LifeBar lifeBarScript;
+	GameObject LifeBar;
     // Use this for initialization
     void Awake () {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-
-
+		LifeBar = GameObject.FindGameObjectWithTag ("LifeBar");
+		lifeBarScript = LifeBar.gameObject.GetComponent ("LifeBar") as LifeBar;
     }
 	
 	// Update is called once per frame
@@ -64,21 +65,20 @@ public class CharacterControllerScript : MonoBehaviour {
 			
 
 			platform.transform.position = platformSpwnPoint.position;
-			platform.SetActive(true);
+			anim.Play("YumePiattaforma");
+			anim.SetBool("platform", true);
+			rb.velocity = new Vector3(0f,0f,0f);
+			Invoke("PlatformAbility", 0.25f);
 			Invoke ("PlatformAbilityClose", 3f);
 		}
-		if ((Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && !arrow.activeSelf && abilitySelector==1) {
-			Debug.Log("FREZZIA!!!!");
-			arrow.transform.position = firePoint.position;
-			arrow.SetActive(true);
-			Rigidbody2D arrowRb = arrow.GetComponent<Rigidbody2D>();
-			if(facingRight==true){
-			arrowRb.AddForce(new Vector2(400,0));
-			}else{
-				arrowRb.AddForce(new Vector2(-400,0));
-			}
+		if ((Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && !arrow.activeSelf && abilitySelector==1 && anim.GetBool ("Ground") == true ) {
 
-			Invoke ("ArrowAbilityClose", 1f);
+			arrow.transform.position = firePoint.position;
+			anim.Play ("YumeArcoTerra");
+			rb.velocity = new Vector3(0f,0f,0f);
+			anim.SetBool("shooting", true);
+			Invoke ("ArrowAbility", 0.15f);
+			Invoke ("ArrowAbilityClose", 1.2f);
 		}
 	}
 
@@ -90,7 +90,7 @@ public class CharacterControllerScript : MonoBehaviour {
 			rb.AddForce(new Vector2(0, jumpForce));
 		}
 		
-		if (anim.GetBool ("Attacking") == false) {
+		if (anim.GetBool ("Attacking") == false && anim.GetBool("shooting") == false && anim.GetBool("IstantDeath")== false && anim.GetBool("platform")==false) {
 			groundedLeft = Physics2D.OverlapCircle (groundCheckLeft.position, groundRadius, whatIsGround);
 			groundedRight = Physics2D.OverlapCircle (groundCheckRight.position, groundRadius, whatIsGround);
 			grounded = groundedLeft || groundedRight;
@@ -126,31 +126,34 @@ public class CharacterControllerScript : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.CompareTag ("Enemy") && attackTrigger1.enabled == false && attackTrigger2.enabled == false && attackTrigger3.enabled == false && superAttackTrigger.enabled== false && Time.time > nextHitAllowed) {
-
+			anim.Play("YumeDamage");
 			hp -= 1;
 			Debug.Log ("Danno " + hp + " left!");
 			nextHitAllowed = Time.time + hitDelay;
 			if (hp <= 0) {
 				anim.SetTrigger ("death");
-				Invoke ("Death", 0.8f);
+				Invoke ("Death", 0.6f);
 			}
 		}
 		}
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag ("Death") ) {
-			Death();
+			anim.SetBool ("IstantDeath", true);
+			rb.velocity = new Vector3(0f,0f,0f);
+			Invoke("Death",0.6f);
 		}
 		if (other.transform.tag == "MovingPlatform" ) {
 			transform.parent = other.transform;
 		}
 		if(other.CompareTag("EnemyObject")){
+			anim.Play ("YumeDamage");
 			hp -= 1;
 			Debug.Log ("Danno " + hp + " left!");
 			nextHitAllowed = Time.time + hitDelay;
 			if (hp <= 0) {
 				anim.SetTrigger ("death");
-				Invoke ("Death", 0.8f);
+				Invoke ("Death", 0.6f);
 		
 		}
 			other.gameObject.SetActive(false);
@@ -159,24 +162,44 @@ public class CharacterControllerScript : MonoBehaviour {
 	}
 	
 	 void Death(){
-		this.gameObject.SetActive (false);
+		anim.SetBool ("IstantDeath", false);
+		anim.SetTrigger ("respawn");
+		SaveLoad.Spawn();
+		hp = 3;
+		lifeBarScript.resetLifeBar ();
+
+
+
+	}
+
+	void PlatformAbility(){
+		platform.SetActive(true);
+		anim.SetBool ("platform", false);
 	}
 
 	void PlatformAbilityClose(){
-		
-		
-		//platform.transform.SetParent (this.transform);
 		platform.SetActive (false);
-		
-		
+
 	}
+
+	
+	void ArrowAbility(){
+		arrow.SetActive(true);
+		Rigidbody2D arrowRb = arrow.GetComponent<Rigidbody2D>();
+		if(facingRight==true){
+			arrowRb.AddForce(new Vector2(400,0));
+			anim.SetBool("shooting", false);
+		}else{
+			arrowRb.AddForce(new Vector2(-400,0));
+			anim.SetBool("shooting", false);
+		}
+
+	}
+
+
 	void ArrowAbilityClose(){
-		
-		
-		//platform.transform.SetParent (this.transform);
+
 		arrow.SetActive (false);
-		
-		
 	}
 
 

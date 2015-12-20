@@ -26,4 +26,5 @@ public class FlyingSpitterTrigger : MonoBehaviour
             flyingSpitterAI.bulletTimer = 0;
         }
     }
+
 }

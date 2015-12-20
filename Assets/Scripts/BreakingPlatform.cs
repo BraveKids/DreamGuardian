@@ -7,6 +7,7 @@ public class BreakingPlatform : MonoBehaviour {
 		if (other.CompareTag ("Player")) {
 			Debug.Log ("ATTENTO");
 			Invoke ("DestroyPlatform", 0.8f);
+			Invoke ("RegeneratePlatform", 3f);
 		}
 
 		
@@ -14,6 +15,10 @@ public class BreakingPlatform : MonoBehaviour {
 
 	void DestroyPlatform(){
 		parent.SetActive (false);
+	}
+
+	void RegeneratePlatform(){
+		parent.SetActive (true);
 	}
 
 }

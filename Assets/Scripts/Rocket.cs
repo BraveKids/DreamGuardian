@@ -4,7 +4,7 @@ using System.Collections;
 public class Rocket : MonoBehaviour {
 
     public float speed;
-    float lifeTime = 10f;
+    float lifeTime = 3f;
 
     void Start()
     {

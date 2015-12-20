@@ -9,16 +9,16 @@ GameObject:
   m_Component:
   - 4: {fileID: 426944}
   - 212: {fileID: 21214166}
-  - 58: {fileID: 5821476}
   - 50: {fileID: 5062070}
   - 114: {fileID: 11457250}
-  m_Layer: 0
+  - 61: {fileID: 6167962}
+  m_Layer: 8
   m_Name: Arrow
   m_TagString: AttackTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &426944
 Transform:
   m_ObjectHideFlags: 1
@@ -47,8 +47,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &5821476
-CircleCollider2D:
+--- !u!61 &6167962
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -57,9 +57,9 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: .0142376423, y: .05410254}
   serializedVersion: 2
-  m_Radius: .340000004
+  m_Size: {x: 1.66901445, y: .222602904}
 --- !u!114 &11457250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -95,7 +95,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -422914511
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9db25f60e2941b8499491b67727d141f, type: 3}
+  m_Sprite: {fileID: 21300014, guid: f81a8a5da129e654f849f7d3b832cce8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -120,6 +120,11 @@ Prefab:
       propertyPath: m_TagString
       value: AttackTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300014, guid: f81a8a5da129e654f849f7d3b832cce8,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 134314}

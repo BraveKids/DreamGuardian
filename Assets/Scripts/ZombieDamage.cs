@@ -11,8 +11,9 @@ public class ZombieDamage : MonoBehaviour {
     void Start()
     {
         anim = GetComponentInParent<Animator>();
+		player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.gameObject.GetComponent("PlayerAttack") as PlayerAttack;
-        player = GameObject.FindGameObjectWithTag("Player");
+        
     }
 
    

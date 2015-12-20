@@ -2,14 +2,15 @@
 using System.Collections;
 
 public class SetYume : MonoBehaviour {
-
+	//public GameObject startPoint; 
 	// Use this for initialization
 	void Start () {
 		//when yume is created i can assign it to the script, elsewhere it will raise a nullpointer exception
+		//startPoint = GameObject.FindGameObjectWithTag("StartPoint");
 		SaveLoad.GetYume();
-		Vector3 savedPos = new Vector3(SaveLoad.savedGame.x, SaveLoad.savedGame.y, transform.position.z);
-		transform.position = savedPos;
-		Debug.Log("Yume Position: "+savedPos);
+		//SaveLoad.savedGame.x = startPoint.transform.position.x;
+		//SaveLoad.savedGame.y = startPoint.transform.position.y;
+		SaveLoad.Spawn();
 	}
 	
 

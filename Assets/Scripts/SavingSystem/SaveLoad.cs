@@ -50,7 +50,7 @@ public class SaveLoad {
 	}
 
 	public static void ContinueGame () {
-		SavingPoints.Load();
+		SavingPoints.Load ();
 		Load ();
 		Debug.Log ("Continued");
 	}
@@ -58,21 +58,37 @@ public class SaveLoad {
 	public static void SaveGame () {
 		savedGame.x = player.transform.position.x;
 		savedGame.y = player.transform.position.y;
+		savedGame.firstGame = false;
 		Save ();
 		Debug.Log ("Game saved");
 		
 	}
 	
 	public static  void FirstGame () {
-		//cancel prevoius saved game and saving points
-		if(File.Exists(SAVING_PATH))File.Delete(SAVING_PATH);
-		if(File.Exists(SavingPoints.SAVING_POINTS_PATH))File.Delete(SavingPoints.SAVING_POINTS_PATH);
+		//cancel previous saved game and saving points
+		if (File.Exists (SAVING_PATH)) {
+			File.Delete (SAVING_PATH);
+		}
+		if (File.Exists (SavingPoints.SAVING_POINTS_PATH)) {
+			File.Delete (SavingPoints.SAVING_POINTS_PATH);
+		}
 		Debug.Log ("New Game");
-		savedGame.x = -22.30036f;
-		savedGame.y = -2.331829f;
+		savedGame.firstGame = true;
+
 	}
 
-	public static void GetYume(){
+	public static void Spawn () {
+		if (savedGame.firstGame) {
+			GameObject startPoint = GameObject.FindGameObjectWithTag ("StartPoint");
+			savedGame.x = startPoint.transform.position.x;
+			savedGame.y = startPoint.transform.position.y;
+		}
+		Vector3 savedPos = new Vector3 (SaveLoad.savedGame.x, SaveLoad.savedGame.y, player.transform.position.z);
+		player.transform.position = savedPos;
+		Debug.Log ("Yume Position: " + savedPos);
+	}
+
+	public static void GetYume () {
 		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 

@@ -1,0 +1,156 @@
+fileFormatVersion: 2
+guid: 978811f1d8bf89648a129505fb34cdfc
+timeCreated: 1450116966
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: SpitterAttacco_0
+    21300002: SpitterAttacco_1
+    21300004: SpitterAttacco_2
+    21300006: SpitterAttacco_3
+    21300008: SpitterAttacco_4
+    21300010: SpitterAttacco_5
+    21300012: SpitterAttacco_6
+    21300014: SpitterAttacco_7
+    21300016: SpitterAttacco_8
+    21300018: SpitterAttacco_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: SpitterAttacco_0
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 983
+        width: 376
+        height: 354
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpitterAttacco_1
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 975
+        width: 329
+        height: 353
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpitterAttacco_2
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 989
+        width: 338
+        height: 333
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpitterAttacco_3
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 977
+        width: 377
+        height: 333
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpitterAttacco_4
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 452
+        width: 324
+        height: 365
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpitterAttacco_5
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 473
+        width: 363
+        height: 355
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpitterAttacco_6
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 461
+        width: 365
+        height: 365
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpitterAttacco_7
+      rect:
+        serializedVersion: 2
+        x: 1572
+        y: 479
+        width: 297
+        height: 375
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpitterAttacco_9
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 131
+        width: 390
+        height: 130
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

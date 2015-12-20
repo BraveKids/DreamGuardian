@@ -1,0 +1,210 @@
+fileFormatVersion: 2
+guid: 9ff503925efe78544ae201b5cffa5ca7
+timeCreated: 1447893088
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: yumeIdle_0
+    21300002: yumeIdle_1
+    21300004: yumeIdle_2
+    21300006: yumeIdle_3
+    21300008: yumeIdle_4
+    21300010: yumeIdle_5
+    21300012: yumeIdle_6
+    21300014: yumeIdle_7
+    21300016: yumeIdle_8
+    21300018: yumeIdle_9
+    21300020: yumeIdle_10
+    21300022: yumeIdle_11
+    21300024: yumeIdle_12
+    21300026: yumeIdle_13
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: yumeIdle_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 500
+        width: 239
+        height: 388
+      alignment: 9
+      pivot: {x: .513249636, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeIdle_1
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 500
+        width: 249
+        height: 388
+      alignment: 9
+      pivot: {x: .533913136, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeIdle_2
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 499
+        width: 272
+        height: 389
+      alignment: 9
+      pivot: {x: .567146063, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeIdle_3
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 884
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeIdle_4
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 500
+        width: 267
+        height: 388
+      alignment: 9
+      pivot: {x: .560802877, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeIdle_5
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 499
+        width: 258
+        height: 388
+      alignment: 9
+      pivot: {x: .558991194, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeIdle_6
+      rect:
+        serializedVersion: 2
+        x: 1684
+        y: 500
+        width: 247
+        height: 388
+      alignment: 9
+      pivot: {x: .535687029, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeIdle_7
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 80
+        width: 232
+        height: 388
+      alignment: 9
+      pivot: {x: .506076694, y: .50000006}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeIdle_8
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 80
+        width: 232
+        height: 388
+      alignment: 9
+      pivot: {x: .502430737, y: .49781996}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeIdle_9
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 80
+        width: 235
+        height: 393
+      alignment: 9
+      pivot: {x: .490401626, y: .494977891}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeIdle_10
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 80
+        width: 232
+        height: 388
+      alignment: 9
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeIdle_11
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 83
+        width: 230
+        height: 387
+      alignment: 9
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeIdle_12
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 83
+        width: 222
+        height: 387
+      alignment: 9
+      pivot: {x: .475501806, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeIdle_13
+      rect:
+        serializedVersion: 2
+        x: 1720
+        y: 80
+        width: 230
+        height: 388
+      alignment: 9
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,210 @@
+fileFormatVersion: 2
+guid: 4822e6caa4214e64899bfa9629ac0188
+timeCreated: 1450091068
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: DefeatYumeSprite_0
+    21300002: DefeatYumeSprite_1
+    21300004: DefeatYumeSprite_2
+    21300006: DefeatYumeSprite_3
+    21300008: DefeatYumeSprite_4
+    21300010: DefeatYumeSprite_5
+    21300012: DefeatYumeSprite_6
+    21300014: DefeatYumeSprite_7
+    21300016: DefeatYumeSprite_8
+    21300018: DefeatYumeSprite_9
+    21300020: DefeatYumeSprite_10
+    21300022: DefeatYumeSprite_11
+    21300024: DefeatYumeSprite_12
+    21300026: DefeatYumeSprite_13
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: DefeatYumeSprite_0
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 2909
+        width: 288
+        height: 392
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DefeatYumeSprite_1
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 2903
+        width: 310
+        height: 402
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DefeatYumeSprite_2
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 2907
+        width: 273
+        height: 385
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DefeatYumeSprite_3
+      rect:
+        serializedVersion: 2
+        x: 1473
+        y: 2896
+        width: 571
+        height: 386
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DefeatYumeSprite_4
+      rect:
+        serializedVersion: 2
+        x: 2254
+        y: 2862
+        width: 891
+        height: 408
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DefeatYumeSprite_5
+      rect:
+        serializedVersion: 2
+        x: 3377
+        y: 2903
+        width: 772
+        height: 506
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DefeatYumeSprite_6
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 1698
+        width: 277
+        height: 381
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DefeatYumeSprite_7
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 1703
+        width: 324
+        height: 398
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DefeatYumeSprite_8
+      rect:
+        serializedVersion: 2
+        x: 1266
+        y: 1695
+        width: 458
+        height: 426
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DefeatYumeSprite_9
+      rect:
+        serializedVersion: 2
+        x: 1962
+        y: 1698
+        width: 550
+        height: 438
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DefeatYumeSprite_10
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 186
+        width: 292
+        height: 399
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DefeatYumeSprite_11
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 198
+        width: 299
+        height: 321
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DefeatYumeSprite_12
+      rect:
+        serializedVersion: 2
+        x: 1367
+        y: 198
+        width: 393
+        height: 325
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DefeatYumeSprite_13
+      rect:
+        serializedVersion: 2
+        x: 2192
+        y: 177
+        width: 603
+        height: 419
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

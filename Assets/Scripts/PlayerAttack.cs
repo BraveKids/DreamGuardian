@@ -12,12 +12,14 @@ public class PlayerAttack: MonoBehaviour {
 	public Collider2D attackTrigger3;
 	public Collider2D superAttackTrigger;
 
+	Rigidbody2D rb;
 	Animator anim;
 
 	public int energy=0;
 
 	void Awake (){
 		anim = GetComponent<Animator>();
+		rb = GetComponent<Rigidbody2D>();
 		attackTrigger1.enabled = false;
 		attackTrigger2.enabled = false;
 		attackTrigger3.enabled = false;
@@ -31,7 +33,8 @@ public class PlayerAttack: MonoBehaviour {
 
 
 
-		if ((Input.GetKeyDown (KeyCode.Joystick1Button2) || Input.GetKeyDown(KeyCode.F)) &&  anim.GetBool ("Ground") == true) {
+		if ((Input.GetKeyDown (KeyCode.Joystick1Button2) || Input.GetKeyDown(KeyCode.F)) &&  anim.GetBool ("Ground") == true && attackTrigger3.enabled == false ) {
+			rb.velocity = new Vector3(0f,0f,0f);
 			lastHitTimer = Time.realtimeSinceStartup;
 			if (combo > 3) {
 				combo = 0;
@@ -66,18 +69,22 @@ public class PlayerAttack: MonoBehaviour {
 			switch(comboCounter){
 		case(1):
 			anim.Play("YumeAttack1");
+
 			attackTrigger1.enabled = true;
 			attackTrigger2.enabled = false;
 			attackTrigger3.enabled = false;
+
 			break;
 		case(2):
 			anim.Play("YumeAttack2");
+		
 			attackTrigger1.enabled = false;
 			attackTrigger2.enabled = true;
 			attackTrigger3.enabled = false;
 			break;
 		case(3):
 			anim.Play("YumeAttack3");
+	
 			attackTrigger1.enabled = false;
 			attackTrigger2.enabled = false;
 			attackTrigger3.enabled = true;
@@ -87,6 +94,7 @@ public class PlayerAttack: MonoBehaviour {
 			attackTrigger1.enabled = false;
 			attackTrigger2.enabled = false;
 			attackTrigger3.enabled = false;
+
 			break;
 
 		}
