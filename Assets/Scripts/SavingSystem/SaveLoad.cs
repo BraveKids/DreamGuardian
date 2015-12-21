@@ -50,6 +50,7 @@ public class SaveLoad {
 	}
 
 	public static void ContinueGame () {
+		savedGame.firstGame = false;
 		SavingPoints.Load ();
 		Load ();
 		Debug.Log ("Continued");

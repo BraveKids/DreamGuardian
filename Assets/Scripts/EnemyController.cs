@@ -3,7 +3,9 @@ using System.Collections;
 
 public class EnemyController : MonoBehaviour {
 	Animator anim;
-	public float hp = 4;
+	public float max_hp = 4;
+	public float current_hp = 4;
+	
 	private PlayerAttack playerScript;
 	 GameObject player;
 	// Use this for initialization
@@ -20,10 +22,10 @@ public class EnemyController : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.CompareTag ("AttackTrigger")) {
-			hp -= 1;
+			current_hp -= 1;
 			anim.SetTrigger ("damage");
-			Debug.Log ("OUCH! " + hp + " left!");
-			if (hp <= 0) {
+			Debug.Log ("OUCH! " + current_hp + " left!");
+			if (current_hp%max_hp == 0) {
 				anim.Play ("explosion");
 				Invoke ("DestroyEnemy", 0.15f);
 
