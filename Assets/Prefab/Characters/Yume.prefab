@@ -44,9 +44,7 @@ GameObject:
   - 50: {fileID: 5079628}
   - 114: {fileID: 11473824}
   - 114: {fileID: 11478850}
-  - 58: {fileID: 5819442}
-  - 58: {fileID: 5816498}
-  - 58: {fileID: 5874236}
+  - 61: {fileID: 6151136}
   - 114: {fileID: 11496106}
   - 114: {fileID: 11474304}
   m_Layer: 8
@@ -306,49 +304,10 @@ Rigidbody2D:
   m_AngularDrag: .0500000007
   m_GravityScale: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!58 &5816498
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 126004}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: .200000003, y: .200000003}
-  serializedVersion: 2
-  m_Radius: .699999988
---- !u!58 &5819442
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 126004}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: .300000012, y: 1.45000005}
-  serializedVersion: 2
-  m_Radius: .5
---- !u!58 &5874236
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 126004}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: .230000004, y: -1.20000005}
-  serializedVersion: 2
-  m_Radius: .637532771
 --- !u!61 &6105828
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -375,6 +334,19 @@ BoxCollider2D:
   m_Offset: {x: 2.30171752, y: -.649895489}
   serializedVersion: 2
   m_Size: {x: 2.94969273, y: 1.37910974}
+--- !u!61 &6151136
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126004}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: .223820329, y: .0739000738}
+  serializedVersion: 2
+  m_Size: {x: 1.16813111, y: 3.73219895}
 --- !u!61 &6160318
 BoxCollider2D:
   m_ObjectHideFlags: 1
