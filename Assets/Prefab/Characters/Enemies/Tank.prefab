@@ -107,7 +107,7 @@ GameObject:
   - 4: {fileID: 453018}
   m_Layer: 0
   m_Name: Tank
-  m_TagString: Untagged
+  m_TagString: EnemyToReset
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -376,7 +376,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 4
-  player: {fileID: 0}
   enemy: {fileID: 148530}
 --- !u!114 &11420744
 MonoBehaviour:
@@ -450,6 +449,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: EnemyToReset
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

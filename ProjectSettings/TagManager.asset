@@ -18,6 +18,7 @@ TagManager:
   - Border
   - StartPoint
   - MovingPlatformExt
+  - EnemyToReset
   layers:
   - Default
   - TransparentFX
