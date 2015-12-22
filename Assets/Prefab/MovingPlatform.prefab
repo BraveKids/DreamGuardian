@@ -72,7 +72,6 @@ GameObject:
   - 4: {fileID: 438706}
   - 212: {fileID: 21261930}
   - 61: {fileID: 6161308}
-  - 50: {fileID: 5061284}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -88,7 +87,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 486046}
-  - 114: {fileID: 11405846}
+  - 114: {fileID: 11414632}
   m_Layer: 0
   m_Name: MovingPlatform
   m_TagString: Untagged
@@ -199,7 +198,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128120}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.94999981, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 486046}
@@ -211,7 +210,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131104}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -91.3671722, y: 42.4775314, z: 0}
+  m_LocalPosition: {x: -94.7099991, y: 42.0299988, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 438706}
@@ -231,22 +230,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 438706}
   m_RootOrder: 2
---- !u!50 &5061284
-Rigidbody2D:
-  serializedVersion: 2
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128254}
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: .0500000007
-  m_GravityScale: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 6
 --- !u!58 &5829772
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -312,7 +295,7 @@ BoxCollider2D:
   m_Offset: {x: -.0755310059, y: .195716858}
   serializedVersion: 2
   m_Size: {x: 4.04845858, y: 1.03758693}
---- !u!114 &11405846
+--- !u!114 &11414632
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -320,7 +303,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 131104}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff86461712aea3e449ea476711404010, type: 3}
+  m_Script: {fileID: 11500000, guid: 846a6c4e11d59b64f8f1a0ee8801e615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   platform: {fileID: 128254}
