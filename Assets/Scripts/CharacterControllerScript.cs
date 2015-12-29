@@ -159,22 +159,14 @@ public class CharacterControllerScript : MonoBehaviour {
 		anim.SetBool ("IstantDeath", false);
 		anim.SetTrigger ("respawn");
 
-		CameraFollowOnPlatform.instance.stopCourutine();
-
-		GameObject camera =GameObject.FindGameObjectWithTag("MainCamera");
 		
 		
 		Application.LoadLevel (Application.loadedLevel);	//level reset
 
-		CameraFollowOnPlatform.instance.Start();
-		
-		//camera.GetComponent<CameraFollowOnPlatform>().enabled = true;
-		
-		//camera.SetActive(false);
-		//gameObject.GetComponent<PlayerGroundOnPlatform>().enabled = true;
+		CameraFollowOnPlatform.instance.Start();	//need to reobtain the player object
 
 		SaveLoad.Spawn ();
-		//ResetSystem.resetAll();
+
 		hp = 3;
 
 
