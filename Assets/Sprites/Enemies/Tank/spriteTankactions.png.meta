@@ -1,0 +1,302 @@
+fileFormatVersion: 2
+guid: 5dfa42bb7574f074cb40047bd63756d0
+timeCreated: 1450125322
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: spriteTankactions_0
+    21300002: spriteTankactions_1
+    21300004: spriteTankactions_2
+    21300006: spriteTankactions_3
+    21300008: spriteTankactions_4
+    21300010: spriteTankactions_5
+    21300012: spriteTankactions_6
+    21300014: spriteTankactions_7
+    21300016: spriteTankactions_8
+    21300018: spriteTankactions_9
+    21300020: spriteTankactions_10
+    21300022: spriteTankactions_11
+    21300024: spriteTankactions_12
+    21300026: spriteTankactions_13
+    21300028: spriteTankactions_14
+    21300030: spriteTankactions_15
+    21300032: spriteTankactions_16
+    21300034: spriteTankactions_17
+    21300036: spriteTankactions_18
+    21300038: spriteTankactions_19
+    21300040: spriteTankactions_20
+    21300042: spriteTankactions_21
+    21300044: spriteTankactions_22
+    21300046: spriteTankactions_23
+    21300048: spriteTankactions_24
+    21300050: spriteTankactions_25
+    21300052: spriteTankactions_26
+    21300054: spriteTankactions_27
+    21300056: spriteTankactions_28
+    21300058: spriteTankactions_29
+    21300060: spriteTankactions_30
+    21300062: spriteTankactions_31
+    21300064: spriteTankactions_32
+    21300066: spriteTankactions_33
+    21300068: spriteTankactions_34
+    21300070: spriteTankactions_35
+    21300072: spriteTankactions_36
+    21300074: spriteTankactions_37
+    21300076: spriteTankactions_38
+    21300078: spriteTankactions_39
+    21300080: spriteTankactions_40
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
+  spriteSheet:
+    sprites:
+    - name: spriteTankactions_0
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 2816
+        width: 494
+        height: 548
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteTankactions_1
+      rect:
+        serializedVersion: 2
+        x: 2059
+        y: 2820
+        width: 531
+        height: 544
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteTankactions_2
+      rect:
+        serializedVersion: 2
+        x: 2878
+        y: 2816
+        width: 547
+        height: 544
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteTankactions_3
+      rect:
+        serializedVersion: 2
+        x: 3804
+        y: 2820
+        width: 536
+        height: 527
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteTankactions_4
+      rect:
+        serializedVersion: 2
+        x: 4731
+        y: 2816
+        width: 539
+        height: 544
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteTankactions_5
+      rect:
+        serializedVersion: 2
+        x: 5554
+        y: 2820
+        width: 544
+        height: 540
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteTankactions_6
+      rect:
+        serializedVersion: 2
+        x: 6497
+        y: 2812
+        width: 519
+        height: 564
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteTankactions_28
+      rect:
+        serializedVersion: 2
+        x: 5517
+        y: 605
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteTankactions_35
+      rect:
+        serializedVersion: 2
+        x: 4051
+        y: 408
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteTankactions_37
+      rect:
+        serializedVersion: 2
+        x: 3096
+        y: 284
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteTankactions_39
+      rect:
+        serializedVersion: 2
+        x: 3129
+        y: 222
+        width: 21
+        height: 41
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteTankactions_7
+      rect:
+        serializedVersion: 2
+        x: 7473
+        y: 1399
+        width: 565
+        height: 570
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteTankactions_8
+      rect:
+        serializedVersion: 2
+        x: 5921
+        y: 1389
+        width: 560
+        height: 595
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteTankactions_9
+      rect:
+        serializedVersion: 2
+        x: 4915
+        y: 1389
+        width: 644
+        height: 560
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteTankactions_10
+      rect:
+        serializedVersion: 2
+        x: 3784
+        y: 1389
+        width: 942
+        height: 575
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteTankactions_11
+      rect:
+        serializedVersion: 2
+        x: 6441
+        y: 180
+        width: 576
+        height: 570
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteTankactions_12
+      rect:
+        serializedVersion: 2
+        x: 5530
+        y: 165
+        width: 565
+        height: 585
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteTankactions_13
+      rect:
+        serializedVersion: 2
+        x: 4548
+        y: 170
+        width: 610
+        height: 545
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteTankactions_14
+      rect:
+        serializedVersion: 2
+        x: 3462
+        y: 184
+        width: 669
+        height: 575
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteTankactions_15
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 175
+        width: 664
+        height: 545
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

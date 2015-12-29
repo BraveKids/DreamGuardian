@@ -1,0 +1,237 @@
+fileFormatVersion: 2
+guid: 0a5e7397dcbbe2344a49b4d41fb6737b
+timeCreated: 1450123985
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: spritedeathEpalombella_0
+    21300002: spritedeathEpalombella_1
+    21300004: spritedeathEpalombella_2
+    21300006: spritedeathEpalombella_3
+    21300008: spritedeathEpalombella_4
+    21300010: spritedeathEpalombella_5
+    21300012: spritedeathEpalombella_6
+    21300014: spritedeathEpalombella_7
+    21300016: spritedeathEpalombella_8
+    21300018: spritedeathEpalombella_9
+    21300020: spritedeathEpalombella_10
+    21300022: spritedeathEpalombella_11
+    21300024: spritedeathEpalombella_12
+    21300026: spritedeathEpalombella_13
+    21300028: spritedeathEpalombella_14
+    21300030: spritedeathEpalombella_15
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
+  spriteSheet:
+    sprites:
+    - name: spritedeathEpalombella_0
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 1261
+        width: 372
+        height: 457
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spritedeathEpalombella_1
+      rect:
+        serializedVersion: 2
+        x: 1699
+        y: 1319
+        width: 408
+        height: 457
+      alignment: 9
+      pivot: {x: .677508175, y: .325130403}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spritedeathEpalombella_2
+      rect:
+        serializedVersion: 2
+        x: 2356
+        y: 1268
+        width: 423
+        height: 508
+      alignment: 9
+      pivot: {x: .64169389, y: .318105876}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spritedeathEpalombella_3
+      rect:
+        serializedVersion: 2
+        x: 2925
+        y: 1224
+        width: 518
+        height: 627
+      alignment: 9
+      pivot: {x: .567496419, y: .348645091}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spritedeathEpalombella_4
+      rect:
+        serializedVersion: 2
+        x: 3412
+        y: 1658
+        width: 48
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spritedeathEpalombella_5
+      rect:
+        serializedVersion: 2
+        x: 3427
+        y: 1544
+        width: 27
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spritedeathEpalombella_6
+      rect:
+        serializedVersion: 2
+        x: 3429
+        y: 1400
+        width: 56
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spritedeathEpalombella_7
+      rect:
+        serializedVersion: 2
+        x: 3118
+        y: 1193
+        width: 29
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spritedeathEpalombella_8
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 100
+        width: 385
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spritedeathEpalombella_9
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 116
+        width: 386
+        height: 332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spritedeathEpalombella_10
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 166
+        width: 508
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spritedeathEpalombella_11
+      rect:
+        serializedVersion: 2
+        x: 2439
+        y: 48
+        width: 257
+        height: 529
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spritedeathEpalombella_12
+      rect:
+        serializedVersion: 2
+        x: 2974
+        y: 222
+        width: 477
+        height: 359
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spritedeathEpalombella_13
+      rect:
+        serializedVersion: 2
+        x: 3576
+        y: 290
+        width: 247
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spritedeathEpalombella_14
+      rect:
+        serializedVersion: 2
+        x: 2958
+        y: 218
+        width: 14
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spritedeathEpalombella_15
+      rect:
+        serializedVersion: 2
+        x: 1605
+        y: 156
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

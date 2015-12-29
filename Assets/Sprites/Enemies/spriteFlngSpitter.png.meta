@@ -1,0 +1,265 @@
+fileFormatVersion: 2
+guid: 13e2d0f45432e0646b9359fed0488157
+timeCreated: 1450088684
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: spriteFlngSpitter_0
+    21300002: spriteFlngSpitter_1
+    21300004: spriteFlngSpitter_2
+    21300006: spriteFlngSpitter_3
+    21300008: spriteFlngSpitter_4
+    21300010: spriteFlngSpitter_5
+    21300012: spriteFlngSpitter_6
+    21300014: spriteFlngSpitter_7
+    21300016: spriteFlngSpitter_8
+    21300018: spriteFlngSpitter_9
+    21300020: spriteFlngSpitter_10
+    21300022: spriteFlngSpitter_11
+    21300024: spriteFlngSpitter_12
+    21300026: spriteFlngSpitter_13
+    21300028: spriteFlngSpitter_14
+    21300030: spriteFlngSpitter_15
+    21300032: spriteFlngSpitter_16
+    21300034: spriteFlngSpitter_17
+    21300036: spriteFlngSpitter_18
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: spriteFlngSpitter_0
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 1362
+        width: 369
+        height: 445
+      alignment: 9
+      pivot: {x: .639803112, y: .294899106}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteFlngSpitter_1
+      rect:
+        serializedVersion: 2
+        x: 1496
+        y: 1405
+        width: 389
+        height: 441
+      alignment: 9
+      pivot: {x: .693821907, y: .266043812}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteFlngSpitter_2
+      rect:
+        serializedVersion: 2
+        x: 2317
+        y: 1405
+        width: 392
+        height: 286
+      alignment: 9
+      pivot: {x: .712584853, y: .430624783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteFlngSpitter_3
+      rect:
+        serializedVersion: 2
+        x: 3217
+        y: 1418
+        width: 408
+        height: 240
+      alignment: 9
+      pivot: {x: .713974297, y: .533068836}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteFlngSpitter_4
+      rect:
+        serializedVersion: 2
+        x: 3972
+        y: 1444
+        width: 517
+        height: 247
+      alignment: 9
+      pivot: {x: .776319981, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteFlngSpitter_5
+      rect:
+        serializedVersion: 2
+        x: 4792
+        y: 1457
+        width: 541
+        height: 251
+      alignment: 9
+      pivot: {x: .778730989, y: .515809298}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteFlngSpitter_6
+      rect:
+        serializedVersion: 2
+        x: 5761
+        y: 1342
+        width: 432
+        height: 392
+      alignment: 9
+      pivot: {x: .729643643, y: .692338884}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteFlngSpitter_7
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 811
+        width: 428
+        height: 392
+      alignment: 9
+      pivot: {x: .694703996, y: .672092378}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteFlngSpitter_8
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 950
+        width: 537
+        height: 253
+      alignment: 9
+      pivot: {x: .773417711, y: .531369686}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteFlngSpitter_9
+      rect:
+        serializedVersion: 2
+        x: 2172
+        y: 950
+        width: 517
+        height: 253
+      alignment: 9
+      pivot: {x: .799346149, y: .531369686}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteFlngSpitter_10
+      rect:
+        serializedVersion: 2
+        x: 3210
+        y: 1006
+        width: 409
+        height: 244
+      alignment: 9
+      pivot: {x: .723153472, y: .516263366}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteFlngSpitter_11
+      rect:
+        serializedVersion: 2
+        x: 4110
+        y: 1009
+        width: 395
+        height: 287
+      alignment: 9
+      pivot: {x: .710969627, y: .458519489}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteFlngSpitter_12
+      rect:
+        serializedVersion: 2
+        x: 4924
+        y: 857
+        width: 386
+        height: 449
+      alignment: 9
+      pivot: {x: .715889871, y: .287888438}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteFlngSpitter_13
+      rect:
+        serializedVersion: 2
+        x: 5784
+        y: 857
+        width: 373
+        height: 449
+      alignment: 9
+      pivot: {x: .659581542, y: .287888438}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteFlngSpitter_14
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 165
+        width: 385
+        height: 468
+      alignment: 9
+      pivot: {x: .726757348, y: .347374499}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteFlngSpitter_15
+      rect:
+        serializedVersion: 2
+        x: 1361
+        y: 175
+        width: 386
+        height: 329
+      alignment: 9
+      pivot: {x: .674767673, y: .487938404}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteFlngSpitter_16
+      rect:
+        serializedVersion: 2
+        x: 2030
+        y: 214
+        width: 505
+        height: 287
+      alignment: 9
+      pivot: {x: .782885492, y: .513826787}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteFlngSpitter_17
+      rect:
+        serializedVersion: 2
+        x: 2861
+        y: 251
+        width: 484
+        height: 290
+      alignment: 9
+      pivot: {x: .770562768, y: .541050553}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteFlngSpitter_18
+      rect:
+        serializedVersion: 2
+        x: 3527
+        y: 234
+        width: 494
+        height: 356
+      alignment: 9
+      pivot: {x: .732953668, y: .633760929}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
