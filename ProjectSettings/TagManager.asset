@@ -20,6 +20,7 @@ TagManager:
   - MovingPlatformExt
   - GUI
   - LifeBar
+  - EnemyToReset
   layers:
   - Default
   - TransparentFX

@@ -50,6 +50,7 @@ public class SaveLoad {
 	}
 
 	public static void ContinueGame () {
+		savedGame.firstGame = false;
 		SavingPoints.Load ();
 		Load ();
 		Debug.Log ("Continued");
@@ -85,7 +86,6 @@ public class SaveLoad {
 		}
 		Vector3 savedPos = new Vector3 (SaveLoad.savedGame.x, SaveLoad.savedGame.y, player.transform.position.z);
 		player.transform.position = savedPos;
-		Debug.Log ("Yume Position: " + savedPos);
 	}
 
 	public static void GetYume () {

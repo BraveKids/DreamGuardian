@@ -20,7 +20,6 @@ public class PlayerGroundOnPlatform : MonoBehaviour {
 		}
 
 		if (other.CompareTag ("MovingPlatform")) {
-			Debug.Log ("entered");
 			//other.gameObject.GetComponentInChildren<BoxCollider2D> ().enabled = true;
 			other.transform.GetChild (0).GetComponent<BoxCollider2D> ().enabled = true;
 

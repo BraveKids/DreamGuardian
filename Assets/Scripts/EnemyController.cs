@@ -4,6 +4,8 @@ using System.Collections;
 public class EnemyController : MonoBehaviour {
 	Animator anim;
 	public float hp = 4;
+
+	
 	private PlayerAttack playerScript;
 	 GameObject player;
 	public GameObject enemy;
@@ -26,10 +28,12 @@ public class EnemyController : MonoBehaviour {
 		if (other.CompareTag ("AttackTrigger")) {
 			hp -= 1;
 			anim.SetTrigger ("damage");
+
 			Debug.Log ("OUCH! " + hp + " left!");
 			if (hp <= 0) {
 				anim.Play ("Death");
 				Invoke ("DestroyEnemy", 0.5f);
+
 
 			}
 		}

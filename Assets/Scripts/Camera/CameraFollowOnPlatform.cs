@@ -3,6 +3,7 @@ using System.Collections;
 using System.Linq;
 
 public class CameraFollowOnPlatform : MonoBehaviour {
+	
 
 	public static CameraFollowOnPlatform instance = null;
 	Vector3 currentOrigin;	//posizione corrente della camera (transform.position), utilizzata per chiarezza del codice
@@ -10,7 +11,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	//public float currentY;
 	public float originY;	//basically the ground y
 	public bool nextToGround = true;
-	GameObject player;
+	public GameObject player;
 	public float cameraOffset = 1.5f;	//when on ground how much the camera will be lift up from it?
 
 	public float deviationFix = 0.2f; //if i jump on the spot i get different y position. Fixed it introducing a little range between odl and new position
@@ -28,7 +29,8 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	//the camera will follow the platform. This generate some space lap.
 	public float diff_when_moving = 0;
 
-	void Start () {
+	public void Start () {
+
 		// singleton
 		if (instance == null) {
 			instance = this;
@@ -42,6 +44,9 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	}
 
 	void Update () {
+		player = GameObject.FindGameObjectWithTag ("Player");
+
+
 
 		float playerY = player.transform.position.y;
 
@@ -83,6 +88,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 
 		//only used for ResetCamera
 		currentOrigin = transform.position;
+
 		
 	}
 
@@ -102,12 +108,12 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 
 	public IEnumerator  ResetCamera (bool movingPlat) {
 
+
 		//Debug.DrawLine (new Vector3 (player.transform.position.x + 1f, currentY, player.transform.position.z), new Vector3 (player.transform.position.x - 1f, currentY, player.transform.position.z), Color.red, 2, false);
 		movingCamera = true;
 		//if nextY is greater than the origin plus offset due to moving platform, don't move the camera
 		bool substantialDiff = outOfRange (nextY, transform.position.y - deviationFix, transform.position.y + deviationFix);
 		if (substantialDiff && !nextToGround) {
-			Debug.Log ("Reset camera!");
 
 
 			t = 0.0f;
@@ -115,6 +121,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 			//some code
 			while (t < 1.0f && movingCamera) {
 				t += Time.deltaTime * (Time.timeScale / transitionDuration);
+				
 				//Vector3 nextPos = new Vector3 (transform.position.x, nextY, transform.position.z);
 				Vector3 nextPos = new Vector3 (transform.position.x, nextY, transform.position.z);
 
@@ -128,7 +135,6 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 			}
 		}
 
-		Debug.Log (movingPlat);
 		if (movingPlat) {
 
 			diff_when_moving = Mathf.Abs (transform.position.y - player.transform.position.y);
@@ -153,4 +159,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 		return outOfRange (playerY, bottom, top) && playerY < bottom;
 	}
 
+	public void stopCourutine () {
+		StopCoroutine ("ResetCamera");
+	}
 }
