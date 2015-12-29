@@ -20,7 +20,6 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	public float smoothTimeX;
 	public float smoothTimeY;
 	float t = 0.0f;
-
 	public bool onMovingPlat = false;
 	bool movingCamera = false;
 	public float nextY;
@@ -38,7 +37,8 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 			Destroy (gameObject);
 		}
 		player = GameObject.FindGameObjectWithTag ("Player");
-		currentOrigin = new Vector3 (player.transform.position.x, transform.position.y, transform.position.z);
+		currentOrigin = new Vector3 (player.transform.position.x, player.transform.position.y+ deviationFix, transform.position.z);
+		transform.position = currentOrigin;
 	}
 
 	void Update () {
@@ -86,7 +86,6 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 		
 	}
 
-
 	public void followMe (float nextY, bool movingPlat) {
 
 		this.nextY = nextY;
@@ -119,7 +118,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 				//Vector3 nextPos = new Vector3 (transform.position.x, nextY, transform.position.z);
 				Vector3 nextPos = new Vector3 (transform.position.x, nextY, transform.position.z);
 
-	//don't know why but it seems like it take less than transitionDuration to set the camera so i forced the exit
+				//don't know why but it seems like it take less than transitionDuration to set the camera so i forced the exit
 
 				transform.position = Vector3.Lerp (transform.position, nextPos, t);	
 				if (nextY == transform.position.y) {
@@ -129,7 +128,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 			}
 		}
 
-		Debug.Log(movingPlat);
+		Debug.Log (movingPlat);
 		if (movingPlat) {
 
 			diff_when_moving = Mathf.Abs (transform.position.y - player.transform.position.y);
@@ -139,7 +138,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 
 		}
 
-		onMovingPlat =movingPlat;
+		onMovingPlat = movingPlat;
 
 		
 		movingCamera = false;
