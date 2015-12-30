@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Collections.Generic;
 
 [System.Serializable]
 public class Game {
@@ -8,10 +9,14 @@ public class Game {
 
 	public float x;
 	public float y;
+
 	public bool firstGame = true;
+	public List<String> skills;
 
-	public Game(){
 
+	public Game () {
+		skills = new List<String>();
+		
 	}
 
 }

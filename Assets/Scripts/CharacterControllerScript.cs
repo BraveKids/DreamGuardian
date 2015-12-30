@@ -26,17 +26,19 @@ public class CharacterControllerScript : MonoBehaviour {
 	public GameObject arrow;
 	public Transform firePoint;
 	public Transform platformSpwnPoint;
-	int abilitySelector = 0;
 
+	private int abilitySelector = 0;	//an int used for circulary shift the skills
+	string abilitySelected;				//this is the ability selected
+	
 	private LifeBar lifeBarScript;
 	GameObject LifeBar;
-    // Use this for initialization
-    void Awake () {
-        rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+	// Use this for initialization
+	void Awake () {
+		rb = GetComponent<Rigidbody2D> ();
+		anim = GetComponent<Animator> ();
 		LifeBar = GameObject.FindGameObjectWithTag ("LifeBar");
 		lifeBarScript = LifeBar.gameObject.GetComponent ("LifeBar") as LifeBar;
-    }
+	}
 
 	
 	// Update is called once per frame
@@ -44,41 +46,47 @@ public class CharacterControllerScript : MonoBehaviour {
 		ChangeAbility ();
 		Ability ();
 		Movement ();
-
-
 	}
 
 	void ChangeAbility () {
-		if (Input.GetKeyDown (KeyCode.Joystick1Button5) || Input.GetKeyDown (KeyCode.V)) {
-			if (abilitySelector == 0) {
-				abilitySelector = 1;
-				Debug.Log ("Abilità 2");
-			} else {
-				abilitySelector = 0;
-				Debug.Log ("Abilità 1");
-			}
+		int skillsUnlocked = SaveLoad.savedGame.skills.Count;
+		if (skillsUnlocked > 0) {
+			if (Input.GetKeyDown (KeyCode.Joystick1Button5) || Input.GetKeyDown (KeyCode.V)) {
+				abilitySelector+=1;
+				abilitySelector = abilitySelector%skillsUnlocked;
 
+				abilitySelected = SaveLoad.savedGame.skills[abilitySelector];
+		
+				/*if (abilitySelector == 0) {
+					abilitySelector = 1;
+					Debug.Log ("Abilità 2");
+				} else {
+					abilitySelector = 0;
+					Debug.Log ("Abilità 1");
+				}*/
+			}
 		}
 	}
 
 	void Ability () {
-		if ((Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && anim.GetBool ("Ground") == true && !platform.activeSelf && abilitySelector == 0) {
+		if ((Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && anim.GetBool ("Ground") == true && !platform.activeSelf && abilitySelected=="platformAbility") {
 			
-
 			platform.transform.position = platformSpwnPoint.position;
 			anim.Play ("YumePiattaforma");
+
 			anim.SetBool ("platform", true);
 			rb.velocity = new Vector3 (0f, 0f, 0f);
 			Invoke ("PlatformAbility", 0.25f);
 			Invoke ("PlatformAbilityClose", 3f);
 		}
-		if ((Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && !arrow.activeSelf && abilitySelector == 1 && anim.GetBool ("Ground") == true) {
+
+		if ((Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && !arrow.activeSelf && abilitySelected=="arrowAbility"  && anim.GetBool ("Ground") == true) {
 
 			arrow.transform.position = firePoint.position;
 			anim.Play ("YumeArcoTerra");
 
-			rb.velocity = new Vector3(0f,0f,0f);
-			anim.SetBool("shooting", true);
+			rb.velocity = new Vector3 (0f, 0f, 0f);
+			anim.SetBool ("shooting", true);
 			Invoke ("ArrowAbility", 0.15f);
 
 			Invoke ("ArrowAbilityClose", 1.2f);
@@ -170,7 +178,7 @@ public class CharacterControllerScript : MonoBehaviour {
 		
 		Application.LoadLevel (Application.loadedLevel);	//level reset
 
-		CameraFollowOnPlatform.instance.Start();	//need to reobtain the player object
+		CameraFollowOnPlatform.instance.Start ();	//need to reobtain the player object
 
 		SaveLoad.Spawn ();
 
@@ -190,17 +198,16 @@ public class CharacterControllerScript : MonoBehaviour {
 		platform.SetActive (false);
 
 	}
-	
 
-	void ArrowAbility(){
-		arrow.SetActive(true);
-		Rigidbody2D arrowRb = arrow.GetComponent<Rigidbody2D>();
-		if(facingRight==true){
-			arrowRb.AddForce(new Vector2(400,0));
-			anim.SetBool("shooting", false);
-		}else{
-			arrowRb.AddForce(new Vector2(-400,0));
-			anim.SetBool("shooting", false);
+	void ArrowAbility () {
+		arrow.SetActive (true);
+		Rigidbody2D arrowRb = arrow.GetComponent<Rigidbody2D> ();
+		if (facingRight == true) {
+			arrowRb.AddForce (new Vector2 (400, 0));
+			anim.SetBool ("shooting", false);
+		} else {
+			arrowRb.AddForce (new Vector2 (-400, 0));
+			anim.SetBool ("shooting", false);
 		}
 
 
