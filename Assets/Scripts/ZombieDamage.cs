@@ -22,12 +22,12 @@ public class ZombieDamage : MonoBehaviour {
         if (other.CompareTag("AttackTrigger"))
         {
             hp -= 1;
-            anim.SetTrigger("damage");
+            anim.Play("damage");
             Debug.Log("OUCH! " + hp + " left!");
             if (hp <= 0)
             {
                 anim.Play("explosion");
-                Invoke("DestroyEnemy", 0.15f);
+                Invoke("DestroyEnemy", 0.2f);
 
             }
         }
