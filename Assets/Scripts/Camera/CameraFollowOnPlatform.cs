@@ -158,7 +158,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	bool imFalling (float playerY, float bottom, float top) {
 		return outOfRange (playerY, bottom, top) && playerY < bottom;
 	}
-
+	
 	public void stopCourutine () {
 		StopCoroutine ("ResetCamera");
 	}

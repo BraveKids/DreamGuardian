@@ -10,7 +10,7 @@ public class LifeBar : MonoBehaviour {
 	public GameObject energy3;
 	private CharacterControllerScript playerLifeScript;
 	private PlayerAttack playerEnergyScript;
-	public GameObject player;
+	private GameObject player;
 
 	// Use this for initialization
 	void Start () {
