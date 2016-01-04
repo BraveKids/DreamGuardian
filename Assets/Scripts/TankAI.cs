@@ -17,6 +17,7 @@ public class TankAI : MonoBehaviour {
 
     public bool inseguimento = false;
     public bool ritorno = false;
+    public bool vulnerable = false;
 
     float timer;
     public float vulnerabilityInterval;
@@ -41,13 +42,14 @@ public class TankAI : MonoBehaviour {
     {
         if ((isLeft == true && player.transform.position.x > checkPosition.transform.position.x) || (isLeft == false && player.transform.position.x < checkPosition.transform.position.x))
         {
+            vulnerable = true;
             Flip();
         }
         if (inseguimento == true)
         {
             Move();
         }
-        if (ritorno == true)
+        if (ritorno == true && vulnerable == false)
         {
             if (HittingBorder == false)
             {
@@ -65,20 +67,27 @@ public class TankAI : MonoBehaviour {
             else if (HittingBorder == true)
             {
 				anim.SetBool("walking",false);
-                Stop();
+                anim.SetBool("walkingBack", false);
                 ritorno = false;
+                Stop();
+                
             }
         }
     }
 
     public void Flip()
     {
+        anim.SetBool("walking", false);
+        anim.SetBool("walkingBack", false);
+        rb.isKinematic = true;
         timer += Time.deltaTime;
         if (timer >= vulnerabilityInterval)
         {
             transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
             velocity *= -1;
             isLeft = !isLeft;
+            vulnerable = false;
+            rb.isKinematic = false;
             timer = 0;
         }
     }
@@ -87,6 +96,7 @@ public class TankAI : MonoBehaviour {
     {
         backVelocity = -velocity * (-1);
         rb.isKinematic = false;
+        anim.SetBool("walkingBack", true);
         rb.velocity = new Vector2(backVelocity, rb.velocity.y);
 
     }

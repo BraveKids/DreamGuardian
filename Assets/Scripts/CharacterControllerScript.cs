@@ -35,7 +35,7 @@ public class CharacterControllerScript : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 		LifeBar = GameObject.FindGameObjectWithTag ("LifeBar");
-		lifeBarScript = LifeBar.gameObject.GetComponent ("LifeBar") as LifeBar;
+		//lifeBarScript = LifeBar.gameObject.GetComponent ("LifeBar") as LifeBar;
     }
 	
 	// Update is called once per frame

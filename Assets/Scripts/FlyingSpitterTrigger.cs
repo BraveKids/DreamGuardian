@@ -8,7 +8,8 @@ public class FlyingSpitterTrigger : MonoBehaviour
     void Start()
     {
         flyingSpitterAI = gameObject.GetComponentInParent<FlyingSpitterAI>();
-    } 
+    }
+
 
     void OnTriggerStay2D(Collider2D col)
     {
@@ -22,8 +23,8 @@ public class FlyingSpitterTrigger : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            flyingSpitterAI.allowAttack = true;
-            flyingSpitterAI.bulletTimer = 0;
+            //flyingSpitterAI.allowAttack = true;
+            //flyingSpitterAI.bulletTimer = 0;
         }
     }
 

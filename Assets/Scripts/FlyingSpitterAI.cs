@@ -54,9 +54,20 @@ public class FlyingSpitterAI : MonoBehaviour {
         {
 			anim.Play("Attack");
             GameObject bulletClone;
-            bulletClone = Instantiate(bullet, shootPoint.transform.position, Quaternion.identity) as GameObject;
-            bulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(-bulletSpeed, 0);
-            allowAttack = false;
+            if (isLeft == true)
+            {
+                bulletClone = Instantiate(bullet, shootPoint.transform.position, Quaternion.identity) as GameObject;
+                bulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(-bulletSpeed, 0);
+                allowAttack = false;
+            }
+            else if (isLeft == false)
+            {
+                bullet.transform.localScale = new Vector2(bullet.transform.localScale.x * -1, bullet.transform.localScale.y);
+                bulletClone = Instantiate(bullet, shootPoint.transform.position, Quaternion.identity) as GameObject;
+                bulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(-bulletSpeed, 0);
+                bullet.transform.localScale = new Vector2(bullet.transform.localScale.x * -1, bullet.transform.localScale.y);
+                allowAttack = false;
+            }
         }
         else if (allowAttack == false)
         {
@@ -75,7 +86,6 @@ public class FlyingSpitterAI : MonoBehaviour {
     void Flip()
     {
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
-        bullet.transform.localScale = new Vector2(bullet.transform.localScale.x * -1, bullet.transform.localScale.y);
         isLeft = !isLeft;
         bulletSpeed *= -1;
     }
