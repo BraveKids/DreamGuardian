@@ -81,6 +81,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &156308
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 451126}
+  m_Layer: 0
+  m_Name: shootPointLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &169410
 GameObject:
   m_ObjectHideFlags: 1
@@ -93,6 +108,21 @@ GameObject:
   m_Name: BorderCheck
   m_TagString: Untagged
   m_Icon: {fileID: -3545028842045912814, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &186174
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 402720}
+  m_Layer: 0
+  m_Name: shootPointRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -131,6 +161,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &402720
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186174}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 490538}
+  m_RootOrder: 0
 --- !u!4 &443472
 Transform:
   m_ObjectHideFlags: 1
@@ -138,7 +180,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -88.5732803, y: 43.3991394, z: 0}
+  m_LocalPosition: {x: -88.5732803, y: 44.7700005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 490538}
@@ -159,6 +201,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 458564}
   m_RootOrder: 0
+--- !u!4 &451126
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156308}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 490538}
+  m_RootOrder: 1
 --- !u!4 &453358
 Transform:
   m_ObjectHideFlags: 1
@@ -184,7 +238,7 @@ Transform:
   - {fileID: 450620}
   - {fileID: 453358}
   m_Father: {fileID: 490538}
-  m_RootOrder: 0
+  m_RootOrder: 2
 --- !u!4 &479092
 Transform:
   m_ObjectHideFlags: 1
@@ -219,6 +273,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 402720}
+  - {fileID: 451126}
   - {fileID: 458564}
   m_Father: {fileID: 443472}
   m_RootOrder: 0
@@ -249,7 +305,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!58 &5826864
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -359,6 +415,15 @@ MonoBehaviour:
   - {fileID: 119606}
   moveSpeed: 3
   hpDelta: 0
+  shootInterval: 2
+  bulletSpeed: 5
+  bulletTimer: 0
+  awake: 0
+  lookingRight: 1
+  bullet: {fileID: 183260, guid: a4d3849664b59e043bb7f723cf911fcf, type: 2}
+  target: {fileID: 0}
+  shootPointLeft: {fileID: 451126}
+  shootPointRight: {fileID: 402720}
 --- !u!114 &11471544
 MonoBehaviour:
   m_ObjectHideFlags: 1

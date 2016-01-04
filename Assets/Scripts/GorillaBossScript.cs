@@ -6,18 +6,31 @@ public class GorillaBossScript : MonoBehaviour {
 	Animator anim;
 	bool vulnerable;
 	bool movingBack;
+	bool canAttack;
 	public GameObject enemy;
 	public GameObject[] ropes;
 	public float moveSpeed;
 	int actualRope;
 	int hp;
 	public int hpDelta;
+	public float shootInterval;
+	public float bulletSpeed = 10;
+	public float bulletTimer;
+	
+	public bool awake = false;
+	public bool lookingRight = true;
+	
+	public GameObject bullet;
+	public Transform target;
+	public Transform shootPointLeft;
+	public Transform shootPointRight;
 	// Use this for initialization
 	void Start () {
 		actualRope = 0;
 		rb = GetComponent<Rigidbody2D>();
 		rb.isKinematic = true;
 		vulnerable = false;
+		canAttack = true;
 		hp = 12;
 		hpDelta = 0;
 	
@@ -30,21 +43,35 @@ public class GorillaBossScript : MonoBehaviour {
 		if(!ropes[actualRope].activeSelf==true){
 			rb.isKinematic = false;
 			vulnerable = true;
+			canAttack = false;
 			actualRope+=1;
-		
+			}
+		if (target.transform.position.x > transform.position.x)
+		{
+			lookingRight = true;
+		}
+		if (target.transform.position.x < transform.position.x)
+		{
+			lookingRight = false;
+		}
 
-			
 
-	}
+
+		if (canAttack) {
+			Attack (lookingRight);
+		}
+
 		if (hpDelta == 4) {
 			BackToRope();
 			}
+
 		if (movingBack == true) {
 			gameObject.transform.position = Vector3.MoveTowards (transform.position,ropes [actualRope].transform.position,  Time.deltaTime * moveSpeed);
 
 		}
 		if (transform.position.Equals(ropes [actualRope].transform.position)) {
 			movingBack = false;
+			canAttack = true;
 		}
 }
 
@@ -59,10 +86,37 @@ public class GorillaBossScript : MonoBehaviour {
 	}
 
 
+
+
 	void BackToRope(){
 		hpDelta=0;
 		vulnerable = false;
 		rb.isKinematic = true;
 		movingBack = true;
+	}
+
+
+	public void Attack (bool attackingRight)
+	{
+		bulletTimer += Time.deltaTime;
+		if(bulletTimer >= shootInterval)
+		{
+			Vector2 direction = target.transform.position - transform.position;
+			direction.Normalize();
+			if (!attackingRight)
+			{
+				GameObject bulletClone;
+				bulletClone = Instantiate(bullet, shootPointLeft.transform.position, shootPointLeft.transform.rotation)as GameObject;
+				bulletClone.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
+				bulletTimer = 0;
+			}
+			if (attackingRight)
+			{
+				GameObject bulletClone;
+				bulletClone = Instantiate(bullet, shootPointRight.transform.position, shootPointRight.transform.rotation) as GameObject;
+				bulletClone.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
+				bulletTimer = 0;
+			}
+		}
 	}
 }
