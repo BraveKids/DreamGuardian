@@ -13,6 +13,7 @@ public class TankAI : MonoBehaviour {
     public Transform checkPosition;
     public float checkPositionRadius;
     public LayerMask WhatIsBorder;
+    public Collider2D AttackTrigger;
     public bool HittingBorder;
 
     public bool inseguimento = false;
@@ -21,6 +22,12 @@ public class TankAI : MonoBehaviour {
 
     float timer;
     public float vulnerabilityInterval;
+    float hitTimer;
+    float hitInterval = 2;
+
+    public bool attacking = false;
+    public bool hit = false;
+    bool allowHit = false;
 
 
     // Use this for initialization
@@ -28,6 +35,7 @@ public class TankAI : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
 		anim = GetComponentInChildren<Animator> ();
         player = GameObject.FindGameObjectWithTag("Player");
+        AttackTrigger.enabled = false;
 
     }
 	
@@ -40,39 +48,70 @@ public class TankAI : MonoBehaviour {
 
     void BehaviourHandler()
     {
-        if ((isLeft == true && player.transform.position.x > checkPosition.transform.position.x) || (isLeft == false && player.transform.position.x < checkPosition.transform.position.x))
+        if (attacking == true)
         {
-            vulnerable = true;
-            Flip();
-        }
-        if (inseguimento == true)
-        {
-            Move();
-        }
-        if (ritorno == true && vulnerable == false)
-        {
-            if (HittingBorder == false)
+            anim.SetBool("walking", false);
+            anim.SetBool("walkingBack", false);
+            if (allowHit == true)
             {
-                if ((isLeft == true && checkPosition.transform.position.x < startPosition.transform.position.x)||(isLeft == false && checkPosition.transform.position.x > startPosition.transform.position.x))
-                {	
-					anim.SetBool("walking",false);
-                    GoBack();
+                Attack();
+                //allowHit = false;
+            }
+            else if (allowHit == false)
+            {
+                hit = false;
+                AttackTrigger.enabled = false;
+            }
+            hitTimer += Time.deltaTime;
+            if (hitTimer >= hitInterval)
+            {
+                allowHit = !allowHit;
+                hitTimer = 0;
+            }
+
+        }
+        if (attacking == false)
+        {
+            hit = false;
+            AttackTrigger.enabled = false;
+        }
+        if (attacking == false)
+        {
+            if ((isLeft == true && player.transform.position.x > checkPosition.transform.position.x) || (isLeft == false && player.transform.position.x < checkPosition.transform.position.x))
+            {
+                vulnerable = true;
+                Flip();
+            }
+            if (inseguimento == true)
+            {
+                Move();
+            }
+            if (ritorno == true && vulnerable == false)
+            {
+                if (HittingBorder == false)
+                {
+                    if ((isLeft == true && checkPosition.transform.position.x < startPosition.transform.position.x) || (isLeft == false && checkPosition.transform.position.x > startPosition.transform.position.x))
+                    {
+                        anim.SetBool("walking", false);
+                        GoBack();
+
+                    }
+                    else if ((isLeft == true && checkPosition.transform.position.x > startPosition.transform.position.x) || (isLeft == false && checkPosition.transform.position.x < startPosition.transform.position.x))
+                    {
+                        Move();
+                    }
+                }
+                else if (HittingBorder == true)
+                {
+                    anim.SetBool("walking", false);
+                    anim.SetBool("walkingBack", false);
+                    ritorno = false;
+                    Stop();
 
                 }
-                else if ((isLeft == true && checkPosition.transform.position.x > startPosition.transform.position.x)||(isLeft == false && checkPosition.transform.position.x < startPosition.transform.position.x))
-                {
-                    Move();
-                }
-            }
-            else if (HittingBorder == true)
-            {
-				anim.SetBool("walking",false);
-                anim.SetBool("walkingBack", false);
-                ritorno = false;
-                Stop();
-                
             }
         }
+        anim.SetBool("attacking", hit);
     }
 
     public void Flip()
@@ -112,5 +151,12 @@ public class TankAI : MonoBehaviour {
     {
         rb.velocity = new Vector2(0, rb.velocity.y);
         rb.isKinematic = true;
+    }
+
+    public void Attack()
+    {
+        rb.isKinematic = true;
+        hit = true;
+        AttackTrigger.enabled = true;
     }
 }
