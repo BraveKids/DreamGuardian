@@ -86,6 +86,11 @@ public class SaveLoad {
 		}
 		Vector3 savedPos = new Vector3 (SaveLoad.savedGame.x, SaveLoad.savedGame.y, player.transform.position.z);
 		player.transform.position = savedPos;
+
+		//if there are some ability unlocked, take the first
+		if(savedGame.skills.Count>0){
+			player.GetComponent<CharacterControllerScript>().setAbility(savedGame.skills[0]);
+		}
 	}
 
 	public static void GetYume () {

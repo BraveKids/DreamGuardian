@@ -26,9 +26,8 @@ public class CharacterControllerScript : MonoBehaviour {
 	public GameObject arrow;
 	public Transform firePoint;
 	public Transform platformSpwnPoint;
-
 	private int abilitySelector = 0;	//an int used for circulary shift the skills
-	string abilitySelected;				//this is the ability selected
+	private string abilitySelected;				//this is the ability selected
 	
 	private LifeBar lifeBarScript;
 	GameObject LifeBar;
@@ -50,26 +49,20 @@ public class CharacterControllerScript : MonoBehaviour {
 
 	void ChangeAbility () {
 		int skillsUnlocked = SaveLoad.savedGame.skills.Count;
+
 		if (skillsUnlocked > 0) {
 			if (Input.GetKeyDown (KeyCode.Joystick1Button5) || Input.GetKeyDown (KeyCode.V)) {
-				abilitySelector+=1;
-				abilitySelector = abilitySelector%skillsUnlocked;
+				abilitySelector += 1;
+				abilitySelector = abilitySelector % skillsUnlocked;
 
-				abilitySelected = SaveLoad.savedGame.skills[abilitySelector];
-		
-				/*if (abilitySelector == 0) {
-					abilitySelector = 1;
-					Debug.Log ("Abilità 2");
-				} else {
-					abilitySelector = 0;
-					Debug.Log ("Abilità 1");
-				}*/
+				abilitySelected = SaveLoad.savedGame.skills [abilitySelector];
+				setAbility(SaveLoad.savedGame.skills[abilitySelector]);
 			}
 		}
 	}
 
 	void Ability () {
-		if ((Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && anim.GetBool ("Ground") == true && !platform.activeSelf && abilitySelected=="platformAbility") {
+		if ((Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && anim.GetBool ("Ground") == true && !platform.activeSelf && abilitySelected == "platformAbility") {
 			
 			platform.transform.position = platformSpwnPoint.position;
 			anim.Play ("YumePiattaforma");
@@ -80,7 +73,7 @@ public class CharacterControllerScript : MonoBehaviour {
 			Invoke ("PlatformAbilityClose", 3f);
 		}
 
-		if ((Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && !arrow.activeSelf && abilitySelected=="arrowAbility"  && anim.GetBool ("Ground") == true) {
+		if ((Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && !arrow.activeSelf && abilitySelected == "arrowAbility" && anim.GetBool ("Ground") == true) {
 
 			arrow.transform.position = firePoint.position;
 			anim.Play ("YumeArcoTerra");
@@ -187,6 +180,16 @@ public class CharacterControllerScript : MonoBehaviour {
 
 
 
+	}
+
+	public void setAbility (string ability) {
+		abilitySelected = ability;
+		//to implement -> update the GUI
+		Debug.Log(ability);
+	}
+
+	public string getAbility(){
+		return abilitySelected;
 	}
 
 	void PlatformAbility () {
