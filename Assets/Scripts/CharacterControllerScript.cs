@@ -11,6 +11,7 @@ public class CharacterControllerScript : MonoBehaviour {
 	public Collider2D attackTrigger1;
 	public Collider2D attackTrigger2;
 	public Collider2D attackTrigger3;
+	public Collider2D attackJumpTrigger;
 	public Collider2D superAttackTrigger;
 	bool groundedLeft = false;
 	bool groundedRight = false;
@@ -80,15 +81,20 @@ public class CharacterControllerScript : MonoBehaviour {
 			Invoke ("PlatformAbilityClose", 3f);
 		}
 
-		if ((Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && !arrow.activeSelf && abilitySelected=="arrowAbility"  && anim.GetBool ("Ground") == true) {
+
+		if ((Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && !arrow.activeSelf && abilitySelected=="arrowAbility" ) {
+
 
 			arrow.transform.position = firePoint.position;
+			if(anim.GetBool ("Ground") == false){
+				anim.Play ("YumeArcoSalto");
+			}else{
 			anim.Play ("YumeArcoTerra");
+			}
 
-			rb.velocity = new Vector3 (0f, 0f, 0f);
-			anim.SetBool ("shooting", true);
-			Invoke ("ArrowAbility", 0.15f);
-
+			rb.velocity = new Vector3(0f,rb.velocity.y,0f);
+			anim.SetBool("shooting", true);
+			Invoke ("ArrowAbility", 0.1f);
 			Invoke ("ArrowAbilityClose", 1.2f);
 		}
 	}
@@ -125,17 +131,18 @@ public class CharacterControllerScript : MonoBehaviour {
 
 
 	}
-	
-	void Flip () {
-		facingRight = !facingRight;
-		Vector3 theScale = transform.localScale;
-		theScale.x *= -1;
-		transform.localScale = theScale;
-	}
 
-	void OnTriggerStay2D (Collider2D other) {
-		if (other.CompareTag ("Enemy") && attackTrigger1.enabled == false && attackTrigger2.enabled == false && attackTrigger3.enabled == false && superAttackTrigger.enabled == false && Time.time > nextHitAllowed) {
-			anim.Play ("YumeDamage");
+    void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+    }
+
+	void OnTriggerStay2D(Collider2D other) {
+		if (other.CompareTag ("Enemy") && attackTrigger1.enabled == false && attackJumpTrigger.enabled == false && attackTrigger2.enabled == false && attackTrigger3.enabled == false && superAttackTrigger.enabled== false && Time.time > nextHitAllowed) {
+			anim.Play("YumeDamage");
 			hp -= 1;
 			Debug.Log ("Danno " + hp + " left!");
 			nextHitAllowed = Time.time + hitDelay;

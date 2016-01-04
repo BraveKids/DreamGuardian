@@ -3,6 +3,11 @@ using System.Collections;
 
 public class Bullet : MonoBehaviour {
 
+	void Start(){
+		Invoke ("DestroyBullet", 2f); 
+	}
+
+
 	void OnTriggerEnter2D (Collider2D col)
     {
         if (col.isTrigger != true)
@@ -14,4 +19,8 @@ public class Bullet : MonoBehaviour {
             Destroy(gameObject);
         }
     }
+
+	void DestroyBullet(){
+		Destroy(gameObject);
+	}
 }

@@ -10,6 +10,7 @@ public class PlayerAttack: MonoBehaviour {
 	public Collider2D attackTrigger1;
 	public Collider2D attackTrigger2;
 	public Collider2D attackTrigger3;
+	public Collider2D attackJumpTrigger;
 	public Collider2D superAttackTrigger;
 
 	Rigidbody2D rb;
@@ -23,6 +24,7 @@ public class PlayerAttack: MonoBehaviour {
 		attackTrigger1.enabled = false;
 		attackTrigger2.enabled = false;
 		attackTrigger3.enabled = false;
+		attackJumpTrigger.enabled = false;
 		superAttackTrigger.enabled = false;
 	}
 	
@@ -33,33 +35,39 @@ public class PlayerAttack: MonoBehaviour {
 
 
 
-		if ((Input.GetKeyDown (KeyCode.Joystick1Button2) || Input.GetKeyDown(KeyCode.F)) &&  anim.GetBool ("Ground") == true && attackTrigger3.enabled == false ) {
-			rb.velocity = new Vector3(0f,0f,0f);
-			lastHitTimer = Time.realtimeSinceStartup;
-			if (combo > 3) {
-				combo = 0;
+		if ((Input.GetKeyDown (KeyCode.Joystick1Button2) || Input.GetKeyDown (KeyCode.F)) && attackTrigger3.enabled == false) {
+			if (anim.GetBool ("Ground") == true) {
+				rb.velocity = new Vector3 (0f, 0f, 0f);
+				lastHitTimer = Time.realtimeSinceStartup;
+				if (combo > 3) {
+					combo = 0;
 
-			} else {
-				combo++;
+				} else {
+					combo++;
+				}
+			
+				Combo (combo);
+			
+			}else{
+
+				lastHitTimer = Time.realtimeSinceStartup;
+				anim.Play ("YumeJumpAttack");
+				attackJumpTrigger.enabled = true;
 			}
-			attacking = true;
-			Combo (combo);
 		}
 			if (hitTimer - lastHitTimer > 0.5) {
 				combo = 0;
-				attacking = false;
-				attackTrigger1.enabled = false;
-				attackTrigger2.enabled = false;
-				attackTrigger3.enabled = false;
+				Combo (0);
+
 				if (hitTimer - lastHitTimer < 0.2) {
 					
-					attacking = false;
+
 					combo=0;
 					Combo (0);
 
 				} 
 			}
-			anim.SetBool ("Attacking", attacking);
+	
 			
 		}
 	
@@ -94,6 +102,7 @@ public class PlayerAttack: MonoBehaviour {
 			attackTrigger1.enabled = false;
 			attackTrigger2.enabled = false;
 			attackTrigger3.enabled = false;
+			attackJumpTrigger.enabled = false;
 
 			break;
 

@@ -1,0 +1,144 @@
+fileFormatVersion: 2
+guid: d133edb1ac6add34f8237298fa8504d0
+timeCreated: 1451406920
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: spriteJumpAttakdef_0
+    21300002: spriteJumpAttakdef_1
+    21300004: spriteJumpAttakdef_2
+    21300006: spriteJumpAttakdef_3
+    21300008: spriteJumpAttakdef_4
+    21300010: spriteJumpAttakdef_5
+    21300012: spriteJumpAttakdef_6
+    21300014: spriteJumpAttakdef_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: spriteJumpAttakdef_0
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1502
+        width: 257
+        height: 341
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteJumpAttakdef_1
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1493
+        width: 210
+        height: 359
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteJumpAttakdef_2
+      rect:
+        serializedVersion: 2
+        x: 1437
+        y: 1495
+        width: 221
+        height: 404
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteJumpAttakdef_3
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 960
+        width: 257
+        height: 385
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteJumpAttakdef_4
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 951
+        width: 189
+        height: 369
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteJumpAttakdef_5
+      rect:
+        serializedVersion: 2
+        x: 1521
+        y: 960
+        width: 235
+        height: 369
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteJumpAttakdef_6
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 454
+        width: 410
+        height: 436
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spriteJumpAttakdef_7
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 484
+        width: 278
+        height: 374
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
