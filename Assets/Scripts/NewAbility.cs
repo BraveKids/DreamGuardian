@@ -4,20 +4,18 @@ using System.Collections;
 public class NewAbility : MonoBehaviour {
 
 	public string ability;
-	private bool notMet = true;
 
 	void OnTriggerEnter2D (Collider2D other) {
 
 
 		if (other.CompareTag ("Player")) {
-			if (notMet) {
-				notMet = false;
+			if (!SaveLoad.savedGame.skills.Contains(ability)) {	//se non ho quell'abilità
 				
-				SaveLoad.savedGame.skills.Add (ability);
+				SaveLoad.savedGame.skills.Add (ability);	//ottenimento dell'abilità
 
-				transform.GetChild (0).GetComponent<dialogManager> ().Activate ();
+				transform.GetChild (0).GetComponent<dialogManager> ().Activate ();	//attivo il dialogo
 
-				
+				SaveLoad.SaveGame();
 			}
 		
 			

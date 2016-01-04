@@ -11,8 +11,6 @@ public class dialogManager : MonoBehaviour {
 	private int currentLine = 0;
 	private int endAtLine;
 	private bool active = false;
-	private float originY;
-	private float AWAY = 2000;
 	
 
 	// Use this for initialization
@@ -20,10 +18,9 @@ public class dialogManager : MonoBehaviour {
 		//getting component
 		textBox = GameObject.Find ("dialogPanel");
 		theText = textBox.transform.GetComponentInChildren<Text> ();
-		originY = textBox.transform.position.y;	//need for reset the dialog later
-		//textBox.SetActive(false);
-		//Sia chiaro che sto modo di nascondere la roba lo odio. Ma a quanto pare usare SetActive rende l'ogetto irragiungibile da altri
-		textBox.transform.position = new Vector3 (textBox.transform.position.x, AWAY, textBox.transform.position.z);
+
+
+		showDialog (false);	//hide the dialog box
 
 		if (textFile != null) {
 			textLines = textFile.text.Split ('\n');
@@ -32,7 +29,7 @@ public class dialogManager : MonoBehaviour {
 
 		endAtLine = textLines.Length - 1;
 	
-		gameObject.SetActive (false);
+		gameObject.SetActive (false);	//stop the script
 	}
 
 	public void Activate () {
@@ -40,21 +37,18 @@ public class dialogManager : MonoBehaviour {
 		//Bloccare i movimenti di yume qui richiamando un metodo che scrivi in characterControllerScript
 
 		active = true;
-		gameObject.SetActive (true);
+		gameObject.SetActive (true);	//riattivo lo script e il conseguente metodo update
 
-
-		//textBox.SetActive (true);
-		textBox.transform.position = new Vector3 (textBox.transform.position.x, originY, textBox.transform.position.z);
-		
-		theText.text.Remove (0);
+		showDialog (true);	//show dialog box		
 	}
 
 	public void Deactivate () {
 		active = false;
 
-		//textBox.SetActive (false);
-		textBox.transform.position = new Vector3 (textBox.transform.position.x, AWAY, textBox.transform.position.z);
-		gameObject.SetActive(false);
+
+		showDialog (false);
+
+		gameObject.SetActive (false);
 		
 	}
 
@@ -72,6 +66,12 @@ public class dialogManager : MonoBehaviour {
 				//come sopra ma riattivare yume
 			}
 		}
+	}
+
+	void showDialog (bool show) {
+		textBox.GetComponent<Image> ().enabled = show;	//enabled/disabled the dialogBox
+		theText.text = "";	//clean the text
+		
 	}
 }
 
