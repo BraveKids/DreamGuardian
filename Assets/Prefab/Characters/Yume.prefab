@@ -131,6 +131,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &159068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 485670}
+  - 61: {fileID: 6178002}
+  m_Layer: 8
+  m_Name: attackTrigger1
+  m_TagString: AttackTrigger
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &187080
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +173,7 @@ GameObject:
   - 4: {fileID: 441336}
   - 61: {fileID: 6171870}
   m_Layer: 8
-  m_Name: attackTrigger1
+  m_Name: attackJumpTrigger
   m_TagString: AttackTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -194,16 +210,17 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17, y: 28.8999996, z: 0}
+  m_LocalPosition: {x: -16.4099998, y: 28, z: 0}
   m_LocalScale: {x: .364357412, y: .364357412, z: .364357412}
   m_Children:
   - {fileID: 439716}
   - {fileID: 404368}
   - {fileID: 488024}
   - {fileID: 455520}
-  - {fileID: 441336}
+  - {fileID: 485670}
   - {fileID: 482242}
   - {fileID: 413696}
+  - {fileID: 441336}
   - {fileID: 470816}
   - {fileID: 480552}
   m_Father: {fileID: 0}
@@ -227,11 +244,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 190168}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.34000003, y: -.40200001, z: 0}
+  m_LocalPosition: {x: 1.57000005, y: -.402000159, z: 0}
   m_LocalScale: {x: 1.25616515, y: 4.05925798, z: 1}
   m_Children: []
   m_Father: {fileID: 433214}
-  m_RootOrder: 4
+  m_RootOrder: 7
 --- !u!4 &455520
 Transform:
   m_ObjectHideFlags: 1
@@ -255,7 +272,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 433214}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!4 &480552
 Transform:
   m_ObjectHideFlags: 1
@@ -267,7 +284,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 433214}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!4 &482242
 Transform:
   m_ObjectHideFlags: 1
@@ -280,6 +297,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 433214}
   m_RootOrder: 5
+--- !u!4 &485670
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.34000003, y: -.40200001, z: 0}
+  m_LocalScale: {x: 1.25616515, y: 4.05925798, z: 1}
+  m_Children: []
+  m_Father: {fileID: 433214}
+  m_RootOrder: 4
 --- !u!4 &488024
 Transform:
   m_ObjectHideFlags: 1
@@ -383,6 +412,19 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_Offset: {x: .0913690254, y: .0736047029}
+  serializedVersion: 2
+  m_Size: {x: .856459916, y: .852790833}
+--- !u!61 &6178002
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159068}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
   m_Offset: {x: .330555499, y: .0736046657}
   serializedVersion: 2
   m_Size: {x: .811178267, y: .852790833}
@@ -416,9 +458,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 3
   hp: 3
-  attackTrigger1: {fileID: 6171870}
+  attackTrigger1: {fileID: 6178002}
   attackTrigger2: {fileID: 6105828}
   attackTrigger3: {fileID: 6142636}
+  attackJumpTrigger: {fileID: 6171870}
   superAttackTrigger: {fileID: 6160318}
   groundCheckLeft: {fileID: 439716}
   groundCheckRight: {fileID: 404368}
@@ -452,9 +495,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3729ed06969eed64081210ecd5050f7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackTrigger1: {fileID: 6171870}
+  attackTrigger1: {fileID: 6178002}
   attackTrigger2: {fileID: 6105828}
   attackTrigger3: {fileID: 6142636}
+  attackJumpTrigger: {fileID: 6171870}
   superAttackTrigger: {fileID: 6160318}
   energy: 0
 --- !u!114 &11496106
@@ -463,7 +507,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126004}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0491d9843157e948a6f30c9be36f050, type: 3}
   m_Name: 
