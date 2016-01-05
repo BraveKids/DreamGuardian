@@ -12,7 +12,8 @@ GameObject:
   - 212: {fileID: 21264066}
   - 222: {fileID: 22284814}
   - 114: {fileID: 11462764}
-  m_Layer: 0
+  - 61: {fileID: 6118356}
+  m_Layer: 9
   m_Name: DreamMaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,13 +29,26 @@ GameObject:
   m_Component:
   - 224: {fileID: 22466996}
   - 114: {fileID: 11433390}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TextBoxManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!61 &6118356
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102514}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: -4.45234346, y: -3.79999995}
+  serializedVersion: 2
+  m_Size: {x: 17.2687817, y: .136226237}
 --- !u!61 &6150788
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -60,7 +74,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textFile: {fileID: 4900000, guid: a8ec881c9ee644b48ad73b1e8f9041c0, type: 3}
-  textLines: []
+  textLines:
+  - 
 --- !u!114 &11462764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -137,7 +152,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -1.08000004, y: 2.91000009}
+  m_AnchoredPosition: {x: -11.4122086, y: 30.5599995}
   m_SizeDelta: {x: 2.46000004, y: .709999979}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &100100000

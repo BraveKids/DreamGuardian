@@ -7,11 +7,12 @@ public class GorillaBossScript : MonoBehaviour {
 	bool vulnerable;
 	bool movingBack;
 	bool canAttack;
+	public float stunTimer;
 	public GameObject enemy;
 	public GameObject[] ropes;
 	public float moveSpeed;
 	int actualRope;
-	int hp;
+	public int hp;
 	public int hpDelta;
 	public float shootInterval;
 	public float bulletSpeed = 10;
@@ -54,6 +55,9 @@ public class GorillaBossScript : MonoBehaviour {
 		{
 			lookingRight = false;
 		}
+		if (vulnerable) {
+			stunTimer += Time.deltaTime;
+		}
 
 
 
@@ -61,8 +65,9 @@ public class GorillaBossScript : MonoBehaviour {
 			Attack (lookingRight);
 		}
 
-		if (hpDelta == 4) {
+		if (hpDelta == 4 || stunTimer>=5f) {
 			BackToRope();
+			stunTimer=0f;
 			}
 
 		if (movingBack == true) {
