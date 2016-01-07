@@ -139,6 +139,7 @@ public class CharacterControllerScript : MonoBehaviour {
 		if (other.CompareTag ("Enemy") && attackTrigger1.enabled == false && attackJumpTrigger.enabled == false && attackTrigger2.enabled == false && attackTrigger3.enabled == false && superAttackTrigger.enabled== false && Time.time > nextHitAllowed) {
 			anim.Play("YumeDamage");
 			hp -= 1;
+			GameObject.Find("HUD").GetComponent<HUDManager>().updateHP(hp);
 			Debug.Log ("Danno " + hp + " left!");
 			nextHitAllowed = Time.time + hitDelay;
 			if (hp <= 0) {
@@ -181,6 +182,7 @@ public class CharacterControllerScript : MonoBehaviour {
 		Application.LoadLevel (Application.loadedLevel);	//level reset
 
 		CameraFollowOnPlatform.instance.Start ();	//need to reobtain the player object
+		GameObject.Find("HUD").GetComponent<HUDManager>().Start();
 
 		SaveLoad.Spawn ();
 
@@ -194,7 +196,7 @@ public class CharacterControllerScript : MonoBehaviour {
 	public void setAbility (string ability) {
 		abilitySelected = ability;
 		//to implement -> update the GUI
-		Debug.Log(ability);
+		GameObject.Find("HUD").GetComponent<HUDManager>().setAbilityHUD(ability);
 	}
 
 	public string getAbility(){
