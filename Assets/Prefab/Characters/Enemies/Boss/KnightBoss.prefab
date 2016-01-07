@@ -15,6 +15,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &120342
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 433212}
+  - 60: {fileID: 6096714}
+  - 114: {fileID: 11474152}
+  m_Layer: 9
+  m_Name: StunTriggerLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &128992
 GameObject:
   m_ObjectHideFlags: 1
@@ -26,28 +43,11 @@ GameObject:
   - 212: {fileID: 21284724}
   - 61: {fileID: 6100508}
   - 95: {fileID: 9577742}
-  - 114: {fileID: 11400604}
   - 58: {fileID: 5805502}
+  - 114: {fileID: 11475418}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &137020
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 451820}
-  - 60: {fileID: 6090892}
-  - 114: {fileID: 11433872}
-  m_Layer: 9
-  m_Name: ChaseRangeForward
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66,7 +66,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &155902
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +94,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 491682}
   - 50: {fileID: 5017046}
-  - 114: {fileID: 11494088}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -150,23 +149,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &195968
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 424822}
-  - 60: {fileID: 6049076}
-  - 114: {fileID: 11431742}
-  m_Layer: 9
-  m_Name: ChaseRangeBack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!4 &400388
 Transform:
   m_ObjectHideFlags: 1
@@ -207,18 +189,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 445254}
   m_RootOrder: 0
---- !u!4 &424822
+--- !u!4 &433212
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 195968}
+  m_GameObject: {fileID: 120342}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 495704}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!4 &445254
 Transform:
   m_ObjectHideFlags: 1
@@ -227,22 +209,10 @@ Transform:
   m_GameObject: {fileID: 128992}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: .180000007, z: 0}
-  m_LocalScale: {x: 4.5, y: 4.5, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children:
   - {fileID: 415852}
   m_Father: {fileID: 491682}
-  m_RootOrder: 0
---- !u!4 &451820
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 137020}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.01249993, y: 1.1624999, z: 1}
-  m_Children: []
-  m_Father: {fileID: 495704}
   m_RootOrder: 0
 --- !u!4 &473624
 Transform:
@@ -263,7 +233,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155902}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.0299997, y: 1.35999858, z: 0}
+  m_LocalPosition: {x: 2.67000008, y: 1.35999858, z: 0}
   m_LocalScale: {x: .237114355, y: 5.41948843, z: 1}
   m_Children: []
   m_Father: {fileID: 401018}
@@ -292,8 +262,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 451820}
-  - {fileID: 424822}
+  - {fileID: 433212}
   m_Father: {fileID: 491682}
   m_RootOrder: 1
 --- !u!50 &5017046
@@ -325,40 +294,24 @@ CircleCollider2D:
   m_Offset: {x: -.0299999993, y: .0599999987}
   serializedVersion: 2
   m_Radius: .0759837255
---- !u!60 &6049076
+--- !u!60 &6096714
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 195968}
+  m_GameObject: {fileID: 120342}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -1, y: 0}
   m_Points:
     m_Paths:
-    - - {x: -.453912735, y: .33845371}
-      - {x: -.466448784, y: -.36575827}
-      - {x: -9.76229858, y: -.419720531}
-      - {x: -9.70518494, y: 3.29779863}
---- !u!60 &6090892
-PolygonCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 137020}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: -.561119556, y: .32779488}
-      - {x: -.556687593, y: -.347675741}
-      - {x: -10.4195843, y: -.434901059}
-      - {x: -10.3783817, y: 2.8384347}
+    - - {x: -.0363845825, y: .834942043}
+      - {x: .514396667, y: .729175031}
+      - {x: .515007019, y: -.343841851}
+      - {x: -1.95235443, y: -.388860017}
+      - {x: -2.00632477, y: 1.10431468}
 --- !u!61 &6100508
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -441,49 +394,24 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11400604
+--- !u!114 &11474152
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 120342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91a1fec4387abaa4eab7c8cb1501f5ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KnightBoss: {fileID: 128992}
+--- !u!114 &11475418
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9ab6c3d83ebc52479d67ed75bd4446b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 4
-  enemy: {fileID: 167506}
---- !u!114 &11431742
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 195968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91a1fec4387abaa4eab7c8cb1501f5ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  KnightBoss: {fileID: 157824}
---- !u!114 &11433872
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 137020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91a1fec4387abaa4eab7c8cb1501f5ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  KnightBoss: {fileID: 157824}
---- !u!114 &11494088
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 157824}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7b8b578435ca944fb6a6e4cf2b02737, type: 3}
@@ -492,10 +420,12 @@ MonoBehaviour:
   chase: 0
   stun: 0
   stunTimer: 0
+  crashOnWall: 0
+  Trigger: {fileID: 120342}
   startPosition: {fileID: 400388}
   leftWall: {fileID: 183610}
   rightWall: {fileID: 155902}
-  moveSpeed: 5
+  moveSpeed: 4
 --- !u!212 &21207436
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -9,10 +9,10 @@ public class KnightTriggerScript : MonoBehaviour {
 		KnightBossScript = KnightBoss.gameObject.GetComponent ("KnightBossScript") as KnightBossScript;
 	}
 
-	void OnTriggerStay2D(Collider2D other){
+	void OnTriggerExit2D(Collider2D other){
 	if (other.CompareTag ("Player")) {
-			KnightBossScript.chase = true;
-			gameObject.SetActive(false);
+			KnightBossScript.crashOnWall = true;
+
 		}
 	}
 

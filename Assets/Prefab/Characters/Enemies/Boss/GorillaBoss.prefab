@@ -176,7 +176,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 490538}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!4 &436518
 Transform:
   m_ObjectHideFlags: 1
@@ -214,11 +214,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 156308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.800000012, y: 0, z: 0}
+  m_LocalPosition: {x: -.800003052, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 490538}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!4 &458564
 Transform:
   m_ObjectHideFlags: 1
@@ -265,8 +265,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 402720}
   - {fileID: 451126}
+  - {fileID: 402720}
   - {fileID: 458564}
   m_Father: {fileID: 443472}
   m_RootOrder: 0
@@ -470,6 +470,7 @@ MonoBehaviour:
   - {fileID: 119606}
   moveSpeed: 3
   hp: 0
+  body: {fileID: 191646}
   hpDelta: 0
   shootInterval: 2
   bulletSpeed: 5

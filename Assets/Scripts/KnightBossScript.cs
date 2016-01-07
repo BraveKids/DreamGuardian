@@ -5,6 +5,8 @@ public class KnightBossScript : MonoBehaviour {
 	public bool chase;
 	public bool stun;
 	public float stunTimer;
+	public bool crashOnWall;
+	public GameObject Trigger;
 	bool vulnerable;
 	bool left;
 	Rigidbody2D rb;
@@ -15,7 +17,8 @@ public class KnightBossScript : MonoBehaviour {
 	public float moveSpeed = 4f;
 	// Use this for initialization
 	void Start () {
-		rb = GetComponent<Rigidbody2D> ();
+		crashOnWall = false;
+		rb = GetComponentInParent<Rigidbody2D> ();
 		stunTimer = 0f;
 		stun = false;
 		chase = true;
@@ -47,14 +50,35 @@ public class KnightBossScript : MonoBehaviour {
 	
 
 	void OnTriggerEnter2D(Collider2D other){
-		if(other.CompareTag("Wall")){
+		if (other.CompareTag ("Wall")) {
+			if(crashOnWall){
 			stun = true;
 			chase = false;
+			}else{
+
+				ContinueChase();
+			}
 		}
+
+
+	}
+
+	void Flip()
+	{
+
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
+		Vector3 triggerScale = Trigger.transform.localScale;
+		triggerScale.x *= -1;
+		Trigger.transform.localScale = triggerScale;
+
 	}
 
 	void BackOnHorse(){
 		stun = false;
+		Flip ();
+		crashOnWall = false;
 		vulnerable = false;
 		if (left == true) {
 			left = false;
@@ -62,5 +86,16 @@ public class KnightBossScript : MonoBehaviour {
 			left = true;
 		}
 		chase = true;
+	}
+
+	void ContinueChase(){
+
+		if (left == true) {
+			left = false;
+		} else {
+			left = true;
+		}
+		chase = true;
+		Flip ();
 	}
 }
