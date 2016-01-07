@@ -16,6 +16,8 @@ public class NewAbility : MonoBehaviour {
 				transform.GetChild (0).GetComponent<dialogManager> ().Activate ();	//attivo il dialogo
 
 				SaveLoad.SaveGame();
+
+				GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterControllerScript>().setAbility(ability);
 			}
 		
 			
