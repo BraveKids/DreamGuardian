@@ -11,10 +11,16 @@ public class dialogManager : MonoBehaviour {
 	private int currentLine = 0;
 	private int endAtLine;
 	private bool active = false;
+	private CharacterControllerScript PlayerScript;
+	private PlayerAttack PlayerAttackScript;
+	GameObject Yume;
 	
 
 	// Use this for initialization
 	void Start () {
+		Yume = GameObject.FindGameObjectWithTag ("Player");
+		PlayerScript = Yume.gameObject.GetComponent ("CharacterControllerScript") as CharacterControllerScript;
+		PlayerAttackScript = Yume.gameObject.GetComponent ("PlayerAttack") as PlayerAttack;
 		//getting component
 		textBox = GameObject.Find ("dialogPanel");
 		theText = textBox.transform.GetComponentInChildren<Text> ();
@@ -35,7 +41,9 @@ public class dialogManager : MonoBehaviour {
 	public void Activate () {
 		//PER TOMMASO
 		//Bloccare i movimenti di yume qui richiamando un metodo che scrivi in characterControllerScript
-
+		PlayerScript.canMove = false;
+		PlayerScript.anim.SetFloat ("Speed", 0f);
+		PlayerAttackScript.canAttack = false;
 		active = true;
 		gameObject.SetActive (true);	//riattivo lo script e il conseguente metodo update
 
@@ -49,6 +57,7 @@ public class dialogManager : MonoBehaviour {
 		showDialog (false);
 
 		gameObject.SetActive (false);
+
 		
 	}
 
@@ -64,6 +73,9 @@ public class dialogManager : MonoBehaviour {
 				Deactivate ();
 				//PER TOMMASO
 				//come sopra ma riattivare yume
+				PlayerScript.canMove = true;
+				PlayerAttackScript.canAttack = true;
+
 			}
 		}
 	}

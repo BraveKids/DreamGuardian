@@ -7,18 +7,20 @@ public class GorillaBossScript : MonoBehaviour {
 	bool vulnerable;
 	bool movingBack;
 	bool canAttack;
+	public float stunTimer;
 	public GameObject enemy;
 	public GameObject[] ropes;
 	public float moveSpeed;
 	int actualRope;
-	int hp;
+	public int hp;
+	public GameObject body;
 	public int hpDelta;
 	public float shootInterval;
 	public float bulletSpeed = 10;
 	public float bulletTimer;
 	
 	public bool awake = false;
-	public bool lookingRight = true;
+	public bool lookingRight;
 	
 	public GameObject bullet;
 	public Transform target;
@@ -46,23 +48,33 @@ public class GorillaBossScript : MonoBehaviour {
 			canAttack = false;
 			actualRope+=1;
 			}
-		if (target.transform.position.x > transform.position.x)
+		/*if (target.transform.position.x > transform.position.x)
 		{
 			lookingRight = true;
+
 		}
 		if (target.transform.position.x < transform.position.x)
 		{
 			lookingRight = false;
+
+		}*/
+		if (vulnerable) {
+			stunTimer += Time.deltaTime;
 		}
 
+		if ((lookingRight == false && target.transform.position.x < transform.position.x)|| (lookingRight == true && target.transform.position.x > transform.position.x))
+		{
+			Flip();
+		}
 
 
 		if (canAttack) {
 			Attack (lookingRight);
 		}
 
-		if (hpDelta == 4) {
+		if (hpDelta == 4 || stunTimer>=5f) {
 			BackToRope();
+			stunTimer=0f;
 			}
 
 		if (movingBack == true) {
@@ -95,6 +107,14 @@ public class GorillaBossScript : MonoBehaviour {
 		movingBack = true;
 	}
 
+	void Flip()
+	{
+		lookingRight = !lookingRight;
+		Vector3 theScale = body.transform.localScale;
+		theScale.x *= -1;
+		body.transform.localScale = theScale;
+	}
+
 
 	public void Attack (bool attackingRight)
 	{
@@ -103,14 +123,14 @@ public class GorillaBossScript : MonoBehaviour {
 		{
 			Vector2 direction = target.transform.position - transform.position;
 			direction.Normalize();
-			if (!attackingRight)
+			if (attackingRight)
 			{
 				GameObject bulletClone;
 				bulletClone = Instantiate(bullet, shootPointLeft.transform.position, shootPointLeft.transform.rotation)as GameObject;
 				bulletClone.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
 				bulletTimer = 0;
 			}
-			if (attackingRight)
+			if (!attackingRight)
 			{
 				GameObject bulletClone;
 				bulletClone = Instantiate(bullet, shootPointRight.transform.position, shootPointRight.transform.rotation) as GameObject;
