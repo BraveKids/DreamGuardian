@@ -108,7 +108,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 453916}
   - 61: {fileID: 6113032}
-  - 114: {fileID: 11453982}
+  - 114: {fileID: 11415332}
   m_Layer: 0
   m_Name: VulnerableZone
   m_TagString: Untagged
@@ -125,6 +125,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 418222}
   - 61: {fileID: 6163394}
+  - 114: {fileID: 11491334}
   m_Layer: 0
   m_Name: AttackZone
   m_TagString: Untagged
@@ -236,7 +237,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102992}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.41342354, y: -1.89592683, z: 0}
+  m_LocalPosition: {x: -6.77593994, y: -1.92452383, z: 0}
   m_LocalScale: {x: .741295218, y: .741295218, z: .741295218}
   m_Children:
   - {fileID: 416168}
@@ -401,12 +402,12 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177692}
   m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: d416426d135ebaf4ca0da4e132a693cd, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 1.78999996, y: 1.49011612e-07}
+  m_Offset: {x: 1.68038261, y: 1.49011612e-07}
   serializedVersion: 2
-  m_Size: {x: .264062822, y: 4.76197004}
+  m_Size: {x: .483295441, y: 4.76197004}
 --- !u!61 &6144202
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -463,6 +464,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11415332
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ab6c3d83ebc52479d67ed75bd4446b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 4
+  enemy: {fileID: 102992}
 --- !u!114 &11415904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -483,24 +497,14 @@ MonoBehaviour:
   WhatIsBorder:
     serializedVersion: 2
     m_Bits: 2048
+  AttackTrigger: {fileID: 5834166}
   HittingBorder: 0
   inseguimento: 0
   ritorno: 0
   vulnerable: 0
   vulnerabilityInterval: 2.5
---- !u!114 &11453982
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 177692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 951949b9f2a03264798b501f2f112413, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 3
-  enemy: {fileID: 102992}
+  attacking: 0
+  hit: 0
 --- !u!114 &11457914
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -513,6 +517,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tankAI: {fileID: 0}
+--- !u!114 &11491334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 181886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfb7fb697b9c1ad48a3990a944829951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21266142
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -537,7 +552,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -422914511
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300020, guid: 5dfa42bb7574f074cb40047bd63756d0, type: 3}
+  m_Sprite: {fileID: 21300002, guid: b44e56e07c659e64b9c851bbf22b676a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
