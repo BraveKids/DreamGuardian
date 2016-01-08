@@ -5,6 +5,7 @@ using System.Linq;
 public class CameraFollowOnPlatform : MonoBehaviour {
 
 	private bool followYume = true;
+	private float diffOnNewLevel = 0.2464275f;
 	public static CameraFollowOnPlatform instance = null;
 	Vector3 currentOrigin;	//posizione corrente della camera (transform.position), utilizzata per chiarezza del codice
 
@@ -172,6 +173,6 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 
 	public void setFollowYume (bool follow, Vector3 position) {
 		this.followYume = follow;
-		transform.position = new Vector3 (position.x, position.y + cameraOffset, transform.position.z);
+		transform.position = new Vector3 (position.x-diffOnNewLevel, position.y + cameraOffset, transform.position.z);
 	}
 }
