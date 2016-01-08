@@ -10,7 +10,7 @@ public class KnightTriggerScript : MonoBehaviour {
 	}
 
 	void OnTriggerExit2D(Collider2D other){
-	if (other.CompareTag ("Player")) {
+	if (other.CompareTag ("Player") && KnightBossScript.tooLate==true) {
 			KnightBossScript.crashOnWall = true;
 
 		}

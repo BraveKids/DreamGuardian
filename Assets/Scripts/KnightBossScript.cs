@@ -7,6 +7,9 @@ public class KnightBossScript : MonoBehaviour {
 	public float stunTimer;
 	public bool crashOnWall;
 	public GameObject Trigger;
+	public Transform tooLateLeftPoint;
+	public Transform tooLateRightPoint;
+	public bool tooLate;
 	bool vulnerable;
 	bool left;
 	Rigidbody2D rb;
@@ -23,6 +26,8 @@ public class KnightBossScript : MonoBehaviour {
 		stun = false;
 		chase = true;
 		left = true;
+		tooLate = false;
+
 		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 	
@@ -36,6 +41,8 @@ public class KnightBossScript : MonoBehaviour {
 			
 			}
 		}
+
+		CheckTooLateToStop ();
 
 		if (stun) {
 			vulnerable = true;
@@ -52,8 +59,9 @@ public class KnightBossScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.CompareTag ("Wall")) {
 			if(crashOnWall){
-			stun = true;
-			chase = false;
+				stun = true;
+				chase = false;
+			
 			}else{
 
 				ContinueChase();
@@ -75,8 +83,21 @@ public class KnightBossScript : MonoBehaviour {
 
 	}
 
+	void CheckTooLateToStop(){
+			if(left && (transform.position.x < tooLateLeftPoint.position.x)){
+				tooLate = true;
+			}else{
+			if( !left && transform.position.x > tooLateRightPoint.position.x){
+				tooLate = true;
+			}
+		}
+		 
+	}
+
 	void BackOnHorse(){
 		stun = false;
+		tooLate = false;
+
 		Flip ();
 		crashOnWall = false;
 		vulnerable = false;
@@ -89,6 +110,8 @@ public class KnightBossScript : MonoBehaviour {
 	}
 
 	void ContinueChase(){
+		tooLate = false;
+
 
 		if (left == true) {
 			left = false;

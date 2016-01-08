@@ -113,7 +113,7 @@ public class CharacterControllerScript : MonoBehaviour {
 			anim.SetBool ("Ground", grounded); //per "capire" se è o no grounded, continua a chiederselo/ a verificarlo
 			
 			anim.SetFloat ("vSpeed", rb.velocity.y); //vertical speed
-			
+
 			float move = Input.GetAxis ("Horizontal");
 			anim.SetFloat ("Speed", Mathf.Abs (move)); //con questa riga risco a "leggere" il mutamento di Speed
 			// e quindi a far cambiare l'animazione da idle a run
