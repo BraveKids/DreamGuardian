@@ -88,9 +88,11 @@ public class SaveLoad {
 		player.transform.position = savedPos;
 
 		//if there are some ability unlocked, take the first
-		if(savedGame.skills.Count>0){
-			player.GetComponent<CharacterControllerScript>().setAbility(savedGame.skills[0]);
+		if (savedGame.skills.Count > 0) {
+			player.GetComponent<CharacterControllerScript> ().setAbility (savedGame.skills [0]);
 		}
+
+		savedGame.firstGame = false;
 	}
 
 	public static void GetYume () {
