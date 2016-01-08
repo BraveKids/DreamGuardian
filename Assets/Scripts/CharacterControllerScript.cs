@@ -7,7 +7,9 @@ public class CharacterControllerScript : MonoBehaviour {
 	public int hp = 3;
 	bool facingRight = true;
 	Rigidbody2D rb;
-	Animator anim;
+	public Animator anim;
+	public float arrowTimer;
+	public bool canMove;
 	public Collider2D attackTrigger1;
 	public Collider2D attackTrigger2;
 	public Collider2D attackTrigger3;
@@ -34,6 +36,7 @@ public class CharacterControllerScript : MonoBehaviour {
 	GameObject LifeBar;
 	// Use this for initialization
 	void Awake () {
+		canMove = true;
 		rb = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
 		LifeBar = GameObject.FindGameObjectWithTag ("LifeBar");
@@ -43,6 +46,8 @@ public class CharacterControllerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		arrowTimer += Time.deltaTime;
 		ChangeAbility ();
 		Ability ();
 		Movement ();
@@ -63,7 +68,7 @@ public class CharacterControllerScript : MonoBehaviour {
 	}
 
 	void Ability () {
-		if ((Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && anim.GetBool ("Ground") == true && !platform.activeSelf && abilitySelected == "platformAbility") {
+		if (canMove && (Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && anim.GetBool ("Ground") == true && !platform.activeSelf && abilitySelected == "platformAbility") {
 			
 			platform.transform.position = platformSpwnPoint.position;
 			anim.Play ("YumePiattaforma");
@@ -76,10 +81,10 @@ public class CharacterControllerScript : MonoBehaviour {
 
 
 
-		if ((Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && !arrow.activeSelf && abilitySelected=="arrowAbility" ) {
+		if (arrowTimer>=1.5f && (Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && !arrow.activeSelf && abilitySelected=="arrowAbility" ) {
 
 
-
+			arrowTimer = 0f;
 			arrow.transform.position = firePoint.position;
 			if(anim.GetBool ("Ground") == false){
 				anim.Play ("YumeArcoSalto");
@@ -96,19 +101,19 @@ public class CharacterControllerScript : MonoBehaviour {
 
 	void Movement () {
 
-		if (grounded && (Input.GetKeyDown (KeyCode.Joystick1Button0) || Input.GetKeyDown (KeyCode.Space))) {
+		if (canMove && grounded && (Input.GetKeyDown (KeyCode.Joystick1Button0) || Input.GetKeyDown (KeyCode.Space))) {
 			anim.SetBool ("Ground", false);
 			rb.AddForce (new Vector2 (0, jumpForce));
 		}
 		
-		if (anim.GetBool ("Attacking") == false && anim.GetBool ("shooting") == false && anim.GetBool ("IstantDeath") == false && anim.GetBool ("platform") == false) {
+		if (canMove && anim.GetBool ("Attacking") == false && anim.GetBool ("shooting") == false && anim.GetBool ("IstantDeath") == false && anim.GetBool ("platform") == false) {
 			groundedLeft = Physics2D.OverlapCircle (groundCheckLeft.position, groundRadius, whatIsGround);
 			groundedRight = Physics2D.OverlapCircle (groundCheckRight.position, groundRadius, whatIsGround);
 			grounded = groundedLeft || groundedRight;
 			anim.SetBool ("Ground", grounded); //per "capire" se è o no grounded, continua a chiederselo/ a verificarlo
 			
 			anim.SetFloat ("vSpeed", rb.velocity.y); //vertical speed
-			
+
 			float move = Input.GetAxis ("Horizontal");
 			anim.SetFloat ("Speed", Mathf.Abs (move)); //con questa riga risco a "leggere" il mutamento di Speed
 			// e quindi a far cambiare l'animazione da idle a run

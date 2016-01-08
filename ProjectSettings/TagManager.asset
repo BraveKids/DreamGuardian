@@ -21,6 +21,7 @@ TagManager:
   - GUI
   - LifeBar
   - EnemyToReset
+  - Wall
   layers:
   - Default
   - TransparentFX
