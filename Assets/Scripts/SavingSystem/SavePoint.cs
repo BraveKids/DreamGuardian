@@ -33,6 +33,9 @@ public class SavePoint : MonoBehaviour {
 			SavingPoints.Save ();
 			SaveLoad.SaveGame ();
 			Debug.Log ("salvando");
+			//in case he's coming from a level change and is running
+			CameraFollowOnPlatform.instance.setFollowYume(true);
+			other.gameObject.GetComponent<CharacterControllerScript>().stopRunYume();	
 		}		
 	}
 

@@ -3,8 +3,8 @@ using System.Collections;
 using System.Linq;
 
 public class CameraFollowOnPlatform : MonoBehaviour {
-	
 
+	private bool followYume = true;
 	public static CameraFollowOnPlatform instance = null;
 	Vector3 currentOrigin;	//posizione corrente della camera (transform.position), utilizzata per chiarezza del codice
 
@@ -39,56 +39,59 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 			Destroy (gameObject);
 		}
 		player = GameObject.FindGameObjectWithTag ("Player");
-		currentOrigin = new Vector3 (player.transform.position.x, player.transform.position.y+ deviationFix, transform.position.z);
+		currentOrigin = new Vector3 (player.transform.position.x, player.transform.position.y + deviationFix, transform.position.z);
 		transform.position = currentOrigin;
 	}
 
 	void Update () {
-		player = GameObject.FindGameObjectWithTag ("Player");
+
+		if (followYume) {
+			player = GameObject.FindGameObjectWithTag ("Player");
 
 
 
-		float playerY = player.transform.position.y;
+			float playerY = player.transform.position.y;
 
-		Debug.DrawLine (new Vector3 (player.transform.position.x, transform.position.y + deviationFix, player.transform.position.z), new Vector3 (player.transform.position.x, transform.position.y - deviationFix, player.transform.position.z), Color.green, 2, false);
+			Debug.DrawLine (new Vector3 (player.transform.position.x, transform.position.y + deviationFix, player.transform.position.z), new Vector3 (player.transform.position.x, transform.position.y - deviationFix, player.transform.position.z), Color.green, 2, false);
 
-		float cameraX = player.transform.position.x;
-		float cameraY = transform.position.y;
+			float cameraX = player.transform.position.x;
+			float cameraY = transform.position.y;
 		
 
-		if (playerY < originY + cameraOffset) {
-			nextToGround = true;
-		} else {
-			nextToGround = false;
-		}
-		//float posX = Mathf.SmoothDamp (transform.position.x, player.transform.position.x, ref velocity.x, smoothTimeX);
+			if (playerY < originY + cameraOffset) {
+				nextToGround = true;
+			} else {
+				nextToGround = false;
+			}
+			//float posX = Mathf.SmoothDamp (transform.position.x, player.transform.position.x, ref velocity.x, smoothTimeX);
 
-		//float posY = transform.position.y;
+			//float posY = transform.position.y;
 
 
-		//if on moving platform
+			//if on moving platform
 
-		if (onMovingPlat && !nextToGround) {
-			cameraY = player.transform.position.y + diff_when_moving;
-			nextY = cameraY;
-		}
+			if (onMovingPlat && !nextToGround) {
+				cameraY = player.transform.position.y + diff_when_moving;
+				nextY = cameraY;
+			}
 
-		//if falling
-		//if i'm out of range and also lower from the bottom then i'm falling
-		if (imFalling (playerY, nextY - deviationFix, nextY + deviationFix) && !nextToGround) {
-			float diff = cameraY - playerY;
-			movingCamera = false;
-			cameraY = playerY /*+ diff*/;
-		}
+			//if falling
+			//if i'm out of range and also lower from the bottom then i'm falling
+			if (imFalling (playerY, nextY - deviationFix, nextY + deviationFix) && !nextToGround) {
+				float diff = cameraY - playerY;
+				movingCamera = false;
+				cameraY = playerY /*+ diff*/;
+			}
 	
 
-		transform.position = new Vector3 (cameraX, cameraY, transform.position.z);
+			transform.position = new Vector3 (cameraX, cameraY, transform.position.z);
 
 
 
-		//only used for ResetCamera
-		currentOrigin = transform.position;
+			//only used for ResetCamera
+			currentOrigin = transform.position;
 
+		}
 		
 	}
 
@@ -161,5 +164,14 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	
 	public void stopCourutine () {
 		StopCoroutine ("ResetCamera");
+	}
+
+	public void setFollowYume (bool follow) {
+		this.followYume = follow;
+	}
+
+	public void setFollowYume (bool follow, Vector3 position) {
+		this.followYume = follow;
+		transform.position = new Vector3 (position.x, position.y + cameraOffset, transform.position.z);
 	}
 }
