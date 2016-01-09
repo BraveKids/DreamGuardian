@@ -1,9 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NewAbility : MonoBehaviour {
+public class DreamMaster : MonoBehaviour {
 
 	public string ability;
+
+	void Start(){
+		//IDLE
+	}
+
+	public void byeBye(){
+		//SALUTA
+		Debug.Log("ciaooo");
+	}
 
 	void OnTriggerEnter2D (Collider2D other) {
 
@@ -18,8 +27,7 @@ public class NewAbility : MonoBehaviour {
 				SaveLoad.SaveGame();
 
 				GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterControllerScript>().setAbility(ability);
-			}
-		
+			}	
 			
 		}
 	}
