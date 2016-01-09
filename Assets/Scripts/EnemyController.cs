@@ -5,8 +5,9 @@ public class EnemyController : MonoBehaviour {
 	Animator anim;
 	public float hp = 4;
 
+
 	
-	private PlayerAttack playerScript;
+	private CharacterControllerScript playerScript;
 	 GameObject player;
 	public GameObject enemy;
 	// Use this for initialization
@@ -16,7 +17,7 @@ public class EnemyController : MonoBehaviour {
 		if (anim == null) {
 			anim = GetComponentInParent<Animator>();
 		}
-		playerScript = player.gameObject.GetComponent("PlayerAttack") as PlayerAttack;
+		playerScript = player.gameObject.GetComponent("CharacterControllerScript") as CharacterControllerScript;
 	}
 	
 	// Update is called once per frame

@@ -40,7 +40,7 @@ public class LifeBar : MonoBehaviour {
 		}
 
 	}
-
+	/*
 	void checkEnergyBar () {
 		if (playerEnergyScript.energy == 1) {
 			energy1.gameObject.SetActive (true);
@@ -55,7 +55,7 @@ public class LifeBar : MonoBehaviour {
 			playerEnergyScript.energy = 0;
 			resetEnergyBar ();
 		}
-	}
+	}*/
 
 	public void resetEnergyBar () {
 		energy1.gameObject.SetActive (false);

@@ -11,6 +11,9 @@ public class KnightBossScript : MonoBehaviour {
 	public Transform tooLateRightPoint;
 	public bool tooLate;
 	bool vulnerable;
+	public GameObject enemy;
+	public int hp;
+	public int hpDelta;
 	bool left;
 	Rigidbody2D rb;
 	public Transform startPosition;
@@ -18,8 +21,11 @@ public class KnightBossScript : MonoBehaviour {
 	public GameObject rightWall;
 	GameObject player;
 	public float moveSpeed = 4f;
+	private CharacterControllerScript playerScript;
 	// Use this for initialization
 	void Start () {
+		player = GameObject.FindGameObjectWithTag("Player");
+		playerScript = player.gameObject.GetComponent("CharacterControllerScript") as CharacterControllerScript;
 		crashOnWall = false;
 		rb = GetComponentInParent<Rigidbody2D> ();
 		stunTimer = 0f;
@@ -27,8 +33,7 @@ public class KnightBossScript : MonoBehaviour {
 		chase = true;
 		left = true;
 		tooLate = false;
-
-		player = GameObject.FindGameObjectWithTag ("Player");
+		vulnerable = false;
 	}
 	
 	// Update is called once per frame
@@ -49,9 +54,10 @@ public class KnightBossScript : MonoBehaviour {
 			stunTimer += Time.deltaTime;
 		}
 
-		if (stunTimer >= 5f) {
+		if (stunTimer >= 5f || hpDelta == 4) {
 			stunTimer = 0;
-			BackOnHorse();
+			hpDelta = 0;
+			Invoke("BackOnHorse", 2f);
 		}
 	}
 	
@@ -61,10 +67,24 @@ public class KnightBossScript : MonoBehaviour {
 			if(crashOnWall){
 				stun = true;
 				chase = false;
+				vulnerable = true;
 			
 			}else{
 
 				ContinueChase();
+			}
+		}
+		if (other.CompareTag("AttackTrigger") && vulnerable == true){
+			hp-=1;
+			hpDelta+=1;
+
+			if (playerScript.energy < 10)
+			{
+				playerScript.energy += 1;
+				GameObject.Find("HUD").GetComponent<HUDManager>().updateMP(playerScript.energy);
+			}
+			if(hp<=0){
+				enemy.gameObject.SetActive(false);
 			}
 		}
 
@@ -93,6 +113,7 @@ public class KnightBossScript : MonoBehaviour {
 		}
 		 
 	}
+	
 
 	void BackOnHorse(){
 		stun = false;

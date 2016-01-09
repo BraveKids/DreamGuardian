@@ -5,6 +5,7 @@ public class CharacterControllerScript : MonoBehaviour {
 
 	public float maxSpeed;
 	public int hp = 3;
+	public int energy=0;
 	bool facingRight = true;
 	Rigidbody2D rb;
 	public Animator anim;
@@ -31,16 +32,11 @@ public class CharacterControllerScript : MonoBehaviour {
 	public Transform platformSpwnPoint;
 	private int abilitySelector = 0;	//an int used for circulary shift the skills
 	private string abilitySelected;				//this is the ability selected
-	
-	private LifeBar lifeBarScript;
-	GameObject LifeBar;
 	// Use this for initialization
 	void Awake () {
 		canMove = true;
 		rb = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
-		LifeBar = GameObject.FindGameObjectWithTag ("LifeBar");
-		lifeBarScript = LifeBar.gameObject.GetComponent ("LifeBar") as LifeBar;
 	}
 
 	
@@ -68,7 +64,7 @@ public class CharacterControllerScript : MonoBehaviour {
 	}
 
 	void Ability () {
-		if (canMove && (Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && anim.GetBool ("Ground") == true && !platform.activeSelf && abilitySelected == "platformAbility") {
+		if (energy>0 && canMove && (Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && anim.GetBool ("Ground") == true && !platform.activeSelf && abilitySelected == "platformAbility") {
 			
 			platform.transform.position = platformSpwnPoint.position;
 			anim.Play ("YumePiattaforma");
@@ -76,12 +72,15 @@ public class CharacterControllerScript : MonoBehaviour {
 			anim.SetBool ("platform", true);
 			rb.velocity = new Vector3 (0f, 0f, 0f);
 			Invoke ("PlatformAbility", 0.25f);
+			energy-=1;
+			GameObject.Find("HUD").GetComponent<HUDManager>().updateMP(energy);
 			Invoke ("PlatformAbilityClose", 3f);
+
 		}
 
 
 
-		if (arrowTimer>=1.5f && (Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && !arrow.activeSelf && abilitySelected=="arrowAbility" ) {
+		if (energy>0 && canMove && arrowTimer>=1.5f && (Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && !arrow.activeSelf && abilitySelected=="arrowAbility" ) {
 
 
 			arrowTimer = 0f;
@@ -96,6 +95,8 @@ public class CharacterControllerScript : MonoBehaviour {
 			anim.SetBool("shooting", true);
 			Invoke ("ArrowAbility", 0.1f);
 			Invoke ("ArrowAbilityClose", 1.2f);
+			energy-=1;
+			GameObject.Find("HUD").GetComponent<HUDManager>().updateMP(energy);
 		}
 	}
 
@@ -181,21 +182,12 @@ public class CharacterControllerScript : MonoBehaviour {
 	void Death () {
 		anim.SetBool ("IstantDeath", false);
 		anim.SetTrigger ("respawn");
-
-		
-		
 		Application.LoadLevel (Application.loadedLevel);	//level reset
-
 		CameraFollowOnPlatform.instance.Start ();	//need to reobtain the player object
 		GameObject.Find("HUD").GetComponent<HUDManager>().Start();
-
 		SaveLoad.Spawn ();
-
 		hp = 3;
-		lifeBarScript.resetLifeBar ();
-
-
-
+		energy = 3;
 	}
 
 	public void setAbility (string ability) {

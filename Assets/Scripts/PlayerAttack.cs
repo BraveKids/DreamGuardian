@@ -15,7 +15,7 @@ public class PlayerAttack: MonoBehaviour {
 	Rigidbody2D rb;
 	Animator anim;
 
-	public int energy=0;
+
 
 	void Awake (){
 		canAttack = true;
@@ -110,7 +110,7 @@ public class PlayerAttack: MonoBehaviour {
 		}
 	}
 
-
+	/*
 	void SuperAttack(){
 		anim.SetTrigger ("SuperAttack");
 		
@@ -121,7 +121,7 @@ public class PlayerAttack: MonoBehaviour {
 	void superAttackDown(){
 		energy=-1;
 		superAttackTrigger.enabled = false;
-	}
+	}*/
 
 
 	

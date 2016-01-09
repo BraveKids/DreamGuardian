@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 418844}
   - 61: {fileID: 6197980}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: leftSlide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 440176}
   - 61: {fileID: 6143266}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: rightSlide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - 4: {fileID: 456578}
   - 212: {fileID: 21252752}
   - 61: {fileID: 6174908}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: AbilityPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 444280}
   - 61: {fileID: 6136376}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PlatformCollider
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 163, y: 117, z: 0}
   m_LocalScale: {x: .349999994, y: .349999994, z: 1}
   m_Children:
   - {fileID: 444280}
@@ -139,9 +139,9 @@ BoxCollider2D:
   m_Material: {fileID: 6200000, guid: d416426d135ebaf4ca0da4e132a693cd, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 1.25093496, y: .971899509}
+  m_Offset: {x: 1.25093496, y: 1.13056731}
   serializedVersion: 2
-  m_Size: {x: .308421046, y: .723927259}
+  m_Size: {x: .308421046, y: .358197182}
 --- !u!61 &6174908
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -152,9 +152,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 1.01303673}
+  m_Offset: {x: 0, y: 1.11918867}
   serializedVersion: 2
-  m_Size: {x: 2.454772, y: .572032452}
+  m_Size: {x: 2.454772, y: .359724343}
 --- !u!61 &6197980
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -165,9 +165,9 @@ BoxCollider2D:
   m_Material: {fileID: 6200000, guid: d416426d135ebaf4ca0da4e132a693cd, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -1.25484383, y: .983575106}
+  m_Offset: {x: -1.25484383, y: 1.13599503}
   serializedVersion: 2
-  m_Size: {x: .344250202, y: .726572275}
+  m_Size: {x: .344250202, y: .385193914}
 --- !u!212 &21252752
 SpriteRenderer:
   m_ObjectHideFlags: 1

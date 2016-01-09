@@ -18,7 +18,9 @@ public class GorillaBossScript : MonoBehaviour {
 	public float shootInterval;
 	public float bulletSpeed = 10;
 	public float bulletTimer;
-	
+	private CharacterControllerScript playerScript;
+	GameObject player;
+
 	public bool awake = false;
 	public bool lookingRight;
 	
@@ -28,6 +30,8 @@ public class GorillaBossScript : MonoBehaviour {
 	public Transform shootPointRight;
 	// Use this for initialization
 	void Start () {
+		player = GameObject.FindGameObjectWithTag("Player");
+		playerScript = player.gameObject.GetComponent("CharacterControllerScript") as CharacterControllerScript;
 		actualRope = 0;
 		rb = GetComponent<Rigidbody2D>();
 		rb.isKinematic = true;
@@ -91,6 +95,11 @@ public class GorillaBossScript : MonoBehaviour {
 		if (other.CompareTag("AttackTrigger") && vulnerable == true){
 			hp-=1;
 			hpDelta+=1;
+			if (playerScript.energy < 10)
+			{
+				playerScript.energy += 1;
+				GameObject.Find("HUD").GetComponent<HUDManager>().updateMP(playerScript.energy);
+			}
 			if(hp<=0){
 			enemy.gameObject.SetActive(false);
 			}
