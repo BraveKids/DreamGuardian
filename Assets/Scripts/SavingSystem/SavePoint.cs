@@ -25,6 +25,8 @@ public class SavePoint : MonoBehaviour {
 		
 		if (other.CompareTag ("Player") && usable) {
 
+			Debug.Log(other.gameObject.transform.position.x-transform.position.x);
+
 			SavingPoints.pointsDict [id] = false;
 
 			usable = false;
@@ -33,6 +35,9 @@ public class SavePoint : MonoBehaviour {
 			SavingPoints.Save ();
 			SaveLoad.SaveGame ();
 			Debug.Log ("salvando");
+			//in case he's coming from a level change and is running
+			CameraFollowOnPlatform.instance.setFollowYume(true);
+			other.gameObject.GetComponent<CharacterControllerScript>().stopRunYume();	
 		}		
 	}
 

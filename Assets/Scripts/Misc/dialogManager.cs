@@ -4,8 +4,8 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class dialogManager : MonoBehaviour {
-	private GameObject textBox;
-	private Text theText;
+	public GameObject textBox;
+	public Text theText;
 	public TextAsset textFile;
 	public string[] textLines;
 	private int currentLine = 0;
@@ -14,7 +14,8 @@ public class dialogManager : MonoBehaviour {
 	private CharacterControllerScript PlayerScript;
 	private PlayerAttack PlayerAttackScript;
 	GameObject Yume;
-	
+
+
 
 	// Use this for initialization
 	void Start () {
@@ -58,6 +59,7 @@ public class dialogManager : MonoBehaviour {
 
 		gameObject.SetActive (false);
 
+		transform.parent.gameObject.GetComponent<DreamMaster>().byeBye();
 		
 	}
 
