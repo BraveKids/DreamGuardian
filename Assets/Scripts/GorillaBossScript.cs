@@ -44,7 +44,6 @@ public class GorillaBossScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (hpDelta);
 
 		if(!ropes[actualRope].activeSelf==true){
 			rb.isKinematic = false;
@@ -52,16 +51,6 @@ public class GorillaBossScript : MonoBehaviour {
 			canAttack = false;
 			actualRope+=1;
 			}
-		/*if (target.transform.position.x > transform.position.x)
-		{
-			lookingRight = true;
-
-		}
-		if (target.transform.position.x < transform.position.x)
-		{
-			lookingRight = false;
-
-		}*/
 		if (vulnerable) {
 			stunTimer += Time.deltaTime;
 		}

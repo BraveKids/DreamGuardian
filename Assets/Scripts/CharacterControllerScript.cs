@@ -83,10 +83,6 @@ public class CharacterControllerScript : MonoBehaviour {
 
 
 		if (energy>0 && canMove && arrowTimer>=1.5f && (Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && !arrow.activeSelf && abilitySelected=="arrowAbility" ) {
-
-
-
-
 			arrowTimer = 0f;
 			arrow.transform.position = firePoint.position;
 			if (anim.GetBool ("Ground") == false) {
