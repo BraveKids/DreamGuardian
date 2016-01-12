@@ -257,7 +257,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.9019737, y: -1.91031396, z: 0}
+  m_LocalPosition: {x: -8.376297, y: -1.77020907, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 421630}
@@ -389,7 +389,7 @@ Animator:
   m_GameObject: {fileID: 178458}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 61d425750d620014dbefa927ca69e49d, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -423,15 +423,17 @@ MonoBehaviour:
   LeftBorder: {fileID: 407552}
   RightBorder: {fileID: 474610}
   shootPoint: {fileID: 429894}
-  bullet: {fileID: 159270, guid: 386f667677e5a56449482a55420a92e3, type: 2}
+  bullet: {fileID: 192964, guid: 386f667677e5a56449482a55420a92e3, type: 2}
   anim: {fileID: 0}
   attacking: 0
+  isLeft: 1
   BorderCheck: {fileID: 442124}
   BorderCheckRadius: .100000001
   WhatIsBorder:
     serializedVersion: 2
     m_Bits: 2048
   HittingBorder: 0
+  attackSpitter: 1
 --- !u!114 &11428750
 MonoBehaviour:
   m_ObjectHideFlags: 1

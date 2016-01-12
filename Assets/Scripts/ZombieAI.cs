@@ -54,6 +54,7 @@ public class ZombieAI : MonoBehaviour {
     {
         if (attacking == true)
         {
+            anim.SetBool("walking", false);
             if (allowHit == true)
             {
                 Attack();
@@ -79,6 +80,7 @@ public class ZombieAI : MonoBehaviour {
         }
         if (stopped == true && attacking == false)
         {
+            anim.SetBool("walking", false);
             rb.isKinematic = true;
             timer += Time.deltaTime;
             if (timer >= stopInterval)
@@ -91,11 +93,13 @@ public class ZombieAI : MonoBehaviour {
 
         if (Inseguimento == false && stopped == false && attacking == false)
         {
+            anim.SetBool("walking", true);
             rb.velocity = new Vector2(-walkVelocity, rb.velocity.y);
             checkPosition();
         }
         else if (Inseguimento == true && stopped == false && attacking == false)
         {
+            anim.SetBool("walking", true);
             rb.velocity = new Vector2(-runVelocity, rb.velocity.y);
         }
         anim.SetBool("attacking", hit);
