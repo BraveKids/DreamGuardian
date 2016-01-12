@@ -117,7 +117,8 @@ public class TankAI : MonoBehaviour {
     {
         anim.SetBool("walking", false);
         anim.SetBool("walkingBack", false);
-        rb.isKinematic = true;
+		Stop ();
+		//rb.isKinematic = true;
         timer += Time.deltaTime;
         if (timer >= vulnerabilityInterval)
         {

@@ -18,14 +18,12 @@ public class ZombieDamage : MonoBehaviour {
     }
 
 
-   
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("AttackTrigger"))
+        if (other.CompareTag("AttackTrigger") && hp>0)
         {
             hp -= 1;
-            anim.Play("damage");
-            Debug.Log("OUCH! " + hp + " left!");
+            //anim.Play("damage");
 			if (hp <= 0) {
 				anim.Play ("explosion");
 				if (playerScript.energy < 10)
@@ -39,11 +37,7 @@ public class ZombieDamage : MonoBehaviour {
 			}
           
         }
-        if (other.CompareTag("SuperAttackTrigger"))
-        {
-            anim.SetTrigger("explode");
-            DestroyEnemy();
-        }
+ 
     }
 
 
