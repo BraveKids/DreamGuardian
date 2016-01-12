@@ -1,0 +1,419 @@
+fileFormatVersion: 2
+guid: 2886e6f4895f83c4fba5c79e5252c75e
+timeCreated: 1452339394
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: SquireIdle_5
+    21300002: SquireIdle_4
+    21300004: SquireIdle_3
+    21300006: SquireIdle_2
+    21300008: SquireIdle_1
+    21300010: Squire
+    21300012: SquireAttack_3
+    21300014: SquireAttack_2
+    21300016: SquireAttack_1
+    21300018: Squiremove_8
+    21300020: Squiremove_7
+    21300022: Squiremove_6
+    21300024: Squiremove_5
+    21300026: Squiremove_4
+    21300028: Squiremove_3
+    21300030: Squiremove_2
+    21300032: Squiremove_1
+    21300034: SquireDeath_5
+    21300036: SquireDeath_4
+    21300038: SpriteSquiremove_19
+    21300040: SpriteSquiremove_20
+    21300042: SquireDeath_1
+    21300044: SpriteSquiremove_22
+    21300046: SpriteSquiremove_23
+    21300048: SquireDeath_3
+    21300050: SquireDeath_2
+    21300052: SpriteSquiremove_26
+    21300054: SpriteSquiremove_27
+    21300056: SpriteSquiremove_28
+    21300058: SpriteSquiremove_29
+    21300060: SpriteSquiremove_30
+    21300062: SpriteSquiremove_31
+    21300064: SpriteSquiremove_32
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: SquireIdle_5
+      rect:
+        serializedVersion: 2
+        x: 3075
+        y: 6953
+        width: 512
+        height: 689
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SquireIdle_4
+      rect:
+        serializedVersion: 2
+        x: 4068
+        y: 6968
+        width: 496
+        height: 695
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SquireIdle_3
+      rect:
+        serializedVersion: 2
+        x: 4899
+        y: 6958
+        width: 506
+        height: 684
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SquireIdle_2
+      rect:
+        serializedVersion: 2
+        x: 5698
+        y: 6968
+        width: 486
+        height: 638
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SquireIdle_1
+      rect:
+        serializedVersion: 2
+        x: 6508
+        y: 6963
+        width: 501
+        height: 669
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Squire
+      rect:
+        serializedVersion: 2
+        x: 9434
+        y: 6953
+        width: 496
+        height: 642
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SquireAttack_3
+      rect:
+        serializedVersion: 2
+        x: 6743
+        y: 5129
+        width: 533
+        height: 643
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SquireAttack_2
+      rect:
+        serializedVersion: 2
+        x: 7475
+        y: 5124
+        width: 762
+        height: 723
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SquireAttack_1
+      rect:
+        serializedVersion: 2
+        x: 8326
+        y: 5129
+        width: 679
+        height: 669
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Squiremove_8
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 3265
+        width: 491
+        height: 699
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Squiremove_7
+      rect:
+        serializedVersion: 2
+        x: 1549
+        y: 3300
+        width: 727
+        height: 465
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Squiremove_6
+      rect:
+        serializedVersion: 2
+        x: 2871
+        y: 3305
+        width: 685
+        height: 591
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Squiremove_5
+      rect:
+        serializedVersion: 2
+        x: 4110
+        y: 3318
+        width: 741
+        height: 677
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Squiremove_4
+      rect:
+        serializedVersion: 2
+        x: 5354
+        y: 3368
+        width: 689
+        height: 632
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Squiremove_3
+      rect:
+        serializedVersion: 2
+        x: 6612
+        y: 3478
+        width: 648
+        height: 564
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Squiremove_2
+      rect:
+        serializedVersion: 2
+        x: 7997
+        y: 3331
+        width: 664
+        height: 772
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Squiremove_1
+      rect:
+        serializedVersion: 2
+        x: 9251
+        y: 3316
+        width: 585
+        height: 679
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SquireDeath_5
+      rect:
+        serializedVersion: 2
+        x: 4721
+        y: 1419
+        width: 559
+        height: 647
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SquireDeath_4
+      rect:
+        serializedVersion: 2
+        x: 5797
+        y: 1424
+        width: 653
+        height: 617
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpriteSquiremove_19
+      rect:
+        serializedVersion: 2
+        x: 5917
+        y: 2030
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpriteSquiremove_20
+      rect:
+        serializedVersion: 2
+        x: 6153
+        y: 2021
+        width: 52
+        height: 51
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SquireDeath_1
+      rect:
+        serializedVersion: 2
+        x: 9408
+        y: 1414
+        width: 507
+        height: 684
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpriteSquiremove_22
+      rect:
+        serializedVersion: 2
+        x: 2986
+        y: 1800
+        width: 42
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpriteSquiremove_23
+      rect:
+        serializedVersion: 2
+        x: 3195
+        y: 1779
+        width: 26
+        height: 37
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SquireDeath_3
+      rect:
+        serializedVersion: 2
+        x: 7187
+        y: 1419
+        width: 689
+        height: 554
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SquireDeath_2
+      rect:
+        serializedVersion: 2
+        x: 8232
+        y: 1419
+        width: 585
+        height: 538
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpriteSquiremove_26
+      rect:
+        serializedVersion: 2
+        x: 3389
+        y: 1596
+        width: 36
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpriteSquiremove_27
+      rect:
+        serializedVersion: 2
+        x: 3164
+        y: 1523
+        width: 36
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpriteSquiremove_28
+      rect:
+        serializedVersion: 2
+        x: 5311
+        y: 1502
+        width: 68
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpriteSquiremove_29
+      rect:
+        serializedVersion: 2
+        x: 6456
+        y: 1534
+        width: 68
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpriteSquiremove_30
+      rect:
+        serializedVersion: 2
+        x: 3336
+        y: 1440
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpriteSquiremove_31
+      rect:
+        serializedVersion: 2
+        x: 3577
+        y: 1387
+        width: 47
+        height: 58
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpriteSquiremove_32
+      rect:
+        serializedVersion: 2
+        x: 3109
+        y: 1372
+        width: 39
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
