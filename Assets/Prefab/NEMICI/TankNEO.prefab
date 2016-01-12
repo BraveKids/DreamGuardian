@@ -32,6 +32,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &119770
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 466708}
+  - 61: {fileID: 6199626}
+  - 114: {fileID: 11404692}
+  m_Layer: 0
+  m_Name: Shield
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &124432
 GameObject:
   m_ObjectHideFlags: 1
@@ -237,7 +254,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102992}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.77593994, y: -1.92452383, z: 0}
+  m_LocalPosition: {x: -6.23398113, y: -2.04270101, z: 0}
   m_LocalScale: {x: .741295218, y: .741295218, z: .741295218}
   m_Children:
   - {fileID: 416168}
@@ -269,6 +286,7 @@ Transform:
   - {fileID: 455798}
   - {fileID: 418222}
   - {fileID: 410738}
+  - {fileID: 466708}
   m_Father: {fileID: 416168}
   m_RootOrder: 0
 --- !u!4 &453916
@@ -295,6 +313,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 426662}
   m_RootOrder: 0
+--- !u!4 &466708
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119770}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.58000004, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 426662}
+  m_RootOrder: 3
 --- !u!4 &466932
 Transform:
   m_ObjectHideFlags: 1
@@ -447,6 +477,19 @@ BoxCollider2D:
   m_Offset: {x: -.0315433145, y: 2.68220901e-07}
   serializedVersion: 2
   m_Size: {x: .179873809, y: 1.3928318}
+--- !u!61 &6199626
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119770}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: .158325315, y: .808248043}
+  serializedVersion: 2
+  m_Size: {x: 1.48387313, y: 2.61649632}
 --- !u!95 &9563178
 Animator:
   serializedVersion: 3
@@ -464,6 +507,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11404692
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c2f4508c982e934484e5e6d03cbd2f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tankAI: {fileID: 0}
+  shieldInterval: 2
 --- !u!114 &11415332
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -504,7 +560,7 @@ MonoBehaviour:
   vulnerable: 0
   vulnerabilityInterval: 2.5
   attacking: 0
-  hit: 0
+  shieldIsActive: 0
 --- !u!114 &11457914
 MonoBehaviour:
   m_ObjectHideFlags: 1

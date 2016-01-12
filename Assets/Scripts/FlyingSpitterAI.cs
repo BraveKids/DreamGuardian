@@ -19,6 +19,8 @@ public class FlyingSpitterAI : MonoBehaviour {
     GameObject player;
     public bool allowAttack = true;
 
+    public bool attackSpitter;
+
     // Use this for initialization
     void Start()
     {
@@ -50,37 +52,43 @@ public class FlyingSpitterAI : MonoBehaviour {
     }
     public void Attack()
     {
-        if (allowAttack == true)
+        if (attackSpitter == true)
         {
-			anim.Play("Attack");
-            GameObject bulletClone;
-            if (isLeft == true)
+            if (allowAttack == true)
             {
-                bulletClone = Instantiate(bullet, shootPoint.transform.position, Quaternion.identity) as GameObject;
-                bulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(-bulletSpeed, 0);
-                allowAttack = false;
+                anim.Play("Attack");
+                GameObject bulletClone;
+                if (isLeft == true)
+                {
+                    bulletClone = Instantiate(bullet, shootPoint.transform.position, Quaternion.identity) as GameObject;
+                    bulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(-bulletSpeed, 0);
+                    allowAttack = false;
+                }
+                else if (isLeft == false)
+                {
+                    bullet.transform.localScale = new Vector2(bullet.transform.localScale.x * -1, bullet.transform.localScale.y);
+                    bulletClone = Instantiate(bullet, shootPoint.transform.position, Quaternion.identity) as GameObject;
+                    bulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(-bulletSpeed, 0);
+                    bullet.transform.localScale = new Vector2(bullet.transform.localScale.x * -1, bullet.transform.localScale.y);
+                    allowAttack = false;
+                }
             }
-            else if (isLeft == false)
+            else if (allowAttack == false)
             {
-                bullet.transform.localScale = new Vector2(bullet.transform.localScale.x * -1, bullet.transform.localScale.y);
-                bulletClone = Instantiate(bullet, shootPoint.transform.position, Quaternion.identity) as GameObject;
-                bulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(-bulletSpeed, 0);
-                bullet.transform.localScale = new Vector2(bullet.transform.localScale.x * -1, bullet.transform.localScale.y);
-                allowAttack = false;
+                bulletTimer += Time.deltaTime;
+                if (bulletTimer >= shootInterval)
+                {
+
+                    bulletTimer = 0;
+                    allowAttack = true;
+                }
+            }
+            else if (attackSpitter == false)
+            {
+                
             }
         }
-        else if (allowAttack == false)
-        {
-            bulletTimer += Time.deltaTime;
-            if (bulletTimer >= shootInterval)
-            {
-
-                bulletTimer = 0;
-                allowAttack = true;
-            }
-        }
-
-       
+               
     }
     
     void Flip()
