@@ -29,7 +29,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	//when on moving platform some time is needed to move vertically the camera, and then 
 	//the camera will follow the platform. This generate some space lap.
 	public float diff_when_moving = 0;
-	private bool onVerticalLevel = true;
+	private bool onVerticalLevel = false;
 	float playerY;
 	Camera cam;
 	float height ;
@@ -92,7 +92,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 					cameraY = playerY /*+ diff*/;
 				}
 			} else {
-				if (playerY < cameraY-(height/2)) {
+				if (playerY < cameraY - (height / 2)) {
 					player.GetComponent<CharacterControllerScript> ().Death ();
 				}
 			}
@@ -111,10 +111,12 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	}
 
 	public void followMe (float nextY, bool movingPlat) {
-		if (onVerticalLevel && nextY < this.nextY) {
 
+		if (onVerticalLevel && nextY < this.nextY) {
 			return;
 		}
+		
+		Debug.Log ("camera reset");
 		this.nextY = nextY;
 		if (movingCamera) {
 			t = 0.0f;
@@ -123,6 +125,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 			StartCoroutine (ResetCamera (movingPlat));
 
 		}
+
 	}
 
 	//this method updata
