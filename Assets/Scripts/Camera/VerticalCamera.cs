@@ -2,21 +2,21 @@
 using System.Collections;
 using System.Linq;
 
-public class CameraFollowOnPlatform : MonoBehaviour {
-
+public class VerticalCamera : MonoBehaviour {
+	
 	private bool followYume = true;
 	private float diffOnNewLevel = 0.2464275f;
-	public static CameraFollowOnPlatform instance = null;
+	public static VerticalCamera instance = null;
 	Vector3 currentOrigin;	//posizione corrente della camera (transform.position), utilizzata per chiarezza del codice
-
+	
 	//public float currentY;
 	public float originY;	//basically the ground y
 	public bool nextToGround = true;
 	public GameObject player;
 	public float cameraOffset = 1.5f;	//when on ground how much the camera will be lift up from it?
-
+	
 	public float deviationFix = 0.2f; //if i jump on the spot i get different y position. Fixed it introducing a little range between odl and new position
-
+	
 	//used for ResetCamera, no need to explain
 	private Vector2 velocity;
 	public float smoothTimeX;
@@ -26,18 +26,18 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	bool movingCamera = false;
 	public float nextY;
 
+	Camera cam;
+	float cameraHeight;
+	
 	//when on moving platform some time is needed to move vertically the camera, and then 
 	//the camera will follow the platform. This generate some space lap.
 	public float diff_when_moving = 0;
-	private bool onVerticalLevel = true;
-	float playerY;
-	Camera cam;
-	float height ;
-
+	
 	public void Start () {
-		cam = Camera.main;
-		height = 2f * cam.orthographicSize;
 
+		cam = Camera.main;
+		cameraHeight = 2f * cam.orthographicSize;
+		
 		// singleton
 		if (instance == null) {
 			instance = this;
@@ -49,94 +49,81 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 		currentOrigin = new Vector3 (player.transform.position.x, player.transform.position.y + deviationFix, transform.position.z);
 		transform.position = currentOrigin;
 	}
-
+	
 	void Update () {
-
+		
 		if (followYume) {
 			player = GameObject.FindGameObjectWithTag ("Player");
-
-
-
-			playerY = player.transform.position.y;
-
+			
+			
+			
+			float playerY = player.transform.position.y;
+			
 			Debug.DrawLine (new Vector3 (player.transform.position.x, transform.position.y + deviationFix, player.transform.position.z), new Vector3 (player.transform.position.x, transform.position.y - deviationFix, player.transform.position.z), Color.green, 2, false);
-
-			float cameraX = player.transform.position.x;
+			
+			float cameraX = transform.position.x;
 			float cameraY = transform.position.y;
-		
-
+			
+			
 			if (playerY < originY + cameraOffset) {
 				nextToGround = true;
 			} else {
 				nextToGround = false;
 			}
 			//float posX = Mathf.SmoothDamp (transform.position.x, player.transform.position.x, ref velocity.x, smoothTimeX);
-
+			
 			//float posY = transform.position.y;
-
-
+			
+			
 			//if on moving platform
-
+			
 			if (onMovingPlat && !nextToGround) {
 				cameraY = player.transform.position.y + diff_when_moving;
 				nextY = cameraY;
-			}
-
-
-			if (!onVerticalLevel) {
-				//if falling
-				//if i'm out of range and also lower from the bottom then i'm falling
-				if (imFalling (playerY, nextY - deviationFix, nextY + deviationFix) && !nextToGround) {
-					float diff = cameraY - playerY;
-					movingCamera = false;
-					cameraY = playerY /*+ diff*/;
-				}
-			} else {
-				if (playerY < cameraY-(height/2)) {
-					player.GetComponent<CharacterControllerScript> ().Death ();
-				}
-			}
-		
+			}	
 	
-
+			
+			
 			transform.position = new Vector3 (cameraX, cameraY, transform.position.z);
-
-
-
+			
+			
+			
 			//only used for ResetCamera
 			currentOrigin = transform.position;
 
+
+			//die condition
+			if(playerY<cameraY-(cameraHeight/2)){
+				player.GetComponent<CharacterControllerScript>().Death();
+			}
 		}
 		
 	}
-
+	
 	public void followMe (float nextY, bool movingPlat) {
-		if (onVerticalLevel && nextY < this.nextY) {
-
-			return;
-		}
+		
 		this.nextY = nextY;
 		if (movingCamera) {
 			t = 0.0f;
 		} else {
-
+			
 			StartCoroutine (ResetCamera (movingPlat));
-
+			
 		}
 	}
-
+	
 	//this method updata
-
+	
 	public IEnumerator  ResetCamera (bool movingPlat) {
-
-
+		
+		
 		//Debug.DrawLine (new Vector3 (player.transform.position.x + 1f, currentY, player.transform.position.z), new Vector3 (player.transform.position.x - 1f, currentY, player.transform.position.z), Color.red, 2, false);
 		movingCamera = true;
 		//if nextY is greater than the origin plus offset due to moving platform, don't move the camera
 		bool substantialDiff = outOfRange (nextY, transform.position.y - deviationFix, transform.position.y + deviationFix);
 		if (substantialDiff && !nextToGround) {
-
-
+			
+			
 			t = 0.0f;
 			float transitionDuration = 1f;
 			//some code
@@ -145,9 +132,9 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 				
 				//Vector3 nextPos = new Vector3 (transform.position.x, nextY, transform.position.z);
 				Vector3 nextPos = new Vector3 (transform.position.x, nextY, transform.position.z);
-
+				
 				//don't know why but it seems like it take less than transitionDuration to set the camera so i forced the exit
-
+				
 				transform.position = Vector3.Lerp (transform.position, nextPos, t);	
 				if (nextY == transform.position.y) {
 					movingCamera = false;
@@ -155,27 +142,27 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 				yield return 0;
 			}
 		}
-
+		
 		if (movingPlat) {
-
+			
 			diff_when_moving = Mathf.Abs (transform.position.y - player.transform.position.y);
 			if (transform.position.y < player.transform.position.y) {
 				diff_when_moving = -diff_when_moving;
 			}
-
+			
 		}
-
+		
 		onMovingPlat = movingPlat;
-
+		
 		
 		movingCamera = false;
-
+		
 	}
-
+	
 	bool outOfRange (float numberToCheck, float bottom, float top) {
 		return numberToCheck < bottom || numberToCheck > top;
 	}
-
+	
 	bool imFalling (float playerY, float bottom, float top) {
 		return outOfRange (playerY, bottom, top) && playerY < bottom;
 	}
@@ -183,17 +170,14 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	public void stopCourutine () {
 		StopCoroutine ("ResetCamera");
 	}
-
+	
 	public void setFollowYume (bool follow) {
 		this.followYume = follow;
 	}
-
+	
 	public void setFollowYume (bool follow, Vector3 position) {
 		this.followYume = follow;
-		transform.position = new Vector3 (position.x - diffOnNewLevel, position.y + cameraOffset, transform.position.z);
-	}
-
-	public void verticalLevel (bool vertical) {
-		onVerticalLevel = vertical;
+		transform.position = new Vector3 (position.x-diffOnNewLevel, position.y + cameraOffset, transform.position.z);
 	}
 }
+

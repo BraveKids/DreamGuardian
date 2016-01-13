@@ -186,7 +186,7 @@ public class CharacterControllerScript : MonoBehaviour {
 		
 	}
 
-	void Death () {
+	public void Death () {
 		anim.SetBool ("IstantDeath", false);
 		anim.SetTrigger ("respawn");
 		Application.LoadLevel (Application.loadedLevel);	//level reset
