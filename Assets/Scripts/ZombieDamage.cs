@@ -29,6 +29,7 @@ public class ZombieDamage : MonoBehaviour {
                 anim.Play("explosion");
                 Invoke("DestroyEnemy", 0.15f);
 
+
             }
         }
         if (other.CompareTag("SuperAttackTrigger"))

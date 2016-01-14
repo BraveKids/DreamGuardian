@@ -23,6 +23,7 @@ public class TankAttack : MonoBehaviour {
         if (col.CompareTag("Player"))
         {
             tankAI.attacking = false;
+            tankAI.anim.SetBool("shield", false);
 
         }
 
