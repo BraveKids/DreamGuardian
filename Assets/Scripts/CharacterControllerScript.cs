@@ -82,7 +82,7 @@ public class CharacterControllerScript : MonoBehaviour {
 
 
 
-		if (energy>0 && canMove && arrowTimer>=1.5f && (Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && !arrow.activeSelf && abilitySelected=="arrowAbility" ) {
+		if (energy>0 && canMove && arrowTimer>=1.3f && (Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && !arrow.activeSelf && abilitySelected=="arrowAbility" ) {
 			arrowTimer = 0f;
 			arrow.transform.position = firePoint.position;
 			if (anim.GetBool ("Ground") == false) {
@@ -153,7 +153,6 @@ public class CharacterControllerScript : MonoBehaviour {
 			anim.Play ("YumeDamage");
 			hp -= 1;
 			GameObject.Find ("HUD").GetComponent<HUDManager> ().updateHP (hp);
-			Debug.Log ("Danno " + hp + " left!");
 			nextHitAllowed = Time.time + hitDelay;
 			if (hp <= 0) {
 				anim.SetTrigger ("death");
@@ -174,7 +173,7 @@ public class CharacterControllerScript : MonoBehaviour {
 		if (other.CompareTag ("EnemyObject")) {
 			anim.Play ("YumeDamage");
 			hp -= 1;
-			Debug.Log ("Danno " + hp + " left!");
+			GameObject.Find ("HUD").GetComponent<HUDManager> ().updateHP (hp);
 			nextHitAllowed = Time.time + hitDelay;
 			if (hp <= 0) {
 				anim.SetTrigger ("death");

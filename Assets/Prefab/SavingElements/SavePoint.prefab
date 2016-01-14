@@ -12,6 +12,7 @@ GameObject:
   - 212: {fileID: 21275506}
   - 222: {fileID: 22287104}
   - 114: {fileID: 11441186}
+  - 132: {fileID: 13250370}
   m_Layer: 0
   m_Name: SavePoint
   m_TagString: SavePoint
@@ -43,6 +44,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a255d888293535d478f44aaf082305d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!132 &13250370
+GUIText:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151818}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: 1.1.1
+  m_Anchor: 0
+  m_Alignment: 0
+  m_PixelOffset: {x: 0, y: 0}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 0}
+  m_Material: {fileID: 0}
+  m_FontSize: 0
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_PixelCorrect: 1
+  m_RichText: 1
 --- !u!212 &21275506
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -89,7 +113,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -20.2659512, y: 2.29483795}
+  m_AnchoredPosition: {x: -24.6882229, y: 37.4636421}
   m_SizeDelta: {x: 2.46000004, y: .709999979}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &100100000

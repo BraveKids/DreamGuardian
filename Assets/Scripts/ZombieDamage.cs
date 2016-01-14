@@ -23,7 +23,7 @@ public class ZombieDamage : MonoBehaviour {
         if (other.CompareTag("AttackTrigger") && hp>0)
         {
             hp -= 1;
-            //anim.Play("damage");
+            anim.Play("damage");
 			if (hp <= 0) {
 				anim.Play ("explosion");
 				if (playerScript.energy < 10)

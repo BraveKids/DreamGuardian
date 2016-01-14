@@ -7,6 +7,7 @@ public class GorillaBossScript : MonoBehaviour {
 	bool vulnerable;
 	bool movingBack;
 	bool canAttack;
+	public bool active;
 	public float stunTimer;
 	public GameObject enemy;
 	public GameObject[] ropes;
@@ -30,53 +31,54 @@ public class GorillaBossScript : MonoBehaviour {
 	public Transform shootPointRight;
 	// Use this for initialization
 	void Start () {
+		active = false;
 		player = GameObject.FindGameObjectWithTag("Player");
 		playerScript = player.gameObject.GetComponent("CharacterControllerScript") as CharacterControllerScript;
 		actualRope = 0;
 		rb = GetComponent<Rigidbody2D>();
 		rb.isKinematic = true;
 		vulnerable = false;
-		canAttack = true;
 		hp = 12;
 		hpDelta = 0;
+		canAttack = true;
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-		if(!ropes[actualRope].activeSelf==true){
-			rb.isKinematic = false;
-			vulnerable = true;
-			canAttack = false;
-			actualRope+=1;
+		if (active) {
+			if (!ropes [actualRope].activeSelf == true) {
+				rb.isKinematic = false;
+				vulnerable = true;
+				canAttack = false;
+				actualRope += 1;
 			}
-		if (vulnerable) {
-			stunTimer += Time.deltaTime;
-		}
-
-		if ((lookingRight == false && target.transform.position.x < transform.position.x)|| (lookingRight == true && target.transform.position.x > transform.position.x))
-		{
-			Flip();
-		}
-
-
-		if (canAttack) {
-			Attack (lookingRight);
-		}
-
-		if (hpDelta == 4 || stunTimer>=5f) {
-			BackToRope();
-			stunTimer=0f;
+			if (vulnerable) {
+				stunTimer += Time.deltaTime;
 			}
 
-		if (movingBack == true) {
-			gameObject.transform.position = Vector3.MoveTowards (transform.position,ropes [actualRope].transform.position,  Time.deltaTime * moveSpeed);
+			if ((lookingRight == false && target.transform.position.x < transform.position.x) || (lookingRight == true && target.transform.position.x > transform.position.x)) {
+				Flip ();
+			}
 
-		}
-		if (transform.position.Equals(ropes [actualRope].transform.position)) {
-			movingBack = false;
-			canAttack = true;
+
+			if (canAttack) {
+				Attack (lookingRight);
+			}
+
+			if (hpDelta == 4 || stunTimer >= 5f) {
+				BackToRope ();
+				stunTimer = 0f;
+			}
+
+			if (movingBack == true) {
+				gameObject.transform.position = Vector3.MoveTowards (transform.position, ropes [actualRope].transform.position, Time.deltaTime * moveSpeed);
+
+			}
+			if (transform.position.Equals (ropes [actualRope].transform.position)) {
+				movingBack = false;
+				canAttack = true;
+			}
 		}
 }
 

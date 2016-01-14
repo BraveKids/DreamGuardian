@@ -32,7 +32,7 @@ public class FlyingSpitterAI : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-		bullet.transform.localScale = new Vector3 (0.3f, 0.3f, 0.3f);
+
 		character.transform.position = Vector3.MoveTowards(character.transform.position, currentPoint.position, Time.deltaTime * moveSpeed);
         if (character.transform.position == currentPoint.position)
         {

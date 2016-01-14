@@ -17,8 +17,8 @@ public class attackingObject : MonoBehaviour {
 	
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag ("Player")) {
-			rb.AddForce(new Vector2(-150,0));;
-			Invoke("Destroy", 1.5f);
+			rb.AddForce(new Vector2(-400,0));;
+			Invoke("Destroy", 3f);
 		}
 	}
 	
