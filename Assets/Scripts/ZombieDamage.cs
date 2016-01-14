@@ -27,7 +27,8 @@ public class ZombieDamage : MonoBehaviour {
             if (hp <= 0)
             {
                 anim.Play("explosion");
-                Invoke("DestroyEnemy", 0.15f);
+                Invoke("DestroyEnemy", 1.5f);
+                //DestroyEnemy();
 
 
             }
