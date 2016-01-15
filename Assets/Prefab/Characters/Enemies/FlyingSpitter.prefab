@@ -166,7 +166,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117170}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.32486343, y: -1.57306528, z: 0}
+  m_LocalPosition: {x: -50.5096207, y: 60.6100006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 423904}
@@ -255,7 +255,7 @@ MonoBehaviour:
   pointSelection: 1
   bulletTimer: 0
   shootInterval: 3
-  bullet: {fileID: 192964, guid: 386f667677e5a56449482a55420a92e3, type: 2}
+  bullet: {fileID: 183432, guid: 53ae0623f11335e40b97a9850bdf121f, type: 2}
   shootPoint: {fileID: 462366}
   bulletSpeed: 5
   isLeft: 1

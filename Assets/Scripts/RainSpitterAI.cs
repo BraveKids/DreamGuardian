@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class RainSpitterAI : MonoBehaviour {
+    Animator anim;
     public GameObject cannonball;  
     float bulletTimer;
     public float shootInterval;
@@ -37,6 +38,7 @@ public class RainSpitterAI : MonoBehaviour {
     {
         allowShoot = false;
         player = GameObject.FindGameObjectWithTag("Player");
+        anim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -56,6 +58,7 @@ public class RainSpitterAI : MonoBehaviour {
         if (allowShoot == true)
         {
             allowShoot = false;
+            anim.Play("Attack_RainSpitter");
             GameObject ball = Instantiate(cannonball, shootPoint.transform.position, Quaternion.identity) as GameObject;
             if (selectedTarget == 1)
             {

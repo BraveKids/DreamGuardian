@@ -110,12 +110,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originY: 0
   nextToGround: 1
+  player: {fileID: 0}
   cameraOffset: 1.5
-  deviationFix: 2
-  isFalling: 0
+  deviationFix: .200000003
   smoothTimeX: 0
   smoothTimeY: 0
-  on_moving_plat: 0
+  onMovingPlat: 0
+  nextY: 0
   diff_when_moving: 0
 --- !u!114 &11417914
 MonoBehaviour:

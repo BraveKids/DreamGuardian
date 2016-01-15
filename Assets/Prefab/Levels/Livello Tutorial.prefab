@@ -219,7 +219,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 487184}
   - 61: {fileID: 6124982}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: RightBorder
   m_TagString: Border
   m_Icon: {fileID: 2270504221434485236, guid: 0000000000000000d000000000000000, type: 0}
@@ -461,7 +461,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 494494}
   - 61: {fileID: 6109222}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: RightBorder
   m_TagString: Border
   m_Icon: {fileID: 2270504221434485236, guid: 0000000000000000d000000000000000, type: 0}
@@ -802,7 +802,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 448592}
   - 61: {fileID: 6131238}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: LeftBorder
   m_TagString: Border
   m_Icon: {fileID: 2270504221434485236, guid: 0000000000000000d000000000000000, type: 0}
@@ -1194,7 +1194,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 488120}
   - 61: {fileID: 6120072}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: LeftBorder
   m_TagString: Border
   m_Icon: {fileID: 2270504221434485236, guid: 0000000000000000d000000000000000, type: 0}
@@ -2797,10 +2797,12 @@ MonoBehaviour:
   BorderCheckRadius: .100000001
   WhatIsBorder:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 4096
   HittingBorder: 0
+  bulletTimer: 0
   shootInterval: 1
   attackSpitter: 0
+  allowAttack: 1
 --- !u!114 &11426930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2836,7 +2838,7 @@ MonoBehaviour:
   BorderCheckRadius: .100000001
   WhatIsBorder:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 4096
   HittingBorder: 0
 --- !u!114 &11468544
 MonoBehaviour:
@@ -2875,7 +2877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 3
-  deathTimer: .200000003
+  deathTimer: 1
   enemy: {fileID: 143372}
 --- !u!114 &11485626
 MonoBehaviour:
