@@ -1,0 +1,111 @@
+fileFormatVersion: 2
+guid: 6fb054357e247084b9baf973c692ffb0
+timeCreated: 1452862088
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: GorillabossStun_0
+    21300002: GorillabossStun_1
+    21300004: GorillabossStun_2
+    21300006: GorillabossStun_3
+    21300008: GorillabossStun_4
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: GorillabossStun_0
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 854
+        width: 570
+        height: 357
+      alignment: 9
+      pivot: {x: .476034909, y: .521865308}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GorillabossStun_1
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 865
+        width: 555
+        height: 350
+      alignment: 9
+      pivot: {x: .492967993, y: .500000358}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GorillabossStun_2
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 409
+        width: 586
+        height: 355
+      alignment: 9
+      pivot: {x: .446718395, y: .500000179}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GorillabossStun_3
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 409
+        width: 536
+        height: 361
+      alignment: 9
+      pivot: {x: .489077777, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GorillabossStun_4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1351
+        width: 521
+        height: 230
+      alignment: 9
+      pivot: {x: .447561949, y: .618783951}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

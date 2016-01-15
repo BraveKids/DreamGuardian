@@ -4,7 +4,7 @@ using System.Collections;
 public class Bullet : MonoBehaviour {
 
 	void Start(){
-		Invoke ("DestroyBullet", 2f); 
+		Invoke ("DestroyBullet", 3f); 
 	}
 
 
