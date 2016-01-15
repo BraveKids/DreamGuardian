@@ -3254,7 +3254,6 @@ GameObject:
   - 61: {fileID: 6164222}
   - 95: {fileID: 9594816}
   - 114: {fileID: 11476228}
-  - 58: {fileID: 5815224}
   m_Layer: 0
   m_Name: Body
   m_TagString: EnemyBody
@@ -5219,7 +5218,6 @@ GameObject:
   - 61: {fileID: 6111336}
   - 95: {fileID: 9539142}
   - 114: {fileID: 11466336}
-  - 58: {fileID: 5854890}
   m_Layer: 0
   m_Name: Body
   m_TagString: EnemyBody
@@ -10182,32 +10180,6 @@ CircleCollider2D:
   m_Offset: {x: -1.65999997, y: 2.30999994}
   serializedVersion: 2
   m_Radius: .899999976
---- !u!58 &5812726
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 154492}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2.17025757
---- !u!58 &5815224
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 157170}
-  m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: d416426d135ebaf4ca0da4e132a693cd, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: -1.65999997, y: 2.30999994}
-  serializedVersion: 2
-  m_Radius: .899999976
 --- !u!58 &5820706
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -10351,32 +10323,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: .574254274
---- !u!58 &5852546
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 112884}
-  m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: d416426d135ebaf4ca0da4e132a693cd, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: .100000001, y: .0700000003}
-  serializedVersion: 2
-  m_Radius: .0603365861
---- !u!58 &5854890
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 192508}
-  m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: d416426d135ebaf4ca0da4e132a693cd, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: -1.65999997, y: 2.30999994}
-  serializedVersion: 2
-  m_Radius: .899999976
 --- !u!58 &5856876
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -12149,9 +12095,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 7.62939453e-06, y: 2.18850803}
+  m_Offset: {x: 13.3304749, y: -.689288199}
   serializedVersion: 2
-  m_Size: {x: 2.45999479, y: 6.84850073}
+  m_Size: {x: 29.1192722, y: 1.09289002}
 --- !u!61 &6154062
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -17576,7 +17522,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 109.25, y: .278798103}
+  m_AnchoredPosition: {x: 109.25, y: .289999992}
   m_SizeDelta: {x: 1.96000004, y: .709999979}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22478168

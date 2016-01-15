@@ -38,7 +38,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	Camera cam;
 	float height ;
 	float width;
-	float moveSpeed = 1;
+	public float moveSpeed = 1;
 
 	public void Start () {
 		setChasingCamera (false);
@@ -213,6 +213,10 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	public void setChasingCamera (bool chasing) {
 		transform.FindChild ("cameraBorder").gameObject.SetActive(chasing);
 		this.onChasingCamera = chasing;
+	}
+
+	public bool getChasingCamera(){
+		return onChasingCamera;
 	}
 
 	public void setFollowYume (bool follow, Vector3 position) {
