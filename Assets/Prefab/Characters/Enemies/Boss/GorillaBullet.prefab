@@ -11,7 +11,8 @@ GameObject:
   - 212: {fileID: 21224570}
   - 61: {fileID: 6145852}
   - 50: {fileID: 5032844}
-  - 114: {fileID: 11440546}
+  - 114: {fileID: 11486192}
+  - 95: {fileID: 9599484}
   m_Layer: 0
   m_Name: GorillaBullet
   m_TagString: Enemy
@@ -60,7 +61,24 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: .222222224, y: .222222224}
---- !u!114 &11440546
+--- !u!95 &9599484
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 170154}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f336feb600aabb44ca2fbe725877dc48, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11486192
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -68,7 +86,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 170154}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f916b3bc0a0bcd4b9ec521007f46d86, type: 3}
+  m_Script: {fileID: 11500000, guid: 9cf4c2116fedd914f81496d7ba42bbc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &21224570
