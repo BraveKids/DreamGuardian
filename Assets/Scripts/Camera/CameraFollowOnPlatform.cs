@@ -34,6 +34,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	Camera cam;
 	float height ;
 
+
 	public void Start () {
 		cam = Camera.main;
 		height = 2f * cam.orthographicSize;
@@ -49,6 +50,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 		currentOrigin = new Vector3 (player.transform.position.x, player.transform.position.y + deviationFix, transform.position.z);
 		transform.position = currentOrigin;
 	}
+
 
 	void Update () {
 
@@ -110,13 +112,15 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 		
 	}
 
+
 	public void followMe (float nextY, bool movingPlat) {
 
 		if (onVerticalLevel && nextY < this.nextY) {
+			Debug.Log ("Vertical level, so doing nothing");
 			return;
 		}
 		
-		Debug.Log ("camera reset");
+		Debug.Log ("camera reset begin");
 		this.nextY = nextY;
 		if (movingCamera) {
 			t = 0.0f;
@@ -127,8 +131,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 		}
 
 	}
-
-	//this method updata
+	
 
 	public IEnumerator  ResetCamera (bool movingPlat) {
 
@@ -138,7 +141,6 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 		//if nextY is greater than the origin plus offset due to moving platform, don't move the camera
 		bool substantialDiff = outOfRange (nextY, transform.position.y - deviationFix, transform.position.y + deviationFix);
 		if (substantialDiff && !nextToGround) {
-
 
 			t = 0.0f;
 			float transitionDuration = 1f;
