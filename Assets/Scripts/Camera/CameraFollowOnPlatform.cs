@@ -34,7 +34,6 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	Camera cam;
 	float height ;
 
-
 	public void Start () {
 		cam = Camera.main;
 		height = 2f * cam.orthographicSize;
@@ -47,10 +46,9 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 			Destroy (gameObject);
 		}
 		player = GameObject.FindGameObjectWithTag ("Player");
-		currentOrigin = new Vector3 (player.transform.position.x, player.transform.position.y + deviationFix, transform.position.z);
+		currentOrigin = new Vector3 (player.transform.position.x, player.transform.position.y + cameraOffset, transform.position.z);
 		transform.position = currentOrigin;
 	}
-
 
 	void Update () {
 
@@ -112,7 +110,6 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 		
 	}
 
-
 	public void followMe (float nextY, bool movingPlat) {
 
 		if (onVerticalLevel && nextY < this.nextY) {
@@ -131,7 +128,6 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 		}
 
 	}
-	
 
 	public IEnumerator  ResetCamera (bool movingPlat) {
 
@@ -200,5 +196,10 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 
 	public void verticalLevel (bool vertical) {
 		onVerticalLevel = vertical;
+	}
+
+	public void onNewLevel (Vector3 position) {
+		setFollowYume (false, new Vector3 (position.x, player.transform.position.y, position.z));	
+
 	}
 }
