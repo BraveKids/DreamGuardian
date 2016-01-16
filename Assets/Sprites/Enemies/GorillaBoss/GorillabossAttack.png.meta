@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 669cdbc63570997459d51e343f1876d6
-timeCreated: 1452856107
+timeCreated: 1452864726
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -60,138 +60,143 @@ TextureImporter:
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
-  buildTargetSettings: []
+  buildTargetSettings:
+  - buildTarget: Standalone
+    maxTextureSize: 8192
+    textureFormat: -1
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
   spriteSheet:
     sprites:
     - name: GorillabossAttack_0
       rect:
         serializedVersion: 2
-        x: 7559
-        y: 13
+        x: 9564
+        y: 24
         width: 285
-        height: 499
+        height: 621
       alignment: 9
       pivot: {x: .516366839, y: .500000238}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossAttack_1
       rect:
         serializedVersion: 2
-        x: 6855
-        y: 13
-        width: 303
-        height: 499
+        x: 8648
+        y: 10
+        width: 361
+        height: 620
       alignment: 9
-      pivot: {x: .453813106, y: .481303215}
+      pivot: {x: .437527061, y: .481303453}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossAttack_2
       rect:
         serializedVersion: 2
-        x: 6249
-        y: 0
-        width: 247
-        height: 498
+        x: 7881
+        y: 57
+        width: 311
+        height: 559
       alignment: 9
-      pivot: {x: .348909557, y: .490632951}
+      pivot: {x: .367812365, y: .448565811}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossAttack_3
       rect:
         serializedVersion: 2
-        x: 5545
-        y: 17
-        width: 279
-        height: 425
+        x: 6993
+        y: 28
+        width: 359
+        height: 543
       alignment: 9
-      pivot: {x: .466558874, y: .456095368}
+      pivot: {x: .433808655, y: .445268989}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossAttack_4
       rect:
         serializedVersion: 2
-        x: 4849
-        y: 36
-        width: 303
-        height: 424
+        x: 6123
+        y: 45
+        width: 370
+        height: 538
       alignment: 9
-      pivot: {x: .469207674, y: .444989413}
+      pivot: {x: .421542436, y: .423134953}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossAttack_5
       rect:
         serializedVersion: 2
-        x: 4215
-        y: 0
-        width: 326
-        height: 488
+        x: 5362
+        y: 16
+        width: 385
+        height: 595
       alignment: 9
-      pivot: {x: .442761749, y: .480881751}
+      pivot: {x: .320604205, y: .451240361}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossAttack_6
       rect:
         serializedVersion: 2
-        x: 3636
-        y: 0
-        width: 318
-        height: 507
+        x: 4594
+        y: 16
+        width: 359
+        height: 614
       alignment: 9
       pivot: {x: .353304505, y: .472397059}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossAttack_7
       rect:
         serializedVersion: 2
-        x: 3034
-        y: 17
-        width: 308
-        height: 495
+        x: 3839
+        y: 22
+        width: 379
+        height: 637
       alignment: 9
-      pivot: {x: .378833324, y: .471728444}
+      pivot: {x: .332299232, y: .453270495}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossAttack_8
       rect:
         serializedVersion: 2
-        x: 2489
-        y: 22
-        width: 326
-        height: 508
+        x: 3153
+        y: 28
+        width: 395
+        height: 625
       alignment: 9
-      pivot: {x: .414142638, y: .454085827}
+      pivot: {x: .369492918, y: .444679886}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossAttack_9
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 13
-        width: 298
-        height: 499
+        x: 2425
+        y: 34
+        width: 370
+        height: 619
       alignment: 9
-      pivot: {x: .359113663, y: .481303215}
+      pivot: {x: .359113693, y: .443313718}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossAttack_10
       rect:
         serializedVersion: 2
-        x: 1285
-        y: 13
-        width: 359
-        height: 429
+        x: 1602
+        y: 34
+        width: 470
+        height: 520
       alignment: 9
-      pivot: {x: .370058358, y: .456504613}
+      pivot: {x: .370058239, y: .433893651}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossAttack_11
       rect:
         serializedVersion: 2
-        x: 725
-        y: 45
+        x: 954
+        y: 75
         width: 472
-        height: 476
+        height: 528
       alignment: 9
-      pivot: {x: .381400943, y: .441198796}
+      pivot: {x: .40631181, y: .418930292}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossAttack_12
       rect:
         serializedVersion: 2
-        x: 222
-        y: 8
-        width: 401
-        height: 532
+        x: 356
+        y: 61
+        width: 414
+        height: 566
       alignment: 9
-      pivot: {x: .488366783, y: .473694295}
+      pivot: {x: .40316537, y: .484081298}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

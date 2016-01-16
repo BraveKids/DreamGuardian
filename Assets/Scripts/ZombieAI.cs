@@ -26,9 +26,9 @@ public class ZombieAI : MonoBehaviour {
     float Range;
 
     float timer;
-    float stopInterval = 1;
+    float stopInterval = 1f;
     float hitTimer;
-    float hitInterval = 1;
+    float hitInterval = 1.4f;
 
     void Start()
     {
