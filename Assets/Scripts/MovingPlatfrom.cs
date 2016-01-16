@@ -17,16 +17,16 @@ public class MovingPlatfrom : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 	
-			platform.transform.position = Vector3.MoveTowards (platform.transform.position, currentPoint.position, Time.deltaTime * moveSpeed);
-			if (platform.transform.position == currentPoint.position) {
-				pointSelection++;
+		platform.transform.position = Vector3.MoveTowards (platform.transform.position, currentPoint.position, Time.deltaTime * moveSpeed);
+		if (platform.transform.position == currentPoint.position) {
+			pointSelection++;
 
-				if (pointSelection == points.Length) {
-					pointSelection = 0;
-				}
-
-				currentPoint = points [pointSelection];
+			if (pointSelection == points.Length) {
+				pointSelection = 0;
 			}
+
+			currentPoint = points [pointSelection];
+		}
 		
 	}
 }

@@ -14,6 +14,7 @@ public class GorillaBossTrigger : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.CompareTag("Player")){
 			gorillaScript.active = true;
+			gorillaScript.anim.SetBool("attack", true);
 			this.gameObject.SetActive(false);
 		}
 	}

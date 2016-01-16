@@ -118,9 +118,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 7.62939453e-06, y: 2.18850803}
+  m_Offset: {x: 14.0133209, y: -.930724382}
   serializedVersion: 2
-  m_Size: {x: 2.45999479, y: 6.84850073}
+  m_Size: {x: 30.4867077, y: .610037327}
 --- !u!114 &11401508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -248,7 +248,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 148.639999, y: .278798103}
+  m_AnchoredPosition: {x: 132.130112, y: .278798103}
   m_SizeDelta: {x: 2.46000004, y: .709999979}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22430342
@@ -259,7 +259,7 @@ RectTransform:
   m_GameObject: {fileID: 128192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .339208126, y: 1.16484427, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22440144}
   - {fileID: 22405458}
@@ -268,7 +268,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 6.11000013, y: -3}
+  m_AnchoredPosition: {x: -112.300003, y: -2.72996521}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22440144

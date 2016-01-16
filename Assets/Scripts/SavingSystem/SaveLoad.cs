@@ -79,6 +79,7 @@ public class SaveLoad {
 	}
 
 	public static void Spawn () {
+
 		if (savedGame.firstGame) {
 			GameObject startPoint = GameObject.FindGameObjectWithTag ("StartPoint");
 			savedGame.x = startPoint.transform.position.x;
@@ -87,6 +88,8 @@ public class SaveLoad {
 		Vector3 savedPos = new Vector3 (SaveLoad.savedGame.x, SaveLoad.savedGame.y, player.transform.position.z);
 		player.transform.position = savedPos;
 		savedGame.firstGame = false;
+		Camera.main.GetComponent<CameraFollowOnPlatform> ().enabled = true;
+
 		
 
 		//if there are some ability unlocked, take the first

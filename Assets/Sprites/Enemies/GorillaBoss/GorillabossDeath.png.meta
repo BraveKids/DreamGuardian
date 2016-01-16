@@ -1,0 +1,122 @@
+fileFormatVersion: 2
+guid: 4a83e6978de654749840451ddc07c3f1
+timeCreated: 1452862764
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: GorillabossDeath_0
+    21300002: GorillabossDeath_1
+    21300004: GorillabossDeath_2
+    21300006: GorillabossDeath_3
+    21300008: GorillabossDeath_4
+    21300010: GorillabossDeath_5
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: GorillabossDeath_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 33
+        width: 407
+        height: 498
+      alignment: 9
+      pivot: {x: .621853411, y: .404562563}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GorillabossDeath_1
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 39
+        width: 409
+        height: 482
+      alignment: 9
+      pivot: {x: .626309931, y: .33708629}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GorillabossDeath_2
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 41
+        width: 443
+        height: 442
+      alignment: 9
+      pivot: {x: .565304875, y: .275590986}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GorillabossDeath_3
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 25
+        width: 612
+        height: 446
+      alignment: 9
+      pivot: {x: .540517986, y: .28687042}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GorillabossDeath_4
+      rect:
+        serializedVersion: 2
+        x: 2268
+        y: 35
+        width: 663
+        height: 442
+      alignment: 9
+      pivot: {x: .521817625, y: .270916045}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GorillabossDeath_5
+      rect:
+        serializedVersion: 2
+        x: 2975
+        y: 87
+        width: 341
+        height: 318
+      alignment: 9
+      pivot: {x: .536359787, y: .519494712}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
