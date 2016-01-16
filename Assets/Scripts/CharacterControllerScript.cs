@@ -5,7 +5,7 @@ public class CharacterControllerScript : MonoBehaviour {
 
 	public float maxSpeed;
 	public int hp = 3;
-	public int energy=0;
+	public int energy = 0;
 	bool facingRight = true;
 	Rigidbody2D rb;
 	public Animator anim;
@@ -60,12 +60,14 @@ public class CharacterControllerScript : MonoBehaviour {
 
 				abilitySelected = SaveLoad.savedGame.skills [abilitySelector];
 				setAbility (SaveLoad.savedGame.skills [abilitySelector]);
+
+				Debug.Log (abilitySelected);
 			}
 		}
 	}
 
 	void Ability () {
-		if (energy>0 && canMove && (Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && anim.GetBool ("Ground") == true && !platform.activeSelf && abilitySelected == "platformAbility") {
+		if (energy > 0 && canMove && (Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && anim.GetBool ("Ground") == true && !platform.activeSelf && abilitySelected == "platformAbility") {
 			
 			platform.transform.position = platformSpwnPoint.position;
 			anim.Play ("YumePiattaforma");
@@ -73,8 +75,8 @@ public class CharacterControllerScript : MonoBehaviour {
 			anim.SetBool ("platform", true);
 			rb.velocity = new Vector3 (0f, 0f, 0f);
 			Invoke ("PlatformAbility", 0.25f);
-			energy-=1;
-			GameObject.Find("HUD").GetComponent<HUDManager>().updateMP(energy);
+			energy -= 1;
+			GameObject.Find ("HUD").GetComponent<HUDManager> ().updateMP (energy);
 			Invoke ("PlatformAbilityClose", 3f);
 
 		}
@@ -82,7 +84,7 @@ public class CharacterControllerScript : MonoBehaviour {
 
 
 
-		if (energy>0 && canMove && arrowTimer>=1.3f && (Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && !arrow.activeSelf && abilitySelected=="arrowAbility" ) {
+		if (energy > 0 && canMove && arrowTimer >= 1.3f && (Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && !arrow.activeSelf && abilitySelected == "arrowAbility") {
 			arrowTimer = 0f;
 			arrow.transform.position = firePoint.position;
 			if (anim.GetBool ("Ground") == false) {
@@ -95,8 +97,8 @@ public class CharacterControllerScript : MonoBehaviour {
 			anim.SetBool ("shooting", true);
 			Invoke ("ArrowAbility", 0.1f);
 			Invoke ("ArrowAbilityClose", 1.2f);
-			energy-=1;
-			GameObject.Find("HUD").GetComponent<HUDManager>().updateMP(energy);
+			energy -= 1;
+			GameObject.Find ("HUD").GetComponent<HUDManager> ().updateMP (energy);
 		}
 	}
 
@@ -190,7 +192,7 @@ public class CharacterControllerScript : MonoBehaviour {
 		anim.SetTrigger ("respawn");
 		Application.LoadLevel (Application.loadedLevel);	//level reset
 		CameraFollowOnPlatform.instance.Start ();	//need to reobtain the player object
-		GameObject.Find("HUD").GetComponent<HUDManager>().Start();
+		GameObject.Find ("HUD").GetComponent<HUDManager> ().Start ();
 		SaveLoad.Spawn ();
 		hp = 3;
 		energy = 3;

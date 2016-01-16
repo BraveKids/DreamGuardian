@@ -8,7 +8,6 @@ public class PlayerGroundOnPlatform : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other) {
 		float nextY = transform.position.y;
 
-		Debug.Log ("Platform touched");
 		if (other.CompareTag ("Platform")) {
 
 			//StartCoroutine (CameraFollowOnPlatform.instance.ResetCamera (transform.position.y, false));
@@ -37,7 +36,8 @@ public class PlayerGroundOnPlatform : MonoBehaviour {
 
 		if (other.CompareTag ("Ground")) {
 
-			CameraFollowOnPlatform.instance.originY = transform.position.y;
+			Debug.Log ("Ground toched");
+			CameraFollowOnPlatform.instance.setOriginY (transform.position.y);
 			CameraFollowOnPlatform.instance.nextY = transform.position.y;
 			//
 			//CameraFollowOnPlatform.instance.currentY = transform.position.y+CameraFollowOnPlatform.instance.groundDim;

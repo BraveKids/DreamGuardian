@@ -5,7 +5,7 @@ using System.Linq;
 public class CameraFollowOnPlatform : MonoBehaviour {
 
 	private bool followYume = true;
-	private float diffOnNewLevel = 0.2464275f;
+	//private float diffOnNewLevel = 0.2464275f;
 	public static CameraFollowOnPlatform instance = null;
 	Vector3 currentOrigin;	//posizione corrente della camera (transform.position), utilizzata per chiarezza del codice
 
@@ -77,7 +77,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 
 			cameraY = transform.position.y;
 		
-
+			Debug.Log ("Originy: " + originY);
 			if (playerY < originY + cameraOffset) {
 				nextToGround = true;
 			} else {
@@ -132,18 +132,16 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	}
 
 	public void followMe (float nextY, bool movingPlat) {
-
+		
 		if (onVerticalLevel && nextY < this.nextY) {
 			Debug.Log ("Vertical level, so doing nothing");
 			return;
 		}
 		
-		Debug.Log ("camera reset begin");
 		this.nextY = nextY;
 		if (movingCamera) {
 			t = 0.0f;
 		} else {
-
 			StartCoroutine (ResetCamera (movingPlat));
 
 		}
@@ -157,6 +155,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 		movingCamera = true;
 		//if nextY is greater than the origin plus offset due to moving platform, don't move the camera
 		bool substantialDiff = outOfRange (nextY, transform.position.y - deviationFix, transform.position.y + deviationFix);
+
 		if (substantialDiff && !nextToGround) {
 
 			t = 0.0f;
@@ -164,7 +163,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 			//some code
 			while (t < 1.0f && movingCamera) {
 				t += Time.deltaTime * (Time.timeScale / transitionDuration);
-				
+				Debug.Log ("resetting");
 				//Vector3 nextPos = new Vector3 (transform.position.x, nextY, transform.position.z);
 				Vector3 nextPos = new Vector3 (transform.position.x, nextY, transform.position.z);
 
@@ -211,17 +210,17 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	}
 
 	public void setChasingCamera (bool chasing) {
-		transform.FindChild ("cameraBorder").gameObject.SetActive(chasing);
+		transform.FindChild ("cameraBorder").gameObject.SetActive (chasing);
 		this.onChasingCamera = chasing;
 	}
 
-	public bool getChasingCamera(){
+	public bool getChasingCamera () {
 		return onChasingCamera;
 	}
 
 	public void setFollowYume (bool follow, Vector3 position) {
 		this.followYume = follow;
-		transform.position = new Vector3 (position.x - diffOnNewLevel, position.y + cameraOffset, transform.position.z);
+		transform.position = new Vector3 (position.x /*- diffOnNewLevel*/, position.y + cameraOffset, transform.position.z);
 	}
 
 	public void verticalLevel (bool vertical) {
@@ -231,5 +230,9 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	public void onNewLevel (Vector3 position) {
 		setFollowYume (false, new Vector3 (position.x, player.transform.position.y, position.z));	
 
+	}
+
+	public void setOriginY (float originY) {
+		this.originY = originY;
 	}
 }

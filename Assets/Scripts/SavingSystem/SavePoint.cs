@@ -4,6 +4,7 @@ using System.Collections;
 public class SavePoint : MonoBehaviour {
 
 	private bool usable = true;
+	private bool onNewLevel = false;
 	string id;
 
 	void Start () {
@@ -25,7 +26,7 @@ public class SavePoint : MonoBehaviour {
 		
 		if (other.CompareTag ("Player") && usable) {
 
-			Debug.Log(other.gameObject.transform.position.x-transform.position.x);
+			Debug.Log (other.gameObject.transform.position.x - transform.position.x);
 
 			SavingPoints.pointsDict [id] = false;
 
@@ -36,10 +37,21 @@ public class SavePoint : MonoBehaviour {
 			SaveLoad.SaveGame ();
 			Debug.Log ("salvando");
 
-			//in case he's coming from a level change and is running
-			CameraFollowOnPlatform.instance.setFollowYume(true);
-			other.gameObject.GetComponent<CharacterControllerScript>().stopRunYume();	
+				
 		}		
+	}
+
+	void OnTriggerStay2D (Collider2D other) {
+		if (other.CompareTag ("Player")) {		
+
+			if (other.transform.position.x >= transform.position.x && !onNewLevel) {
+				//in case he's coming from a level change and is running
+				CameraFollowOnPlatform.instance.setFollowYume (true);
+				other.GetComponent<CharacterControllerScript> ().stopRunYume ();
+				onNewLevel = true;
+
+			}
+		}
 	}
 
 	void setColor () {
