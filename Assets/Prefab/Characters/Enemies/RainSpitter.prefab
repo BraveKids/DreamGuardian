@@ -87,6 +87,7 @@ GameObject:
   - 212: {fileID: 21267726}
   - 95: {fileID: 9577164}
   - 114: {fileID: 11498642}
+  - 58: {fileID: 5812622}
   m_Layer: 0
   m_Name: Character
   m_TagString: Enemy
@@ -113,7 +114,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -48.2870255, y: 61.6968536, z: 0}
+  m_LocalPosition: {x: 199.540298, y: 131.109955, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 486102}
@@ -171,6 +172,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 421982}
   m_RootOrder: 3
+--- !u!58 &5812622
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190298}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -.515873432, y: .912760019}
+  serializedVersion: 2
+  m_Radius: 1.74906409
 --- !u!95 &9577164
 Animator:
   serializedVersion: 3
@@ -220,7 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 1
-  deathTimer: .200000003
+  deathTimer: .400000006
   enemy: {fileID: 131090}
 --- !u!212 &21267726
 SpriteRenderer:

@@ -27,10 +27,10 @@ public class ZombieDamage : MonoBehaviour {
 			if (hp <= 0) {
 				anim.Play ("explosion");
 				if (playerScript.energy < 10)
-				/*{
+				{
 					playerScript.energy += 1;
 					GameObject.Find("HUD").GetComponent<HUDManager>().updateMP(playerScript.energy);
-				}*/
+				}
 				Invoke ("DestroyEnemy", deathTimer);
 				
 				

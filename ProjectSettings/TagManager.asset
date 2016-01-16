@@ -73,3 +73,6 @@ TagManager:
   - name: Player
     uniqueID: 2920803005
     locked: 0
+  - name: Smoke
+    uniqueID: 3385930747
+    locked: 0
