@@ -37,7 +37,6 @@ public class PlayerAttack: MonoBehaviour {
 
 		if (canAttack &&(Input.GetKeyDown (KeyCode.Joystick1Button2) || Input.GetKeyDown (KeyCode.F)) && attackTrigger3.enabled == false) {
 			if (anim.GetBool ("Ground") == true) {
-				rb.isKinematic = true;
 				rb.velocity = new Vector3 (0f, 0f, 0f);
 				anim.SetBool ("Attacking",true);
 				lastHitTimer = Time.realtimeSinceStartup;
@@ -60,10 +59,10 @@ public class PlayerAttack: MonoBehaviour {
 			if (hitTimer - lastHitTimer > 0.5) {
 				combo = 0;
 				Combo (0);
-			rb.isKinematic = false;
+		
 				if (hitTimer - lastHitTimer < 0.2) {
 					
-				rb.isKinematic = false;
+			
 					combo=0;
 					Combo (0);
 

@@ -68,7 +68,8 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 			playerY = player.transform.position.y;
 
 			Debug.DrawLine (new Vector3 (player.transform.position.x, transform.position.y + deviationFix, player.transform.position.z), new Vector3 (player.transform.position.x, transform.position.y - deviationFix, player.transform.position.z), Color.green, 2, false);
-
+			Debug.DrawLine (new Vector3 (-100f,originY, player.transform.position.z), new Vector3 (100f, originY, player.transform.position.z), Color.green, 2, false);
+			
 			cameraX = player.transform.position.x;
 			
 			if (onChasingCamera) {

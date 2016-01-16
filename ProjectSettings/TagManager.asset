@@ -23,6 +23,7 @@ TagManager:
   - EnemyToReset
   - Wall
   - vulnerable
+  - EnemyBody
   layers:
   - Default
   - TransparentFX
