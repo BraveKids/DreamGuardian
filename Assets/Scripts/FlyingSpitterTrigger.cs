@@ -4,7 +4,7 @@ using System.Collections;
 public class FlyingSpitterTrigger : MonoBehaviour
 {
     public FlyingSpitterAI flyingSpitterAI;
-    float exitInterval = 2;
+    float exitInterval = 1.5f;
     float timer;
     bool isExit;
 

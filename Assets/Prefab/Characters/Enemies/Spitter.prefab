@@ -56,7 +56,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 407552}
   - 61: {fileID: 6166398}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: LeftBorder
   m_TagString: Border
   m_Icon: {fileID: 2270504221434485236, guid: 0000000000000000d000000000000000, type: 0}
@@ -123,7 +123,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 474610}
   - 61: {fileID: 6128364}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: RightBorder
   m_TagString: Border
   m_Icon: {fileID: 2270504221434485236, guid: 0000000000000000d000000000000000, type: 0}
@@ -257,7 +257,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.3422966, y: -3.2709198, z: 0}
+  m_LocalPosition: {x: -48.4966583, y: 60.5615311, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 421630}
@@ -423,7 +423,8 @@ MonoBehaviour:
   LeftBorder: {fileID: 407552}
   RightBorder: {fileID: 474610}
   shootPoint: {fileID: 429894}
-  bullet: {fileID: 0}
+  bullet: {fileID: 183432, guid: 53ae0623f11335e40b97a9850bdf121f, type: 2}
+  shootVelocity: 4
   anim: {fileID: 0}
   attacking: 0
   isLeft: 1
@@ -431,9 +432,12 @@ MonoBehaviour:
   BorderCheckRadius: .100000001
   WhatIsBorder:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 4096
   HittingBorder: 0
+  bulletTimer: 0
+  shootInterval: 1
   attackSpitter: 1
+  allowAttack: 1
 --- !u!114 &11428750
 MonoBehaviour:
   m_ObjectHideFlags: 1
