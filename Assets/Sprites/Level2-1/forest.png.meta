@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: b2a5a816282391847b3e286c92c03c77
-timeCreated: 1447941424
+guid: 55edf8fa8f0170842b526f7de4e0155c
+timeCreated: 1452943712
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: castle_door_exit_0
-    21300002: castle_door_exit_1
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -28,11 +26,11 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -3
+  textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: 16
+    aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -40,7 +38,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,27 +49,7 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites:
-    - name: castle_door_exit_0
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 17
-        width: 140
-        height: 157
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: castle_door_exit_1
-      rect:
-        serializedVersion: 2
-        x: 226
-        y: 19
-        width: 138
-        height: 162
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+    sprites: []
   spritePackingTag: 
   userData: 
   assetBundleName: 
