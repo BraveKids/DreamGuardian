@@ -211,7 +211,10 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	}
 
 	public void setChasingCamera (bool chasing) {
-		transform.FindChild ("cameraBorder").gameObject.SetActive (chasing);
+
+		transform.FindChild ("cameraBorder").gameObject.SetActive(chasing);
+		transform.FindChild ("chasingSmoke").gameObject.SetActive (chasing);
+
 		this.onChasingCamera = chasing;
 	}
 
