@@ -46,6 +46,7 @@ GameObject:
   - 61: {fileID: 6192722}
   - 212: {fileID: 21241768}
   - 222: {fileID: 22276238}
+  - 114: {fileID: 11414152}
   m_Layer: 0
   m_Name: reachLevel
   m_TagString: Untagged
@@ -121,6 +122,18 @@ BoxCollider2D:
   m_Offset: {x: -3.81469727e-06, y: 0}
   serializedVersion: 2
   m_Size: {x: 2.46000004, y: .709999979}
+--- !u!114 &11414152
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 179208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f55e4d30aee85b34787bbde1192dc374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  song: 
 --- !u!114 &11454618
 MonoBehaviour:
   m_ObjectHideFlags: 1

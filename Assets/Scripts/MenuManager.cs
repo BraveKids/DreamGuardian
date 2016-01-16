@@ -25,7 +25,7 @@ public class MenuManager : MonoBehaviour {
 			first_run = false;
 		} else {
 			// menu music
-			SoundManager.instance.SetBackgroundMusic (0);
+			SoundManager.instance.SetBackgroundMusic ("menu");
 			GoToMenu ();
 		}
 	}
@@ -72,6 +72,7 @@ public class MenuManager : MonoBehaviour {
 
 	//activate both on Continue and New Game button
 	public void GoToGameplay (bool newGame) {
+		SoundManager.instance.SetMusic (false);
 		//GoToGameplay->Gameplay.cs->SaveLoad.cs->SetYume.cs
 
 		//Gameplay.newGame = newGame; //if true began a new game
@@ -84,7 +85,7 @@ public class MenuManager : MonoBehaviour {
 
 		// background music
 
-		SoundManager.instance.SetBackgroundMusic (1);
+		//SoundManager.instance.SetBackgroundMusic ("game");
 		Application.LoadLevel ("Gameplay");
 
 	}

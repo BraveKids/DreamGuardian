@@ -98,15 +98,15 @@ public class CharacterControllerScript : MonoBehaviour {
 			Invoke ("ArrowAbility", 0.1f);
 			Invoke ("ArrowAbilityClose", 1.2f);
 
-			energy-=2;
-			GameObject.Find("HUD").GetComponent<HUDManager>().updateMP(energy);
+			energy -= 2;
+			GameObject.Find ("HUD").GetComponent<HUDManager> ().updateMP (energy);
 
 		}
 	}
 
 	void Movement () {
 
-		if (canMove && grounded && anim.GetBool("Attacking") == false && (Input.GetKeyDown (KeyCode.Joystick1Button0) || Input.GetKeyDown (KeyCode.Space))) {
+		if (canMove && grounded && anim.GetBool ("Attacking") == false && (Input.GetKeyDown (KeyCode.Joystick1Button0) || Input.GetKeyDown (KeyCode.Space))) {
 			anim.SetBool ("Ground", false);
 			rb.AddForce (new Vector2 (0, jumpForce));
 		}
