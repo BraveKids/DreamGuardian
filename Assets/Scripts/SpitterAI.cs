@@ -9,7 +9,7 @@ public class SpitterAI : MonoBehaviour {
     public Transform shootPoint;
     public GameObject bullet;
 
-    float walkVelocity = 1f;
+    public float walkVelocity = 1f;
     public float shootVelocity = 4f;
     Rigidbody2D rb;
     public Animator anim;

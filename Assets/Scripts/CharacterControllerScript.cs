@@ -65,7 +65,7 @@ public class CharacterControllerScript : MonoBehaviour {
 	}
 
 	void Ability () {
-		if (energy>0 && canMove && (Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && anim.GetBool ("Ground") == true && !platform.activeSelf && abilitySelected == "platformAbility") {
+		if (/*energy>0 && */canMove && (Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && anim.GetBool ("Ground") == true && !platform.activeSelf && abilitySelected == "platformAbility") {
 			
 			platform.transform.position = platformSpwnPoint.position;
 			anim.Play ("YumePiattaforma");
@@ -82,7 +82,7 @@ public class CharacterControllerScript : MonoBehaviour {
 
 
 
-		if (energy>0 && canMove && arrowTimer>=1.3f && (Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && !arrow.activeSelf && abilitySelected=="arrowAbility" ) {
+		if (/*energy>0 && */canMove && arrowTimer>=1.3f && (Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && !arrow.activeSelf && abilitySelected=="arrowAbility" ) {
 			arrowTimer = 0f;
 			arrow.transform.position = firePoint.position;
 			if (anim.GetBool ("Ground") == false) {
