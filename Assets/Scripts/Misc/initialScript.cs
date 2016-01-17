@@ -9,8 +9,5 @@ public class initialScript : MonoBehaviour {
 		SoundManager.instance.SetBackgroundMusic ("game");
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }

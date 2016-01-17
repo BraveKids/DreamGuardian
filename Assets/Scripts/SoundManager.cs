@@ -12,8 +12,12 @@ public class SoundManager : MonoBehaviour {
 	AudioSource audioSource = null;
 
 	// clips 
-	public AudioClip menu_background;
+	public AudioClip menuMusic;
 	public AudioClip game_background;
+	public AudioClip lvl0Music;
+	public AudioClip schoolMusic;	//high school music? LOL
+	public AudioClip misticMusic;
+
 	
 	// Use this for initialization
 	void Start () {
@@ -27,8 +31,11 @@ public class SoundManager : MonoBehaviour {
 		}
 
 		allMusics = new Dictionary<string, AudioClip> ();
-		allMusics.Add ("menu", menu_background);
-		allMusics.Add ("game", game_background);
+		allMusics.Add ("menu", menuMusic);
+		//allMusics.Add ("game", game_background);		
+		allMusics.Add("lvl0", lvl0Music);
+		allMusics.Add("school", schoolMusic);
+		allMusics.Add("mistic", misticMusic);
 		
 		audioSource = GetComponent<AudioSource> () as AudioSource;
 		audioSource.loop = true;
