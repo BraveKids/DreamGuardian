@@ -8,6 +8,7 @@ Library/
 Assets/AssetStoreTools*
 Assets/Scenes
 *.unity
+*.wav
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
