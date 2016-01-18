@@ -29,10 +29,11 @@ public class HUDManager : MonoBehaviour {
 		abilityHUD.enabled = false;		
 	}
 
-	void Update(){
-		if (Input.GetKeyDown (KeyCode.Escape) || Input.GetKeyDown (KeyCode.Joystick1Button7)) {
-			pauseMenu.SetActive(true);
-		}
+	void Update () {
+		/*if (Input.GetKeyDown (KeyCode.Escape) || Input.GetKeyDown (KeyCode.Joystick1Button7)) {
+			pauseMenu.SetActive (true);
+			pauseMenu.GetComponent<PauseMenu> ().Start ();
+		}*/
 	}
 
 	public void setAbilityHUD (string ability) {

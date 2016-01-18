@@ -4,7 +4,7 @@ using System.Collections;
 public class PauseMenu : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
+	public void Start () {
 		showPauseMenu ();
 	}
 	
@@ -21,15 +21,18 @@ public class PauseMenu : MonoBehaviour {
 	
 	void hidePauseMenu () {
 		gameObject.SetActive (false);
+		Time.timeScale = 1;		
 	}
 	
 	public void continueGame () {
 		hidePauseMenu ();
-		Time.timeScale = 1;
 	}
 	
 	public void toMainMenu () {
+		Camera.main.GetComponent<CameraFollowOnPlatform> ().enabled = false;
+		
 		hidePauseMenu ();
+		Time.timeScale = 1;
 		Application.LoadLevel ("menu");
 	}
 

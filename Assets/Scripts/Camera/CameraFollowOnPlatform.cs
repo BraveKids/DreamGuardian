@@ -78,7 +78,6 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 
 			cameraY = transform.position.y;
 		
-			Debug.Log ("Originy: " + originY);
 			if (playerY < originY + cameraOffset) {
 				nextToGround = true;
 			} else {
