@@ -67,7 +67,7 @@ public class dialogManager : MonoBehaviour {
 		if (active) {
 			theText.text = textLines [currentLine];
 
-			if (Input.GetKeyDown (KeyCode.Return)) {
+			if (Input.GetKeyDown (KeyCode.Return) || Input.GetKeyDown(KeyCode.Joystick1Button0)) {
 				currentLine++;
 			}
 
