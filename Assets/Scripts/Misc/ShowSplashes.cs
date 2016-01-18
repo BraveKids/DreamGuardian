@@ -7,6 +7,10 @@ public class ShowSplashes : MonoBehaviour {
 	public GameObject second_splash;
 	// Use this for initialization
 	void Start () {
+		if (!Application.isEditor) {
+			Cursor.visible = false;
+			Cursor.lockState = CursorLockMode.Locked;
+		}
 		StartCoroutine (SplashScreen ());
 	}
 	
@@ -21,7 +25,7 @@ public class ShowSplashes : MonoBehaviour {
 		first_splash.SetActive (false);
 		second_splash.SetActive (true);
 		yield return new WaitForSeconds (splash_pause);
-		second_splash.SetActive (false);		
+		//second_splash.SetActive (false);		
 		Application.LoadLevel ("Menu");
 		yield return null;
 	}

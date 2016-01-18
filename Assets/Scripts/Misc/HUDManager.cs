@@ -13,6 +13,7 @@ public class HUDManager : MonoBehaviour {
 	public Sprite arrowHUDSprite;
 	public Sprite platformHUDSprite;
 	public Dictionary<string,Sprite> HUDSprite = new Dictionary<string, Sprite> ();
+	public GameObject pauseMenu;
 	
 	// Use this for initialization
 	public void Start () {
@@ -28,6 +29,7 @@ public class HUDManager : MonoBehaviour {
 
 		abilityHUD.enabled = false;		
 	}
+
 
 	public void setAbilityHUD (string ability) {
 		abilityHUD.enabled = true;

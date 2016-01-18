@@ -48,6 +48,7 @@ public class CharacterControllerScript : MonoBehaviour {
 		ChangeAbility ();
 		Ability ();
 		Movement ();
+
 	}
 
 	void ChangeAbility () {
