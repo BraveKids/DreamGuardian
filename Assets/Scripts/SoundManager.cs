@@ -12,8 +12,9 @@ public class SoundManager : MonoBehaviour {
 	AudioSource audioSource = null;
 
 	// clips 
+	public AudioClip chase;
 	public AudioClip menuMusic;
-
+	public AudioClip forest;
 	public AudioClip lvl0Music;
 	public AudioClip schoolMusic;	//high school music? LOL
 
@@ -31,9 +32,11 @@ public class SoundManager : MonoBehaviour {
 		}
 
 		allMusics = new Dictionary<string, AudioClip> ();
+		allMusics.Add ("chase", chase);
 		allMusics.Add ("menu", menuMusic);
 		allMusics.Add("lvl0", lvl0Music);
 		allMusics.Add("school", schoolMusic);
+		allMusics.Add ("forest", forest);
 	
 		
 		audioSource = GetComponent<AudioSource> () as AudioSource;
