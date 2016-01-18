@@ -19,15 +19,10 @@ public class MenuManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (first_run) {
-			CleanMenus ();
-			StartCoroutine (SplashScreen ());
-			first_run = false;
-		} else {
-			// menu music
-			SoundManager.instance.SetBackgroundMusic ("menu");
-			GoToMenu ();
-		}
+
+		//SoundManager.instance.SetBackgroundMusic ("menu");
+		GoToMenu ();
+
 	}
 	
 	public void SliderValueChanged (float value) {
@@ -43,6 +38,7 @@ public class MenuManager : MonoBehaviour {
 		leaderboard.SetActive (false);
 		settings.SetActive (false);
 		credits.SetActive (false);
+		saving.SetActive (false);
 	}
 
 	public void GoToLeaderboard () {
@@ -111,18 +107,7 @@ public class MenuManager : MonoBehaviour {
 		credits.SetActive (false);
 		full_background.SetActive (false);
 	}
+	
 
-	IEnumerator SplashScreen () {
-		first_splash.SetActive (true);
-		yield return new WaitForSeconds (splash_pause);
-		first_splash.SetActive (false);
-		second_splash.SetActive (true);
-		yield return new WaitForSeconds (splash_pause);
-		second_splash.SetActive (false);
 
-		full_background.SetActive (true);
-
-		GoToMenu ();
-		yield return null;
-	}
 }
