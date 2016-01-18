@@ -59,7 +59,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	}
 
 	void Update () {
-
+		Debug.Log ("Y: " + transform.position.y); 
 		if (followYume) {
 			player = GameObject.FindGameObjectWithTag ("Player");
 
