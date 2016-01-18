@@ -12,6 +12,7 @@ public class menuManagerWrapper : MonoBehaviour {
 	GameObject menuManager;
 	float lastAxisY;
 	float axisRange = 0.7f;
+	int numButton = 0;
 
 	// Use this for initialization
 	void Start () {	
@@ -23,6 +24,7 @@ public class menuManagerWrapper : MonoBehaviour {
 		foreach (Transform child in transform) {
 			if (child.gameObject.GetComponent<Button> ().interactable == true) {
 				buttons.Add (child.gameObject.GetComponent<Button> ());
+				numButton++;
 			}
 		}
 		buttons [0].image.color = Color.red;
@@ -67,7 +69,7 @@ public class menuManagerWrapper : MonoBehaviour {
 
 	void updateMenu () {
 
-		selected = count % 4;
+		selected = count % numButton;
 		Debug.Log ("selected: " + selected + " count: " + count);
 		for (int i=0; i < buttons.Count; i++) {
 

@@ -59,7 +59,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	}
 
 	void Update () {
-
+		Debug.Log ("Y: " + transform.position.y); 
 		if (followYume) {
 			player = GameObject.FindGameObjectWithTag ("Player");
 
@@ -78,7 +78,6 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 
 			cameraY = transform.position.y;
 		
-			Debug.Log ("Originy: " + originY);
 			if (playerY < originY + cameraOffset) {
 				nextToGround = true;
 			} else {
