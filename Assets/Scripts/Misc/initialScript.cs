@@ -5,7 +5,10 @@ public class initialScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Cursor.visible = false;
+		if (!Application.isEditor) {
+			Cursor.visible = false;
+			Cursor.lockState = CursorLockMode.Locked;
+		}
 		SoundManager.instance.SetBackgroundMusic ("game");
 	}
 	

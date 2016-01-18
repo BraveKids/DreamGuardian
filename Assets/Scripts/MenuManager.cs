@@ -43,6 +43,7 @@ public class MenuManager : MonoBehaviour {
 		leaderboard.SetActive (false);
 		settings.SetActive (false);
 		credits.SetActive (false);
+		saving.SetActive (false);
 	}
 
 	public void GoToLeaderboard () {
