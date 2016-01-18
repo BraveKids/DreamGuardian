@@ -28,12 +28,12 @@ public class HUDManager : MonoBehaviour {
 
 		abilityHUD.enabled = false;		
 	}
-	/*
+
 	void Update(){
 		if (Input.GetKeyDown (KeyCode.Escape) || Input.GetKeyDown (KeyCode.Joystick1Button7)) {
 			pauseMenu.SetActive(true);
 		}
-	}*/
+	}
 
 	public void setAbilityHUD (string ability) {
 		abilityHUD.enabled = true;
