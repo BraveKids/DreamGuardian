@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 08e2e4f4e5c8fa947819b9275d46ac6c
-timeCreated: 1452859159
+timeCreated: 1453116787
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -11,6 +11,9 @@ TextureImporter:
     21300008: GorillabossFalling_4
     21300010: GorillabossFalling_5
     21300012: GorillabossFalling_6
+    21300014: GorillabossFalling_7
+    21300016: GorillabossFalling_8
+    21300018: GorillabossFalling_9
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -65,9 +68,9 @@ TextureImporter:
     - name: GorillabossFalling_0
       rect:
         serializedVersion: 2
-        x: 5601
+        x: 5646
         y: 0
-        width: 438
+        width: 334
         height: 576
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -75,60 +78,60 @@ TextureImporter:
     - name: GorillabossFalling_1
       rect:
         serializedVersion: 2
-        x: 4727
+        x: 4826
         y: 0
-        width: 474
-        height: 575
-      alignment: 9
-      pivot: {x: .538757563, y: .455269337}
+        width: 338
+        height: 576
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossFalling_2
       rect:
         serializedVersion: 2
-        x: 3875
-        y: 0
-        width: 562
-        height: 576
-      alignment: 9
-      pivot: {x: .5, y: .468105048}
+        x: 3922
+        y: 108
+        width: 482
+        height: 342
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossFalling_3
       rect:
         serializedVersion: 2
-        x: 3048
-        y: 0
-        width: 544
-        height: 576
-      alignment: 9
-      pivot: {x: .486491472, y: .480863035}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: GorillabossFalling_4
-      rect:
-        serializedVersion: 2
-        x: 2361
-        y: 0
-        width: 503
-        height: 576
-      alignment: 9
-      pivot: {x: .44156158, y: .455347002}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: GorillabossFalling_5
-      rect:
-        serializedVersion: 2
-        x: 1093
-        y: 0
-        width: 717
-        height: 576
+        x: 3078
+        y: 82
+        width: 477
+        height: 434
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossFalling_6
       rect:
         serializedVersion: 2
-        x: 105
-        y: 0
-        width: 779
-        height: 576
+        x: 2361
+        y: 49
+        width: 488
+        height: 489
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GorillabossFalling_8
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 123
+        width: 687
+        height: 396
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GorillabossFalling_9
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 130
+        width: 650
+        height: 180
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

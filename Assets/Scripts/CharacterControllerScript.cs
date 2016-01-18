@@ -97,7 +97,6 @@ public class CharacterControllerScript : MonoBehaviour {
 			anim.SetBool ("shooting", true);
 			Invoke ("ArrowAbility", 0.1f);
 			Invoke ("ArrowAbilityClose", 1.2f);
-
 			energy -= 2;
 			GameObject.Find ("HUD").GetComponent<HUDManager> ().updateMP (energy);
 

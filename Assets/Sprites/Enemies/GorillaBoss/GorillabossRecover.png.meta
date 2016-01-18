@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 6bdcf03c259e62d4c8edb9b3feaef79c
-timeCreated: 1452862687
+timeCreated: 1453116493
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -63,41 +63,41 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 97
-        y: 174
+        y: 196
         width: 410
-        height: 293
-      alignment: 0
-      pivot: {x: .5, y: .5}
+        height: 263
+      alignment: 9
+      pivot: {x: .38100931, y: .566602468}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossRecover_1
       rect:
         serializedVersion: 2
         x: 747
-        y: 180
+        y: 198
         width: 373
-        height: 342
+        height: 324
       alignment: 9
-      pivot: {x: .484304965, y: .528530002}
+      pivot: {x: .505232632, y: .545647979}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossRecover_2
       rect:
         serializedVersion: 2
         x: 1481
-        y: 186
+        y: 198
         width: 415
-        height: 361
-      alignment: 0
-      pivot: {x: .5, y: .5}
+        height: 349
+      alignment: 9
+      pivot: {x: .532916009, y: .521622658}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossRecover_3
       rect:
         serializedVersion: 2
         x: 1170
-        y: 842
+        y: 863
         width: 373
-        height: 503
+        height: 482
       alignment: 9
-      pivot: {x: .641257942, y: .39525032}
+      pivot: {x: .641257942, y: .403009921}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

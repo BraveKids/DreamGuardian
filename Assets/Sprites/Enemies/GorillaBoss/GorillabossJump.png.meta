@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 61f81efbecdeb934d826081a5cc25a30
-timeCreated: 1452859950
+timeCreated: 1453117799
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -66,7 +66,7 @@ TextureImporter:
         width: 483
         height: 548
       alignment: 9
-      pivot: {x: .329154134, y: .520913899}
+      pivot: {x: .305425495, y: .516730845}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossJump_1
       rect:
@@ -76,7 +76,7 @@ TextureImporter:
         width: 387
         height: 486
       alignment: 9
-      pivot: {x: .399309337, y: .490567118}
+      pivot: {x: .405231804, y: .481133997}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossJump_2
       rect:
@@ -85,8 +85,8 @@ TextureImporter:
         y: 54
         width: 410
         height: 540
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .421729714, y: .92872268}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

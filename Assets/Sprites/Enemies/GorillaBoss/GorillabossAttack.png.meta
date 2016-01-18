@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 669cdbc63570997459d51e343f1876d6
-timeCreated: 1452864726
+timeCreated: 1453114753
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -76,7 +76,7 @@ TextureImporter:
         width: 285
         height: 621
       alignment: 9
-      pivot: {x: .516366839, y: .500000238}
+      pivot: {x: .272176534, y: .902964592}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossAttack_1
       rect:
@@ -86,7 +86,7 @@ TextureImporter:
         width: 361
         height: 620
       alignment: 9
-      pivot: {x: .437527061, y: .481303453}
+      pivot: {x: .236544535, y: .923129737}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossAttack_2
       rect:
@@ -96,7 +96,7 @@ TextureImporter:
         width: 311
         height: 559
       alignment: 9
-      pivot: {x: .367812365, y: .448565811}
+      pivot: {x: .210694149, y: .885628402}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossAttack_3
       rect:
@@ -106,7 +106,7 @@ TextureImporter:
         width: 359
         height: 543
       alignment: 9
-      pivot: {x: .433808655, y: .445268989}
+      pivot: {x: .289450139, y: .881575525}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossAttack_4
       rect:
@@ -116,7 +116,7 @@ TextureImporter:
         width: 370
         height: 538
       alignment: 9
-      pivot: {x: .421542436, y: .423134953}
+      pivot: {x: .277473092, y: .885514498}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossAttack_5
       rect:
@@ -126,7 +126,7 @@ TextureImporter:
         width: 385
         height: 595
       alignment: 9
-      pivot: {x: .320604205, y: .451240361}
+      pivot: {x: .162917256, y: .911630809}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossAttack_6
       rect:
@@ -136,7 +136,7 @@ TextureImporter:
         width: 359
         height: 614
       alignment: 9
-      pivot: {x: .353304505, y: .472397059}
+      pivot: {x: .155326486, y: .908894479}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossAttack_7
       rect:
@@ -146,7 +146,7 @@ TextureImporter:
         width: 379
         height: 637
       alignment: 9
-      pivot: {x: .332299232, y: .453270495}
+      pivot: {x: .144768298, y: .885630012}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossAttack_8
       rect:
@@ -156,7 +156,7 @@ TextureImporter:
         width: 395
         height: 625
       alignment: 9
-      pivot: {x: .369492918, y: .444679886}
+      pivot: {x: .167066351, y: .899555445}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossAttack_9
       rect:
@@ -166,7 +166,7 @@ TextureImporter:
         width: 370
         height: 619
       alignment: 9
-      pivot: {x: .359113693, y: .443313718}
+      pivot: {x: .187030852, y: .904990554}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossAttack_10
       rect:
@@ -176,7 +176,7 @@ TextureImporter:
         width: 470
         height: 520
       alignment: 9
-      pivot: {x: .370058239, y: .433893651}
+      pivot: {x: .266093552, y: .906583369}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossAttack_11
       rect:
@@ -186,7 +186,7 @@ TextureImporter:
         width: 472
         height: 528
       alignment: 9
-      pivot: {x: .40631181, y: .418930292}
+      pivot: {x: .283964783, y: .91530633}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossAttack_12
       rect:
@@ -196,7 +196,7 @@ TextureImporter:
         width: 414
         height: 566
       alignment: 9
-      pivot: {x: .40316537, y: .484081298}
+      pivot: {x: .263677835, y: .907890081}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

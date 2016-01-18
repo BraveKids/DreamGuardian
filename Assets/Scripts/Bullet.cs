@@ -12,10 +12,6 @@ public class Bullet : MonoBehaviour {
     {
         if (col.isTrigger != true)
         {
-            if (col.CompareTag("Player"))
-            {
-                //col.GetComponent<Player>().Damage(1);
-            }
             Destroy(gameObject);
         }
     }

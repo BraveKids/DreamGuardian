@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 6fb054357e247084b9baf973c692ffb0
-timeCreated: 1452862088
+timeCreated: 1453116421
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -64,51 +64,41 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 43
-        y: 854
-        width: 570
-        height: 357
+        y: 889
+        width: 525
+        height: 296
       alignment: 9
-      pivot: {x: .476034909, y: .521865308}
+      pivot: {x: .5148682, y: .564879954}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossStun_1
       rect:
         serializedVersion: 2
         x: 673
-        y: 865
-        width: 555
-        height: 350
+        y: 893
+        width: 531
+        height: 281
       alignment: 9
-      pivot: {x: .492967993, y: .500000358}
+      pivot: {x: .514700413, y: .583321035}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossStun_2
       rect:
         serializedVersion: 2
-        x: 634
-        y: 409
-        width: 586
-        height: 355
+        x: 632
+        y: 442
+        width: 512
+        height: 298
       alignment: 9
-      pivot: {x: .446718395, y: .500000179}
+      pivot: {x: .507622838, y: .561251879}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GorillabossStun_3
       rect:
         serializedVersion: 2
-        x: 55
-        y: 409
-        width: 536
-        height: 361
+        x: 59
+        y: 438
+        width: 511
+        height: 287
       alignment: 9
-      pivot: {x: .489077777, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: GorillabossStun_4
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 1351
-        width: 521
-        height: 230
-      alignment: 9
-      pivot: {x: .447561949, y: .618783951}
+      pivot: {x: .50763768, y: .592032075}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

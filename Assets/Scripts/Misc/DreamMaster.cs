@@ -28,6 +28,8 @@ public class DreamMaster : MonoBehaviour {
 				SaveLoad.SaveGame();
 
 				GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterControllerScript>().setAbility(ability);
+				GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterControllerScript>().energy = 10;
+				GameObject.Find ("HUD").GetComponent<HUDManager> ().updateMP (GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterControllerScript>().energy);
 			}	
 			
 		}
