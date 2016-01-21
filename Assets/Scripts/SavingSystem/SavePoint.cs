@@ -6,6 +6,7 @@ public class SavePoint : MonoBehaviour {
 	private bool usable = true;
 	private bool onNewLevel = false;
 	string id;
+	public bool save;
 
 	void Start () {
 		id = GetComponent<GUIText> ().text;
@@ -26,7 +27,6 @@ public class SavePoint : MonoBehaviour {
 		
 		if (other.CompareTag ("Player") && usable) {
 
-			Debug.Log (other.gameObject.transform.position.x - transform.position.x);
 
 			SavingPoints.pointsDict [id] = false;
 
@@ -34,7 +34,11 @@ public class SavePoint : MonoBehaviour {
 			setColor ();
 
 			SavingPoints.Save ();
-			SaveLoad.SaveGame ();
+			if (save) {
+				SaveLoad.SaveGame ();
+			} else {
+				SaveLoad.CheckPoint ();
+			}
 			Debug.Log ("salvando");
 
 				

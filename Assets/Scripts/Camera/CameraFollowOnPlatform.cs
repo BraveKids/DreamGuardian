@@ -59,7 +59,6 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	}
 
 	void Update () {
-		Debug.Log ("Y: " + transform.position.y); 
 		if (followYume) {
 			player = GameObject.FindGameObjectWithTag ("Player");
 
@@ -68,7 +67,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 			playerY = player.transform.position.y;
 
 			Debug.DrawLine (new Vector3 (player.transform.position.x, transform.position.y + deviationFix, player.transform.position.z), new Vector3 (player.transform.position.x, transform.position.y - deviationFix, player.transform.position.z), Color.green, 2, false);
-			Debug.DrawLine (new Vector3 (-100f,originY, player.transform.position.z), new Vector3 (100f, originY, player.transform.position.z), Color.green, 2, false);
+			Debug.DrawLine (new Vector3 (-100f, originY, player.transform.position.z), new Vector3 (100f, originY, player.transform.position.z), Color.green, 2, false);
 			
 			cameraX = player.transform.position.x;
 			
@@ -95,7 +94,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 				nextY = cameraY;
 			}
 
-
+			Debug.Log ("onVertical: " + onVerticalLevel);
 			if (!onVerticalLevel) {
 				//if falling
 				//if i'm out of range and also lower from the bottom then i'm falling
@@ -137,13 +136,15 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 			Debug.Log ("Vertical level, so doing nothing");
 			return;
 		}
-		
-		this.nextY = nextY;
-		if (movingCamera) {
-			t = 0.0f;
-		} else {
-			StartCoroutine (ResetCamera (movingPlat));
 
+		if (this.nextY < nextY) {
+			this.nextY = nextY;
+			if (movingCamera) {
+				t = 0.0f;
+			} else {
+				StartCoroutine (ResetCamera (movingPlat));
+
+			}
 		}
 
 	}
@@ -211,7 +212,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 
 	public void setChasingCamera (bool chasing) {
 
-		transform.FindChild ("cameraBorder").gameObject.SetActive(chasing);
+		transform.FindChild ("cameraBorder").gameObject.SetActive (chasing);
 		transform.FindChild ("chasingSmoke").gameObject.SetActive (chasing);
 
 		this.onChasingCamera = chasing;

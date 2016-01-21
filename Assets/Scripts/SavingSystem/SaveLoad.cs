@@ -64,6 +64,12 @@ public class SaveLoad {
 		Debug.Log ("Game saved");
 		
 	}
+
+	public static void CheckPoint(){
+		savedGame.x = player.transform.position.x;
+		savedGame.y = player.transform.position.y;
+		savedGame.firstGame = false;
+	}
 	
 	public static  void FirstGame () {
 		//cancel previous saved game and saving points
