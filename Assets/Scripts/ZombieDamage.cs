@@ -25,7 +25,7 @@ public class ZombieDamage : MonoBehaviour {
             hp -= 1;
             anim.Play("damage");
 			if (hp <= 0) {
-				anim.Play ("explosion");
+				anim.SetTrigger("explosion");
 				if (playerScript.energy < 10)
 				{
 					playerScript.energy += 1;
