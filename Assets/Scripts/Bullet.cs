@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour {
     {
         if (col.isTrigger != true)
         {
-            Destroy(gameObject);
+            Invoke("DestroyBullet", 0.1f);
         }
     }
 
