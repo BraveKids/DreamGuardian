@@ -6,15 +6,21 @@ public class MovingPlatformOnTrigger : MonoBehaviour {
 	public float moveSpeed;
 	public Transform EndPoint;
 	public Transform StartPoint;
-	bool moving;
+	public bool moving;
+	public bool movingBack;
 
 	void Start(){
 		moving = false;
+		movingBack = false;
 	}
 
 	void Update(){
 		if (moving) {
 			platform.transform.position = Vector3.MoveTowards (platform.transform.position, EndPoint.position,moveSpeed);
+		}
+
+		if (movingBack) {
+			platform.transform.position = Vector3.MoveTowards (platform.transform.position, StartPoint.position,moveSpeed);
 		}
 	}
 	void OnTriggerEnter2D(Collider2D other) {
@@ -33,10 +39,14 @@ public class MovingPlatformOnTrigger : MonoBehaviour {
 	}
 	void MovePlatform(){
 		moving = true;
+		movingBack = false;
 	}
 	
 	void MovePlatformBack(){
-		platform.transform.position = StartPoint.position;
+		movingBack = true;
+	
+
+		//platform.transform.position = StartPoint.position;
 	}
 
 

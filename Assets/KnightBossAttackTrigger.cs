@@ -9,11 +9,13 @@ public class KnightBossAttackTrigger : MonoBehaviour {
 		knightScript = KnightBoss.gameObject.GetComponent("KnightBossScript") as KnightBossScript;
 		
 	}
-	
+
+
 	// Update is called once per frame
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.CompareTag ("Player")) {
 			if (knightScript.stun == false) {
+				knightScript.anim.Play ("attack");
 				knightScript.moveBackToStart ();
 			}
 		}
