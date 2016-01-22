@@ -94,7 +94,6 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 				nextY = cameraY;
 			}
 
-			Debug.Log ("onVertical: " + onVerticalLevel);
 			if (!onVerticalLevel) {
 				//if falling
 				//if i'm out of range and also lower from the bottom then i'm falling
@@ -133,7 +132,6 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	public void followMe (float nextY, bool movingPlat) {
 		
 		if (onVerticalLevel && nextY < this.nextY) {
-			Debug.Log ("Vertical level, so doing nothing");
 			return;
 		}
 
@@ -164,7 +162,6 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 			//some code
 			while (t < 1.0f && movingCamera) {
 				t += Time.deltaTime * (Time.timeScale / transitionDuration);
-				Debug.Log ("resetting");
 				//Vector3 nextPos = new Vector3 (transform.position.x, nextY, transform.position.z);
 				Vector3 nextPos = new Vector3 (transform.position.x, nextY, transform.position.z);
 

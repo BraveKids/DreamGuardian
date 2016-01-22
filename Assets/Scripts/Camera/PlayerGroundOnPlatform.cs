@@ -36,7 +36,6 @@ public class PlayerGroundOnPlatform : MonoBehaviour {
 
 		if (other.CompareTag ("Ground")) {
 
-			Debug.Log ("Ground toched");
 			CameraFollowOnPlatform.instance.setOriginY (transform.position.y);
 			CameraFollowOnPlatform.instance.nextY = transform.position.y;
 			//

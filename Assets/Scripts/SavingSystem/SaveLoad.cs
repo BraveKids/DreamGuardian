@@ -65,7 +65,7 @@ public class SaveLoad {
 		
 	}
 
-	public static void CheckPoint(){
+	public static void CheckPoint () {
 		savedGame.x = player.transform.position.x;
 		savedGame.y = player.transform.position.y;
 		savedGame.firstGame = false;
@@ -79,14 +79,18 @@ public class SaveLoad {
 		if (File.Exists (SavingPoints.SAVING_POINTS_PATH)) {
 			File.Delete (SavingPoints.SAVING_POINTS_PATH);
 		}
-		Debug.Log ("New Game");
 		savedGame.firstGame = true;
 
+	}
+
+	public static void setLevel (int level) {
+		savedGame.level = level;
 	}
 
 	public static void Spawn () {
 
 		if (savedGame.firstGame) {
+			savedGame.level = 0;
 			GameObject startPoint = GameObject.FindGameObjectWithTag ("StartPoint");
 			savedGame.x = startPoint.transform.position.x;
 			savedGame.y = startPoint.transform.position.y;
