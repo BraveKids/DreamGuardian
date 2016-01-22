@@ -53,7 +53,7 @@ public class TankAI : MonoBehaviour {
        
             if (attacking == true)
             {
-                anim.SetBool("walking", false);
+                //anim.SetBool("walking", false);
                 anim.SetBool("walkingBack", false);
                 anim.SetBool("shield", true);
                 if (allowHit == true)
@@ -160,6 +160,7 @@ public class TankAI : MonoBehaviour {
         AttackTrigger.enabled = true;
         if (activateTrigger == true)
         {
+            anim.SetBool("walking", false);
             anim.SetBool("shield", false);
             anim.SetTrigger("attack");
             activateTrigger = false;
