@@ -10,6 +10,9 @@ Assets/Scenes
 *.unity
 *.wav
 *.wav.meta
+*.mp3
+*.mp3.meta
+
 
 
 # ===================================== #
