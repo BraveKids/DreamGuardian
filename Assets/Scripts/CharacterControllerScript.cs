@@ -8,10 +8,16 @@ public class CharacterControllerScript : MonoBehaviour {
 	public int energy = 0;
 	bool facingRight = true;
 	Rigidbody2D rb;
+	public float vMove;
 	public Animator anim;
 	public float arrowTimer;
 	public bool canMove;
 	private bool  runYume = false;
+	SpriteRenderer renderer;
+	Color normalColor;
+	public GameObject colliderCrouch;
+	public GameObject damageAreaStand;
+	public GameObject damageAreaCrouch;
 	public Collider2D attackTrigger1;
 	public Collider2D attackTrigger2;
 	public Collider2D attackTrigger3;
@@ -20,9 +26,10 @@ public class CharacterControllerScript : MonoBehaviour {
 	bool groundedLeft = false;
 	bool groundedRight = false;
 	bool grounded = false;
+
 	public Transform groundCheckLeft;
 	public Transform groundCheckRight;
-	float hitDelay = 1.5f;
+	float hitDelay = 1f;
 	private float nextHitAllowed = 0f;
 	float groundRadius = 0.1f;
 	public LayerMask whatIsGround; //cosa il character deve considerare ground es. il terreno, i nemici...
@@ -36,6 +43,8 @@ public class CharacterControllerScript : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		canMove = true;
+		renderer = GetComponent<SpriteRenderer> ();
+		normalColor = renderer.material.color;
 		rb = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
 	}
@@ -48,6 +57,24 @@ public class CharacterControllerScript : MonoBehaviour {
 		ChangeAbility ();
 		Ability ();
 		Movement ();
+		/*vMove = Input.GetAxis("Vertical");
+		if (vMove<0 && grounded){
+			canMove = false;
+			anim.Play("YumeCrouch");
+			rb.velocity = new Vector3 (0f, 0f, 0f);
+			colliderCrouch.gameObject.SetActive(true);
+			gameObject.GetComponent<PlayerAttack>().canAttack = false;
+			gameObject.GetComponent<Collider2D>().enabled = false;
+			damageAreaStand.gameObject.SetActive(false);
+			damageAreaCrouch.gameObject.SetActive(true);
+		}else if(vMove>-1){
+			canMove = true;
+			gameObject.GetComponent<PlayerAttack>().canAttack = true;
+			gameObject.GetComponent<Collider2D>().enabled = true;
+			damageAreaStand.gameObject.SetActive(true);
+			damageAreaCrouch.gameObject.SetActive(false);
+			colliderCrouch.gameObject.SetActive(false);
+		}*/
 	}
 
 	void ChangeAbility () {
@@ -104,7 +131,7 @@ public class CharacterControllerScript : MonoBehaviour {
 	}
 
 	void Movement () {
-
+			
 		if (canMove && grounded && anim.GetBool ("Attacking") == false && (Input.GetKeyDown (KeyCode.Joystick1Button0) || Input.GetKeyDown (KeyCode.Space))) {
 			anim.SetBool ("Ground", false);
 			rb.AddForce (new Vector2 (0, jumpForce));
@@ -119,11 +146,12 @@ public class CharacterControllerScript : MonoBehaviour {
 			anim.SetFloat ("vSpeed", rb.velocity.y); //vertical speed
 
 			float move = Input.GetAxis ("Horizontal");
+
 			anim.SetFloat ("Speed", Mathf.Abs (move)); //con questa riga risco a "leggere" il mutamento di Speed
 			// e quindi a far cambiare l'animazione da idle a run
 			
 			rb.velocity = new Vector2 (move * maxSpeed, rb.velocity.y);
-			
+
 			if (move > 0 && !facingRight) {
 				Flip ();
 			} else if (move < 0 && facingRight) {
@@ -151,9 +179,17 @@ public class CharacterControllerScript : MonoBehaviour {
 		transform.localScale = theScale;
 	}
 
+	IEnumerator DamageCoroutine(){
+		Debug.Log ("Flash");
+		renderer.material.color = Color.red;
+		yield return new WaitForSeconds(0.1f);
+		renderer.material.color = normalColor;
+	}
+
 	void OnTriggerStay2D (Collider2D other) {
 		if (other.CompareTag ("Enemy") && attackTrigger1.enabled == false && attackJumpTrigger.enabled == false && attackTrigger2.enabled == false && attackTrigger3.enabled == false && superAttackTrigger.enabled == false && Time.time > nextHitAllowed) {
 			anim.Play ("YumeDamage");
+			StartCoroutine("DamageCoroutine");
 			hp -= 1;
 			GameObject.Find ("HUD").GetComponent<HUDManager> ().updateHP (hp);
 			nextHitAllowed = Time.time + hitDelay;
@@ -175,6 +211,7 @@ public class CharacterControllerScript : MonoBehaviour {
 		}
 		if (other.CompareTag ("EnemyObject")) {
 			anim.Play ("YumeDamage");
+			StartCoroutine("DamageCoroutine");
 			hp -= 1;
 			GameObject.Find ("HUD").GetComponent<HUDManager> ().updateHP (hp);
 			nextHitAllowed = Time.time + hitDelay;

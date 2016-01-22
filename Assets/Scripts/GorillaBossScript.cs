@@ -6,11 +6,15 @@ using System.IO;
 
 public class GorillaBossScript : MonoBehaviour {
 	Rigidbody2D rb;
+	public AudioSource deathSound;
+	public AudioSource hitSound;
 	public Animator anim;
 	public bool onRope;
 	public bool vulnerable;
 	bool movingBack;
 	bool canAttack;
+	SpriteRenderer renderer;
+	Color normalColor;
 	public bool grounded;	
 	public bool active;
 	public float stunTimer;
@@ -35,6 +39,8 @@ public class GorillaBossScript : MonoBehaviour {
 	public Transform shootPointRight;
 	// Use this for initialization
 	void Start () {
+		renderer = GetComponentInChildren<SpriteRenderer> ();
+		normalColor = renderer.material.color;
 		onRope = true;
 		active = false;
 		grounded = false;
@@ -109,7 +115,7 @@ public class GorillaBossScript : MonoBehaviour {
 
 			}
 			if(hp<=0){
-				
+				deathSound.PlayOneShot(deathSound.clip);
 				anim.SetTrigger("die");
 				Invoke ("Death", 0.8f);
 				
@@ -118,9 +124,18 @@ public class GorillaBossScript : MonoBehaviour {
 
 }
 
+	IEnumerator DamageCoroutine(){
+		Debug.Log ("Flash");
+		renderer.material.color = Color.red;
+		yield return new WaitForSeconds(0.1f);
+		renderer.material.color = normalColor;
+	}
+
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag("AttackTrigger") && vulnerable == true && hp>0){
 			hp-=1;
+			hitSound.PlayOneShot(deathSound.clip);
+			StartCoroutine("DamageCoroutine");
 			GameObject.Find ("HUD").GetComponent<HUDManager> ().updateBossHP (hp);
 			anim.Play("damage");
 			hpDelta+=1;
