@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
+using System.IO;
 
 public class GorillaBossScript : MonoBehaviour {
 	Rigidbody2D rb;
 	public Animator anim;
-	bool vulnerable;
+	public bool onRope;
+	public bool vulnerable;
 	bool movingBack;
 	bool canAttack;
 	public bool grounded;	
@@ -22,7 +26,7 @@ public class GorillaBossScript : MonoBehaviour {
 	public float bulletTimer;
 	private CharacterControllerScript playerScript;
 	GameObject player;
-
+	//public Slider hpHUD;
 	public bool awake = false;
 	public bool lookingRight;
 	public GameObject bullet;
@@ -31,8 +35,7 @@ public class GorillaBossScript : MonoBehaviour {
 	public Transform shootPointRight;
 	// Use this for initialization
 	void Start () {
-
-
+		onRope = true;
 		active = false;
 		grounded = false;
 		player = GameObject.FindGameObjectWithTag("Player");
@@ -42,6 +45,7 @@ public class GorillaBossScript : MonoBehaviour {
 		rb.isKinematic = true;
 		vulnerable = false;
 		hp = 12;
+		//GameObject.Find ("HUD").GetComponent<HUDManager> ().updateBossHP (hp);
 		hpDelta = 0;
 		canAttack = true;
 		anim = GetComponentInChildren<Animator> ();
@@ -52,10 +56,13 @@ public class GorillaBossScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (active) {
+			GameObject.Find ("HUD").GetComponent<HUDManager> ().gorillaBossHP.gameObject.SetActive (true);
 
 			//anim.gameObject.SetActive(true);
-			if (!ropes [actualRope].activeSelf == true) {
+			if (!ropes [actualRope].activeSelf == true || actualRope>4) {
+				onRope = false;
 				rb.isKinematic = false;
+				body.gameObject.tag = "vulnerable";
 				anim.Play("Falling");
 				vulnerable = true;
 				canAttack = false;
@@ -65,11 +72,12 @@ public class GorillaBossScript : MonoBehaviour {
 
 				stunTimer += Time.deltaTime;
 				if(grounded){
-					anim.Play ("Stun");
+					anim.SetBool("stun",true);
+
 				}
 			}
 
-			if ((lookingRight == false && target.transform.position.x < transform.position.x) || (lookingRight == true && target.transform.position.x > transform.position.x)) {
+			if ((lookingRight == false && target.transform.position.x < transform.position.x) || (lookingRight == true && target.transform.position.x > transform.position.x) && vulnerable == false) {
 				anim.SetBool("attack", false);
 				Flip ();
 			}
@@ -79,7 +87,7 @@ public class GorillaBossScript : MonoBehaviour {
 				Attack (lookingRight);
 			}
 
-			if (hpDelta == 4 || stunTimer >= 5f && hp>0) {
+			if (hpDelta == 4 || stunTimer >= 5f) {
 				BackToRope ();
 				stunTimer = 0f;
 				grounded = false;
@@ -92,23 +100,28 @@ public class GorillaBossScript : MonoBehaviour {
 
 			}
 			if (transform.position.Equals (ropes [actualRope].transform.position)) {
+				onRope = true;
 				anim.SetBool("attack", true);
+				body.gameObject.tag = "Enemy";
 				movingBack = false;
 				canAttack = true;
 				anim.SetTrigger("backOnRope");
 
 			}
+			if(hp<=0){
+				
+				anim.SetTrigger("die");
+				Invoke ("Death", 0.8f);
+				
+			}
 		}
-		if(hp<=0){
-			anim.Play("Die");
-			Invoke ("Death", 0.8f);
-			
-		}
+
 }
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.CompareTag("AttackTrigger") && vulnerable == true){
+		if (other.CompareTag("AttackTrigger") && vulnerable == true && hp>0){
 			hp-=1;
+			GameObject.Find ("HUD").GetComponent<HUDManager> ().updateBossHP (hp);
 			anim.Play("damage");
 			hpDelta+=1;
 			if (playerScript.energy < 10)
@@ -123,6 +136,7 @@ public class GorillaBossScript : MonoBehaviour {
 
 
 	void BackToRope(){
+		anim.SetBool ("stun", false);
 		anim.Play ("recover");
 		bulletTimer = 0f;
 		hpDelta=0;
@@ -169,8 +183,13 @@ public class GorillaBossScript : MonoBehaviour {
 	void MovingBack(){
 		movingBack = true;
 	}
+	/*
+	public void updateHP (int hp) {
+		hpHUD.value = hp;
+	}*/
 
 	void Death(){
+		GameObject.Find ("HUD").GetComponent<HUDManager> ().gorillaBossHP.gameObject.SetActive (false);
 		enemy.gameObject.SetActive(false);
 	}
 
