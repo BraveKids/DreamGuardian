@@ -14,6 +14,9 @@ public class KnightBossScript : MonoBehaviour {
 	public bool tooLate;
 	public GameObject enemy;
 	public int hp;
+	public Animator anim;
+	SpriteRenderer renderer;
+	Color normalColor;
 	public int hpDelta;
 	public bool left;
 	Rigidbody2D rb;
@@ -27,6 +30,9 @@ public class KnightBossScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		hp = 12;
+		anim = GetComponent<Animator> ();
+		renderer = GetComponent<SpriteRenderer> ();
+		normalColor = renderer.material.color;
 		hpDelta = 0;
 		player = GameObject.FindGameObjectWithTag("Player");
 		playerScript = player.gameObject.GetComponent("CharacterControllerScript") as CharacterControllerScript;
@@ -46,9 +52,12 @@ public class KnightBossScript : MonoBehaviour {
 		if (active) {
 			GameObject.Find ("HUD").GetComponent<HUDManager> ().knightBossHP.gameObject.SetActive (true);
 			if (chase) {
+
 				if (left) {
+
 					rb.MovePosition (Vector3.MoveTowards (transform.position, new Vector3 (leftWall.transform.position.x, transform.position.y, leftWall.transform.position.z), Time.deltaTime * moveSpeed));
 				} else {
+
 					rb.MovePosition (Vector3.MoveTowards (transform.position, new Vector3 (rightWall.transform.position.x, transform.position.y, rightWall.transform.position.z), Time.deltaTime * moveSpeed));
 			
 				}
@@ -57,26 +66,37 @@ public class KnightBossScript : MonoBehaviour {
 			CheckTooLateToStop ();
 
 			if (stun) {
+				anim.SetBool("stun", true);
 				attackTrigger.gameObject.SetActive(false);
 				gameObject.tag = "vulnerable";
 				stunTimer += Time.deltaTime;
 			}
 
 			if (stunTimer >= 4f || hpDelta == 4) {
+				anim.SetBool("stun", false);
 				stunTimer = 0f;
 				hpDelta = 0;
 				stun = false;
+				//anim.SetTrigger ("flip");
 				Flip ();
-				Invoke("BackOnHorse", 2f);
+				anim.SetTrigger("rampage");
+				Invoke("BackOnHorse", 1.2f);
 				}
 			
 		}
 	}
-	
+
+	IEnumerator DamageCoroutine(){
+		Debug.Log ("Flash");
+		renderer.material.color = Color.red;
+		yield return new WaitForSeconds(0.1f);
+		renderer.material.color = normalColor;
+	}
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.CompareTag ("Wall")) {
 			if(crashOnWall && !freeRound){
+				anim.Play("crash");
 				stun = true;
 				chase = false;
 			
@@ -88,6 +108,7 @@ public class KnightBossScript : MonoBehaviour {
 		}
 		if (other.CompareTag("AttackTrigger") && stun == true && hp>0 && hpDelta<4){
 			hp-=1;
+			StartCoroutine("DamageCoroutine");
 			GameObject.Find ("HUD").GetComponent<HUDManager> ().updateKnightBossHP (hp);
 			hpDelta+=1;
 

@@ -5,9 +5,10 @@ public class DreamMaster : MonoBehaviour {
 
 	public string ability;
 	Animator anim;
-
+	AudioSource audio;
 	void Start(){
 		anim = GetComponent<Animator> ();
+		audio = GetComponent<AudioSource> ();
 	}
 
 	public void byeBye(){
@@ -19,6 +20,7 @@ public class DreamMaster : MonoBehaviour {
 
 
 		if (other.CompareTag ("Player")) {
+			audio.PlayOneShot(audio.clip);
 			if (!SaveLoad.savedGame.skills.Contains(ability)) {	//se non ho quell'abilità
 				anim.Play("GiveAbility");	
 				SaveLoad.savedGame.skills.Add (ability);	//ottenimento dell'abilità
