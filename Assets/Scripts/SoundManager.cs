@@ -15,13 +15,12 @@ public class SoundManager : MonoBehaviour {
 	public AudioClip lullaby;
 	public AudioClip tutorial;
 	public AudioClip school;
-	string musicPlayed;
+	int level = -2;
 
 
 	
 	// Use this for initialization
 	void Start () {
-
 		// singleton
 		if (instance == null) {
 			instance = this;
@@ -42,16 +41,19 @@ public class SoundManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		switch (SaveLoad.savedGame.level) {
-		case -1:
-			SetBackgroundMusic ("lullaby");
-			break;
-		case 0:
-			SetBackgroundMusic ("tutorial");
-			break;
-		case 1:
-			SetBackgroundMusic ("school");
-			break;
+		Debug.Log (level);
+		if (level != SaveLoad.savedGame.level) {
+			switch (SaveLoad.savedGame.level) {
+			case -1:
+				SetBackgroundMusic ("lullaby");
+				break;
+			case 0:
+				SetBackgroundMusic ("tutorial");
+				break;
+			case 1:
+				SetBackgroundMusic ("school");
+				break;
+			}
 		}
 	}
 
@@ -60,9 +62,9 @@ public class SoundManager : MonoBehaviour {
 	}
 
 	public void SetBackgroundMusic (string background) {
-		if (allMusics.ContainsKey (background) && musicPlayed != background) {
+		if (allMusics.ContainsKey (background)) {
 			audioSource.clip = allMusics [background];
-			musicPlayed = background;
+			level = SaveLoad.savedGame.level;
 			Debug.Log ("musica cambiata con livello: " + SaveLoad.savedGame.level);
 		}
 

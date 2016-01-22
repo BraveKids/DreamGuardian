@@ -38,6 +38,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	Camera cam;
 	float height ;
 	float width;
+	bool twist;
 	public float moveSpeed = 1;
 
 	public void Start () {
@@ -235,5 +236,9 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 
 	public void setOriginY (float originY) {
 		this.originY = originY;
+	}
+
+	public void dreamTwist (bool twist) {
+		this.twist = twist;
 	}
 }
