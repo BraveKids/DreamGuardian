@@ -13,7 +13,7 @@ public class Game {
 	public int level;
 
 	public Game () {
-		level = 0;
+		level = -1;
 		skills = new List<String> ();
 		skills.Add ("arrowAbility");
 		skills.Add ("platformAbility");

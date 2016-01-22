@@ -43,13 +43,13 @@ public class SoundManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		switch (SaveLoad.savedGame.level) {
-		case 0:
+		case -1:
 			SetBackgroundMusic ("lullaby");
 			break;
-		case 1:
+		case 0:
 			SetBackgroundMusic ("tutorial");
 			break;
-		case 2:
+		case 1:
 			SetBackgroundMusic ("school");
 			break;
 		}
@@ -60,10 +60,10 @@ public class SoundManager : MonoBehaviour {
 	}
 
 	public void SetBackgroundMusic (string background) {
-		if (allMusics.ContainsKey (background) && musicPlayed!=background) {
+		if (allMusics.ContainsKey (background) && musicPlayed != background) {
 			audioSource.clip = allMusics [background];
 			musicPlayed = background;
-			Debug.Log("musica cambiata con livello: "+SaveLoad.savedGame.level);
+			Debug.Log ("musica cambiata con livello: " + SaveLoad.savedGame.level);
 		}
 
 

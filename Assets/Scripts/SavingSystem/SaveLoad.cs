@@ -90,7 +90,7 @@ public class SaveLoad {
 	public static void Spawn () {
 
 		if (savedGame.firstGame) {
-			savedGame.level = 1;
+			savedGame.level = 0;
 			GameObject startPoint = GameObject.FindGameObjectWithTag ("StartPoint");
 			savedGame.x = startPoint.transform.position.x;
 			savedGame.y = startPoint.transform.position.y;
