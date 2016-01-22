@@ -15,6 +15,7 @@ public class SoundManager : MonoBehaviour {
 	public AudioClip lullaby;
 	public AudioClip tutorial;
 	public AudioClip school;
+	public AudioClip gorilla;
 	string musicPlayed;
 
 
@@ -34,6 +35,7 @@ public class SoundManager : MonoBehaviour {
 		allMusics.Add ("lullaby", lullaby);
 		allMusics.Add ("tutorial", tutorial);
 		allMusics.Add ("school", school);
+		allMusics.Add ("gorilla", gorilla);
 	
 		
 		audioSource = GetComponent<AudioSource> () as AudioSource;
@@ -52,7 +54,14 @@ public class SoundManager : MonoBehaviour {
 		case 1:
 			SetBackgroundMusic ("school");
 			break;
+		
+		case 2:
+			SetBackgroundMusic ("gorilla");
+			break;
+		
 		}
+
+
 	}
 
 	public void SetVolume (float _volume) {
@@ -64,10 +73,11 @@ public class SoundManager : MonoBehaviour {
 			audioSource.clip = allMusics [background];
 			musicPlayed = background;
 			Debug.Log ("musica cambiata con livello: " + SaveLoad.savedGame.level);
+			audioSource.Play ();
 		}
 
 
-		audioSource.Play ();
+
 	}
 
 	public void SetMusic (bool _music) {

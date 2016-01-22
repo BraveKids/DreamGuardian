@@ -7,9 +7,9 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 0
     path: Assets/Scenes/GameTemplate.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Splashes.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Menu.unity
   - enabled: 1
     path: Assets/Scenes/Gameplay.unity
