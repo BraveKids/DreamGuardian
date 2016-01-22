@@ -12,11 +12,10 @@ public class SoundManager : MonoBehaviour {
 	AudioSource audioSource = null;
 
 	// clips 
-	public AudioClip chase;
-	public AudioClip menuMusic;
-	public AudioClip forest;
-	public AudioClip lvl0Music;
-	public AudioClip schoolMusic;	//high school music? LOL
+	public AudioClip lullaby;
+	public AudioClip tutorial;
+	public AudioClip school;
+	string musicPlayed;
 
 
 	
@@ -32,22 +31,28 @@ public class SoundManager : MonoBehaviour {
 		}
 
 		allMusics = new Dictionary<string, AudioClip> ();
-		allMusics.Add ("chase", chase);
-		allMusics.Add ("menu", menuMusic);
-		allMusics.Add("lvl0", lvl0Music);
-		allMusics.Add("school", schoolMusic);
-		allMusics.Add ("forest", forest);
+		allMusics.Add ("lullaby", lullaby);
+		allMusics.Add ("tutorial", tutorial);
+		allMusics.Add ("school", school);
 	
 		
 		audioSource = GetComponent<AudioSource> () as AudioSource;
 		audioSource.loop = true;
-		SetBackgroundMusic ("menu");
-		//audioSource.Play ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		switch (SaveLoad.savedGame.level) {
+		case 0:
+			SetBackgroundMusic ("lullaby");
+			break;
+		case 1:
+			SetBackgroundMusic ("tutorial");
+			break;
+		case 2:
+			SetBackgroundMusic ("school");
+			break;
+		}
 	}
 
 	public void SetVolume (float _volume) {
@@ -55,9 +60,10 @@ public class SoundManager : MonoBehaviour {
 	}
 
 	public void SetBackgroundMusic (string background) {
-
-		if (allMusics.ContainsKey (background)) {
+		if (allMusics.ContainsKey (background) && musicPlayed!=background) {
 			audioSource.clip = allMusics [background];
+			musicPlayed = background;
+			Debug.Log("musica cambiata con livello: "+SaveLoad.savedGame.level);
 		}
 
 
