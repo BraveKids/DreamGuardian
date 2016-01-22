@@ -13,14 +13,11 @@ public class Game {
 	public int level;
 
 	public Game () {
-<<<<<<< HEAD
-		skills = new List<String>();
-		//skills.Add ("arrowAbility");
-=======
+
 		level = -1;
 		skills = new List<String> ();
 		skills.Add ("arrowAbility");
->>>>>>> sound_manager
+
 		skills.Add ("platformAbility");
 		
 	}
