@@ -9,7 +9,7 @@ public class SpitterAI : MonoBehaviour {
     public Transform shootPoint;
     public GameObject bullet;
 
-    float walkVelocity = 1f;
+    public float walkVelocity = 1f;
     public float shootVelocity = 4f;
     Rigidbody2D rb;
     public Animator anim;
@@ -25,9 +25,11 @@ public class SpitterAI : MonoBehaviour {
 
     public float bulletTimer;
     public float shootInterval = 1;
+    public float initialInterval;
+    public bool isInitial = true;
 
     public bool attackSpitter;
-    public bool allowAttack = true;
+    public bool allowAttack = false;
 
 
     void Start()
@@ -50,14 +52,14 @@ public class SpitterAI : MonoBehaviour {
     {
         if (attacking == false)
         {
-			anim.SetBool("Attacking", attacking);
+			anim.SetBool("Attacking", false);
             rb.isKinematic = false;
             rb.velocity = new Vector2(-walkVelocity, rb.velocity.y);
             walk();
         }
         else if (attacking == true)
         {
-			anim.SetBool("Attacking", attacking);
+			anim.SetBool("Attacking", true);
             rb.isKinematic = true;
 			rb.velocity = new Vector2(0f,0f);
             Attack();
@@ -103,12 +105,26 @@ public class SpitterAI : MonoBehaviour {
             }
             else if (allowAttack == false)
             {
-                bulletTimer += Time.deltaTime;
-                if (bulletTimer >= shootInterval)
+                if (isInitial == true)
                 {
-                    bulletTimer = 0;
-                    allowAttack = true;
+                    bulletTimer += Time.deltaTime;
+                    if (bulletTimer >= initialInterval)
+                    {
+                        bulletTimer = 0;
+                        allowAttack = true;
+                        isInitial = false;
+                    }
                 }
+                else if (isInitial == false)
+                {
+                    bulletTimer += Time.deltaTime;
+                    if (bulletTimer >= shootInterval)
+                    {
+                        bulletTimer = 0;
+                        allowAttack = true;
+                    }
+                }
+                
             }
             
         }

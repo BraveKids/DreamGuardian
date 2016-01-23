@@ -1,12 +1,14 @@
 fileFormatVersion: 2
-guid: 2286a366cf42da344aec68121bb6826e
-timeCreated: 1452458368
+guid: 2536c37b4307bfb4397d066f4b38a1f1
+timeCreated: 1453548490
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: spriteTankguardia_0
-    21300002: spriteTankguardia_1
-    21300004: spriteTankguardia_2
+    21300000: centauroSpriteMorte_0
+    21300002: centauroSpriteMorte_1
+    21300004: centauroSpriteMorte_2
+    21300006: centauroSpriteMorte_3
+    21300008: centauroSpriteMorte_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -29,7 +31,7 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -3
+  textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
     filterMode: 0
@@ -50,43 +52,58 @@ TextureImporter:
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
-  buildTargetSettings:
-  - buildTarget: Standalone
-    maxTextureSize: 4096
-    textureFormat: -3
-    compressionQuality: 50
-    allowsAlphaSplitting: 0
+  buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: spriteTankguardia_0
+    - name: centauroSpriteMorte_0
       rect:
         serializedVersion: 2
-        x: 994
-        y: 1315
-        width: 515
-        height: 591
+        x: 159
+        y: 831
+        width: 611
+        height: 527
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: spriteTankguardia_1
+    - name: centauroSpriteMorte_1
       rect:
         serializedVersion: 2
-        x: 1005
-        y: 688
-        width: 487
-        height: 520
+        x: 930
+        y: 813
+        width: 726
+        height: 476
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: spriteTankguardia_2
+    - name: centauroSpriteMorte_2
       rect:
         serializedVersion: 2
-        x: 985
-        y: 188
-        width: 480
-        height: 454
+        x: 1943
+        y: 820
+        width: 998
+        height: 382
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: centauroSpriteMorte_3
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 211
+        width: 1092
+        height: 570
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: centauroSpriteMorte_4
+      rect:
+        serializedVersion: 2
+        x: 2211
+        y: 220
+        width: 365
+        height: 540
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

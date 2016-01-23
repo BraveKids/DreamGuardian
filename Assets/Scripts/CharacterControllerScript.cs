@@ -12,6 +12,7 @@ public class CharacterControllerScript : MonoBehaviour {
 	public Animator anim;
 	public float arrowTimer;
 	public bool canMove;
+	public bool steso;
 	private bool  runYume = false;
 	SpriteRenderer renderer;
 	Color normalColor;
@@ -43,6 +44,7 @@ public class CharacterControllerScript : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		canMove = true;
+		steso = false;
 		renderer = GetComponent<SpriteRenderer> ();
 		normalColor = renderer.material.color;
 		rb = GetComponent<Rigidbody2D> ();
@@ -57,24 +59,28 @@ public class CharacterControllerScript : MonoBehaviour {
 		ChangeAbility ();
 		Ability ();
 		Movement ();
-		/*vMove = Input.GetAxis("Vertical");
-		if (vMove<0 && grounded){
-			canMove = false;
+		vMove = Input.GetAxis("Vertical");
+		if (vMove<-0.9 && grounded && canMove ){
+			steso = true;
+			anim.SetBool("steso", true);
 			anim.Play("YumeCrouch");
 			rb.velocity = new Vector3 (0f, 0f, 0f);
 			colliderCrouch.gameObject.SetActive(true);
-			gameObject.GetComponent<PlayerAttack>().canAttack = false;
-			gameObject.GetComponent<Collider2D>().enabled = false;
+			gameObject.GetComponent<PlayerAttack>().steso = true;
+			gameObject.GetComponent<BoxCollider2D>().enabled = false;
+			gameObject.GetComponent<CircleCollider2D>().enabled = false;
 			damageAreaStand.gameObject.SetActive(false);
 			damageAreaCrouch.gameObject.SetActive(true);
-		}else if(vMove>-1){
-			canMove = true;
-			gameObject.GetComponent<PlayerAttack>().canAttack = true;
-			gameObject.GetComponent<Collider2D>().enabled = true;
+		}else if (vMove>-1){
+			steso = false;
+			anim.SetBool("steso", false);
+			gameObject.GetComponent<PlayerAttack>().steso = false;
+			gameObject.GetComponent<BoxCollider2D>().enabled = true;
+			gameObject.GetComponent<CircleCollider2D>().enabled = true;;
 			damageAreaStand.gameObject.SetActive(true);
 			damageAreaCrouch.gameObject.SetActive(false);
 			colliderCrouch.gameObject.SetActive(false);
-		}*/
+		}
 	}
 
 	void ChangeAbility () {
@@ -131,13 +137,20 @@ public class CharacterControllerScript : MonoBehaviour {
 	}
 
 	void Movement () {
-			
-		if (canMove && grounded && anim.GetBool ("Attacking") == false && (Input.GetKeyDown (KeyCode.Joystick1Button0) || Input.GetKeyDown (KeyCode.Space))) {
+		/*
+		if (Input.GetKeyDown (KeyCode.H)) {
+			anim.Play("respawn");
+		}
+		if (Input.GetKeyDown (KeyCode.J)) {
+			anim.Play("flare");
+		}	
+		*/
+		if (!steso && canMove && grounded && anim.GetBool ("Attacking") == false && (Input.GetKeyDown (KeyCode.Joystick1Button0) || Input.GetKeyDown (KeyCode.Space)) && anim.GetFloat("vSpeed")<=0) {
 			anim.SetBool ("Ground", false);
 			rb.AddForce (new Vector2 (0, jumpForce));
 		}
 		
-		if (canMove && anim.GetBool ("Attacking") == false && anim.GetBool ("shooting") == false && anim.GetBool ("IstantDeath") == false && anim.GetBool ("platform") == false) {
+		if (!steso && canMove && anim.GetBool ("Attacking") == false && anim.GetBool ("shooting") == false && anim.GetBool ("IstantDeath") == false && anim.GetBool ("platform") == false) {
 			groundedLeft = Physics2D.OverlapCircle (groundCheckLeft.position, groundRadius, whatIsGround);
 			groundedRight = Physics2D.OverlapCircle (groundCheckRight.position, groundRadius, whatIsGround);
 			grounded = groundedLeft || groundedRight;
@@ -198,6 +211,8 @@ public class CharacterControllerScript : MonoBehaviour {
 				Invoke ("Death", 0.6f);
 			}
 		}
+	
+
 	}
 
 	void OnTriggerEnter2D (Collider2D other) {
@@ -221,6 +236,19 @@ public class CharacterControllerScript : MonoBehaviour {
 		
 			}
 			other.gameObject.SetActive (false);
+		}
+		if (other.CompareTag ("EnemyTrigger")&& Time.time > nextHitAllowed) {
+			anim.Play ("YumeDamage");
+			StartCoroutine("DamageCoroutine");
+			hp -= 1;
+			GameObject.Find ("HUD").GetComponent<HUDManager> ().updateHP (hp);
+			nextHitAllowed = Time.time + hitDelay;
+			if (hp <= 0) {
+				anim.SetTrigger ("death");
+				Invoke ("Death", 0.6f);
+				
+			}
+			
 		}
 		
 	}

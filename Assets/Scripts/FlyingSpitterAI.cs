@@ -18,6 +18,8 @@ public class FlyingSpitterAI : MonoBehaviour {
     public bool isLeft;
     GameObject player;
     public bool allowAttack = true;
+    public float initialInterval;
+    public bool isInitial = true;
 
     public bool attackSpitter;
 
@@ -75,13 +77,28 @@ public class FlyingSpitterAI : MonoBehaviour {
             }
             else if (allowAttack == false)
             {
-                bulletTimer += Time.deltaTime;
-                if (bulletTimer >= shootInterval)
+                if (isInitial == true)
                 {
+                    bulletTimer += Time.deltaTime;
+                    if (bulletTimer >= initialInterval)
+                    {
 
-                    bulletTimer = 0;
-                    allowAttack = true;
+                        bulletTimer = 0;
+                        allowAttack = true;
+                        isInitial = false;
+                    }
                 }
+                else if (isInitial == false)
+                {
+                    bulletTimer += Time.deltaTime;
+                    if (bulletTimer >= shootInterval)
+                    {
+
+                        bulletTimer = 0;
+                        allowAttack = true;
+                    }
+                }
+                
             }
             else if (attackSpitter == false)
             {

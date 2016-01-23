@@ -1,0 +1,281 @@
+fileFormatVersion: 2
+guid: 4c8f219882cc75d44b37118d98ae2cef
+timeCreated: 1453546419
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: yumeSpriteFlare_0
+    21300002: yumeSpriteFlare_1
+    21300004: yumeSpriteFlare_2
+    21300006: yumeSpriteFlare_3
+    21300008: yumeSpriteFlare_4
+    21300010: yumeSpriteFlare_5
+    21300012: yumeSpriteFlare_6
+    21300014: yumeSpriteFlare_7
+    21300016: yumeSpriteFlare_8
+    21300018: yumeSpriteFlare_9
+    21300020: yumeSpriteFlare_10
+    21300022: yumeSpriteFlare_11
+    21300024: yumeSpriteFlare_12
+    21300026: yumeSpriteFlare_13
+    21300028: yumeSpriteFlare_14
+    21300030: yumeSpriteFlare_15
+    21300032: yumeSpriteFlare_16
+    21300034: yumeSpriteFlare_17
+    21300036: yumeSpriteFlare_18
+    21300038: yumeSpriteFlare_19
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Standalone
+    maxTextureSize: 4096
+    textureFormat: -1
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
+  spriteSheet:
+    sprites:
+    - name: yumeSpriteFlare_0
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 1443
+        width: 274
+        height: 410
+      alignment: 9
+      pivot: {x: .578064978, y: .482610345}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeSpriteFlare_1
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 1457
+        width: 282
+        height: 385
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeSpriteFlare_2
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 1464
+        width: 286
+        height: 357
+      alignment: 9
+      pivot: {x: .450140685, y: .490014523}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeSpriteFlare_3
+      rect:
+        serializedVersion: 2
+        x: 1795
+        y: 1457
+        width: 292
+        height: 335
+      alignment: 9
+      pivot: {x: .402329952, y: .574492037}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeSpriteFlare_4
+      rect:
+        serializedVersion: 2
+        x: 2322
+        y: 1486
+        width: 260
+        height: 328
+      alignment: 9
+      pivot: {x: .390309483, y: .54347527}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeSpriteFlare_5
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 1522
+        width: 346
+        height: 449
+      alignment: 9
+      pivot: {x: .263023406, y: .365024209}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeSpriteFlare_6
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 1486
+        width: 172
+        height: 513
+      alignment: 9
+      pivot: {x: .417092979, y: .312370539}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeSpriteFlare_7
+      rect:
+        serializedVersion: 2
+        x: 4116
+        y: 1464
+        width: 185
+        height: 560
+      alignment: 9
+      pivot: {x: .44219014, y: .289922237}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeSpriteFlare_8
+      rect:
+        serializedVersion: 2
+        x: 4650
+        y: 1461
+        width: 164
+        height: 499
+      alignment: 9
+      pivot: {x: .391312748, y: .307106644}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeSpriteFlare_9
+      rect:
+        serializedVersion: 2
+        x: 5178
+        y: 1450
+        width: 164
+        height: 492
+      alignment: 9
+      pivot: {x: .369575322, y: .311608285}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeSpriteFlare_10
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 670
+        width: 192
+        height: 502
+      alignment: 9
+      pivot: {x: .388595104, y: .301157802}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeSpriteFlare_11
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 705
+        width: 164
+        height: 481
+      alignment: 9
+      pivot: {x: .434787273, y: .299888432}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeSpriteFlare_12
+      rect:
+        serializedVersion: 2
+        x: 1374
+        y: 694
+        width: 154
+        height: 507
+      alignment: 9
+      pivot: {x: .430553883, y: .303118885}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeSpriteFlare_13
+      rect:
+        serializedVersion: 2
+        x: 1795
+        y: 705
+        width: 282
+        height: 460
+      alignment: 9
+      pivot: {x: .980384767, y: .00400616182}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeSpriteFlare_14
+      rect:
+        serializedVersion: 2
+        x: 2333
+        y: 734
+        width: 350
+        height: 477
+      alignment: 9
+      pivot: {x: .978723466, y: -.000738563773}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeSpriteFlare_15
+      rect:
+        serializedVersion: 2
+        x: 2986
+        y: 766
+        width: 452
+        height: 356
+      alignment: 9
+      pivot: {x: 1.00477374, y: -.000696760893}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeSpriteFlare_16
+      rect:
+        serializedVersion: 2
+        x: 3745
+        y: 787
+        width: 381
+        height: 285
+      alignment: 9
+      pivot: {x: 1.00526989, y: .474983513}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeSpriteFlare_17
+      rect:
+        serializedVersion: 2
+        x: 4408
+        y: 823
+        width: 456
+        height: 317
+      alignment: 9
+      pivot: {x: 1.00816369, y: .500000179}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeSpriteFlare_18
+      rect:
+        serializedVersion: 2
+        x: 5142
+        y: 798
+        width: 350
+        height: 324
+      alignment: 9
+      pivot: {x: .999095976, y: .511003256}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yumeSpriteFlare_19
+      rect:
+        serializedVersion: 2
+        x: 5706
+        y: 1158
+        width: 199
+        height: 189
+      alignment: 9
+      pivot: {x: .983687997, y: .481137872}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

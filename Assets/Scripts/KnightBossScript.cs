@@ -72,7 +72,7 @@ public class KnightBossScript : MonoBehaviour {
 				stunTimer += Time.deltaTime;
 			}
 
-			if (stunTimer >= 4f || hpDelta == 4) {
+			if ((stunTimer >= 5f || hpDelta == 4) && hp>0) {
 				anim.SetBool("stun", false);
 				stunTimer = 0f;
 				hpDelta = 0;
@@ -82,6 +82,11 @@ public class KnightBossScript : MonoBehaviour {
 				anim.SetTrigger("rampage");
 				Invoke("BackOnHorse", 1.2f);
 				}
+
+			if(hp==0){
+				anim.SetTrigger("die");
+				Invoke ("Death", 0.8f);
+			}
 			
 		}
 	}
@@ -117,10 +122,7 @@ public class KnightBossScript : MonoBehaviour {
 				playerScript.energy += 1;
 				GameObject.Find("HUD").GetComponent<HUDManager>().updateMP(playerScript.energy);
 			}
-			if(hp==0){
-				GameObject.Find ("HUD").GetComponent<HUDManager> ().knightBossHP.gameObject.SetActive (false);
-				enemy.gameObject.SetActive(false);
-			}
+
 		}
 
 
@@ -148,6 +150,10 @@ public class KnightBossScript : MonoBehaviour {
 			}
 		}
 		 
+	}
+	void Death(){
+		GameObject.Find ("HUD").GetComponent<HUDManager> ().knightBossHP.gameObject.SetActive (false);
+		enemy.gameObject.SetActive(false);
 	}
 	
 	public void moveBackToStart(){

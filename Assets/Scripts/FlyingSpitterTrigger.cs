@@ -45,7 +45,8 @@ public class FlyingSpitterTrigger : MonoBehaviour
         if (timer >= exitInterval)
         {
 
-            flyingSpitterAI.allowAttack = true;
+            flyingSpitterAI.allowAttack = false;
+            flyingSpitterAI.isInitial = true;
             flyingSpitterAI.bulletTimer = 0;
             timer = 0;
         }

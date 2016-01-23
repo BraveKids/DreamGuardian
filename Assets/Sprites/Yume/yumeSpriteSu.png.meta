@@ -1,12 +1,11 @@
 fileFormatVersion: 2
-guid: 2286a366cf42da344aec68121bb6826e
-timeCreated: 1452458368
+guid: 6d774e448f06d27439b4c295a3ac1018
+timeCreated: 1453560658
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: spriteTankguardia_0
-    21300002: spriteTankguardia_1
-    21300004: spriteTankguardia_2
+    21300000: yumeSpriteSu_0
+    21300002: yumeSpriteSu_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -29,7 +28,7 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -3
+  textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
     filterMode: 0
@@ -50,43 +49,28 @@ TextureImporter:
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
-  buildTargetSettings:
-  - buildTarget: Standalone
-    maxTextureSize: 4096
-    textureFormat: -3
-    compressionQuality: 50
-    allowsAlphaSplitting: 0
+  buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: spriteTankguardia_0
+    - name: yumeSpriteSu_0
       rect:
         serializedVersion: 2
-        x: 994
-        y: 1315
-        width: 515
-        height: 591
+        x: 750
+        y: 30
+        width: 283
+        height: 232
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: spriteTankguardia_1
+    - name: yumeSpriteSu_1
       rect:
         serializedVersion: 2
-        x: 1005
-        y: 688
-        width: 487
-        height: 520
+        x: 318
+        y: 30
+        width: 278
+        height: 351
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: spriteTankguardia_2
-      rect:
-        serializedVersion: 2
-        x: 985
-        y: 188
-        width: 480
-        height: 454
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerAttack: MonoBehaviour {
 	public bool canAttack;
+	public bool steso;
 	private float hitTimer=0;
 	private float lastHitTimer=0;
 	private int combo = 0;
@@ -18,6 +19,7 @@ public class PlayerAttack: MonoBehaviour {
 
 
 	void Awake (){
+		steso = false;
 		canAttack = true;
 		anim = GetComponent<Animator>();
 		rb = GetComponent<Rigidbody2D>();
@@ -35,7 +37,7 @@ public class PlayerAttack: MonoBehaviour {
 
 
 
-		if (canAttack &&(Input.GetKeyDown (KeyCode.Joystick1Button2) || Input.GetKeyDown (KeyCode.F)) && attackTrigger3.enabled == false) {
+		if (!steso && canAttack &&(Input.GetKeyDown (KeyCode.Joystick1Button2) || Input.GetKeyDown (KeyCode.F)) && attackTrigger3.enabled == false) {
 			if (anim.GetBool ("Ground") == true) {
 				rb.velocity = new Vector3 (0f, 0f, 0f);
 				anim.SetBool ("Attacking",true);

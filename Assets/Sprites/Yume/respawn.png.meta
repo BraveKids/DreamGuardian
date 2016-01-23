@@ -1,12 +1,15 @@
 fileFormatVersion: 2
-guid: 2286a366cf42da344aec68121bb6826e
-timeCreated: 1452458368
+guid: 77a7620722578c4418807e8f8749c170
+timeCreated: 1453545662
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: spriteTankguardia_0
-    21300002: spriteTankguardia_1
-    21300004: spriteTankguardia_2
+    21300000: respawn_0
+    21300002: respawn_1
+    21300004: respawn_2
+    21300006: respawn_3
+    21300008: respawn_4
+    21300010: respawn_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -29,7 +32,7 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -3
+  textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
     filterMode: 0
@@ -50,43 +53,68 @@ TextureImporter:
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
-  buildTargetSettings:
-  - buildTarget: Standalone
-    maxTextureSize: 4096
-    textureFormat: -3
-    compressionQuality: 50
-    allowsAlphaSplitting: 0
+  buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: spriteTankguardia_0
+    - name: respawn_0
       rect:
         serializedVersion: 2
-        x: 994
-        y: 1315
-        width: 515
-        height: 591
+        x: 3753
+        y: 104
+        width: 998
+        height: 740
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: spriteTankguardia_1
+    - name: respawn_1
       rect:
         serializedVersion: 2
-        x: 1005
-        y: 688
-        width: 487
-        height: 520
+        x: 2920
+        y: 155
+        width: 433
+        height: 617
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: spriteTankguardia_2
+    - name: respawn_2
       rect:
         serializedVersion: 2
-        x: 985
-        y: 188
-        width: 480
-        height: 454
+        x: 1995
+        y: 221
+        width: 404
+        height: 528
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: respawn_3
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 239
+        width: 321
+        height: 467
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: respawn_4
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 225
+        width: 319
+        height: 452
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: respawn_5
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 208
+        width: 340
+        height: 439
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

@@ -48,6 +48,7 @@ public class SpitterTrigger : MonoBehaviour {
             {
                 isExit = true;
                 spitterAI.attacking = false;
+                
             }
             
 
@@ -60,7 +61,8 @@ public class SpitterTrigger : MonoBehaviour {
         if (timer >= exitInterval)
         {
 
-            spitterAI.allowAttack = true;
+            spitterAI.allowAttack = false;
+            spitterAI.isInitial = true;
             spitterAI.bulletTimer = 0;
             timer = 0;
         }
