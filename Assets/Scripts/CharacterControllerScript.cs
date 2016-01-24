@@ -26,7 +26,6 @@ public class CharacterControllerScript : MonoBehaviour {
 	bool groundedLeft = false;
 	bool groundedRight = false;
 	bool grounded = false;
-
 	public Transform groundCheckLeft;
 	public Transform groundCheckRight;
 	float hitDelay = 1f;
@@ -179,17 +178,17 @@ public class CharacterControllerScript : MonoBehaviour {
 		transform.localScale = theScale;
 	}
 
-	IEnumerator DamageCoroutine(){
+	IEnumerator DamageCoroutine () {
 		Debug.Log ("Flash");
 		renderer.material.color = Color.red;
-		yield return new WaitForSeconds(0.1f);
+		yield return new WaitForSeconds (0.1f);
 		renderer.material.color = normalColor;
 	}
 
 	void OnTriggerStay2D (Collider2D other) {
 		if (other.CompareTag ("Enemy") && attackTrigger1.enabled == false && attackJumpTrigger.enabled == false && attackTrigger2.enabled == false && attackTrigger3.enabled == false && superAttackTrigger.enabled == false && Time.time > nextHitAllowed) {
 			anim.Play ("YumeDamage");
-			StartCoroutine("DamageCoroutine");
+			StartCoroutine ("DamageCoroutine");
 			hp -= 1;
 			GameObject.Find ("HUD").GetComponent<HUDManager> ().updateHP (hp);
 			nextHitAllowed = Time.time + hitDelay;
@@ -211,7 +210,7 @@ public class CharacterControllerScript : MonoBehaviour {
 		}
 		if (other.CompareTag ("EnemyObject")) {
 			anim.Play ("YumeDamage");
-			StartCoroutine("DamageCoroutine");
+			StartCoroutine ("DamageCoroutine");
 			hp -= 1;
 			GameObject.Find ("HUD").GetComponent<HUDManager> ().updateHP (hp);
 			nextHitAllowed = Time.time + hitDelay;
@@ -298,6 +297,17 @@ public class CharacterControllerScript : MonoBehaviour {
 	public void stopRunYume () {
 		setRunYume (false);
 		setCanMove (true);
+	}
+
+	public void stopYume () {
+		canMove = false;
+		anim.SetFloat ("Speed", 0f);
+		transform.gameObject.GetComponent<PlayerAttack> ().canAttack = false;
+	}
+
+	public void goYume () {
+		canMove = true;
+		transform.gameObject.GetComponent<PlayerAttack> ().canAttack = true;
 	}
 	
 }
