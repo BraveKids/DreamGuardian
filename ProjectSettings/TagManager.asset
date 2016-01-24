@@ -40,8 +40,8 @@ TagManager:
   - AbilityPlatform
   - Border
   - cameraBorder
-  - 
-  - 
+  - HUD
+  - HUDLayout
   - 
   - 
   - 
@@ -76,4 +76,10 @@ TagManager:
     locked: 0
   - name: Smoke
     uniqueID: 3385930747
+    locked: 0
+  - name: HUD
+    uniqueID: 1449318007
+    locked: 0
+  - name: HUDLayout
+    uniqueID: 3828320159
     locked: 0
