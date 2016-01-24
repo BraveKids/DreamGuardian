@@ -7,10 +7,13 @@ public class SavePoint : MonoBehaviour {
 	private bool onNewLevel = false;
 	string id;
 	public bool save;
-
+	Animator anim;
 	void Start () {
 		id = GetComponent<GUIText> ().text;
+		if (!save) {
+			anim = GetComponentInChildren<Animator>();
 
+		}
 		//if the saving point is already in the dict
 		if (SavingPoints.pointsDict.ContainsKey (id)) {
 			usable = SavingPoints.pointsDict [id];
@@ -18,6 +21,10 @@ public class SavePoint : MonoBehaviour {
 			//add the saving point to the dict
 			SavingPoints.pointsDict.Add (id, true);
 		} 
+
+		if(!usable && !save){
+			anim.Play("checkpoint");
+		}
 
 		setColor ();
 
@@ -27,7 +34,9 @@ public class SavePoint : MonoBehaviour {
 		
 		if (other.CompareTag ("Player") && usable) {
 
-
+			if(!save && usable){
+				anim.Play("checkpoint");
+			}
 			SavingPoints.pointsDict [id] = false;
 
 			usable = false;

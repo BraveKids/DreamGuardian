@@ -63,7 +63,7 @@ public class CharacterControllerScript : MonoBehaviour {
 			steso = true;
 			anim.SetBool("steso", true);
 			anim.Play("YumeCrouch");
-			rb.velocity = new Vector3 (0f, 0f, 0f);
+			rb.velocity = new Vector2 (0f, 0f);
 			colliderCrouch.gameObject.SetActive(true);
 			gameObject.GetComponent<PlayerAttack>().steso = true;
 			gameObject.GetComponent<BoxCollider2D>().enabled = false;
@@ -104,12 +104,12 @@ public class CharacterControllerScript : MonoBehaviour {
 			platform.transform.position = platformSpwnPoint.position;
 			anim.Play ("YumePiattaforma");
 
-			anim.SetBool ("platform", true);
-			rb.velocity = new Vector3 (0f, 0f, 0f);
+			//anim.SetBool ("platform", true);
+			rb.velocity = new Vector2 (0f, 0f);
 			Invoke ("PlatformAbility", 0.25f);
 			energy -= 1;
 			GameObject.Find ("HUD").GetComponent<HUDManager> ().updateMP (energy);
-			Invoke ("PlatformAbilityClose", 3f);
+			Invoke ("PlatformAbilityClose", 4f);
 
 		}
 
@@ -144,7 +144,7 @@ public class CharacterControllerScript : MonoBehaviour {
 			anim.Play("flare");
 		}	
 		*/
-		if (!steso && canMove && grounded && anim.GetBool ("Attacking") == false && (Input.GetKeyDown (KeyCode.Joystick1Button0) || Input.GetKeyDown (KeyCode.Space)) && anim.GetFloat("vSpeed")<=0) {
+		if ( canMove && grounded && anim.GetBool ("Attacking") == false && (Input.GetKeyDown (KeyCode.Joystick1Button0) || Input.GetKeyDown (KeyCode.Space)) && rb.velocity.y<=0.5) {
 			anim.SetBool ("Ground", false);
 			rb.AddForce (new Vector2 (0, jumpForce));
 		}
@@ -153,6 +153,7 @@ public class CharacterControllerScript : MonoBehaviour {
 			groundedLeft = Physics2D.OverlapCircle (groundCheckLeft.position, groundRadius, whatIsGround);
 			groundedRight = Physics2D.OverlapCircle (groundCheckRight.position, groundRadius, whatIsGround);
 			grounded = groundedLeft || groundedRight;
+
 			anim.SetBool ("Ground", grounded); //per "capire" se è o no grounded, continua a chiederselo/ a verificarlo
 			
 			anim.SetFloat ("vSpeed", rb.velocity.y); //vertical speed
@@ -275,7 +276,7 @@ public class CharacterControllerScript : MonoBehaviour {
 
 	void PlatformAbility () {
 		platform.SetActive (true);
-		anim.SetBool ("platform", false);
+		//anim.SetBool ("platform", false);
 	}
 
 	void PlatformAbilityClose () {

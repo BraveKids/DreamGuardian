@@ -1,0 +1,100 @@
+fileFormatVersion: 2
+guid: 12faa5c39819e3c488ae5ae0ee79e19e
+timeCreated: 1453649339
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: checkpoint_0
+    21300002: checkpoint_1
+    21300004: checkpoint_2
+    21300006: checkpoint_3
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: checkpoint_0
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 122
+        width: 75
+        height: 126
+      alignment: 9
+      pivot: {x: .434779674, y: .535951376}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: checkpoint_1
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 262
+        width: 73
+        height: 152
+      alignment: 9
+      pivot: {x: .463532954, y: .472768873}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: checkpoint_2
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 415
+        width: 128
+        height: 155
+      alignment: 9
+      pivot: {x: .48577559, y: .404172063}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: checkpoint_3
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 582
+        width: 125
+        height: 127
+      alignment: 9
+      pivot: {x: .507282734, y: -.00177578663}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
