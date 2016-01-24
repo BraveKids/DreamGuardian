@@ -8,8 +8,8 @@ public class HUDManager : MonoBehaviour {
 
 	public GameObject pauseMenu;
 	public Image abilityHUD;
-	public Slider hpHUD;
-	public Slider mpHUD;
+	Slider hpHUD;
+	Slider mpHUD;
 	public Slider gorillaBossHP;
 	public Slider knightBossHP;
 	public Sprite arrowHUDSprite;
