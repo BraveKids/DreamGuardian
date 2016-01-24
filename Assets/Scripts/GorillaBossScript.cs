@@ -68,7 +68,7 @@ public class GorillaBossScript : MonoBehaviour {
 			if (!ropes [actualRope].activeSelf == true || actualRope>4) {
 				onRope = false;
 				rb.isKinematic = false;
-				body.gameObject.tag = "vulnerable";
+				body.gameObject.tag = "EnemyBody";
 				anim.Play("Falling");
 				vulnerable = true;
 				canAttack = false;
@@ -162,12 +162,14 @@ public class GorillaBossScript : MonoBehaviour {
 
 	void Flip()
 	{
-		lookingRight = !lookingRight;
-		Vector3 theScale = body.transform.localScale;
-		theScale.x *= -1;
-		body.transform.localScale = theScale;
-		anim.SetBool("attack", true);
-		//bulletTimer = 0f;
+		if (onRope) {
+			lookingRight = !lookingRight;
+			Vector3 theScale = body.transform.localScale;
+			theScale.x *= -1;
+			body.transform.localScale = theScale;
+			anim.SetBool ("attack", true);
+			//bulletTimer = 0f;
+		}
 	}
 
 
