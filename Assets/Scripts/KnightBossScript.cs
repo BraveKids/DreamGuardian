@@ -68,7 +68,8 @@ public class KnightBossScript : MonoBehaviour {
 			if (stun) {
 				anim.SetBool("stun", true);
 				attackTrigger.gameObject.SetActive(false);
-				gameObject.tag = "vulnerable";
+				gameObject.tag = "EnemyBody" +
+					"";
 				stunTimer += Time.deltaTime;
 			}
 
