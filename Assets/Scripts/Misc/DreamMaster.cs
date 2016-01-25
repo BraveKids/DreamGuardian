@@ -17,7 +17,7 @@ public class DreamMaster : MonoBehaviour {
 
 		if (other.CompareTag ("Player") && !used) {
 			audio.PlayOneShot (audio.clip);
-			if (ability != null) {
+			if (ability != "") {
 				if (!SaveLoad.savedGame.skills.Contains (ability)) {	//se non ho quell'abilità
 					anim.Play ("GiveAbility");	
 					SaveLoad.savedGame.skills.Add (ability);	//ottenimento dell'abilità

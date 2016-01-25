@@ -31,6 +31,7 @@ public class TankAI : MonoBehaviour {
     bool activateTrigger = true;
     bool allowHit = false;
     public bool shieldIsActive = false;
+    ZombieDamage zombieDamage;
 
 
     // Use this for initialization
@@ -39,13 +40,21 @@ public class TankAI : MonoBehaviour {
 		anim = GetComponentInChildren<Animator> ();
         player = GameObject.FindGameObjectWithTag("Player");
         AttackTrigger.enabled = false;
+        zombieDamage = gameObject.GetComponentInChildren<ZombieDamage>();
     }
 	
 	// Update is called once per frame
 	void Update () {
+        if (zombieDamage.allowAction == true)
+        {
+            HittingBorder = Physics2D.OverlapCircle(checkPosition.position, checkPositionRadius, WhatIsBorder);
+            BehaviourHandler();
+        }
+        else if (zombieDamage.allowAction == false)
+        {
 
-        HittingBorder = Physics2D.OverlapCircle(checkPosition.position, checkPositionRadius, WhatIsBorder);
-        BehaviourHandler();
+        }
+       
    }
 
     void BehaviourHandler()
@@ -121,7 +130,7 @@ public class TankAI : MonoBehaviour {
         anim.SetBool("walkingBack", false);
         rb.isKinematic = true;
         timer += Time.deltaTime;
-        if (timer >= vulnerabilityInterval)
+        if (timer >= vulnerabilityInterval && zombieDamage.allowAction == true)
         {
             transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
             velocity *= -1;
@@ -157,7 +166,7 @@ public class TankAI : MonoBehaviour {
     public void Attack()
     {
         rb.isKinematic = true;
-		Invoke ("AttackTriggerActivator", 0.3f);
+		Invoke ("AttackDelay", 0.3f);
         if (activateTrigger == true)
         {
             anim.SetBool("walking", false);
@@ -175,7 +184,8 @@ public class TankAI : MonoBehaviour {
         }
             
     }
-	void AttackTriggerActivator(){
+
+	void AttackDelay(){
 		AttackTrigger.enabled = true;
 	}
 }

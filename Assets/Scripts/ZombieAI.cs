@@ -7,9 +7,10 @@ public class ZombieAI : MonoBehaviour {
     public Transform LeftBorder;
     public Transform RightBorder;
     public Collider2D AttackTrigger;
+    ZombieDamage zombieDamage;
 
-    float walkVelocity = 1f;
-    float runVelocity = 1.8f;
+    public float walkVelocity = 1f;
+    public float runVelocity = 1.8f;
     Rigidbody2D rb;
     public Animator anim;
     public bool Inseguimento = false;
@@ -26,9 +27,10 @@ public class ZombieAI : MonoBehaviour {
     float Range;
 
     float timer;
-    float stopInterval = 1f;
+    float stopInterval = 1;
     float hitTimer;
-    float hitInterval = 1.4f;
+    float hitInterval = 1;
+    public bool ritorno = true;
 
     void Start()
     {
@@ -37,6 +39,7 @@ public class ZombieAI : MonoBehaviour {
         Range = BorderCheckRadius * 2;
         Player = GameObject.FindGameObjectWithTag("Player");
         AttackTrigger.enabled = false;
+        zombieDamage = gameObject.GetComponentInChildren<ZombieDamage>();
     }
 
     public void Flip()
@@ -52,84 +55,97 @@ public class ZombieAI : MonoBehaviour {
 
     void Update()
     {
-        if (attacking == true)
+        if (zombieDamage.allowAction == true)
         {
-            anim.SetBool("walking", false);
-            if (allowHit == true)
+            if (attacking == true)
             {
-                Attack();
-                //allowHit = false;
+                anim.SetBool("walking", false);
+                if (allowHit == true)
+                {
+                    Attack();
+                    //allowHit = false;
+                }
+                else if (allowHit == false)
+                {
+                    hit = false;
+                    AttackTrigger.enabled = false;
+                }
+                hitTimer += Time.deltaTime;
+                if (hitTimer >= hitInterval)
+                {
+                    allowHit = !allowHit;
+                    hitTimer = 0;
+                }
+
             }
-            else if (allowHit == false)
+            if (attacking == false)
             {
                 hit = false;
                 AttackTrigger.enabled = false;
             }
-            hitTimer += Time.deltaTime;
-            if (hitTimer >= hitInterval)
+            if (stopped == true && attacking == false)
             {
-                allowHit = !allowHit;
-                hitTimer = 0;
+                anim.SetBool("walking", false);
+                rb.isKinematic = true;
+                timer += Time.deltaTime;
+                if (timer >= stopInterval)
+                {
+                    rb.isKinematic = false;
+                    timer = 0;
+                    stopped = false;
+                    ritorno = true;
+                }
             }
 
-        }
-        if (attacking == false)
-        {
-            hit = false;
-            AttackTrigger.enabled = false;
-        }
-        if (stopped == true && attacking == false)
-        {
-            anim.SetBool("walking", false);
-            rb.isKinematic = true;
-            timer += Time.deltaTime;
-            if (timer >= stopInterval)
+            if (Inseguimento == false && stopped == false && attacking == false)
             {
-                rb.isKinematic = false;
-                timer = 0;
-                stopped = false;
+                anim.SetBool("walking", true);
+                rb.velocity = new Vector2(-walkVelocity, rb.velocity.y);
+                checkPosition();
             }
-        }
+            else if (Inseguimento == true && stopped == false && attacking == false)
+            {
+                anim.SetBool("walking", true);
+                rb.velocity = new Vector2(-runVelocity, rb.velocity.y);
+            }
+            anim.SetBool("attacking", hit);
 
-        if (Inseguimento == false && stopped == false && attacking == false)
-        {
-            anim.SetBool("walking", true);
-            rb.velocity = new Vector2(-walkVelocity, rb.velocity.y);
-            checkPosition();
         }
-        else if (Inseguimento == true && stopped == false && attacking == false)
+        else if (zombieDamage.allowAction == false)
         {
-            anim.SetBool("walking", true);
-            rb.velocity = new Vector2(-runVelocity, rb.velocity.y);
+
         }
-        anim.SetBool("attacking", hit);
 
     }
 
     public void checkPosition()
     {
-        if ((BorderCheck.position.x > LeftBorder.position.x + Range) && (BorderCheck.position.x < RightBorder.position.x - Range))
+        if (ritorno == true)
         {
-            walk();
+            if ((BorderCheck.position.x > LeftBorder.position.x + Range) && (BorderCheck.position.x < RightBorder.position.x - Range))
+            {
+                walk();
 
-        }
-        else if ((BorderCheck.position.x < LeftBorder.position.x) && (IsLeft == true))
-        {
-            Flip();  
+            }
+            else if ((BorderCheck.position.x < LeftBorder.position.x) && (IsLeft == true))
+            {
+                Flip();
 
+            }
+            else if ((BorderCheck.position.x > RightBorder.position.x) && (IsLeft == false))
+            {
+                Flip();
+            }
         }
-        else if ((BorderCheck.position.x > RightBorder.position.x) && (IsLeft == false))
-        {
-            Flip();
-        }
-        else if ((BorderCheck.position.x < LeftBorder.position.x) && (IsLeft == false))
+        
+        /*else if ((BorderCheck.position.x < LeftBorder.position.x) && (IsLeft == false))
         {
 
         }
         else if ((BorderCheck.position.x > RightBorder.position.x) && (IsLeft == true))
         {
 
-        }
+        }*/
 
     }
 
@@ -153,5 +169,15 @@ public class ZombieAI : MonoBehaviour {
         hit = true;
         AttackTrigger.enabled = true;
     }
+    /*public void checkFlip()
+    {
+        if ((BorderCheck.position.x >Player.transform.position.x && IsLeft == false )|| (BorderCheck.position.x < Player.transform.position.x && IsLeft == true))
+        {
+            transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+            walkVelocity *= -1;
+            runVelocity *= -1;
+            IsLeft = !IsLeft;
+        }
+    }*/
 
-   }
+}
