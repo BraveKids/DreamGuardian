@@ -59,7 +59,6 @@ public class dialogManager : MonoBehaviour {
 
 		gameObject.SetActive (false);
 
-		transform.parent.gameObject.GetComponent<DreamMaster>().byeBye();
 		
 	}
 
