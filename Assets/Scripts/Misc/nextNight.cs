@@ -34,7 +34,7 @@ public class nextNight : MonoBehaviour {
 		
 		SaveLoad.Spawn ();	
 		//fai partire animazione per la ricomposizione
-		
+
 		CameraFollowOnPlatform.instance.onNewLevel (nightStart.transform.position);
 		player.gameObject.GetComponent<Animator> ().Play ("respawn");
 		player.gameObject.GetComponent<CharacterControllerScript> ().goYume();
