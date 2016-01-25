@@ -6,7 +6,6 @@ public class ChaseZombieCone : MonoBehaviour {
     public bool isForward = false;
     ZombieAI zombieAI;
 	public GameObject zombie;
-    public bool checking = false;
 	// Use this for initialization
 
     void Start()
