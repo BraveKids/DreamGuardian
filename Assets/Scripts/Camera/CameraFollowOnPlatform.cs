@@ -244,15 +244,14 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	public void dreamTwist (bool twist) {
 		if (twist && !twisted) {
 			transform.rotation = Quaternion.Euler(new Vector3(0, 180f, 180f));
-			transform.position = new Vector3 (cameraX, cameraY, -cam.transform.position.z);
-			
+			transform.position = new Vector3 (cameraX, cameraY, 10f);			
 			Debug.Log ("camera twisted");
 		}
 
 		if (!twist && twisted) {
 			transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
 			
-			transform.position = new Vector3 (cameraX, cameraY, -cam.transform.position.z);
+			transform.position = new Vector3 (cameraX, cameraY, -10f);
 			Debug.Log ("Back to normal");
 			
 		}
