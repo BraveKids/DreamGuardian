@@ -47,7 +47,6 @@ public class SoundManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (level);
 		if (level != SaveLoad.savedGame.level) {
 			switch (SaveLoad.savedGame.level) {
 			case -1:
@@ -78,7 +77,6 @@ public class SoundManager : MonoBehaviour {
 		if (allMusics.ContainsKey (background)) {
 			audioSource.clip = allMusics [background];
 			level = SaveLoad.savedGame.level;
-			Debug.Log ("musica cambiata con livello: " + SaveLoad.savedGame.level);
 			audioSource.Play ();
 		}
 

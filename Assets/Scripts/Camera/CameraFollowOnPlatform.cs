@@ -5,11 +5,9 @@ using System.Linq;
 public class CameraFollowOnPlatform : MonoBehaviour {
 
 	private bool followYume = true;
-	//private float diffOnNewLevel = 0.2464275f;
 	public static CameraFollowOnPlatform instance = null;
 	Vector3 currentOrigin;	//posizione corrente della camera (transform.position), utilizzata per chiarezza del codice
 
-	//public float currentY;
 	public float originY;	//basically the ground y
 	public bool nextToGround = true;
 	public GameObject player;
@@ -38,11 +36,14 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	Camera cam;
 	float height ;
 	float width;
-	bool twist;
+	bool twisted;
+
+	//chasing camera speed
 	public float moveSpeed = 1;
 
 	public void Start () {
 		setChasingCamera (false);
+		twisted = false;
 		cam = Camera.main;
 		height = 2f * cam.orthographicSize;
 		width = height * cam.aspect;
@@ -54,6 +55,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 		} else {
 			Destroy (gameObject);
 		}
+
 		player = GameObject.FindGameObjectWithTag ("Player");
 		currentOrigin = new Vector3 (player.transform.position.x, player.transform.position.y + cameraOffset, transform.position.z);
 		transform.position = currentOrigin;
@@ -83,9 +85,6 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 			} else {
 				nextToGround = false;
 			}
-			//float posX = Mathf.SmoothDamp (transform.position.x, player.transform.position.x, ref velocity.x, smoothTimeX);
-
-			//float posY = transform.position.y;
 
 
 			//if on moving platform
@@ -95,6 +94,7 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 				nextY = cameraY;
 			}
 
+
 			if (!onVerticalLevel) {
 				//if falling
 				//if i'm out of range and also lower from the bottom then i'm falling
@@ -103,16 +103,19 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 					movingCamera = false;
 					cameraY = playerY /*+ diff*/;
 				}
-			} else {
+			} else {	// if on vertical level when player goes down the camera dies!
 				if (playerY < cameraY - (height / 2)) {
 					player.GetComponent<CharacterControllerScript> ().Death ();
 				}
 			}
 
+
 			if (onChasingCamera) {
-				if (playerX < cameraX - width / 2) {
+				if (playerX < cameraX - width / 2) { //if camera "eats" me
 					player.GetComponent<CharacterControllerScript> ().Death ();					
 				}
+
+				//move the camera to the end of the camera, so basically go forward
 				Vector3 cameraEnd = new Vector3 (cameraX + width / 2, cameraY, transform.position.z);
 				cameraX = Vector3.MoveTowards (transform.position, cameraEnd, Time.deltaTime * moveSpeed).x;
 			}
@@ -239,6 +242,24 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 	}
 
 	public void dreamTwist (bool twist) {
-		this.twist = twist;
+		if (twist && !twisted) {
+			transform.rotation = Quaternion.Euler(new Vector3(0, 180f, 180f));
+			transform.position = new Vector3 (cameraX, cameraY, 10f);			
+			Debug.Log ("camera twisted");
+		}
+
+		if (!twist && twisted) {
+			transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+			
+			transform.position = new Vector3 (cameraX, cameraY, -10f);
+			Debug.Log ("Back to normal");
+			
+		}
+
+		twisted = twist;
+		
+		
+		//transform.position = new Vector3(0,0, -cam.transform.position.z);
+
 	}
 }
