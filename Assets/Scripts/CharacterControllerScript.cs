@@ -63,7 +63,7 @@ public class CharacterControllerScript : MonoBehaviour {
 			steso = true;
 			anim.SetBool("steso", true);
 			anim.Play("YumeCrouch");
-			rb.velocity = new Vector2 (0f, 0f);
+			rb.velocity = new Vector2 (0f, rb.velocity.y);
 			colliderCrouch.gameObject.SetActive(true);
 			gameObject.GetComponent<PlayerAttack>().steso = true;
 			gameObject.GetComponent<BoxCollider2D>().enabled = false;
