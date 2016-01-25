@@ -82,7 +82,7 @@ public class dialogManager : MonoBehaviour {
 	}
 
 	void showDialog (bool show) {
-		textBox.GetComponent<Image> ().enabled = show;	//enabled/disabled the dialogBox
+		textBox.GetComponentInChildren<Image> ().enabled = show;	//enabled/disabled the dialogBox
 		theText.text = "";	//clean the text
 		
 	}

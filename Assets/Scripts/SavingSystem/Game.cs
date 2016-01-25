@@ -17,7 +17,7 @@ public class Game {
 		level = -1;
 		skills = new List<String> ();
 		//skills.Add ("arrowAbility");
-		//skills.Add ("platformAbility");
+		skills.Add ("platformAbility");
 
 		
 	}
