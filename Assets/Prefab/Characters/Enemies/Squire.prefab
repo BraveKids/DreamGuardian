@@ -202,7 +202,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 193404}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.4899998, y: -3.07236481, z: 0}
+  m_LocalPosition: {x: 211.763321, y: 153.282242, z: 0}
   m_LocalScale: {x: 1, y: 1.21249998, z: 1}
   m_Children:
   - {fileID: 410638}
@@ -233,7 +233,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.0900000036, z: 0}
+  m_LocalPosition: {x: -.100000001, y: -.0900000036, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 454668}
@@ -245,7 +245,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 160282}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .779999971, y: -.0799999982, z: 0}
+  m_LocalPosition: {x: .889999986, y: -.0799999982, z: 0}
   m_LocalScale: {x: 1.01249993, y: 1.1624999, z: 1}
   m_Children: []
   m_Father: {fileID: 454668}
@@ -378,10 +378,10 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Points:
     m_Paths:
-    - - {x: -.561119556, y: .32779488}
+    - - {x: -.561117768, y: .79828918}
       - {x: -.556687593, y: -.347675741}
       - {x: -4.3339572, y: -.313163459}
-      - {x: -4.35202646, y: .711152256}
+      - {x: -4.35201883, y: 1.46590471}
 --- !u!60 &6089468
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -395,10 +395,10 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Points:
     m_Paths:
-    - - {x: -.453912735, y: .33845371}
+    - - {x: -.481628418, y: .976947784}
       - {x: -.466448784, y: -.36575827}
-      - {x: -3.21488094, y: -.354395986}
-      - {x: -3.21056843, y: .619608283}
+      - {x: -3.21487427, y: -.377227247}
+      - {x: -3.19673157, y: 1.31592572}
 --- !u!61 &6105000
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -481,6 +481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isForward: 0
   zombie: {fileID: 0}
+  checking: 0
 --- !u!114 &11424454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -496,6 +497,8 @@ MonoBehaviour:
   LeftBorder: {fileID: 488962}
   RightBorder: {fileID: 482314}
   AttackTrigger: {fileID: 5863524}
+  walkVelocity: 1
+  runVelocity: 1.79999995
   anim: {fileID: 0}
   Inseguimento: 0
   IsLeft: 1
@@ -507,6 +510,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4096
   HittingBorder: 0
+  ritorno: 1
 --- !u!114 &11457932
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -531,6 +535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isForward: 1
   zombie: {fileID: 0}
+  checking: 0
 --- !u!114 &11483608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -545,6 +550,7 @@ MonoBehaviour:
   hp: 2
   deathTimer: 1
   enemy: {fileID: 193404}
+  allowAction: 1
 --- !u!212 &21291290
 SpriteRenderer:
   m_ObjectHideFlags: 1

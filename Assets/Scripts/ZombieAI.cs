@@ -9,8 +9,8 @@ public class ZombieAI : MonoBehaviour {
     public Collider2D AttackTrigger;
     ZombieDamage zombieDamage;
 
-    float walkVelocity = 1f;
-    float runVelocity = 1.8f;
+    public float walkVelocity = 1f;
+    public float runVelocity = 1.8f;
     Rigidbody2D rb;
     public Animator anim;
     public bool Inseguimento = false;
@@ -30,6 +30,7 @@ public class ZombieAI : MonoBehaviour {
     float stopInterval = 1;
     float hitTimer;
     float hitInterval = 1;
+    public bool ritorno = true;
 
     void Start()
     {
@@ -92,6 +93,7 @@ public class ZombieAI : MonoBehaviour {
                     rb.isKinematic = false;
                     timer = 0;
                     stopped = false;
+                    ritorno = true;
                 }
             }
 
@@ -118,28 +120,32 @@ public class ZombieAI : MonoBehaviour {
 
     public void checkPosition()
     {
-        if ((BorderCheck.position.x > LeftBorder.position.x + Range) && (BorderCheck.position.x < RightBorder.position.x - Range))
+        if (ritorno == true)
         {
-            walk();
+            if ((BorderCheck.position.x > LeftBorder.position.x + Range) && (BorderCheck.position.x < RightBorder.position.x - Range))
+            {
+                walk();
 
-        }
-        else if ((BorderCheck.position.x < LeftBorder.position.x) && (IsLeft == true))
-        {
-            Flip();  
+            }
+            else if ((BorderCheck.position.x < LeftBorder.position.x) && (IsLeft == true))
+            {
+                Flip();
 
+            }
+            else if ((BorderCheck.position.x > RightBorder.position.x) && (IsLeft == false))
+            {
+                Flip();
+            }
         }
-        else if ((BorderCheck.position.x > RightBorder.position.x) && (IsLeft == false))
-        {
-            Flip();
-        }
-        else if ((BorderCheck.position.x < LeftBorder.position.x) && (IsLeft == false))
+        
+        /*else if ((BorderCheck.position.x < LeftBorder.position.x) && (IsLeft == false))
         {
 
         }
         else if ((BorderCheck.position.x > RightBorder.position.x) && (IsLeft == true))
         {
 
-        }
+        }*/
 
     }
 
@@ -163,5 +169,15 @@ public class ZombieAI : MonoBehaviour {
         hit = true;
         AttackTrigger.enabled = true;
     }
+    /*public void checkFlip()
+    {
+        if ((BorderCheck.position.x >Player.transform.position.x && IsLeft == false )|| (BorderCheck.position.x < Player.transform.position.x && IsLeft == true))
+        {
+            transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+            walkVelocity *= -1;
+            runVelocity *= -1;
+            IsLeft = !IsLeft;
+        }
+    }*/
 
-   }
+}
