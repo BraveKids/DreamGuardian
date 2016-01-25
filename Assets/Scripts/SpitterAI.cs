@@ -30,6 +30,7 @@ public class SpitterAI : MonoBehaviour {
 
     public bool attackSpitter;
     public bool allowAttack = false;
+    ZombieDamage zombieDamage;
 
 
     void Start()
@@ -37,6 +38,7 @@ public class SpitterAI : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
         Player = GameObject.FindGameObjectWithTag("Player");
+        zombieDamage = gameObject.GetComponentInChildren<ZombieDamage>();
     }
 
     public void Flip()
@@ -50,20 +52,27 @@ public class SpitterAI : MonoBehaviour {
 
     void Update()
     {
-        if (attacking == false)
+        if (zombieDamage.allowAction == true)
         {
-			anim.SetBool("Attacking", false);
-            rb.isKinematic = false;
-            rb.velocity = new Vector2(-walkVelocity, rb.velocity.y);
-            walk();
+            if (attacking == false)
+            {
+                anim.SetBool("Attacking", false);
+                rb.isKinematic = false;
+                rb.velocity = new Vector2(-walkVelocity, rb.velocity.y);
+                walk();
+            }
+            else if (attacking == true)
+            {
+                anim.SetBool("Attacking", true);
+                rb.isKinematic = true;
+                rb.velocity = new Vector2(0f, 0f);
+                Attack();
+            }
         }
-        else if (attacking == true)
+        else if (zombieDamage.allowAction == false)
         {
-			anim.SetBool("Attacking", true);
-            rb.isKinematic = true;
-			rb.velocity = new Vector2(0f,0f);
-            Attack();
-        }
+
+        }       
        
             
         
@@ -86,14 +95,14 @@ public class SpitterAI : MonoBehaviour {
             {
                 anim.Play("Attack");
                 GameObject bulletClone;
-                if (isLeft == true)
+                if (isLeft == true && zombieDamage.allowAction == true)
                 {
                     bulletClone = Instantiate(bullet, shootPoint.transform.position, Quaternion.identity) as GameObject;
                     bulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(-shootVelocity, 0);
                     bulletTimer = 0;
                     allowAttack = false;
                 }
-                else if (isLeft == false)
+                else if (isLeft == false && zombieDamage.allowAction == true)
                 {
                     bullet.transform.localScale = new Vector2(bullet.transform.localScale.x * -1, bullet.transform.localScale.y);
                     bulletClone = Instantiate(bullet, shootPoint.transform.position, Quaternion.identity) as GameObject;

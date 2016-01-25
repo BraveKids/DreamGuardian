@@ -7,6 +7,7 @@ public class ZombieAI : MonoBehaviour {
     public Transform LeftBorder;
     public Transform RightBorder;
     public Collider2D AttackTrigger;
+    ZombieDamage zombieDamage;
 
     float walkVelocity = 1f;
     float runVelocity = 1.8f;
@@ -37,6 +38,7 @@ public class ZombieAI : MonoBehaviour {
         Range = BorderCheckRadius * 2;
         Player = GameObject.FindGameObjectWithTag("Player");
         AttackTrigger.enabled = false;
+        zombieDamage = gameObject.GetComponentInChildren<ZombieDamage>();
     }
 
     public void Flip()
@@ -52,57 +54,65 @@ public class ZombieAI : MonoBehaviour {
 
     void Update()
     {
-        if (attacking == true)
+        if (zombieDamage.allowAction == true)
         {
-            anim.SetBool("walking", false);
-            if (allowHit == true)
+            if (attacking == true)
             {
-                Attack();
-                //allowHit = false;
+                anim.SetBool("walking", false);
+                if (allowHit == true)
+                {
+                    Attack();
+                    //allowHit = false;
+                }
+                else if (allowHit == false)
+                {
+                    hit = false;
+                    AttackTrigger.enabled = false;
+                }
+                hitTimer += Time.deltaTime;
+                if (hitTimer >= hitInterval)
+                {
+                    allowHit = !allowHit;
+                    hitTimer = 0;
+                }
+
             }
-            else if (allowHit == false)
+            if (attacking == false)
             {
                 hit = false;
                 AttackTrigger.enabled = false;
             }
-            hitTimer += Time.deltaTime;
-            if (hitTimer >= hitInterval)
+            if (stopped == true && attacking == false)
             {
-                allowHit = !allowHit;
-                hitTimer = 0;
+                anim.SetBool("walking", false);
+                rb.isKinematic = true;
+                timer += Time.deltaTime;
+                if (timer >= stopInterval)
+                {
+                    rb.isKinematic = false;
+                    timer = 0;
+                    stopped = false;
+                }
             }
 
-        }
-        if (attacking == false)
-        {
-            hit = false;
-            AttackTrigger.enabled = false;
-        }
-        if (stopped == true && attacking == false)
-        {
-            anim.SetBool("walking", false);
-            rb.isKinematic = true;
-            timer += Time.deltaTime;
-            if (timer >= stopInterval)
+            if (Inseguimento == false && stopped == false && attacking == false)
             {
-                rb.isKinematic = false;
-                timer = 0;
-                stopped = false;
+                anim.SetBool("walking", true);
+                rb.velocity = new Vector2(-walkVelocity, rb.velocity.y);
+                checkPosition();
             }
-        }
+            else if (Inseguimento == true && stopped == false && attacking == false)
+            {
+                anim.SetBool("walking", true);
+                rb.velocity = new Vector2(-runVelocity, rb.velocity.y);
+            }
+            anim.SetBool("attacking", hit);
 
-        if (Inseguimento == false && stopped == false && attacking == false)
-        {
-            anim.SetBool("walking", true);
-            rb.velocity = new Vector2(-walkVelocity, rb.velocity.y);
-            checkPosition();
         }
-        else if (Inseguimento == true && stopped == false && attacking == false)
+        else if (zombieDamage.allowAction == false)
         {
-            anim.SetBool("walking", true);
-            rb.velocity = new Vector2(-runVelocity, rb.velocity.y);
+
         }
-        anim.SetBool("attacking", hit);
 
     }
 

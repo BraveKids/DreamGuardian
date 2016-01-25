@@ -8,6 +8,7 @@ public class ZombieDamage : MonoBehaviour {
     private CharacterControllerScript playerScript;
     GameObject player;
     public GameObject enemy;
+    public bool allowAction = true;
     // Use this for initialization
     void Start()
     {
@@ -26,11 +27,12 @@ public class ZombieDamage : MonoBehaviour {
             anim.Play("damage");
 			if (hp <= 0) {
 				anim.Play ("explosion");
-				if (playerScript.energy < 10)
-				/*{
-					playerScript.energy += 1;
-					GameObject.Find("HUD").GetComponent<HUDManager>().updateMP(playerScript.energy);
-				}*/
+                if (playerScript.energy < 10)
+                    /*{
+                        playerScript.energy += 1;
+                        GameObject.Find("HUD").GetComponent<HUDManager>().updateMP(playerScript.energy);
+                    }*/
+                allowAction = false;
 				Invoke ("DestroyEnemy", deathTimer);
 				
 				

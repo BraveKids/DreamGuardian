@@ -22,6 +22,7 @@ public class FlyingSpitterAI : MonoBehaviour {
     public bool isInitial = true;
 
     public bool attackSpitter;
+    ZombieDamage zombieDamage;
 
     // Use this for initialization
     void Start()
@@ -29,28 +30,36 @@ public class FlyingSpitterAI : MonoBehaviour {
         currentPoint = points[pointSelection];
         player = GameObject.FindGameObjectWithTag("Player");
 		anim = GetComponentInChildren<Animator> ();
+        zombieDamage = gameObject.GetComponentInChildren<ZombieDamage>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-		character.transform.position = Vector3.MoveTowards(character.transform.position, currentPoint.position, Time.deltaTime * moveSpeed);
-        if (character.transform.position == currentPoint.position)
+        if (zombieDamage.allowAction == true)
         {
-            pointSelection++;
-
-            if (pointSelection == points.Length)
+            character.transform.position = Vector3.MoveTowards(character.transform.position, currentPoint.position, Time.deltaTime * moveSpeed);
+            if (character.transform.position == currentPoint.position)
             {
-                pointSelection = 0;
-            }
+                pointSelection++;
 
-            currentPoint = points[pointSelection];
+                if (pointSelection == points.Length)
+                {
+                    pointSelection = 0;
+                }
+
+                currentPoint = points[pointSelection];
+            }
+            if ((isLeft == true && player.transform.position.x > transform.position.x) || (isLeft == false && player.transform.position.x < transform.position.x))
+            {
+                Flip();
+            }
         }
-        if ((isLeft == true && player.transform.position.x > transform.position.x)|| (isLeft == false && player.transform.position.x < transform.position.x))
+        else if (zombieDamage.allowAction == false)
         {
-            Flip();
+
         }
+		
     }
     public void Attack()
     {
@@ -60,13 +69,13 @@ public class FlyingSpitterAI : MonoBehaviour {
             {
                 anim.Play("Attack");
                 GameObject bulletClone;
-                if (isLeft == true)
+                if (isLeft == true && zombieDamage.allowAction == true)
                 {
                     bulletClone = Instantiate(bullet, shootPoint.transform.position, Quaternion.identity) as GameObject;
                     bulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(-bulletSpeed, 0);
                     allowAttack = false;
                 }
-                else if (isLeft == false)
+                else if (isLeft == false && zombieDamage.allowAction == true)
                 {
                     bullet.transform.localScale = new Vector2(bullet.transform.localScale.x * -1, bullet.transform.localScale.y);
                     bulletClone = Instantiate(bullet, shootPoint.transform.position, Quaternion.identity) as GameObject;

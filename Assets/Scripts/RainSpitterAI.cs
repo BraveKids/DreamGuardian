@@ -18,6 +18,8 @@ public class RainSpitterAI : MonoBehaviour {
     public GameObject toFlip;
 
     bool allowShoot;
+    ZombieDamage zombieDamage;
+
 
     public Vector3 BallisticVel(Transform target, float angle)
     {
@@ -39,49 +41,58 @@ public class RainSpitterAI : MonoBehaviour {
         allowShoot = false;
         player = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponentInChildren<Animator>();
+        zombieDamage = gameObject.GetComponentInChildren<ZombieDamage>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ((isLeft == true && player.transform.position.x > transform.position.x) || (isLeft == false && player.transform.position.x < transform.position.x))
+        if (zombieDamage.allowAction == true)
         {
-            Flip();
-        }
+            if ((isLeft == true && player.transform.position.x > transform.position.x) || (isLeft == false && player.transform.position.x < transform.position.x))
+            {
+                Flip();
+            }
 
-        bulletTimer += Time.deltaTime;
-        if (bulletTimer >= shootInterval)
-        {
-            allowShoot = true;
-            bulletTimer = 0;
+            bulletTimer += Time.deltaTime;
+            if (bulletTimer >= shootInterval)
+            {
+                allowShoot = true;
+                bulletTimer = 0;
+            }
+            if (allowShoot == true && zombieDamage.allowAction == true)
+            {
+                allowShoot = false;
+                anim.Play("Attack_RainSpitter");
+                GameObject ball = Instantiate(cannonball, shootPoint.transform.position, Quaternion.identity) as GameObject;
+                if (selectedTarget == 1)
+                {
+                    ball.GetComponent<Rigidbody2D>().velocity = BallisticVel(target1, shootAngle);
+                }
+                else if (selectedTarget == 2)
+                {
+                    ball.GetComponent<Rigidbody2D>().velocity = BallisticVel(target2, shootAngle);
+                }
+                else if (selectedTarget == 3)
+                {
+                    ball.GetComponent<Rigidbody2D>().velocity = BallisticVel(target3, shootAngle);
+                }
+                if (selectedTarget < 3)
+                {
+                    selectedTarget++;
+                }
+                else
+                {
+                    selectedTarget = 1;
+                }
+
+            }
+            else if (zombieDamage.allowAction == false)
+            {
+
+            }
         }
-        if (allowShoot == true)
-        {
-            allowShoot = false;
-            anim.Play("Attack_RainSpitter");
-            GameObject ball = Instantiate(cannonball, shootPoint.transform.position, Quaternion.identity) as GameObject;
-            if (selectedTarget == 1)
-            {
-                ball.GetComponent<Rigidbody2D>().velocity = BallisticVel(target1, shootAngle);
-            } 
-            else if (selectedTarget == 2)
-            {
-                ball.GetComponent<Rigidbody2D>().velocity = BallisticVel(target2, shootAngle);
-            }
-            else if (selectedTarget == 3)
-            {
-                ball.GetComponent<Rigidbody2D>().velocity = BallisticVel(target3, shootAngle);
-            }
-            if (selectedTarget < 3)
-            {
-                selectedTarget++;
-            }
-            else
-            {
-                selectedTarget = 1;
-            }
-            
-        }
+        
 
     }
     void Flip()

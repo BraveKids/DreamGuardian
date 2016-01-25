@@ -207,7 +207,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 118782}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.370000005, y: .0399999991, z: 0}
+  m_LocalPosition: {x: 2.33999991, y: .189999998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 478992}
@@ -257,7 +257,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -48.4966583, y: 60.5615311, z: 0}
+  m_LocalPosition: {x: 232.638824, y: 156.570602, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 421630}
@@ -352,8 +352,8 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -.50703454, y: .398745477}
       - {x: -.511391282, y: -.382805943}
-      - {x: -3.95260978, y: -.337941647}
-      - {x: -3.9569664, y: .802524924}
+      - {x: -4.6993103, y: -.311279297}
+      - {x: -4.70365906, y: 1.65588379}
 --- !u!61 &6128364
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -424,6 +424,7 @@ MonoBehaviour:
   RightBorder: {fileID: 474610}
   shootPoint: {fileID: 429894}
   bullet: {fileID: 183432, guid: 53ae0623f11335e40b97a9850bdf121f, type: 2}
+  walkVelocity: 1
   shootVelocity: 4
   anim: {fileID: 0}
   attacking: 0
@@ -436,6 +437,8 @@ MonoBehaviour:
   HittingBorder: 0
   bulletTimer: 0
   shootInterval: 1
+  initialInterval: 0
+  isInitial: 1
   attackSpitter: 1
   allowAttack: 1
 --- !u!114 &11428750
@@ -461,9 +464,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9ab6c3d83ebc52479d67ed75bd4446b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1
+  hp: 3
   deathTimer: .200000003
   enemy: {fileID: 147072}
+  allowAction: 1
 --- !u!212 &21242900
 SpriteRenderer:
   m_ObjectHideFlags: 1
