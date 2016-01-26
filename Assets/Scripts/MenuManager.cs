@@ -6,16 +6,11 @@ using System.IO;
 public class MenuManager : MonoBehaviour {
 
 	// menu screens
-	public GameObject first_splash;			// first splash to be shown
-	public GameObject second_splash;		// second splash to be shown
 	public GameObject full_background;		// a unique background for all the menus
 	public GameObject menu;
-	public GameObject leaderboard;
-	public GameObject settings;
 	public GameObject credits;
 	public GameObject saving;
 	public static bool first_run = true;
-	float splash_pause = 1f; 	// every splash stays for one seconds
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +18,12 @@ public class MenuManager : MonoBehaviour {
 		//SoundManager.instance.SetBackgroundMusic ("menu");
 		GoToMenu ();
 
+	}
+
+	void Update () {
+		if (Input.GetKeyDown (KeyCode.Backspace) || Input.GetKeyDown (KeyCode.Joystick1Button1)) {
+			GoToMenu ();
+		}
 	}
 	
 	public void SliderValueChanged (float value) {
@@ -35,23 +36,12 @@ public class MenuManager : MonoBehaviour {
 
 	public void GoToMenu () {
 		menu.SetActive (true);
-		leaderboard.SetActive (false);
-		settings.SetActive (false);
 		credits.SetActive (false);
 		saving.SetActive (false);
 	}
 
-	public void GoToLeaderboard () {
-		menu.SetActive (false);
-		leaderboard.SetActive (true);
-		settings.SetActive (false);
-		credits.SetActive (false);
-	}
-
 	public void GoToSavingMenu () {
 		menu.SetActive (false);
-		leaderboard.SetActive (false);
-		settings.SetActive (false);
 		credits.SetActive (false);
 		saving.SetActive (true);
 
@@ -86,28 +76,20 @@ public class MenuManager : MonoBehaviour {
 
 	}
 
-	public void GoToSettings () {
-		menu.SetActive (false);
-		leaderboard.SetActive (false);
-		settings.SetActive (true);
-		credits.SetActive (false);
-	}
-
 	public void GoToCredits () {
 		menu.SetActive (false);
-		leaderboard.SetActive (false);
-		settings.SetActive (false);
 		credits.SetActive (true);
 	}
 
 	public void CleanMenus () {
 		menu.SetActive (false);
-		leaderboard.SetActive (false);
-		settings.SetActive (false);
 		credits.SetActive (false);
 		full_background.SetActive (false);
 	}
-	
+
+	public void ExitGame () {
+		Application.Quit ();
+	}
 
 
 }

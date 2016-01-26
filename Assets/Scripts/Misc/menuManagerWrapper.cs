@@ -13,10 +13,20 @@ public class menuManagerWrapper : MonoBehaviour {
 	float lastAxisY;
 	float axisRange = 0.7f;
 	int numButton = 0;
+	float t;
+	float transitionDuration = 1f;
+	float scaleX;
+	float scaleY;
+	float scaleZ;
+	
 
 	// Use this for initialization
 	void Start () {	
+
+
+		
 		menuManager = GameObject.Find ("MenuManager");
+		t = 0f;
 		selected = 0;
 		count = 0;
 		buttons = new List<Button> ();
@@ -26,9 +36,13 @@ public class menuManagerWrapper : MonoBehaviour {
 				buttons.Add (child.gameObject.GetComponent<Button> ());
 				numButton++;
 			}
-		}
-		buttons [0].image.color = Color.red;
-	
+		}	
+
+		scaleX = buttons [0].transform.localScale.x;
+		scaleY = buttons [0].transform.localScale.y;
+		scaleZ = buttons [0].transform.localScale.z;
+
+		Debug.Log ("Valori di scala: " + scaleX + " " + scaleY + " " + scaleZ);
 	}
 	
 	// Update is called once per frame
@@ -51,13 +65,6 @@ public class menuManagerWrapper : MonoBehaviour {
 			updateMenu ();
 		}
 
-		for (int i = 4; i < 20; i++) {
-			if (Input.GetKeyDown ("joystick 1 button " + i)) {
-				print ("joystick 1 button " + i);
-			}
-		}
-
-
 		if (Input.GetKeyDown (KeyCode.Return) || Input.GetKeyDown (KeyCode.Joystick1Button0)) {
 			buttons [selected].onClick.Invoke ();
 		}
@@ -65,20 +72,36 @@ public class menuManagerWrapper : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Backspace) || Input.GetKeyDown (KeyCode.Joystick1Button1)) {
 			menuManager.GetComponent<MenuManager> ().GoToMenu ();
 		}
+
+		if (t < 1f) {
+			t += Time.deltaTime / transitionDuration;
+			float delta = nextGaussian (t) * 0.15f;
+	
+			buttons [selected].transform.localScale = new Vector3 (scaleX + delta, (scaleY + delta), scaleZ);
+			if (t > 1f) {
+				t = 0f;
+			}
+		}
+
+
 	}
 
 	void updateMenu () {
-
+		buttons [selected].transform.localScale = new Vector3 (scaleX, scaleY, scaleZ);
 		selected = count % numButton;
-		Debug.Log ("selected: " + selected + " count: " + count);
-		for (int i=0; i < buttons.Count; i++) {
 
-			if (i == selected) {
-				buttons [i].image.color = Color.red;
-			} else {
-				buttons [i].image.color = Color.white;
-			}
-		}
+	
+	}
+
+	float nextGaussian (float x) {
+		double sigma = 0.4;
+		double mu = 0.5;
+		double n1 = 1 / Math.Sqrt (2 * Math.PI * Math.Pow (sigma, 2));
+
+		double n2_1 = (x - mu) / sigma;
+		double n2_2 = Math.Exp (-0.5 * Math.Pow (n2_1, 2));
+
+		return (float)(n1 * n2_2);
 	}
 
 

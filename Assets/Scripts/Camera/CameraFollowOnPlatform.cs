@@ -17,8 +17,6 @@ public class CameraFollowOnPlatform : MonoBehaviour {
 
 	//used for ResetCamera, no need to explain
 	private Vector2 velocity;
-	public float smoothTimeX;
-	public float smoothTimeY;
 	float t = 0.0f;
 	public bool onMovingPlat = false;
 	bool movingCamera = false;
