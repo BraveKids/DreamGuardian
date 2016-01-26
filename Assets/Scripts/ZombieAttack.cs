@@ -11,7 +11,7 @@ public class ZombieAttack : MonoBehaviour {
 		rb = gameObject.GetComponentInParent<Rigidbody2D> ();
     }
 
-    void OnTriggerStay2D (Collider2D col)
+    void OnTriggerEnter2D (Collider2D col)
     {
         if (col.CompareTag("Player"))
         {

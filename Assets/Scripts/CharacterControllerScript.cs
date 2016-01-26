@@ -109,7 +109,7 @@ public class CharacterControllerScript : MonoBehaviour {
 			Invoke ("PlatformAbility", 0.25f);
 			energy -= 1;
 			GameObject.Find ("HUD").GetComponent<HUDManager> ().updateMP (energy);
-			Invoke ("PlatformAbilityClose", 4f);
+			Invoke ("PlatformAbilityClose", 3f);
 
 		}
 

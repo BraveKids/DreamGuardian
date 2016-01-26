@@ -33,7 +33,7 @@ public class PlayerGroundOnPlatform : MonoBehaviour {
 			
 		}
 
-
+		/*
 		if (other.CompareTag ("Ground")) {
 
 			CameraFollowOnPlatform.instance.setOriginY (transform.position.y);
@@ -43,7 +43,7 @@ public class PlayerGroundOnPlatform : MonoBehaviour {
 			//CameraFollowOnPlatform.instance.nextY = CameraFollowOnPlatform.instance.currentY+CameraFollowOnPlatform.instance.groundDim;
 
 					
-		}
+		}*/
 
 		//CameraFollowOnPlatform.instance.isFalling = false;
 	}
@@ -58,11 +58,12 @@ public class PlayerGroundOnPlatform : MonoBehaviour {
 		}
 	}
 
-	/*void OnTriggerStay2D(Collider2D other){
-		if(other.CompareTag("MovingPlatform")){
-			CameraFollowOnPlatform.instance.followMe(transform.position.y, false);
+	void OnTriggerStay2D(Collider2D other){
+		if(other.CompareTag("Ground")){
+			CameraFollowOnPlatform.instance.setOriginY (transform.position.y);
+			CameraFollowOnPlatform.instance.nextY = transform.position.y;
 		}
-	}*/
+	}
 
 
 

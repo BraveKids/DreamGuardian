@@ -42,6 +42,7 @@ public class dialogManager : MonoBehaviour {
 	public void Activate () {
 		//PER TOMMASO
 		//Bloccare i movimenti di yume qui richiamando un metodo che scrivi in characterControllerScript
+		PlayerScript.anim.SetBool ("Ground", true);
 		PlayerScript.canMove = false;
 		PlayerScript.anim.SetFloat ("Speed", 0f);
 		PlayerAttackScript.canAttack = false;

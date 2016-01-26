@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 5c4028f7ef0fa3f47b07c4554389084d
-timeCreated: 1453647593
+guid: 349b690ff86b5bd4da5121eea92d98ca
+timeCreated: 1453810039
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: bossHud_0
-    21300002: bossHud_1
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -40,7 +38,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,34 +47,9 @@ TextureImporter:
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
-  buildTargetSettings:
-  - buildTarget: Standalone
-    maxTextureSize: 8192
-    textureFormat: -1
-    compressionQuality: 50
-    allowsAlphaSplitting: 0
+  buildTargetSettings: []
   spriteSheet:
-    sprites:
-    - name: bossHud_0
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 307
-        width: 424
-        height: 216
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: bossHud_1
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 95
-        width: 426
-        height: 196
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+    sprites: []
   spritePackingTag: 
   userData: 
   assetBundleName: 
