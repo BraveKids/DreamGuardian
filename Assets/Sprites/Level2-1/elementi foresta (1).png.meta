@@ -1,0 +1,111 @@
+fileFormatVersion: 2
+guid: 26bd0daf5a07bb84c8d2c83a3478d7cd
+timeCreated: 1453810311
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: elementi foresta (1)_0
+    21300002: elementi foresta (1)_1
+    21300004: elementi foresta (1)_2
+    21300006: elementi foresta (1)_3
+    21300008: elementi foresta (1)_4
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: elementi foresta (1)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 63
+        width: 1014
+        height: 455
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: elementi foresta (1)_1
+      rect:
+        serializedVersion: 2
+        x: 1285
+        y: 269
+        width: 704
+        height: 202
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: elementi foresta (1)_2
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 790
+        width: 543
+        height: 294
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: elementi foresta (1)_3
+      rect:
+        serializedVersion: 2
+        x: 2024
+        y: 611
+        width: 253
+        height: 232
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: elementi foresta (1)_4
+      rect:
+        serializedVersion: 2
+        x: 2339
+        y: 0
+        width: 1159
+        height: 928
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
