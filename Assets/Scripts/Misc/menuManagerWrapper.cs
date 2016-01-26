@@ -42,7 +42,6 @@ public class menuManagerWrapper : MonoBehaviour {
 		scaleY = buttons [0].transform.localScale.y;
 		scaleZ = buttons [0].transform.localScale.z;
 
-		Debug.Log ("Valori di scala: " + scaleX + " " + scaleY + " " + scaleZ);
 	}
 	
 	// Update is called once per frame

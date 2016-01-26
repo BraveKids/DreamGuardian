@@ -5,7 +5,7 @@ public class PauseMenu : MonoBehaviour {
 
 	// Use this for initialization
 	public void Start () {
-		showPauseMenu ();
+		//showPauseMenu ();
 	}
 	
 	void Update () {
@@ -14,12 +14,13 @@ public class PauseMenu : MonoBehaviour {
 		}
 	}
 	
-	void showPauseMenu () {
-		gameObject.SetActive (true);
+	public void showPauseMenu () {
 		Time.timeScale = 0;
+		
+		gameObject.SetActive (true);
 	}
 	
-	void hidePauseMenu () {
+	public void hidePauseMenu () {
 		gameObject.SetActive (false);
 		Time.timeScale = 1;		
 	}
@@ -29,10 +30,9 @@ public class PauseMenu : MonoBehaviour {
 	}
 	
 	public void toMainMenu () {
-		Camera.main.GetComponent<CameraFollowOnPlatform> ().enabled = false;
-		
-		hidePauseMenu ();
 		Time.timeScale = 1;
+		Camera.main.GetComponent<CameraFollowOnPlatform> ().enabled = false;		
+		hidePauseMenu ();
 		Application.LoadLevel ("menu");
 	}
 
