@@ -30,6 +30,7 @@ public class PauseMenu : MonoBehaviour {
 	}
 	
 	public void toMainMenu () {
+		SaveLoad.savedGame.level = -1;
 		Time.timeScale = 1;
 		Camera.main.GetComponent<CameraFollowOnPlatform> ().enabled = false;		
 		hidePauseMenu ();

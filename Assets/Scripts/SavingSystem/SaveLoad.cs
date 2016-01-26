@@ -97,6 +97,7 @@ public class SaveLoad {
 		}
 		Vector3 savedPos = new Vector3 (SaveLoad.savedGame.x, SaveLoad.savedGame.y, player.transform.position.z);
 		player.transform.position = savedPos;
+		player.GetComponent<CharacterControllerScript> ().anim.Play ("respawn");
 		savedGame.firstGame = false;
 		Camera.main.GetComponent<CameraFollowOnPlatform> ().enabled = true;
 
