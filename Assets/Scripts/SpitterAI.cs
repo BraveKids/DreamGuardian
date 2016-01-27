@@ -25,7 +25,7 @@ public class SpitterAI : MonoBehaviour {
 
     public float bulletTimer;
     public float shootInterval = 1;
-    public float initialInterval;
+     float initialInterval = 0.2f;
     public bool isInitial = true;
 
     public bool attackSpitter;
