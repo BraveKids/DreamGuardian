@@ -30,7 +30,7 @@ public class SoundManager : MonoBehaviour {
 		// singleton
 		if (instance == null) {
 			instance = this;
-			DontDestroyOnLoad (gameObject);
+			//DontDestroyOnLoad (gameObject);
 		} else {
 			Destroy (gameObject);
 		}
@@ -63,6 +63,10 @@ public class SoundManager : MonoBehaviour {
 		
 			case 2:
 				SetBackgroundMusic ("gorilla");
+				break;
+
+			default:
+				SetBackgroundMusic ("lullaby");
 				break;
 	
 			}

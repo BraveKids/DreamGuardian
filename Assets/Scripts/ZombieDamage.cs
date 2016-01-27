@@ -8,12 +8,14 @@ public class ZombieDamage : MonoBehaviour {
     private CharacterControllerScript playerScript;
     GameObject player;
 	SpriteRenderer renderer;
+	AudioSource audio;
 	Color normalColor;
     public GameObject enemy;
     public bool allowAction = true;
     // Use this for initialization
     void Start()
     {
+		audio = GetComponent<AudioSource> ();
 		renderer = GetComponentInParent<SpriteRenderer> ();
 		normalColor = renderer.material.color;
         anim = GetComponentInParent<Animator>();
@@ -33,6 +35,7 @@ public class ZombieDamage : MonoBehaviour {
         if (other.CompareTag("AttackTrigger") && hp>0)
         {
 			StartCoroutine ("DamageCoroutine");
+			audio.PlayOneShot(audio.clip);
             hp -= 1;
             anim.Play("damage");
 			if (hp <= 0) {
