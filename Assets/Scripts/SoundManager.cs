@@ -15,10 +15,11 @@ public class SoundManager : MonoBehaviour {
 	public AudioClip lullaby;
 	public AudioClip tutorial;
 	public AudioClip school;
-
-	int level = -2;
-
 	public AudioClip gorilla;
+	
+
+	int level = -20;	//default value
+
 	string musicPlayed;
 
 
@@ -39,6 +40,7 @@ public class SoundManager : MonoBehaviour {
 		allMusics.Add ("tutorial", tutorial);
 		allMusics.Add ("school", school);
 		allMusics.Add ("gorilla", gorilla);
+	
 	
 		
 		audioSource = GetComponent<AudioSource> () as AudioSource;
@@ -78,6 +80,7 @@ public class SoundManager : MonoBehaviour {
 			audioSource.clip = allMusics [background];
 			level = SaveLoad.savedGame.level;
 			audioSource.Play ();
+			Debug.Log("Now playing: "+background);
 		}
 
 

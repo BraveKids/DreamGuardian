@@ -65,6 +65,7 @@ public class MenuManager : MonoBehaviour {
 
 		if (newGame) {
 			SaveLoad.FirstGame ();
+			SaveLoad.savedGame.level = -2;
 			Application.LoadLevel ("Trailer");
 		} else {
 			SaveLoad.ContinueGame ();
