@@ -65,14 +65,16 @@ public class MenuManager : MonoBehaviour {
 
 		if (newGame) {
 			SaveLoad.FirstGame ();
+			Application.LoadLevel ("Trailer");
 		} else {
 			SaveLoad.ContinueGame ();
+			Application.LoadLevel ("Gameplay");
+			
 		}
 
 		// background music
 
 		//SoundManager.instance.SetBackgroundMusic ("game");
-		Application.LoadLevel ("Gameplay");
 
 	}
 
