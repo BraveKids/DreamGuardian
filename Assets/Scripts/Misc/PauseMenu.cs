@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class PauseMenu : MonoBehaviour {
-
+	public GameObject player;
 	// Use this for initialization
 	public void Start () {
 		//showPauseMenu ();
@@ -16,12 +16,13 @@ public class PauseMenu : MonoBehaviour {
 	
 	public void showPauseMenu () {
 		Time.timeScale = 0;
-		
+		player.gameObject.GetComponent<CharacterControllerScript> ().stopYume();
 		gameObject.SetActive (true);
 	}
 	
 	public void hidePauseMenu () {
 		gameObject.SetActive (false);
+		player.gameObject.GetComponent<CharacterControllerScript> ().goYume();
 		Time.timeScale = 1;		
 	}
 	

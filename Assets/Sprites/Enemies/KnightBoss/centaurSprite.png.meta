@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: e2be145fc83a61541858839754e1c596
-timeCreated: 1453472820
+timeCreated: 1453907388
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -111,7 +111,7 @@ TextureImporter:
         width: 544
         height: 560
       alignment: 9
-      pivot: {x: .380364805, y: .468590438}
+      pivot: {x: .207950369, y: .565122783}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: stun1
       rect:
@@ -121,7 +121,7 @@ TextureImporter:
         width: 527
         height: 564
       alignment: 9
-      pivot: {x: .39752996, y: .465523362}
+      pivot: {x: .217639089, y: .570728064}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: stun2
       rect:
@@ -131,7 +131,7 @@ TextureImporter:
         width: 551
         height: 561
       alignment: 9
-      pivot: {x: .387116194, y: .459000051}
+      pivot: {x: .214989975, y: .564768195}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: recover0
       rect:
