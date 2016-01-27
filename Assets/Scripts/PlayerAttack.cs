@@ -3,6 +3,11 @@ using System.Collections;
 
 public class PlayerAttack: MonoBehaviour {
 	public bool canAttack;
+	public AudioSource attackAudio1;
+	public AudioSource attackAudio2;
+	public AudioClip attack1;
+	public AudioClip attack2;
+	public AudioClip attack3;
 	public bool steso;
 	private float hitTimer=0;
 	private float lastHitTimer=0;
@@ -80,7 +85,7 @@ public class PlayerAttack: MonoBehaviour {
 			switch(comboCounter){
 		case(1):
 			anim.Play("YumeAttack1");
-
+			attackAudio1.PlayOneShot(attack1);
 			attackTrigger1.enabled = true;
 			attackTrigger2.enabled = false;
 			attackTrigger3.enabled = false;
@@ -88,14 +93,14 @@ public class PlayerAttack: MonoBehaviour {
 			break;
 		case(2):
 			anim.Play("YumeAttack2");
-		
+			attackAudio2.PlayDelayed(0.2f);
 			attackTrigger1.enabled = false;
 			attackTrigger2.enabled = true;
 			attackTrigger3.enabled = false;
 			break;
 		case(3):
 			anim.Play("YumeAttack3");
-	
+			attackAudio1.PlayDelayed(0.3f);
 			attackTrigger1.enabled = false;
 			attackTrigger2.enabled = false;
 			attackTrigger3.enabled = true;

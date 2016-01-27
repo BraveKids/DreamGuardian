@@ -2,6 +2,9 @@
 using System.Collections;
 
 public class KnightBossScript : MonoBehaviour {
+	public AudioSource deathSound;
+	public AudioSource hitSound;
+	public AudioSource wallSound;
 	public bool chase;
 	public bool active;
 	public bool stun;
@@ -86,7 +89,7 @@ public class KnightBossScript : MonoBehaviour {
 
 			if(hp==0){
 				anim.SetTrigger("die");
-				Invoke ("Death", 0.8f);
+				Invoke ("Death", 1f);
 			}
 			
 		}
@@ -102,6 +105,7 @@ public class KnightBossScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.CompareTag ("Wall")) {
 			if(crashOnWall && !freeRound){
+				wallSound.PlayOneShot(wallSound.clip);
 				anim.Play("crash");
 				stun = true;
 				chase = false;
@@ -114,6 +118,7 @@ public class KnightBossScript : MonoBehaviour {
 		}
 		if (other.CompareTag("AttackTrigger") && stun == true && hp>0 && hpDelta<4){
 			hp-=1;
+			hitSound.PlayOneShot(deathSound.clip);
 			StartCoroutine("DamageCoroutine");
 			GameObject.Find ("HUD").GetComponent<HUDManager> ().updateKnightBossHP (hp);
 			hpDelta+=1;
