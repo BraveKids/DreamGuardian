@@ -6,6 +6,7 @@ public class nextNight : MonoBehaviour {
 	public GameObject nightStart;
 	public int level;
 	GameObject player;
+	public bool end;
 
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.CompareTag ("Player")) {
@@ -15,7 +16,9 @@ public class nextNight : MonoBehaviour {
 			CameraFollowOnPlatform.instance.setFollowYume (false);
 			Invoke ("Teleport", 2.1f);
 
-				
+			if(end){
+				Application.LoadLevel("Ending");
+			}
 				
 		}		
 	}
@@ -40,6 +43,7 @@ public class nextNight : MonoBehaviour {
 		player.gameObject.GetComponent<CharacterControllerScript> ().goYume();
 
 	}
+
 	
 }
 

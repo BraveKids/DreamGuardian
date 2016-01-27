@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class skipTrailer : MonoBehaviour {
+public class Trailer : MonoBehaviour {
 
 	public AudioSource trailerSong;
 
