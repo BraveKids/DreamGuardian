@@ -16,6 +16,7 @@ public class SoundManager : MonoBehaviour {
 	public AudioClip tutorial;
 	public AudioClip school;
 	public AudioClip gorilla;
+	public AudioClip knight;
 	
 
 	int level = -20;	//default value
@@ -40,6 +41,7 @@ public class SoundManager : MonoBehaviour {
 		allMusics.Add ("tutorial", tutorial);
 		allMusics.Add ("school", school);
 		allMusics.Add ("gorilla", gorilla);
+		allMusics.Add ("knight", knight);
 	
 	
 		
@@ -65,6 +67,9 @@ public class SoundManager : MonoBehaviour {
 				SetBackgroundMusic ("gorilla");
 				break;
 
+			case 5:
+				SetBackgroundMusic("knight");
+				break;
 			default:
 				SetBackgroundMusic ("lullaby");
 				break;
