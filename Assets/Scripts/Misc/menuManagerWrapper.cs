@@ -18,7 +18,7 @@ public class menuManagerWrapper : MonoBehaviour {
 	float scaleX;
 	float scaleY;
 	float scaleZ;
-	
+	public bool pauseMenuOption;
 
 	// Use this for initialization
 	void Start () {	
@@ -71,13 +71,18 @@ public class menuManagerWrapper : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Backspace) || Input.GetKeyDown (KeyCode.Joystick1Button1)) {
 			menuManager.GetComponent<MenuManager> ().GoToMenu ();
 		}
-
+		Debug.Log (pauseMenuOption);
+		
 		if (t < 1f) {
-			t += Time.deltaTime / transitionDuration;
+			if (pauseMenuOption) {
+				t += 0.01656677f / transitionDuration;
+			} else {
+				t += Time.deltaTime / transitionDuration;
+			}
 			float delta = nextGaussian (t) * 0.15f;
 	
 			buttons [selected].transform.localScale = new Vector3 (scaleX + delta, (scaleY + delta), scaleZ);
-			if (t > 1f) {
+			if (t >= 1f) {
 				t = 0f;
 			}
 		}

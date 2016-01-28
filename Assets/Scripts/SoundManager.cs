@@ -93,10 +93,10 @@ public class SoundManager : MonoBehaviour {
 
 	public void SetMusic (bool _music) {
 		if (audioSource.isPlaying == true && _music == false) {
-			audioSource.Stop ();
+			audioSource.Pause();
 		}
 		if (audioSource.isPlaying == false && _music == true) {
-			audioSource.Play ();
+			audioSource.Play();
 		}
 	}
 }

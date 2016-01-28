@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+
 
 public class PauseMenu : MonoBehaviour {
 	public GameObject player;
@@ -16,14 +18,16 @@ public class PauseMenu : MonoBehaviour {
 	
 	public void showPauseMenu () {
 		Time.timeScale = 0;
-		player.gameObject.GetComponent<CharacterControllerScript> ().stopYume();
+		//player.GetComponent<CharacterControllerScript> ().stopYume();
 		gameObject.SetActive (true);
+		SoundManager.instance.SetMusic(false);
 	}
 	
 	public void hidePauseMenu () {
 		gameObject.SetActive (false);
-		player.gameObject.GetComponent<CharacterControllerScript> ().goYume();
+		//player.GetComponent<CharacterControllerScript> ().goYume();
 		Time.timeScale = 1;		
+		SoundManager.instance.SetMusic(true);
 	}
 	
 	public void continueGame () {
@@ -37,5 +41,7 @@ public class PauseMenu : MonoBehaviour {
 		hidePauseMenu ();
 		Application.LoadLevel ("menu");
 	}
+
+
 
 }

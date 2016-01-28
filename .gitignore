@@ -14,7 +14,8 @@ Assets/Scenes
 *.mp3.meta
 *.mp4
 *.mp4.meta
-
+*.ogg
+*.ogg.meta
 
 
 # ===================================== #
