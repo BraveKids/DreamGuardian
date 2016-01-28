@@ -29,7 +29,7 @@ public class TankAI : MonoBehaviour {
 
     public bool attacking = false;
     bool activateTrigger = true;
-    bool allowHit = false;
+    public bool allowHit = false;
     public bool shieldIsActive = false;
     ZombieDamage zombieDamage;
 
@@ -45,6 +45,7 @@ public class TankAI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		Debug.Log (allowHit);
         if (zombieDamage.allowAction == true)
         {
             HittingBorder = Physics2D.OverlapCircle(checkPosition.position, checkPositionRadius, WhatIsBorder);
@@ -72,17 +73,19 @@ public class TankAI : MonoBehaviour {
                 else if (allowHit == false)
                 {
                     AttackTrigger.enabled = false;
-                }
-                hitTimer += Time.deltaTime;
-                if (hitTimer >= hitInterval)
-                {
-                    allowHit = true;
-                    hitTimer = 0;
-                }
+				hitTimer += Time.deltaTime;
+				if (hitTimer >= hitInterval)
+				{
+					allowHit = true;
+					hitTimer = 0;
+				}
+			}
+              
 
             }
             if (attacking == false)
             {
+			allowHit = false;
                 AttackTrigger.enabled = false;
                 anim.SetBool("shield", false);
             }
@@ -165,6 +168,7 @@ public class TankAI : MonoBehaviour {
 
     public void Attack()
     {
+		Debug.Log ("mi Ripeto");
         rb.isKinematic = true;
 		Invoke ("AttackDelay", 0.3f);
         if (activateTrigger == true)

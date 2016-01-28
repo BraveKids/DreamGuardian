@@ -118,7 +118,7 @@ public class CharacterControllerScript : MonoBehaviour {
 
 
 
-		if (energy > 0 && canMove && arrowTimer >= 1.3f && (Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && !arrow.activeSelf && abilitySelected == "arrowAbility") {
+		if (energy > 1 && canMove && arrowTimer >= 1.3f && (Input.GetKeyDown (KeyCode.Joystick1Button1) || Input.GetKeyDown (KeyCode.G)) && !arrow.activeSelf && abilitySelected == "arrowAbility") {
 			arrowTimer = 0f;
 			arrow.transform.position = firePoint.position;
 			if (anim.GetBool ("Ground") == false) {
@@ -204,6 +204,7 @@ public class CharacterControllerScript : MonoBehaviour {
 	void OnTriggerStay2D (Collider2D other) {
 		if (other.CompareTag ("Enemy") && attackTrigger1.enabled == false && attackJumpTrigger.enabled == false && attackTrigger2.enabled == false && attackTrigger3.enabled == false && superAttackTrigger.enabled == false && Time.time > nextHitAllowed) {
 			anim.Play ("YumeDamage");
+			audio.PlayOneShot(damage);
 			StartCoroutine ("DamageCoroutine");
 			hp -= 1;
 			GameObject.Find ("HUD").GetComponent<HUDManager> ().updateHP (hp);

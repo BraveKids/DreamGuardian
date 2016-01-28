@@ -2,8 +2,10 @@
 using System.Collections;
 
 public class GorillaBullet : MonoBehaviour {
+	public AudioSource shootSound;
 	Animator anim;
 	void Start(){
+		shootSound.PlayOneShot (shootSound.clip);
 		anim = GetComponent<Animator> ();
 		Invoke ("DestroyBullet", 3f); 
 	}

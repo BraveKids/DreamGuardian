@@ -169,6 +169,11 @@ public class ZombieAI : MonoBehaviour {
         hit = true;
         AttackTrigger.enabled = true;
     }
+
+
+	public void isAttacking(bool trigger){
+		attacking = trigger;
+	}
     /*public void checkFlip()
     {
         if ((BorderCheck.position.x >Player.transform.position.x && IsLeft == false )|| (BorderCheck.position.x < Player.transform.position.x && IsLeft == true))

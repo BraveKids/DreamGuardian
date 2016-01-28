@@ -60,6 +60,7 @@ public class PlayerAttack: MonoBehaviour {
 
 				lastHitTimer = Time.realtimeSinceStartup;
 				anim.Play ("YumeJumpAttack");
+				attackAudio1.PlayOneShot(attack1);
 				attackJumpTrigger.enabled = true;
 			}
 		}

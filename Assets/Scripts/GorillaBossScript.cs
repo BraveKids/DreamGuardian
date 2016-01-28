@@ -8,6 +8,7 @@ public class GorillaBossScript : MonoBehaviour {
 	Rigidbody2D rb;
 	public AudioSource deathSound;
 	public AudioSource hitSound;
+	public AudioClip roar;
 	public Animator anim;
 	public bool onRope;
 	public bool vulnerable;
@@ -153,6 +154,7 @@ public class GorillaBossScript : MonoBehaviour {
 
 	void BackToRope(){
 		anim.SetBool ("stun", false);
+		hitSound.PlayOneShot (roar);
 		anim.Play ("recover");
 		bulletTimer = 0f;
 		hpDelta=0;

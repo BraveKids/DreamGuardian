@@ -5,6 +5,9 @@ public class KnightBossScript : MonoBehaviour {
 	public AudioSource deathSound;
 	public AudioSource hitSound;
 	public AudioSource wallSound;
+	public AudioSource horseRunning;
+	public AudioClip neigh;
+	public AudioClip roar;
 	public bool chase;
 	public bool active;
 	public bool stun;
@@ -55,7 +58,9 @@ public class KnightBossScript : MonoBehaviour {
 		if (active) {
 			GameObject.Find ("HUD").GetComponent<HUDManager> ().knightBossHP.gameObject.SetActive (true);
 			if (chase) {
-
+				if(!horseRunning.isPlaying){
+					horseRunning.PlayOneShot(horseRunning.clip);
+				}
 				if (left) {
 
 					rb.MovePosition (Vector3.MoveTowards (transform.position, new Vector3 (leftWall.transform.position.x, transform.position.y, leftWall.transform.position.z), Time.deltaTime * moveSpeed));
@@ -83,6 +88,8 @@ public class KnightBossScript : MonoBehaviour {
 				stun = false;
 				//anim.SetTrigger ("flip");
 				Flip ();
+				hitSound.PlayOneShot(neigh);
+				deathSound.PlayOneShot(roar);
 				anim.SetTrigger("rampage");
 				Invoke("BackOnHorse", 1.2f);
 				}
@@ -105,6 +112,7 @@ public class KnightBossScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.CompareTag ("Wall")) {
 			if(crashOnWall && !freeRound){
+				horseRunning.Stop();
 				wallSound.PlayOneShot(wallSound.clip);
 				anim.Play("crash");
 				stun = true;

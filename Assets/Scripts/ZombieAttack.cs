@@ -11,12 +11,12 @@ public class ZombieAttack : MonoBehaviour {
 		rb = gameObject.GetComponentInParent<Rigidbody2D> ();
     }
 
-    void OnTriggerEnter2D (Collider2D col)
+    void OnTriggerStay2D (Collider2D col)
     {
         if (col.CompareTag("Player"))
         {
 			rb.isKinematic = true;
-            zombieAI.attacking = true;
+			zombieAI.isAttacking(true);
         }
     }
 
@@ -24,7 +24,7 @@ public class ZombieAttack : MonoBehaviour {
     {
         if (col.CompareTag("Player"))
         {
-            zombieAI.attacking = false;
+			zombieAI.isAttacking(false);
 
         }
 

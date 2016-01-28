@@ -18,14 +18,14 @@ public class PauseMenu : MonoBehaviour {
 	
 	public void showPauseMenu () {
 		Time.timeScale = 0;
-		//player.GetComponent<CharacterControllerScript> ().stopYume();
+		player.GetComponent<CharacterControllerScript> ().stopYume();
 		gameObject.SetActive (true);
 		SoundManager.instance.SetMusic(false);
 	}
 	
 	public void hidePauseMenu () {
 		gameObject.SetActive (false);
-		//player.GetComponent<CharacterControllerScript> ().goYume();
+		player.GetComponent<CharacterControllerScript> ().goYume();
 		Time.timeScale = 1;		
 		SoundManager.instance.SetMusic(true);
 	}
