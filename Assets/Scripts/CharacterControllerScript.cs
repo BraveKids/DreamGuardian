@@ -2,7 +2,9 @@
 using System.Collections;
 
 public class CharacterControllerScript : MonoBehaviour {
-
+	public AudioSource audio;
+	public AudioClip damage;
+	public AudioClip death;
 	public float maxSpeed;
 	public int hp = 3;
 	public int energy = 0;
@@ -219,6 +221,7 @@ public class CharacterControllerScript : MonoBehaviour {
 		if (other.CompareTag ("Death")) {
 			anim.SetBool ("IstantDeath", true);
 			rb.velocity = new Vector3 (0f, 0f, 0f);
+			audio.PlayOneShot(death);
 			Invoke ("Death", 0.6f);
 		}
 		if (other.transform.tag == "MovingPlatform") {
@@ -227,6 +230,7 @@ public class CharacterControllerScript : MonoBehaviour {
 		if (other.CompareTag ("EnemyObject")) {
 			anim.Play ("YumeDamage");
 			StartCoroutine ("DamageCoroutine");
+			audio.PlayOneShot(damage);
 			hp -= 1;
 			GameObject.Find ("HUD").GetComponent<HUDManager> ().updateHP (hp);
 			nextHitAllowed = Time.time + hitDelay;
@@ -240,11 +244,13 @@ public class CharacterControllerScript : MonoBehaviour {
 		if (other.CompareTag ("EnemyTrigger")&& Time.time > nextHitAllowed) {
 			anim.Play ("YumeDamage");
 			StartCoroutine("DamageCoroutine");
+			audio.PlayOneShot(damage);
 			hp -= 1;
 			GameObject.Find ("HUD").GetComponent<HUDManager> ().updateHP (hp);
 			nextHitAllowed = Time.time + hitDelay;
 			if (hp <= 0) {
 				anim.SetTrigger ("death");
+				audio.PlayOneShot(death);
 				Invoke ("Death", 0.6f);
 				
 			}

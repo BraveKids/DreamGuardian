@@ -78,6 +78,7 @@ public class GorillaBossScript : MonoBehaviour {
 
 				stunTimer += Time.deltaTime;
 				if(grounded){
+
 					anim.SetBool("stun",true);
 
 				}
@@ -117,7 +118,7 @@ public class GorillaBossScript : MonoBehaviour {
 			if(hp<=0){
 				deathSound.PlayOneShot(deathSound.clip);
 				anim.SetTrigger("die");
-				Invoke ("Death", 0.8f);
+				Invoke ("Death", 1f);
 				
 			}
 		}

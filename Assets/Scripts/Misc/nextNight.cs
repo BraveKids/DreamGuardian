@@ -17,7 +17,7 @@ public class nextNight : MonoBehaviour {
 			Invoke ("Teleport", 2.1f);
 
 			if(end){
-				Application.LoadLevel("Ending");
+				Invoke ("Ending", 2f);
 			}
 				
 		}		
@@ -42,6 +42,10 @@ public class nextNight : MonoBehaviour {
 		player.gameObject.GetComponent<Animator> ().Play ("respawn");
 		player.gameObject.GetComponent<CharacterControllerScript> ().goYume();
 
+	}
+
+	void Ending(){
+		Application.LoadLevel("Ending");
 	}
 
 	
